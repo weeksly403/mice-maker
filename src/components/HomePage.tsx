@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from './LanguageProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Clock, Users, Star, MapPin, MessageCircle } from 'lucide-react';
+import { CheckCircle, Clock, Users, Star, MapPin, MessageCircle, Trophy, Briefcase, Presentation, Utensils } from 'lucide-react';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -42,11 +42,11 @@ export const HomePage: React.FC = () => {
   ];
 
   const services = [
-    { title: t('incentiveTravel'), icon: '🏆' },
-    { title: t('teamBuilding'), icon: '🤝' },
-    { title: t('corporateRetreats'), icon: '💼' },
-    { title: t('conferences'), icon: '🎤' },
-    { title: t('galaDinners'), icon: '🍽️' }
+    { title: t('incentiveTravel'), icon: Trophy },
+    { title: t('teamBuilding'), icon: Users },
+    { title: t('corporateRetreats'), icon: Briefcase },
+    { title: t('conferences'), icon: Presentation },
+    { title: t('galaDinners'), icon: Utensils }
   ];
 
   return (
@@ -167,7 +167,9 @@ export const HomePage: React.FC = () => {
             {services.map((service, index) => (
               <Card key={index} className="group cursor-pointer shadow-card hover:shadow-elegant transition-bounce border-0 bg-background/80 backdrop-blur-sm">
                 <CardContent className="p-6 text-center">
-                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <div className="w-16 h-16 mx-auto mb-4 gradient-primary rounded-full flex items-center justify-center">
+                    <service.icon className="w-8 h-8 text-primary-foreground" />
+                  </div>
                   <h3 className="text-lg font-semibold text-foreground">
                     {service.title}
                   </h3>
