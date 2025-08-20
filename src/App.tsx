@@ -8,6 +8,11 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Destinations from "./pages/Destinations";
+import Services from "./pages/Services";
+import Blog from "./pages/Blog";
+import FAQ from "./pages/FAQ";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -24,11 +29,11 @@ const App = () => (
               <Routes>
                 {/* English Routes (default) */}
                 <Route path="/" element={<Index />} />
-                <Route path="/destinations" element={<Index />} />
-                <Route path="/services" element={<Index />} />
-                <Route path="/blog" element={<Index />} />
-                <Route path="/faq" element={<Index />} />
-                <Route path="/contact" element={<Index />} />
+                <Route path="/destinations" element={<Destinations />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/contact" element={<Contact />} />
                 
                 {/* French Routes */}
                 <Route path="/fr" element={<Index />} />
