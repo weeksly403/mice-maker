@@ -3,6 +3,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "./components/LanguageProvider";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -10,17 +13,56 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <BrowserRouter>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">
+              <Routes>
+                {/* English Routes (default) */}
+                <Route path="/" element={<Index />} />
+                <Route path="/destinations" element={<Index />} />
+                <Route path="/services" element={<Index />} />
+                <Route path="/blog" element={<Index />} />
+                <Route path="/faq" element={<Index />} />
+                <Route path="/contact" element={<Index />} />
+                
+                {/* French Routes */}
+                <Route path="/fr" element={<Index />} />
+                <Route path="/fr/destinations" element={<Index />} />
+                <Route path="/fr/services" element={<Index />} />
+                <Route path="/fr/blog" element={<Index />} />
+                <Route path="/fr/faq" element={<Index />} />
+                <Route path="/fr/contact" element={<Index />} />
+                
+                {/* Spanish Routes */}
+                <Route path="/es" element={<Index />} />
+                <Route path="/es/destinos" element={<Index />} />
+                <Route path="/es/servicios" element={<Index />} />
+                <Route path="/es/blog" element={<Index />} />
+                <Route path="/es/faq" element={<Index />} />
+                <Route path="/es/contacto" element={<Index />} />
+                
+                {/* Arabic Routes */}
+                <Route path="/ar" element={<Index />} />
+                <Route path="/ar/الوجهات" element={<Index />} />
+                <Route path="/ar/الخدمات" element={<Index />} />
+                <Route path="/ar/المدونة" element={<Index />} />
+                <Route path="/ar/الأسئلة-الشائعة" element={<Index />} />
+                <Route path="/ar/اتصل-بنا" element={<Index />} />
+                
+                {/* Catch-all route */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </TooltipProvider>
+      </LanguageProvider>
+    </BrowserRouter>
   </QueryClientProvider>
 );
 
