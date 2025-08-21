@@ -124,7 +124,7 @@ export const translations = {
     saharaHighlight2: 'Expéditions 4x4 et méharées',
     saharaHighlight3: 'Couchers de soleil spectaculaires',
 
-    venues: 'lieux',
+    destinationVenues: 'lieux',
     upTo: 'Jusqu\'à',
     guests: 'invités',
     highlights: 'Points forts',
@@ -253,7 +253,7 @@ export const translations = {
     companyNamePlaceholder: 'Votre société',
     contactName: 'Nom du Contact',
     contactNamePlaceholder: 'Votre nom',
-    emailPlaceholder: 'votre@email.com',
+    contactFormEmailPlaceholder: 'votre@email.com',
     phonePlaceholder: '+33 X XX XX XX XX',
     eventType: 'Type d\'Événement',
     selectEventType: 'Sélectionnez un type',
@@ -274,7 +274,7 @@ export const translations = {
     formDisclaimer: 'Vos données sont protégées. Réponse garantie sous 24h.',
 
     // Blog categories
-    venues: 'Lieux',
+    blogVenues: 'Lieux',
     incentives: 'Incentives', 
     corporate: 'Corporate',
     retreats: 'Séminaires',
@@ -396,7 +396,7 @@ export const translations = {
     saharaHighlight2: '4x4 expeditions and camel treks',
     saharaHighlight3: 'Spectacular sunsets',
 
-    venues: 'venues',
+    destinationVenues: 'venues',
     upTo: 'Up to',
     guests: 'guests',
     highlights: 'Highlights',
@@ -525,7 +525,7 @@ export const translations = {
     companyNamePlaceholder: 'Your company',
     contactName: 'Contact Name',
     contactNamePlaceholder: 'Your name',
-    emailPlaceholder: 'your@email.com',
+    contactFormEmailPlaceholder: 'your@email.com',
     phonePlaceholder: '+44 XXX XXX XXXX',
     eventType: 'Event Type',
     selectEventType: 'Select a type',
@@ -546,7 +546,7 @@ export const translations = {
     formDisclaimer: 'Your data is protected. Response guaranteed within 24h.',
 
     // Blog categories
-    venues: 'Venues',
+    blogVenues: 'Venues',
     incentives: 'Incentives',
     corporate: 'Corporate', 
     retreats: 'Retreats',
