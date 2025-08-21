@@ -1,8 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from './LanguageProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Clock, Users, Star, MapPin, MessageCircle, Trophy, Briefcase, Presentation, Utensils, Plane, Building, Palette, TrendingUp, DollarSign, Timer, Target, Quote, Eye, BookOpen, HelpCircle, Phone, Mail } from 'lucide-react';
+import { QuoteDialog } from './QuoteDialog';
+import { CaseStudyDialog } from './CaseStudyDialog';
+import { ScheduleCallDialog } from './ScheduleCallDialog';
+import { openWhatsApp } from '@/utils/whatsapp';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -15,7 +20,8 @@ import blogVenuesImage from '@/assets/blog-morocco-venues.jpg';
 import blogSaharaImage from '@/assets/blog-sahara-retreat.jpg';
 
 export const HomePage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const navigate = useNavigate();
 
   const benefits = [
     {
@@ -248,11 +254,18 @@ export const HomePage: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button variant="cta" size="lg" className="text-lg px-12 py-6">
-              {t('getProposal')}
-            </Button>
+            <QuoteDialog>
+              <Button variant="cta" size="lg" className="text-lg px-12 py-6">
+                {t('getProposal')}
+              </Button>
+            </QuoteDialog>
             
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+              onClick={() => openWhatsApp(undefined, language)}
+            >
               <MessageCircle className="w-5 h-5 mr-2" />
               {t('whatsappContact')}
             </Button>
@@ -295,7 +308,12 @@ export const HomePage: React.FC = () => {
                 ))}
               </div>
               
-              <Button variant="hero" size="lg" className="mt-8">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="mt-8"
+                onClick={() => navigate('/destinations')}
+              >
                 {t('discoverMorocco')}
               </Button>
             </div>
@@ -419,7 +437,11 @@ export const HomePage: React.FC = () => {
                     ))}
                   </div>
                   
-                  <Button variant="outline" className="mt-6">
+                  <Button 
+                    variant="outline" 
+                    className="mt-6"
+                    onClick={() => navigate('/services')}
+                  >
                     {t('learnMore')}
                   </Button>
                 </CardContent>
@@ -573,10 +595,12 @@ export const HomePage: React.FC = () => {
                       {caseStudy.metrics}
                     </p>
                   </div>
-                  <Button variant="outline" size="sm">
-                    <Eye className="w-4 h-4 mr-2" />
-                    {t('viewCaseStudy')}
-                  </Button>
+                  <CaseStudyDialog caseStudy={caseStudy} index={index}>
+                    <Button variant="outline" size="sm">
+                      <Eye className="w-4 h-4 mr-2" />
+                      {t('viewCaseStudy')}
+                    </Button>
+                  </CaseStudyDialog>
                 </CardContent>
               </Card>
             ))}
@@ -615,7 +639,11 @@ export const HomePage: React.FC = () => {
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {insight.description}
                   </p>
-                  <Button variant="outline" size="sm">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => navigate('/blog')}
+                  >
                     <BookOpen className="w-4 h-4 mr-2" />
                     {t('learnMore')}
                   </Button>
@@ -625,7 +653,11 @@ export const HomePage: React.FC = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button variant="hero" size="lg">
+            <Button 
+              variant="hero" 
+              size="lg"
+              onClick={() => navigate('/blog')}
+            >
               {t('readMoreInsights')}
             </Button>
           </div>
@@ -663,7 +695,11 @@ export const HomePage: React.FC = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg">
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => navigate('/faq')}
+            >
               {t('viewAllFAQ')}
             </Button>
           </div>
@@ -693,16 +729,25 @@ export const HomePage: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button variant="cta" size="lg" className="text-lg px-12 py-6 bg-white text-primary hover:bg-white/90">
-              {t('getProposal24h')}
-            </Button>
+            <QuoteDialog title={t('getProposal24h')}>
+              <Button variant="cta" size="lg" className="text-lg px-12 py-6 bg-white text-primary hover:bg-white/90">
+                {t('getProposal24h')}
+              </Button>
+            </QuoteDialog>
             
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
-              <Phone className="w-5 h-5 mr-2" />
-              {t('scheduleCall')}
-            </Button>
+            <ScheduleCallDialog>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
+                <Phone className="w-5 h-5 mr-2" />
+                {t('scheduleCall')}
+              </Button>
+            </ScheduleCallDialog>
             
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+              onClick={() => openWhatsApp(undefined, language)}
+            >
               <MessageCircle className="w-5 h-5 mr-2" />
               {t('whatsappContact')}
             </Button>

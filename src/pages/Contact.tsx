@@ -7,10 +7,13 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { openWhatsApp } from '@/utils/whatsapp';
+import { useToast } from '@/hooks/use-toast';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 
 const Contact: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     company: '',
     name: '',
@@ -30,8 +33,26 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    
+    // Show toast notification
+    toast({
+      title: t('quoteSent'),
+      description: t('quoteSentDesc'),
+    });
+    
+    // Reset form
+    setFormData({
+      company: '',
+      name: '',
+      email: '',
+      phone: '',
+      groupSize: '',
+      dates: '',
+      budget: '',
+      city: '',
+      eventType: '',
+      message: ''
+    });
   };
 
   const contactInfo = [
@@ -128,7 +149,12 @@ const Contact: React.FC = () => {
                   <p className="text-primary-foreground/90 mb-4">
                     {t('whatsappContactDesc')}
                   </p>
-                  <Button variant="secondary" size="sm" className="w-full">
+                  <Button 
+                    variant="secondary" 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => openWhatsApp(undefined, language)}
+                  >
                     {t('chatOnWhatsapp')}
                   </Button>
                 </CardContent>

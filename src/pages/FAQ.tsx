@@ -4,10 +4,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { MessageCircle, Phone, Mail } from 'lucide-react';
+import { QuoteDialog } from '@/components/QuoteDialog';
+import { openWhatsApp } from '@/utils/whatsapp';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 
 const FAQ: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const faqCategories = [
     {
@@ -114,7 +116,11 @@ const FAQ: React.FC = () => {
                 <p className="text-muted-foreground mb-4 text-sm">
                   {t('whatsappSupportDesc')}
                 </p>
-                <Button variant="outline" size="sm">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => openWhatsApp(undefined, language)}
+                >
                   {t('chatNow')}
                 </Button>
               </CardContent>
@@ -131,7 +137,11 @@ const FAQ: React.FC = () => {
                 <p className="text-muted-foreground mb-4 text-sm">
                   {t('phoneSupportDesc')}
                 </p>
-                <Button variant="outline" size="sm">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => window.open('tel:+212600000000', '_self')}
+                >
                   {t('callNow')}
                 </Button>
               </CardContent>
@@ -148,7 +158,11 @@ const FAQ: React.FC = () => {
                 <p className="text-muted-foreground mb-4 text-sm">
                   {t('emailSupportDesc')}
                 </p>
-                <Button variant="outline" size="sm">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => window.open('mailto:info@moroccomice.com', '_self')}
+                >
                   {t('sendEmail')}
                 </Button>
               </CardContent>
@@ -166,9 +180,11 @@ const FAQ: React.FC = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             {t('readyToStartDesc')}
           </p>
-          <Button variant="cta" size="lg" className="text-lg px-12 py-6">
-            {t('getProposal')}
-          </Button>
+          <QuoteDialog>
+            <Button variant="cta" size="lg" className="text-lg px-12 py-6">
+              {t('getProposal')}
+            </Button>
+          </QuoteDialog>
         </div>
       </section>
     </div>
