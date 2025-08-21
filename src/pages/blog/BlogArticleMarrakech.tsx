@@ -9,6 +9,14 @@ import { getLocalizedPath } from '@/lib/i18n';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 
+// New images for enhanced article content
+const marrakechCityscape = '/lovable-uploads/3b2a6045-af07-4373-a07b-1fa6675d0ddd.png';
+const luxuryConferenceRoom = '/lovable-uploads/767d3d8c-7737-420f-aa82-f484184fb442.png';
+const desertTeamBuilding = '/lovable-uploads/c79d5150-8963-4107-a44b-feb29d1c7eaa.png';
+const modernSeminar = '/lovable-uploads/b1bff448-1601-47da-9214-c832a3a4062e.png';
+const moroccanStreet = '/lovable-uploads/6058eec1-8147-43f5-b0af-48dbf2dbd672.png';
+const spiceMarket = '/lovable-uploads/3bd7366c-505d-4820-a1cf-beb0014e0ecc.png';
+
 const BlogArticleMarrakech: React.FC = () => {
   const { t } = useLanguage();
 
@@ -86,7 +94,7 @@ const BlogArticleMarrakech: React.FC = () => {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${conferenceImage})` }}
+          style={{ backgroundImage: `url(${marrakechCityscape})` }}
         >
           <div className="absolute inset-0 gradient-hero opacity-90"></div>
         </div>
@@ -204,6 +212,16 @@ const BlogArticleMarrakech: React.FC = () => {
               Marrakech boasts a variety of venues perfect for seminars. Each offers a unique ambiance, helping create a memorable event. Whether you prefer traditional Moroccan style or sleek modern décor, options abound.
             </p>
 
+            {/* Luxury Conference Venue Image */}
+            <div className="my-12 flex justify-center">
+              <img 
+                src={luxuryConferenceRoom}
+                alt="Luxury conference room in Marrakech featuring traditional Moroccan architecture and modern amenities"
+                className="rounded-lg shadow-lg max-w-full h-auto lg:max-w-4xl"
+                loading="lazy"
+              />
+            </div>
+
             <div className="space-y-6 mb-12">
               {venues.map((venue, index) => (
                 <Card key={index} className="overflow-hidden shadow-card border-0">
@@ -262,6 +280,16 @@ const BlogArticleMarrakech: React.FC = () => {
               To organize a successful seminar in Marrakech, detailed planning is crucial. Start by defining your objectives and target audience. This clarity helps in selecting venues, activities, and speakers aligned with your goals.
             </p>
 
+            {/* Modern Seminar Image */}
+            <div className="my-12 flex justify-center">
+              <img 
+                src={modernSeminar}
+                alt="Modern seminar presentation in progress with attendees and professional setup"
+                className="rounded-lg shadow-lg max-w-full h-auto lg:max-w-4xl"
+                loading="lazy"
+              />
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               {planningSteps.map((step, index) => (
                 <Card key={index} className="shadow-card border-0">
@@ -305,6 +333,16 @@ const BlogArticleMarrakech: React.FC = () => {
               Marrakech offers countless opportunities for unique team-building activities. The city's vibrant culture provides a rich backdrop for creative activities. Incorporating local experiences can foster team cohesion and camaraderie.
             </p>
 
+            {/* Desert Team Building Image */}
+            <div className="my-12 flex justify-center">
+              <img 
+                src={desertTeamBuilding}
+                alt="Corporate team building experience in Moroccan desert with traditional cultural activities"
+                className="rounded-lg shadow-lg max-w-full h-auto lg:max-w-4xl"
+                loading="lazy"
+              />
+            </div>
+
             <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-8 rounded-lg mb-12">
               <h3 className="text-xl font-semibold text-foreground mb-6">Engaging team-building options:</h3>
               <ul className="space-y-3">
@@ -326,7 +364,17 @@ const BlogArticleMarrakech: React.FC = () => {
               Infuse your seminar with the vibrant culture and flavors of Marrakech. This city is known for its rich traditions and diverse cuisine. Including local elements can deeply enhance the seminar experience.
             </p>
 
-            <div className="bg-primary/5 p-6 rounded-lg mb-12">
+            {/* Moroccan Street Scene Image */}
+            <div className="my-12 flex justify-center">
+              <img 
+                src={moroccanStreet}
+                alt="Traditional Moroccan medina street scene showcasing local culture and architecture"
+                className="rounded-lg shadow-lg max-w-full h-auto lg:max-w-4xl"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="bg-primary/5 p-6 rounded-lg mb-8">
               <h3 className="text-xl font-semibold text-foreground mb-4">Ways to incorporate Marrakech's culture:</h3>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                 <li>Traditional music and dance performances</li>
@@ -336,6 +384,16 @@ const BlogArticleMarrakech: React.FC = () => {
                 <li>Traditional storytelling experiences</li>
                 <li>Local artisan presentations</li>
               </ul>
+            </div>
+
+            {/* Moroccan Spice Market Image */}
+            <div className="my-12 flex justify-center">
+              <img 
+                src={spiceMarket}
+                alt="Colorful Moroccan spice market displaying traditional products and local culture"
+                className="rounded-lg shadow-lg max-w-full h-auto lg:max-w-4xl"
+                loading="lazy"
+              />
             </div>
 
             {/* Practical Tips */}
