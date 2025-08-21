@@ -555,7 +555,101 @@ export const translations = {
     corporate: 'Corporate', 
     retreats: 'Retreats',
     allCategories: 'All Categories',
-    featured: 'Featured'
+    featured: 'Featured',
+
+    // New Homepage Sections
+    // Morocco as MICE Destination
+    moroccoMiceTitle: 'Morocco: Your Premium MICE Destination',
+    moroccoMiceStory: 'Discover why international corporations choose Morocco for their most important events. Just 3 hours from Europe, Morocco combines world-class infrastructure with exotic authenticity, offering your teams an inspiring backdrop for conferences, incentives and retreats.',
+    moroccoMiceHighlight1: '300+ direct flights weekly from Europe & Gulf',
+    moroccoMiceHighlight2: 'Modern 5-star hotels with conference facilities',
+    moroccoMiceHighlight3: 'Rich culture and authentic experiences',
+    moroccoMiceHighlight4: 'Cost-effective compared to European destinations',
+    discoverMorocco: 'Discover Morocco',
+
+    // Featured Destinations Enhanced
+    destinationMarrakechDesc: 'Imperial city, luxury resorts, Atlas backdrop',
+    destinationCasablancaDesc: 'Business hub, modern venues, exhibitions',
+    destinationAgadirDesc: 'Coastal retreats, golf, beach activities',
+    destinationFesDesc: 'Cultural heritage, authentic experiences',
+    destinationSaharaDesc: 'Desert camps, adventure team building',
+
+    // Services Deep Dive
+    servicesDeepDiveTitle: 'What We Organize for You',
+    servicesDeepDiveDesc: 'From intimate board meetings to large-scale conferences, we handle every detail of your corporate event in Morocco.',
+
+    // ROI Value Section
+    roiTitle: 'Why Choose Our MICE Services?',
+    roiSubtitle: 'Maximize impact while optimizing your budget',
+    roiSaveTime: 'Save Time',
+    roiSaveTimeDesc: 'Single point of contact for all suppliers and logistics',
+    roiSaveMoney: 'Save Money', 
+    roiSaveMoneyDesc: 'Bulk rates and direct partnerships reduce costs by 20-30%',
+    roiMaximizeImpact: 'Maximize Impact',
+    roiMaximizeImpactDesc: 'Unique experiences that motivate and inspire your teams',
+    roiOptimization: 'Event budget optimization specialist',
+
+    // Testimonials & Social Proof
+    testimonialsTitle: 'Trusted by Leading Companies',
+    testimonialsSubtitle: 'Over 500 successful corporate events organized',
+    testimonial1: '"Outstanding organization for our 200-person conference in Marrakech. Every detail was perfect."',
+    testimonial1Author: 'Sarah Johnson, Event Director',
+    testimonial1Company: 'Fortune 500 Company',
+    clientLogos: 'Trusted by European & Gulf companies',
+
+    // Case Studies
+    caseStudiesTitle: 'Success Stories',
+    caseStudiesSubtitle: 'Recent corporate events we\'ve organized',
+    
+    caseStudy1Title: 'Marrakech Incentive - 80 Participants',
+    caseStudy1Desc: 'Luxury desert gala dinner, Atlas excursions, traditional spa experiences',
+    caseStudy1Metrics: '95% satisfaction rate, 30% cost savings vs Europe',
+    
+    caseStudy2Title: 'Casablanca Conference - 300 Attendees', 
+    caseStudy2Desc: 'International exhibition, simultaneous translation, networking events',
+    caseStudy2Metrics: '100% technical success, 25 countries represented',
+    
+    caseStudy3Title: 'Agadir Team Building - 50 Participants',
+    caseStudy3Desc: 'Surf lessons, wellness retreat, beachfront gala dinner',
+    caseStudy3Metrics: 'Team cohesion improved by 40%, memorable experiences',
+    
+    viewCaseStudy: 'View Details',
+
+    // Blog Insights Teaser
+    insightsTitle: 'MICE Insights & Tips',
+    insightsSubtitle: 'Expert guidance for planning events in Morocco',
+    insight1Title: 'Top 10 Conference Venues in Morocco',
+    insight1Desc: 'Complete guide to the best business venues',
+    insight2Title: 'Why Marrakech is #1 for Corporate Incentives',
+    insight2Desc: 'Discover what makes this imperial city special',
+    insight3Title: 'Team Building in the Sahara Desert',
+    insight3Desc: 'Unique activities to strengthen your team',
+    readMoreInsights: 'Explore Our Blog',
+
+    // FAQ Preview
+    faqPreviewTitle: 'Frequently Asked Questions',
+    faqPreviewSubtitle: 'Quick answers to help you plan',
+    
+    faqPreview1Q: 'How much does a corporate retreat in Morocco cost?',
+    faqPreview1A: 'Most retreats range from €500-1,200 per person for 4-5 days, depending on city, accommodation level and included services.',
+    
+    faqPreview2Q: 'What is the best time for corporate events in Morocco?',
+    faqPreview2A: 'October-December and March-May offer ideal temperatures. Winter months are perfect for southern destinations like Marrakech and Agadir.',
+    
+    faqPreview3Q: 'How far in advance should we book?',
+    faqPreview3A: 'We recommend 2-3 months for standard events, 6 months for large conferences. However, we can accommodate urgent requests within 3 weeks.',
+    
+    faqPreview4Q: 'Do you handle all logistics and transfers?',
+    faqPreview4A: 'Yes, we provide complete ground handling: airport transfers, accommodation, transport for activities, and 24/7 on-site coordination.',
+    
+    viewAllFAQ: 'View All FAQ',
+
+    // Final Strong CTA
+    finalCtaTitle: 'Ready to Plan Your Corporate Event in Morocco?',
+    finalCtaSubtitle: 'Get your free personalized proposal in 24 hours',
+    finalCtaDescription: 'Join hundreds of companies who have chosen Morocco for unforgettable corporate experiences. Our MICE experts are ready to create your perfect event.',
+    getProposal24h: 'Get Free Proposal in 24h',
+    scheduleCall: 'Schedule a Call'
   },
   
   es: {
@@ -609,7 +703,83 @@ export const translations = {
     quickLinks: 'Enlaces Rápidos',
     legalNotice: 'Aviso Legal',
     privacy: 'Privacidad',
-    followUs: 'Síguenos'
+    followUs: 'Síguenos',
+
+    // New Homepage Sections - Spanish
+    moroccoMiceTitle: 'Marruecos: Tu Destino MICE Premium',
+    moroccoMiceStory: 'Descubre por qué las corporaciones internacionales eligen Marruecos para sus eventos más importantes. A solo 3 horas de Europa, Marruecos combina infraestructura de clase mundial con autenticidad exótica.',
+    moroccoMiceHighlight1: '300+ vuelos directos semanales desde Europa y Golfo',
+    moroccoMiceHighlight2: 'Hoteles modernos 5 estrellas con instalaciones para conferencias',
+    moroccoMiceHighlight3: 'Rica cultura y experiencias auténticas',
+    moroccoMiceHighlight4: 'Costo-efectivo comparado con destinos europeos',
+    discoverMorocco: 'Descubrir Marruecos',
+
+    destinationMarrakechDesc: 'Ciudad imperial, resorts de lujo, Atlas de fondo',
+    destinationCasablancaDesc: 'Centro de negocios, venues modernos, exposiciones',
+    destinationAgadirDesc: 'Retiros costeros, golf, actividades de playa',
+    destinationFesDesc: 'Patrimonio cultural, experiencias auténticas',
+    destinationSaharaDesc: 'Campamentos del desierto, team building aventurero',
+
+    servicesDeepDiveTitle: 'Lo Que Organizamos Para Ti',
+    servicesDeepDiveDesc: 'Desde reuniones íntimas de directorio hasta conferencias a gran escala, manejamos cada detalle de tu evento corporativo en Marruecos.',
+
+    roiTitle: '¿Por Qué Elegir Nuestros Servicios MICE?',
+    roiSubtitle: 'Maximiza el impacto mientras optimizas tu presupuesto',
+    roiSaveTime: 'Ahorra Tiempo',
+    roiSaveTimeDesc: 'Un solo punto de contacto para todos los proveedores y logística',
+    roiSaveMoney: 'Ahorra Dinero',
+    roiSaveMoneyDesc: 'Tarifas por volumen y alianzas directas reducen costos en 20-30%',
+    roiMaximizeImpact: 'Maximiza Impacto',
+    roiMaximizeImpactDesc: 'Experiencias únicas que motivan e inspiran a tus equipos',
+    roiOptimization: 'Especialista en optimización de presupuesto de eventos',
+
+    testimonialsTitle: 'Confiado por Empresas Líderes',
+    testimonialsSubtitle: 'Más de 500 eventos corporativos exitosos organizados',
+    testimonial1: '"Organización sobresaliente para nuestra conferencia de 200 personas en Marrakech. Cada detalle fue perfecto."',
+    testimonial1Author: 'Sarah Johnson, Directora de Eventos',
+    testimonial1Company: 'Empresa Fortune 500',
+    clientLogos: 'Confiado por empresas europeas y del Golfo',
+
+    caseStudiesTitle: 'Historias de Éxito',
+    caseStudiesSubtitle: 'Eventos corporativos recientes que hemos organizado',
+    caseStudy1Title: 'Incentivo Marrakech - 80 Participantes',
+    caseStudy1Desc: 'Cena de gala en el desierto de lujo, excursiones al Atlas, experiencias de spa tradicional',
+    caseStudy1Metrics: '95% tasa de satisfacción, 30% ahorro vs Europa',
+    caseStudy2Title: 'Conferencia Casablanca - 300 Asistentes',
+    caseStudy2Desc: 'Exhibición internacional, traducción simultánea, eventos de networking',
+    caseStudy2Metrics: '100% éxito técnico, 25 países representados',
+    caseStudy3Title: 'Team Building Agadir - 50 Participantes',
+    caseStudy3Desc: 'Lecciones de surf, retiro de bienestar, cena de gala frente al mar',
+    caseStudy3Metrics: 'Cohesión del equipo mejorada en 40%, experiencias memorables',
+    viewCaseStudy: 'Ver Detalles',
+
+    insightsTitle: 'Insights y Tips MICE',
+    insightsSubtitle: 'Guía experta para planificar eventos en Marruecos',
+    insight1Title: 'Top 10 Venues para Conferencias en Marruecos',
+    insight1Desc: 'Guía completa de los mejores venues de negocios',
+    insight2Title: 'Por Qué Marrakech es #1 para Incentivos Corporativos',
+    insight2Desc: 'Descubre qué hace especial a esta ciudad imperial',
+    insight3Title: 'Team Building en el Desierto del Sahara',
+    insight3Desc: 'Actividades únicas para fortalecer tu equipo',
+    readMoreInsights: 'Explorar Nuestro Blog',
+
+    faqPreviewTitle: 'Preguntas Frecuentes',
+    faqPreviewSubtitle: 'Respuestas rápidas para ayudarte a planificar',
+    faqPreview1Q: '¿Cuánto cuesta un retiro corporativo en Marruecos?',
+    faqPreview1A: 'La mayoría de retiros oscilan entre €500-1,200 por persona para 4-5 días, dependiendo de la ciudad, nivel de alojamiento y servicios incluidos.',
+    faqPreview2Q: '¿Cuál es el mejor momento para eventos corporativos en Marruecos?',
+    faqPreview2A: 'Octubre-Diciembre y Marzo-Mayo ofrecen temperaturas ideales. Los meses de invierno son perfectos para destinos del sur como Marrakech y Agadir.',
+    faqPreview3Q: '¿Con cuánta anticipación debemos reservar?',
+    faqPreview3A: 'Recomendamos 2-3 meses para eventos estándar, 6 meses para conferencias grandes. Sin embargo, podemos acomodar solicitudes urgentes en 3 semanas.',
+    faqPreview4Q: '¿Manejan toda la logística y traslados?',
+    faqPreview4A: 'Sí, proporcionamos manejo completo en tierra: traslados al aeropuerto, alojamiento, transporte para actividades y coordinación en sitio 24/7.',
+    viewAllFAQ: 'Ver Todas las FAQ',
+
+    finalCtaTitle: '¿Listo para Planificar tu Evento Corporativo en Marruecos?',
+    finalCtaSubtitle: 'Obtén tu propuesta personalizada gratuita en 24 horas',
+    finalCtaDescription: 'Únete a cientos de empresas que han elegido Marruecos para experiencias corporativas inolvidables. Nuestros expertos MICE están listos para crear tu evento perfecto.',
+    getProposal24h: 'Propuesta Gratis en 24h',
+    scheduleCall: 'Programar Llamada'
   },
   
   ar: {
@@ -663,7 +833,83 @@ export const translations = {
     quickLinks: 'روابط سريعة',
     legalNotice: 'الإشعار القانوني',
     privacy: 'الخصوصية',
-    followUs: 'تابعنا'
+    followUs: 'تابعنا',
+
+    // New Homepage Sections - Arabic
+    moroccoMiceTitle: 'المغرب: وجهتك المتميزة للفعاليات التجارية',
+    moroccoMiceStory: 'اكتشف لماذا تختار الشركات العالمية المغرب لأهم فعالياتها. على بعد 3 ساعات فقط من أوروبا، يجمع المغرب بين البنية التحتية عالمية المستوى والأصالة الغريبة.',
+    moroccoMiceHighlight1: '+300 رحلة مباشرة أسبوعياً من أوروبا والخليج',
+    moroccoMiceHighlight2: 'فنادق حديثة 5 نجوم مع مرافق المؤتمرات',
+    moroccoMiceHighlight3: 'ثقافة غنية وتجارب أصيلة',
+    moroccoMiceHighlight4: 'فعال من حيث التكلفة مقارنة بالوجهات الأوروبية',
+    discoverMorocco: 'اكتشف المغرب',
+
+    destinationMarrakechDesc: 'المدينة الإمبراطورية، منتجعات فاخرة، خلفية الأطلس',
+    destinationCasablancaDesc: 'مركز الأعمال، أماكن حديثة، معارض',
+    destinationAgadirDesc: 'خلوات ساحلية، جولف، أنشطة الشاطئ',
+    destinationFesDesc: 'التراث الثقافي، تجارب أصيلة',
+    destinationSaharaDesc: 'مخيمات الصحراء، بناء فرق المغامرة',
+
+    servicesDeepDiveTitle: 'ما ننظمه لك',
+    servicesDeepDiveDesc: 'من اجتماعات مجالس الإدارة الحميمة إلى المؤتمرات واسعة النطاق، نتعامل مع كل تفاصيل فعاليتك الشركاتية في المغرب.',
+
+    roiTitle: 'لماذا تختار خدماتنا للفعاليات التجارية؟',
+    roiSubtitle: 'اعظم الأثر مع تحسين ميزانيتك',
+    roiSaveTime: 'وفر الوقت',
+    roiSaveTimeDesc: 'نقطة اتصال واحدة لجميع الموردين واللوجستيات',
+    roiSaveMoney: 'وفر المال',
+    roiSaveMoneyDesc: 'أسعار الجملة والشراكات المباشرة تقلل التكاليف بنسبة 20-30%',
+    roiMaximizeImpact: 'اعظم الأثر',
+    roiMaximizeImpactDesc: 'تجارب فريدة تحفز وتلهم فرقك',
+    roiOptimization: 'متخصص في تحسين ميزانية الفعاليات',
+
+    testimonialsTitle: 'موثوق من قبل الشركات الرائدة',
+    testimonialsSubtitle: 'أكثر من 500 فعالية شركاتية ناجحة منظمة',
+    testimonial1: '"تنظيم رائع لمؤتمرنا الذي ضم 200 شخص في مراكش. كل التفاصيل كانت مثالية."',
+    testimonial1Author: 'سارة جونسون، مديرة الفعاليات',
+    testimonial1Company: 'شركة فورتشن 500',
+    clientLogos: 'موثوق من قبل الشركات الأوروبية والخليجية',
+
+    caseStudiesTitle: 'قصص النجاح',
+    caseStudiesSubtitle: 'الفعاليات الشركاتية الأخيرة التي نظمناها',
+    caseStudy1Title: 'رحلة حوافز مراكش - 80 مشارك',
+    caseStudy1Desc: 'عشاء فاخر في الصحراء، رحلات استكشافية للأطلس، تجارب سبا تقليدية',
+    caseStudy1Metrics: '95% معدل رضا، 30% توفير مقابل أوروبا',
+    caseStudy2Title: 'مؤتمر الدار البيضاء - 300 حاضر',
+    caseStudy2Desc: 'معرض دولي، ترجمة فورية، فعاليات التواصل',
+    caseStudy2Metrics: '100% نجاح تقني، 25 دولة ممثلة',
+    caseStudy3Title: 'بناء فريق أكادير - 50 مشارك',
+    caseStudy3Desc: 'دروس تصفح، خلوة عافية، عشاء فاخر على الشاطئ',
+    caseStudy3Metrics: 'تماسك الفريق تحسن بنسبة 40%، تجارب لا تُنسى',
+    viewCaseStudy: 'عرض التفاصيل',
+
+    insightsTitle: 'رؤى ونصائح الفعاليات التجارية',
+    insightsSubtitle: 'إرشادات الخبراء لتخطيط الفعاليات في المغرب',
+    insight1Title: 'أفضل 10 أماكن للمؤتمرات في المغرب',
+    insight1Desc: 'دليل شامل لأفضل أماكن الأعمال',
+    insight2Title: 'لماذا مراكش رقم 1 للحوافز الشركاتية',
+    insight2Desc: 'اكتشف ما يجعل هذه المدينة الإمبراطورية مميزة',
+    insight3Title: 'بناء الفريق في صحراء الساهرة',
+    insight3Desc: 'أنشطة فريدة لتقوية فريقك',
+    readMoreInsights: 'استكشف مدونتنا',
+
+    faqPreviewTitle: 'الأسئلة الشائعة',
+    faqPreviewSubtitle: 'إجابات سريعة لمساعدتك في التخطيط',
+    faqPreview1Q: 'كم تكلف الخلوة الشركاتية في المغرب؟',
+    faqPreview1A: 'معظم الخلوات تتراوح من €500-1,200 للشخص لمدة 4-5 أيام، حسب المدينة ومستوى الإقامة والخدمات المشمولة.',
+    faqPreview2Q: 'ما هو أفضل وقت للفعاليات الشركاتية في المغرب؟',
+    faqPreview2A: 'أكتوبر-ديسمبر ومارس-مايو تقدم درجات حرارة مثالية. أشهر الشتاء مثالية للوجهات الجنوبية مثل مراكش وأكادير.',
+    faqPreview3Q: 'كم من الوقت مسبقاً يجب أن نحجز؟',
+    faqPreview3A: 'نوصي بـ 2-3 أشهر للفعاليات العادية، 6 أشهر للمؤتمرات الكبيرة. ومع ذلك، يمكننا استيعاب الطلبات العاجلة خلال 3 أسابيع.',
+    faqPreview4Q: 'هل تتعاملون مع جميع اللوجستيات والنقل؟',
+    faqPreview4A: 'نعم، نوفر المعالجة الكاملة على الأرض: نقل المطار، الإقامة، النقل للأنشطة، والتنسيق في الموقع 24/7.',
+    viewAllFAQ: 'عرض جميع الأسئلة الشائعة',
+
+    finalCtaTitle: 'مستعد لتخطيط فعاليتك الشركاتية في المغرب؟',
+    finalCtaSubtitle: 'احصل على عرضك الشخصي المجاني خلال 24 ساعة',
+    finalCtaDescription: 'انضم إلى مئات الشركات التي اختارت المغرب لتجارب شركاتية لا تُنسى. خبراء الفعاليات التجارية لدينا مستعدون لإنشاء فعاليتك المثالية.',
+    getProposal24h: 'عرض مجاني في 24 ساعة',
+    scheduleCall: 'جدولة مكالمة'
   }
 };
 
