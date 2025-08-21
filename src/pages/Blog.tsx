@@ -9,6 +9,12 @@ import { getLocalizedPath } from '@/lib/i18n';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
+import venuesImage from '@/assets/blog-morocco-venues.jpg';
+import incentiveImage from '@/assets/blog-marrakech-incentive.jpg';
+import agadirImage from '@/assets/blog-agadir-team.jpg';
+import spanishImage from '@/assets/blog-spanish-corporate.jpg';
+import gulfImage from '@/assets/blog-gulf-team.jpg';
+import saharaImage from '@/assets/blog-sahara-retreat.jpg';
 
 const Blog: React.FC = () => {
   const { t } = useLanguage();
@@ -18,7 +24,7 @@ const Blog: React.FC = () => {
       slug: 'top-venues-morocco-conferences',
       title: t('blogPost1Title'),
       excerpt: t('blogPost1Excerpt'),
-      image: conferenceImage,
+      image: venuesImage,
       category: t('venues'),
       readTime: '8 min',
       date: '2024-03-15',
@@ -28,7 +34,7 @@ const Blog: React.FC = () => {
       slug: 'marrakech-incentive-capital',
       title: t('blogPost2Title'),
       excerpt: t('blogPost2Excerpt'),
-      image: heroImage,
+      image: incentiveImage,
       category: t('incentives'),
       readTime: '6 min',
       date: '2024-03-10',
@@ -38,7 +44,7 @@ const Blog: React.FC = () => {
       slug: 'team-building-agadir-activities',
       title: t('blogPost3Title'),
       excerpt: t('blogPost3Excerpt'),
-      image: desertImage,
+      image: agadirImage,
       category: t('teamBuilding'),
       readTime: '7 min',
       date: '2024-03-05',
@@ -48,7 +54,7 @@ const Blog: React.FC = () => {
       slug: 'corporate-travel-morocco-spanish-companies',
       title: t('blogPost4Title'),
       excerpt: t('blogPost4Excerpt'),
-      image: heroImage,
+      image: spanishImage,
       category: t('corporate'),
       readTime: '9 min',
       date: '2024-02-28',
@@ -58,7 +64,7 @@ const Blog: React.FC = () => {
       slug: 'team-building-morocco-gulf-companies',
       title: t('blogPost5Title'),
       excerpt: t('blogPost5Excerpt'),
-      image: desertImage,
+      image: gulfImage,
       category: t('teamBuilding'),
       readTime: '5 min',
       date: '2024-02-20',
@@ -68,7 +74,7 @@ const Blog: React.FC = () => {
       slug: 'sahara-desert-corporate-retreats',
       title: t('blogPost6Title'),
       excerpt: t('blogPost6Excerpt'),
-      image: desertImage,
+      image: saharaImage,
       category: t('retreats'),
       readTime: '10 min',
       date: '2024-02-15',

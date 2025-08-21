@@ -72,8 +72,30 @@ export const translations = {
     faqPageDesc: 'Toutes les réponses à vos questions sur l\'organisation d\'événements au Maroc',
     contactPageTitle: 'Contactez-Nous',
     contactPageDesc: 'Obtenez votre devis personnalisé en 24h pour votre événement au Maroc',
-    blogPageTitle: 'Blog MICE Maroc',
-    blogPageDesc: 'Conseils et tendances pour vos événements d\'entreprise au Maroc',
+    blogPageTitle: 'Blog MICE Maroc - Séminaire Entreprise Maroc',
+    blogPageDesc: 'Conseils d\'experts sur organisation conférence Maroc, incentive Marrakech et événements d\'entreprise Maroc',
+    featuredPosts: 'Articles Vedettes',
+    latestArticles: 'Derniers Articles', 
+    readMore: 'Lire Plus',
+    backToBlog: 'Retour au Blog',
+    stayUpdated: 'Restez Informé',
+    stayUpdatedDesc: 'Recevez les dernières actualités sur les voyages d\'affaires et événements au Maroc',
+    emailPlaceholder: 'Votre email',
+    subscribe: 'S\'abonner',
+    
+    // Blog posts with SEO keywords
+    blogPost1Title: 'Top 10 des Lieux de Conférence au Maroc pour Séminaires Entreprise',
+    blogPost1Excerpt: 'Découvrez les meilleurs lieux pour organisation conférence Maroc alliant installations modernes et hospitalité marocaine authentique.',
+    blogPost2Title: 'Pourquoi Marrakech est la Capitale des Voyages Incentive en Afrique du Nord', 
+    blogPost2Excerpt: 'Explorez comment Marrakech est devenue la destination de choix pour les programmes incentive Marrakech et voyage entreprise Marrakech.',
+    blogPost3Title: 'Meilleures Activités Team Building Maroc à Agadir pour Groupes d\'Entreprise',
+    blogPost3Excerpt: 'Des activités de plage aux aventures du désert, découvrez des expériences team building Maroc uniques à Agadir.',
+    blogPost4Title: 'Guide Voyage d\'Affaires: Le Maroc comme Destination pour Entreprises Espagnoles',
+    blogPost4Excerpt: 'Pourquoi les entreprises espagnoles choisissent le Maroc pour leurs événements d\'entreprise Maroc et séminaires.',
+    blogPost5Title: 'Team Building au Maroc: Destination Parfaite pour Entreprises du Golfe',
+    blogPost5Excerpt: 'Comment la proximité culturelle du Maroc avec le Golfe en fait un lieu idéal pour événements d\'entreprise Maroc.',
+    blogPost6Title: 'Retraites d\'Entreprise dans le Sahara: Expériences Uniques pour Équipes de Direction',
+    blogPost6Excerpt: 'Transformez votre retraite de leadership avec des expériences inoubliables dans le désert du Sahara marocain.',
 
     // Destinations
     marrakechDesc: 'La capitale des incentives avec ses palais, jardins et atlas',
@@ -251,32 +273,13 @@ export const translations = {
     sendProposalRequest: 'Envoyer la Demande',
     formDisclaimer: 'Vos données sont protégées. Réponse garantie sous 24h.',
 
-    // Blog
-    venuesCategory: 'Lieux',
-    incentives: 'Incentives',
+    // Blog categories
+    venues: 'Lieux',
+    incentives: 'Incentives', 
     corporate: 'Corporate',
     retreats: 'Séminaires',
     allCategories: 'Toutes les Catégories',
-    featuredPosts: 'Articles à la Une',
-    latestArticles: 'Derniers Articles',
-    featured: 'À la Une',
-    readMore: 'Lire la Suite',
-    stayUpdated: 'Restez Informé',
-    stayUpdatedDesc: 'Recevez nos derniers conseils et tendances MICE',
-    subscribe: 'S\'abonner',
-
-    blogPost1Title: 'Top 10 des salles de conférence au Maroc',
-    blogPost1Excerpt: 'Découvrez les meilleures salles de conférence du Maroc, des centres de congrès modernes aux palais historiques.',
-    blogPost2Title: 'Pourquoi Marrakech est la capitale des incentives',
-    blogPost2Excerpt: 'Analyse complète des atouts de Marrakech pour l\'organisation d\'incentives mémorables.',
-    blogPost3Title: 'Meilleures activités team building à Agadir',
-    blogPost3Excerpt: 'Guide complet des activités de cohésion d\'équipe sur la côte atlantique marocaine.',
-    blogPost4Title: 'Voyage corporatif : Marruecos como destino para empresas españolas',
-    blogPost4Excerpt: 'Pourquoi le Maroc attire de plus en plus les entreprises espagnoles pour leurs événements.',
-    blogPost5Title: 'أفضل أنشطة بناء الفرق في المغرب للشركات الخليجية',
-    blogPost5Excerpt: 'Guide spécialisé pour les entreprises du Golfe souhaitant organiser des activités au Maroc.',
-    blogPost6Title: 'Retraites corporatives dans le désert du Sahara',
-    blogPost6Excerpt: 'Comment organiser des séminaires d\'exception dans l\'environnement unique du désert marocain.'
+    featured: 'À la Une'
   },
   
   en: {
@@ -341,8 +344,30 @@ export const translations = {
     faqPageDesc: 'All answers to your questions about organizing events in Morocco',
     contactPageTitle: 'Contact Us',
     contactPageDesc: 'Get your personalized quote in 24h for your event in Morocco',
-    blogPageTitle: 'Morocco MICE Blog',
-    blogPageDesc: 'Tips and trends for your corporate events in Morocco',
+    blogPageTitle: 'Morocco MICE Blog - Corporate Retreat Morocco',
+    blogPageDesc: 'Expert insights on conference venues Morocco, team building Marrakech, and MICE Morocco 2025 solutions',
+    featuredPosts: 'Featured Articles',
+    latestArticles: 'Latest Articles',
+    readMore: 'Read More', 
+    backToBlog: 'Back to Blog',
+    stayUpdated: 'Stay Updated',
+    stayUpdatedDesc: 'Get the latest insights on corporate travel and events in Morocco',
+    emailPlaceholder: 'Enter your email',
+    subscribe: 'Subscribe',
+    
+    // Blog posts with SEO keywords
+    blogPost1Title: 'Top 10 Conference Venues Morocco for Corporate Events 2025',
+    blogPost1Excerpt: 'Discover the best conference venues Morocco that combine modern facilities with authentic Moroccan hospitality for successful business gatherings.',
+    blogPost2Title: 'Why Marrakech is the Incentive Travel Capital of North Africa',
+    blogPost2Excerpt: 'Explore how team building Marrakech has become the premier destination for incentive trip Morocco and corporate rewards programs.',
+    blogPost3Title: 'Best Team Building Activities in Agadir for Corporate Groups',
+    blogPost3Excerpt: 'From beach activities to desert adventures, discover unique team building Marrakech experiences that strengthen corporate teams.',
+    blogPost4Title: 'Corporate Travel Guide: Morocco as Destination for Spanish Companies',
+    blogPost4Excerpt: 'Why Spanish companies choose Morocco for their business events Morocco and corporate retreat Morocco programs.',
+    blogPost5Title: 'Team Building Morocco: Perfect Destination for Gulf Companies',
+    blogPost5Excerpt: 'How Morocco\'s cultural proximity to the Gulf makes it ideal for MICE Morocco regional corporate programs.',
+    blogPost6Title: 'Sahara Desert Corporate Retreats: Unique Experiences for Leadership Teams',
+    blogPost6Excerpt: 'Transform your corporate retreat Morocco with unforgettable experiences in Morocco\'s Sahara Desert combining luxury and team building.',
 
     // Destinations
     marrakechDesc: 'The incentive capital with its palaces, gardens and Atlas mountains',
@@ -520,32 +545,13 @@ export const translations = {
     sendProposalRequest: 'Send Request',
     formDisclaimer: 'Your data is protected. Response guaranteed within 24h.',
 
-    // Blog
-    venuesCategory: 'Venues',
+    // Blog categories
+    venues: 'Venues',
     incentives: 'Incentives',
-    corporate: 'Corporate',
+    corporate: 'Corporate', 
     retreats: 'Retreats',
     allCategories: 'All Categories',
-    featuredPosts: 'Featured Posts',
-    latestArticles: 'Latest Articles',
-    featured: 'Featured',
-    readMore: 'Read More',
-    stayUpdated: 'Stay Updated',
-    stayUpdatedDesc: 'Receive our latest MICE tips and trends',
-    subscribe: 'Subscribe',
-
-    blogPost1Title: 'Top 10 Conference Venues in Morocco',
-    blogPost1Excerpt: 'Discover the best conference venues in Morocco, from modern congress centers to historic palaces.',
-    blogPost2Title: 'Why Marrakech is the Incentive Capital',
-    blogPost2Excerpt: 'Complete analysis of Marrakech\'s assets for organizing memorable incentives.',
-    blogPost3Title: 'Best Team Building Activities in Agadir',
-    blogPost3Excerpt: 'Complete guide to team building activities on the Moroccan Atlantic coast.',
-    blogPost4Title: 'Corporate Travel: Morocco as Destination for Spanish Companies',
-    blogPost4Excerpt: 'Why Morocco attracts more and more Spanish companies for their events.',
-    blogPost5Title: 'Best Team Building Activities in Morocco for Gulf Companies',
-    blogPost5Excerpt: 'Specialized guide for Gulf companies wishing to organize activities in Morocco.',
-    blogPost6Title: 'Corporate Retreats in the Sahara Desert',
-    blogPost6Excerpt: 'How to organize exceptional seminars in the unique environment of the Moroccan desert.'
+    featured: 'Featured'
   },
   
   es: {
