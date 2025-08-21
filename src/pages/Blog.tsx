@@ -21,6 +21,16 @@ const Blog: React.FC = () => {
 
   const blogPosts = [
     {
+      slug: 'organizing-successful-seminars-marrakech',
+      title: t('blogPost7Title'),
+      excerpt: t('blogPost7Excerpt'),
+      image: conferenceImage,
+      category: t('venues'),
+      readTime: '12 min',
+      date: '2024-03-20',
+      featured: true
+    },
+    {
       slug: 'top-venues-morocco-conferences',
       title: t('blogPost1Title'),
       excerpt: t('blogPost1Excerpt'),

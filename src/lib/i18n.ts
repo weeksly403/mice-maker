@@ -96,6 +96,8 @@ export const translations = {
     blogPost5Excerpt: 'Comment la proximité culturelle du Maroc avec le Golfe en fait un lieu idéal pour événements d\'entreprise Maroc.',
     blogPost6Title: 'Retraites d\'Entreprise dans le Sahara: Expériences Uniques pour Équipes de Direction',
     blogPost6Excerpt: 'Transformez votre retraite de leadership avec des expériences inoubliables dans le désert du Sahara marocain.',
+    blogPost7Title: 'Guide Complet pour Organiser un Séminaire à Marrakech Réussi',
+    blogPost7Excerpt: 'Planifiez votre prochain séminaire à Marrakech facilement ! Découvrez les lieux de prestige, expériences culturelles riches et conseils de planification essentiels.',
 
     // Destinations
     marrakechDesc: 'La capitale des incentives avec ses palais, jardins et atlas',
@@ -274,7 +276,7 @@ export const translations = {
     formDisclaimer: 'Vos données sont protégées. Réponse garantie sous 24h.',
 
     // Blog categories
-    blogVenues: 'Lieux',
+    venues: 'Lieux',
     incentives: 'Incentives', 
     corporate: 'Corporate',
     retreats: 'Séminaires',
@@ -368,6 +370,8 @@ export const translations = {
     blogPost5Excerpt: 'How Morocco\'s cultural proximity to the Gulf makes it ideal for MICE Morocco regional corporate programs.',
     blogPost6Title: 'Sahara Desert Corporate Retreats: Unique Experiences for Leadership Teams',
     blogPost6Excerpt: 'Transform your corporate retreat Morocco with unforgettable experiences in Morocco\'s Sahara Desert combining luxury and team building.',
+    blogPost7Title: 'Top Tips for a Successful Séminaire à Marrakech',
+    blogPost7Excerpt: 'Plan your next séminaire à Marrakech with ease! Discover luxury venues, rich cultural experiences, and essential planning tips for an unforgettable event.',
 
     // Destinations
     marrakechDesc: 'The incentive capital with its palaces, gardens and Atlas mountains',
@@ -546,7 +550,7 @@ export const translations = {
     formDisclaimer: 'Your data is protected. Response guaranteed within 24h.',
 
     // Blog categories
-    blogVenues: 'Venues',
+    venues: 'Venues',
     incentives: 'Incentives',
     corporate: 'Corporate', 
     retreats: 'Retreats',

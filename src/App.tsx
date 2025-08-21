@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Destinations from "./pages/Destinations";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
+import BlogArticleMarrakech from "./pages/blog/BlogArticleMarrakech";
 import TopVenuesMorocco from "./pages/blog/TopVenuesMorocco";
 import MarrakechIncentive from "./pages/blog/MarrakechIncentive";
 import FAQ from "./pages/FAQ";
@@ -34,6 +35,7 @@ const App = () => (
                 <Route path="/destinations" element={<Destinations />} />
                 <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
           <Route path="/blog/top-venues-morocco-conferences" element={<TopVenuesMorocco />} />
           <Route path="/blog/marrakech-incentive-capital" element={<MarrakechIncentive />} />
                 <Route path="/faq" element={<FAQ />} />
