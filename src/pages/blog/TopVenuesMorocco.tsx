@@ -3,7 +3,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Calendar, Clock, ArrowLeft, MapPin, Star } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, MapPin, Star, Building2, Wifi, Users, Shield, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import venuesImage from '@/assets/blog-morocco-venues.jpg';
@@ -34,9 +34,19 @@ const TopVenuesMorocco: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+    <>
+      {/* SEO Meta Tags */}
+      <title>Top Conference Venues Morocco | Premium MICE Facilities Marrakech Casablanca 2025</title>
+      <meta name="description" content="Discover Morocco's premier conference venues and MICE facilities. Luxury hotels, convention centers, and unique venues in Marrakech, Casablanca, and Agadir for successful corporate events." />
+      <meta name="keywords" content="conference venues Morocco, MICE facilities Morocco, Marrakech conference venues, Casablanca convention centers, corporate event venues Morocco, business meeting facilities" />
+      <meta property="og:title" content="Ultimate Guide to Top Conference Venues in Morocco" />
+      <meta property="og:description" content="Comprehensive guide to Morocco's best conference venues and MICE facilities. Modern amenities, authentic settings, and professional service for successful business events." />
+      <meta property="og:image" content={venuesImage} />
+      <meta property="og:type" content="article" />
+
+      <div className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${venuesImage})` }}
@@ -79,93 +89,320 @@ const TopVenuesMorocco: React.FC = () => {
           <div className="prose prose-lg max-w-none">
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Morocco has emerged as a premier destination for corporate events and conferences, offering world-class venues that combine modern amenities with authentic Moroccan hospitality. From the bustling economic hub of Casablanca to the cultural richness of Marrakech, conference venues in Morocco provide the perfect backdrop for successful business gatherings.
+              <strong>Conference venues Morocco</strong> represent the perfect fusion of cutting-edge business facilities and authentic 
+              cultural experiences. From ultramodern convention centers to historic palaces transformed into luxury event spaces, 
+              Morocco offers unparalleled diversity for successful corporate gatherings, international conferences, and executive meetings.
             </p>
 
-            <h2 className="text-2xl font-serif font-bold text-foreground mb-6 mt-12">
-              Why Choose Morocco for Your Next Conference?
+            <h2 className="text-3xl font-bold mt-12 mb-6 flex items-center gap-3">
+              <Globe className="w-8 h-8 text-primary" />
+              Why Morocco Leads Global MICE Destinations
             </h2>
             
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Morocco's strategic location between Europe and Africa, combined with excellent infrastructure and competitive pricing, makes it an ideal choice for international conferences. The country offers a unique blend of business-friendly environments and exotic cultural experiences that leave lasting impressions on attendees.
+              <strong>MICE facilities Morocco</strong> have earned international recognition for combining world-class infrastructure 
+              with competitive pricing and exceptional service. The kingdom's strategic positioning, modern transportation networks, 
+              and business-friendly policies make it the premier choice for discerning event planners worldwide.
             </p>
 
-            <div className="bg-muted/30 p-6 rounded-lg mb-8">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Key Advantages:</h3>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>Strategic location with easy access from Europe, Africa, and Middle East</li>
-                <li>Modern conference facilities with latest technology</li>
-                <li>Competitive pricing compared to European venues</li>
-                <li>Rich cultural experiences for memorable corporate events</li>
-                <li>Excellent weather year-round</li>
-              </ul>
+            <div className="grid md:grid-cols-2 gap-6 my-8">
+              <Card className="border-2 border-primary/10 hover:border-primary/30 transition-colors">
+                <CardContent className="p-6">
+                  <Building2 className="w-8 h-8 text-primary mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">World-Class Infrastructure</h3>
+                  <p className="text-muted-foreground">
+                    State-of-the-art convention centers, fiber-optic connectivity, and modern AV technology 
+                    meet international standards while offering 40% cost savings compared to European venues.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary/10 hover:border-primary/30 transition-colors">
+                <CardContent className="p-6">
+                  <Award className="w-8 h-8 text-primary mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">Cultural Differentiation</h3>
+                  <p className="text-muted-foreground">
+                    Authentic Moroccan venues provide memorable experiences that set your event apart, 
+                    with seamless blend of traditional architecture and modern conference facilities.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
 
-            <h2 className="text-2xl font-serif font-bold text-foreground mb-8 mt-12">
-              Top Conference Venues in Morocco
+            <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-lg p-8 my-8">
+              <h3 className="text-2xl font-semibold mb-6 text-center">Morocco MICE Advantages</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">3h</div>
+                  <div className="text-sm text-muted-foreground">Flight time from Europe</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">40%</div>
+                  <div className="text-sm text-muted-foreground">Cost savings vs Europe</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">300+</div>
+                  <div className="text-sm text-muted-foreground">Sunny days annually</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">4 Cities</div>
+                  <div className="text-sm text-muted-foreground">International airports</div>
+                </div>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6 flex items-center gap-3">
+              <Star className="w-8 h-8 text-primary" />
+              Premier Conference Venues by Destination
             </h2>
 
-            <div className="grid gap-8 mb-12">
-              {venues.map((venue, index) => (
-                <Card key={index} className="overflow-hidden shadow-card border-0">
-                  <CardContent className="p-8">
-                    <div className="flex flex-col md:flex-row gap-6">
-                      <div className="md:w-1/3">
-                        <img 
-                          src={conferenceImage} 
-                          alt={venue.name}
-                          className="w-full h-48 object-cover rounded-lg"
-                        />
-                      </div>
-                      <div className="md:w-2/3">
-                        <h3 className="text-xl font-serif font-bold text-foreground mb-2">
-                          {venue.name}
-                        </h3>
-                        <div className="flex items-center text-muted-foreground mb-4">
-                          <MapPin className="w-4 h-4 mr-2" />
-                          {venue.location}
-                          <Star className="w-4 h-4 ml-4 mr-1" />
-                          Capacity: {venue.capacity}
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          {venue.features.map((feature, idx) => (
-                            <Badge key={idx} variant="secondary" className="text-xs">
-                              {feature}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            <p className="mb-6">
+              <strong>Marrakech conference venues</strong> and facilities across Morocco cater to every type of business event, 
+              from intimate board meetings to large-scale international conferences. Our comprehensive venue portfolio ensures 
+              the perfect match for your specific requirements, budget, and objectives.
+            </p>
+
+            <div className="space-y-8 mb-12">
+              <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-8 border-l-4 border-primary">
+                <h3 className="text-2xl font-semibold mb-4">Marrakech: Imperial City Venues</h3>
+                <p className="text-muted-foreground mb-6">
+                  Marrakech offers an exceptional blend of historic palaces, luxury hotels, and modern convention facilities. 
+                  The city's unique atmosphere creates memorable experiences while providing all necessary business amenities.
+                </p>
+                
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-primary">Luxury Hotel Venues</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• La Mamounia Palace - 2,000 pax capacity</li>
+                      <li>• Four Seasons Resort - 800 pax capacity</li>
+                      <li>• Royal Mirage Deluxe - 1,200 pax capacity</li>
+                      <li>• Fairmont Royal Palm - 1,500 pax capacity</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-3 text-primary">Historic Palace Venues</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• Palais des Congrès - Modern convention center</li>
+                      <li>• Es Saadi Palace - Luxury conference facilities</li>
+                      <li>• Private Riads - Intimate executive meetings</li>
+                      <li>• Majorelle Gardens - Exclusive outdoor events</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-3 text-primary">Unique Venues</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• Desert camps - Team building retreats</li>
+                      <li>• Golf resort venues - Executive meetings</li>
+                      <li>• Rooftop terraces - Networking events</li>
+                      <li>• Traditional dining venues - Cultural experiences</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg p-8 border-l-4 border-accent">
+                <h3 className="text-2xl font-semibold mb-4">Casablanca: Business Capital Excellence</h3>
+                <p className="text-muted-foreground mb-6">
+                  As Morocco's economic hub, Casablanca provides state-of-the-art business facilities with international standards. 
+                  Perfect for corporate conferences, trade shows, and professional meetings.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-primary">Convention Centers</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• CICR Casablanca - 5,000 pax capacity</li>
+                      <li>• Marina Convention Center - 3,000 pax</li>
+                      <li>• Twin Center Venues - 2,500 pax</li>
+                      <li>• Advanced AV technology and simultaneous translation</li>
+                      <li>• Dedicated business services and support staff</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-3 text-primary">Luxury Business Hotels</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• Four Seasons Hotel Casablanca - Waterfront views</li>
+                      <li>• Hyatt Regency Casablanca - Modern facilities</li>
+                      <li>• Sofitel Casablanca Tour Blanche - French elegance</li>
+                      <li>• Executive floors and business centers</li>
+                      <li>• High-speed connectivity and tech support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-8 border-l-4 border-primary">
+                <h3 className="text-2xl font-semibold mb-4">Agadir & Rabat: Coastal & Capital Venues</h3>
+                <p className="text-muted-foreground mb-6">
+                  Agadir's beachfront venues and Rabat's governmental facilities offer unique settings for specialized events, 
+                  incentive programs, and high-level diplomatic gatherings.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-primary">Agadir Beach Resorts</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• Royal Atlas Agadir - Beachfront conferences</li>
+                      <li>• Sofitel Agadir Thalassa - Spa & wellness events</li>
+                      <li>• Outdoor pavilions with ocean views</li>
+                      <li>• Team building and incentive facilities</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-3 text-primary">Rabat Diplomatic Venues</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• Mohammed V Conference Center</li>
+                      <li>• Luxury diplomatic hotels</li>
+                      <li>• Government protocol facilities</li>
+                      <li>• High-security executive venues</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <h2 className="text-2xl font-serif font-bold text-foreground mb-6 mt-12">
-              Planning Your Corporate Event in Morocco
+            <h2 className="text-3xl font-bold mt-12 mb-6 flex items-center gap-3">
+              <Users className="w-8 h-8 text-primary" />
+              Technology & Infrastructure Standards
             </h2>
             
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              When organizing a conference in Morocco, working with experienced local partners is essential. Professional event management companies in Morocco understand the nuances of international business culture while leveraging local expertise to create seamless corporate experiences.
+              <strong>Corporate event venues Morocco</strong> meet and exceed international technology standards. From high-speed 
+              fiber connectivity to advanced audiovisual systems, Morocco's venues provide the technical infrastructure necessary 
+              for successful international conferences and business gatherings.
             </p>
 
-            <div className="bg-primary/5 p-6 rounded-lg mb-8">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Best Practices for Success:</h3>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>Book venues 3-6 months in advance for optimal availability</li>
-                <li>Consider cultural sensitivity for international attendees</li>
-                <li>Plan transportation and accommodation early</li>
-                <li>Include authentic Moroccan experiences in your program</li>
-                <li>Work with certified local DMC partners</li>
-              </ul>
+            <div className="grid md:grid-cols-2 gap-8 my-8">
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary flex items-center gap-2">
+                  <Wifi className="w-5 h-5" />
+                  Connectivity & Technology
+                </h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li>• Fiber-optic internet with speeds up to 1GB/s</li>
+                  <li>• Redundant connectivity and backup systems</li>
+                  <li>• Advanced AV equipment and staging capabilities</li>
+                  <li>• Simultaneous translation facilities (up to 8 languages)</li>
+                  <li>• Live streaming and hybrid event technology</li>
+                  <li>• Mobile apps and digital event management</li>
+                </ul>
+              </div>
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary flex items-center gap-2">
+                  <Shield className="w-5 h-5" />
+                  Security & Services
+                </h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li>• 24/7 security monitoring and personnel</li>
+                  <li>• VIP protection and diplomatic security</li>
+                  <li>• Medical facilities and emergency protocols</li>
+                  <li>• Multi-lingual professional staff</li>
+                  <li>• Concierge and logistics coordination</li>
+                  <li>• Cultural liaison and protocol guidance</li>
+                </ul>
+              </div>
             </div>
 
-            <h2 className="text-2xl font-serif font-bold text-foreground mb-6 mt-12">
-              Conclusion
+            <h2 className="text-3xl font-bold mt-12 mb-6">Strategic Event Planning in Morocco</h2>
+            
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Successful <strong>business meeting facilities Morocco</strong> selection requires understanding of local capabilities, 
+              cultural considerations, and logistical requirements. Our expert planning approach ensures seamless execution while 
+              maximizing the unique advantages that Morocco offers for international corporate events.
+            </p>
+
+            <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-lg p-8 my-8">
+              <h3 className="text-2xl font-semibold mb-6">Complete Planning Framework</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <h4 className="font-semibold mb-3 text-primary">Pre-Event Planning</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Venue site inspections and selection</li>
+                    <li>• Budget optimization and cost management</li>
+                    <li>• Visa and travel coordination</li>
+                    <li>• Cultural orientation for attendees</li>
+                    <li>• Local supplier vetting and contracts</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3 text-primary">Event Execution</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• On-site coordination and management</li>
+                    <li>• Technical support and troubleshooting</li>
+                    <li>• Cultural activities integration</li>
+                    <li>• Transportation and logistics</li>
+                    <li>• Emergency protocols and contingencies</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3 text-primary">Post-Event Services</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Event analytics and ROI measurement</li>
+                    <li>• Attendee feedback collection</li>
+                    <li>• Content and media delivery</li>
+                    <li>• Follow-up cultural experiences</li>
+                    <li>• Future event planning consultation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+            <div className="space-y-6 mb-12">
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3">What makes Morocco's conference venues unique compared to European alternatives?</h3>
+                <p className="text-muted-foreground text-sm">
+                  Morocco offers 40% cost savings while providing world-class facilities, authentic cultural experiences, and exotic appeal 
+                  that creates memorable events. The strategic location allows easy access from Europe, Africa, and the Middle East.
+                </p>
+              </div>
+
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3">How advanced is the technology infrastructure in Moroccan venues?</h3>
+                <p className="text-muted-foreground text-sm">
+                  Top venues feature fiber-optic internet, advanced AV systems, simultaneous translation facilities, and hybrid event capabilities. 
+                  Morocco has invested heavily in digital infrastructure to meet international business standards.
+                </p>
+              </div>
+
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3">What capacity ranges are available for different event sizes?</h3>
+                <p className="text-muted-foreground text-sm">
+                  Venues accommodate from 10-person executive meetings to 5,000+ participant conferences. Options include intimate riads, 
+                  luxury hotel facilities, and large-scale convention centers across major cities.
+                </p>
+              </div>
+
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3">How do you handle cultural considerations for international attendees?</h3>
+                <p className="text-muted-foreground text-sm">
+                  We provide comprehensive cultural orientation, ensure diverse dining options, respect religious practices, and offer 
+                  cultural liaison services. Our team manages all protocol requirements for seamless international events.
+                </p>
+              </div>
+
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3">What's the recommended timeline for booking venues in Morocco?</h3>
+                <p className="text-muted-foreground text-sm">
+                  Book 4-8 months in advance for optimal venue availability and pricing. Peak season (October-April) requires earlier 
+                  booking, while summer months offer more flexibility and competitive rates.
+                </p>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">
+              Conclusion: Morocco's Conference Venue Excellence
             </h2>
             
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Morocco's conference venues offer the perfect combination of professional facilities, cultural richness, and exceptional value. Whether you're planning a corporate retreat in Marrakech, a conference in Casablanca, or an incentive program in Agadir, Morocco provides world-class venues that will exceed your expectations and create unforgettable experiences for your attendees.
+              Morocco's emergence as a premier global MICE destination reflects the perfect synthesis of world-class infrastructure, 
+              competitive pricing, and authentic cultural experiences. From <strong>Casablanca convention centers</strong> to historic 
+              Marrakech palaces, the kingdom offers unparalleled venue diversity that meets every business requirement while creating 
+              unforgettable experiences. For event planners seeking destinations that combine professional excellence with cultural 
+              richness, Morocco's conference venues represent the pinnacle of international business hospitality and the future of 
+              impactful corporate gatherings.
             </p>
 
           </div>
@@ -186,7 +423,8 @@ const TopVenuesMorocco: React.FC = () => {
           </Button>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
