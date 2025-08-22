@@ -17,6 +17,7 @@ import AgadirDestination from "./pages/destinations/Agadir";
 import FesDestination from "./pages/destinations/Fes";
 import SaharaDestination from "./pages/destinations/Sahara";
 import Services from "./pages/Services";
+import SuccessStories from "./pages/SuccessStories";
 import Blog from "./pages/Blog";
 import BlogArticleMarrakech from "./pages/blog/BlogArticleMarrakech";
 import TopVenuesMorocco from "./pages/blog/TopVenuesMorocco";
@@ -52,6 +53,7 @@ const App = () => (
                   <Route path="/destinations/fes" element={<FesDestination />} />
                   <Route path="/destinations/sahara" element={<SaharaDestination />} />
                   <Route path="/services" element={<Services />} />
+                  <Route path="/success-stories" element={<SuccessStories />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
             <Route path="/blog/top-venues-morocco-conferences" element={<TopVenuesMorocco />} />

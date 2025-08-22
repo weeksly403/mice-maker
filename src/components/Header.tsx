@@ -14,6 +14,7 @@ export const Header: React.FC = () => {
     { key: 'home', path: '/' },
     { key: 'destinations', path: '/destinations' },
     { key: 'services', path: '/services' },
+    { key: 'successStories', path: '/success-stories' },
     { key: 'blog', path: '/blog' },
     { key: 'faq', path: '/faq' },
     { key: 'contact', path: '/contact' },
