@@ -20,10 +20,14 @@ export const AnimatedCard: React.FC<AnimatedCardProps> = ({
     <Card
       ref={ref as React.RefObject<HTMLDivElement>}
       className={cn(
-        'hover-lift transition-corporate',
+        'hover-lift transition-corporate scroll-reveal',
+        delay > 0 && `animate-stagger-fade-in`,
         delay > 0 && `stagger-${Math.min(delay, 5)}`,
         className
       )}
+      style={{ 
+        animationDelay: delay > 0 ? `${delay * 0.1}s` : '0s' 
+      }}
       {...props}
     >
       {children}

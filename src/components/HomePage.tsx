@@ -252,21 +252,21 @@ export const HomePage: React.FC = () => {
         </div>
         
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold text-primary-foreground mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold text-primary-foreground mb-6 leading-tight animate-on-load">
             {t('heroTitle')}
           </h1>
           
-          <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-4 font-medium">
+          <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-4 font-medium animate-on-load-delay-1">
             {t('heroSubtitle')}
           </p>
           
-          <p className="text-lg text-primary-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-primary-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed animate-on-load-delay-2">
             {t('heroDescription')}
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-on-load-delay-3">
             <QuoteDialog>
-              <Button variant="cta" size="lg" className="text-lg px-12 py-6">
+              <Button variant="cta" size="lg" className="text-lg px-12 py-6 hover-lift hover-glow transition-corporate">
                 {t('getProposal')}
               </Button>
             </QuoteDialog>
@@ -274,7 +274,7 @@ export const HomePage: React.FC = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+              className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover-lift"
               onClick={() => openWhatsApp(undefined, language)}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
