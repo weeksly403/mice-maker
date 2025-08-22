@@ -79,7 +79,7 @@ export const ScheduleCallDialog: React.FC<ScheduleCallDialogProps> = ({ children
         <DialogHeader>
           <DialogTitle className="text-2xl font-serif font-bold text-foreground flex items-center">
             <Phone className="w-6 h-6 mr-3 text-primary" />
-            {t('scheduleCall')}
+            {t('bookCall')}
           </DialogTitle>
         </DialogHeader>
         

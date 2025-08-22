@@ -205,7 +205,7 @@ const Services: React.FC = () => {
               <ScheduleCallDialog>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
                   <Calendar className="w-5 h-5 mr-2" />
-                  {t('scheduleCall')}
+                  {t('bookCall')}
                 </Button>
               </ScheduleCallDialog>
             </div>

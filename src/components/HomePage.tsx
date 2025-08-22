@@ -222,12 +222,24 @@ export const HomePage: React.FC = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
-          <img 
-            src={heroImage} 
-            alt="Morocco MICE destination"
-            className="w-full h-full object-cover"
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <iframe
+            src="https://www.youtube.com/embed/KP8HNcYUrvU?autoplay=1&mute=1&loop=1&playlist=KP8HNcYUrvU&controls=0&showinfo=0&rel=0&modestbranding=1"
+            title="Morocco MICE Destination Video"
+            className="w-full h-full object-cover scale-[1.77] origin-center pointer-events-none"
+            allow="autoplay; encrypted-media"
+            allowFullScreen={false}
+            loading="lazy"
+            onError={() => {
+              // Fallback to image if video fails to load
+              const iframe = event.target as HTMLIFrameElement;
+              const fallbackImg = document.createElement('img');
+              fallbackImg.src = heroImage;
+              fallbackImg.alt = 'Morocco MICE destination';
+              fallbackImg.className = 'w-full h-full object-cover';
+              iframe.parentNode?.replaceChild(fallbackImg, iframe);
+            }}
           />
           <div className="absolute inset-0 bg-black/40 backdrop-blur-[0.5px]"></div>
         </div>
@@ -734,7 +746,7 @@ export const HomePage: React.FC = () => {
             <ScheduleCallDialog>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
                 <Phone className="w-5 h-5 mr-2" />
-                {t('scheduleCall')}
+                {t('bookCall')}
               </Button>
             </ScheduleCallDialog>
             
