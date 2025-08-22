@@ -7,6 +7,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from "./components/LanguageProvider";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Destinations from "./pages/Destinations";
@@ -29,6 +30,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <LanguageProvider>
           <TooltipProvider>
             <Toaster />
