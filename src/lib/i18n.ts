@@ -791,7 +791,7 @@ export const translations = {
     finalCtaSubtitle: 'Get your free personalized proposal in 24 hours',
     finalCtaDescription: 'Join hundreds of companies who have chosen Morocco for unforgettable corporate experiences. Our MICE experts are ready to create your perfect event.',
     getProposal24h: 'Get Free Proposal in 24h',
-    scheduleCall: 'Book a Call'
+    bookCall: 'Book a Call'
   },
   
   es: {
@@ -1212,7 +1212,7 @@ export const translations = {
     finalCtaSubtitle: 'Obtén tu propuesta personalizada gratuita en 24 horas',
     finalCtaDescription: 'Únete a cientos de empresas que han elegido Marruecos para experiencias corporativas inolvidables. Nuestros expertos MICE están listos para crear tu evento perfecto.',
     getProposal24h: 'Propuesta Gratis en 24h',
-    scheduleCall: 'Programar una Llamada'
+    bookCall: 'Programar una Llamada'
   },
   
   ar: {
@@ -1633,7 +1633,7 @@ export const translations = {
     finalCtaSubtitle: 'احصل على عرضك الشخصي المجاني خلال 24 ساعة',
     finalCtaDescription: 'انضم إلى مئات الشركات التي اختارت المغرب لتجارب شركاتية لا تُنسى. خبراء الفعاليات التجارية لدينا مستعدون لإنشاء فعاليتك المثالية.',
     getProposal24h: 'عرض مجاني في 24 ساعة',
-    scheduleCall: 'جدولة مكالمة'
+    bookCall: 'جدولة مكالمة'
   }
 };
 
