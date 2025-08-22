@@ -24,7 +24,7 @@ export const translations = {
     heroTitle: 'Événements d\'Entreprise au Maroc',
     heroSubtitle: 'Séminaires • Incentives • Conférences • Team-Building',
     heroDescription: 'Organisez vos événements d\'entreprise au Maroc avec nos experts MICE. Des séminaires à Marrakech aux incentives dans le Sahara.',
-    getProposal: 'Devis Gratuit en 24h',
+    getProposal: 'Devis Gratuit 24h',
     whatsappContact: 'WhatsApp',
     
     // Benefits
@@ -120,9 +120,9 @@ export const translations = {
     additionalRequirements: 'Exigences Supplémentaires',
     sendProposalRequest: 'Envoyer la Demande de Devis',
     freeConsultation: 'Consultation Gratuite',
-    scheduleCall: 'Planifier un Appel',
-    callScheduled: 'Appel Planifié',
-    callScheduledDesc: 'Votre appel a été planifié avec succès. Nous vous contacterons bientôt.',
+    scheduleCall: 'Programmer un Appel',
+    callScheduled: 'Appel Programmé',
+    callScheduledDesc: 'Votre appel a été programmé avec succès. Nous vous contacterons bientôt.',
     timezone: 'Fuseau Horaire',
     selectTimezone: 'Sélectionner votre fuseau horaire',
     preferredTime: 'Heure Préférée',
@@ -318,8 +318,8 @@ export const translations = {
     businessHours: 'Heures d\'Ouverture',
     responseTime24h: 'Réponse sous 24h garantie',
     mondayToFriday: 'Lundi au Vendredi',
-    whatsappContactDesc: 'Réponse immédiate pour vos questions urgentes',
-    chatOnWhatsappContact: 'Chatter sur WhatsApp',
+    whatsappContactDesc: 'Réponse immédiate à vos questions',
+    chatOnWhatsappContact: 'Écrire sur WhatsApp',
 
     requestProposal: 'Demande de Devis',
     companyName: 'Nom de l\'Entreprise',
@@ -369,7 +369,7 @@ export const translations = {
     heroTitle: 'Corporate Events in Morocco',
     heroSubtitle: 'Meetings • Incentives • Conferences • Team-Building',
     heroDescription: 'Organize your corporate events in Morocco with our MICE experts. From seminars in Marrakech to incentives in the Sahara.',
-    getProposal: 'Free Proposal in 24h',
+    getProposal: 'Free Quote 24h',
     whatsappContact: 'WhatsApp',
     
     // Benefits
@@ -721,7 +721,7 @@ export const translations = {
     finalCtaSubtitle: 'Get your free personalized proposal in 24 hours',
     finalCtaDescription: 'Join hundreds of companies who have chosen Morocco for unforgettable corporate experiences. Our MICE experts are ready to create your perfect event.',
     getProposal24h: 'Get Free Proposal in 24h',
-    scheduleCall: 'Schedule a Call'
+    scheduleCall: 'Book a Call'
   },
   
   es: {
@@ -738,7 +738,7 @@ export const translations = {
     heroTitle: 'Eventos Corporativos en Marruecos',
     heroSubtitle: 'Reuniones • Incentivos • Conferencias • Team-Building',
     heroDescription: 'Organiza tus eventos corporativos en Marruecos con nuestros expertos MICE. Desde seminarios en Marrakech hasta incentivos en el Sahara.',
-    getProposal: 'Propuesta Gratis en 24h',
+    getProposal: 'Cotización Gratis 24h',
     whatsappContact: 'WhatsApp',
     
     // Benefits
@@ -852,7 +852,7 @@ export const translations = {
     finalCtaSubtitle: 'Obtén tu propuesta personalizada gratuita en 24 horas',
     finalCtaDescription: 'Únete a cientos de empresas que han elegido Marruecos para experiencias corporativas inolvidables. Nuestros expertos MICE están listos para crear tu evento perfecto.',
     getProposal24h: 'Propuesta Gratis en 24h',
-    scheduleCall: 'Programar Llamada'
+    scheduleCall: 'Programar una Llamada'
   },
   
   ar: {
