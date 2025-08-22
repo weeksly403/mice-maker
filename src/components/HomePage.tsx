@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from './LanguageProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { AnimatedCard } from '@/components/AnimatedCard';
+import { PageTransition } from '@/components/PageTransition';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { CheckCircle, Clock, Users, Star, MapPin, MessageCircle, Trophy, Briefcase, Presentation, Utensils, Plane, Building, Palette, TrendingUp, DollarSign, Timer, Target, Quote, Eye, BookOpen, HelpCircle, Phone, Mail } from 'lucide-react';
 import { QuoteDialog } from './QuoteDialog';
 import { CaseStudyDialog } from './CaseStudyDialog';
@@ -22,6 +25,7 @@ import blogSaharaImage from '@/assets/blog-sahara-retreat.jpg';
 export const HomePage: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
+  const heroRef = useScrollReveal(0.1);
 
   const benefits = [
     {
@@ -219,9 +223,12 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <PageTransition className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section 
+        ref={heroRef}
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <iframe
@@ -773,6 +780,6 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
+    </PageTransition>
   );
 };
