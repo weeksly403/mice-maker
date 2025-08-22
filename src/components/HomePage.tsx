@@ -225,7 +225,7 @@ export const HomePage: React.FC = () => {
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <iframe
-            src="https://www.youtube.com/embed/KP8HNcYUrvU?autoplay=1&mute=1&loop=1&playlist=KP8HNcYUrvU&controls=0&showinfo=0&rel=0&modestbranding=1"
+            src="https://www.youtube.com/embed/p6dAOmN0zdg?autoplay=1&mute=1&loop=1&playlist=p6dAOmN0zdg&controls=0&showinfo=0&rel=0&modestbranding=1"
             title="Morocco MICE Destination Video"
             className="w-full h-full object-cover scale-[1.77] origin-center pointer-events-none"
             allow="autoplay; encrypted-media"
