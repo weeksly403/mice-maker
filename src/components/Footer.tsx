@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-secondary" />
-                <p className="text-primary-foreground/80">info@moroccomice.com</p>
+                <p className="text-primary-foreground/80">info@eventsmorocco.com</p>
               </div>
             </div>
           </div>

@@ -28,7 +28,7 @@ const AgadirTeamBuilding: React.FC = () => {
       <meta property="article:author" content="Morocco MICE Experts" />
       <meta property="article:section" content="Team Building" />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://yoursite.com/blog/team-building-agadir-activities" />
+      <link rel="canonical" href="https://eventsmorocco.com/blog/team-building-agadir-activities" />
       
       {/* Structured Data */}
       <script type="application/ld+json">
@@ -50,7 +50,7 @@ const AgadirTeamBuilding: React.FC = () => {
           "dateModified": "2024-03-05T10:00:00+00:00",
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://yoursite.com/blog/team-building-agadir-activities"
+            "@id": "https://eventsmorocco.com/blog/team-building-agadir-activities"
           }
         })}
       </script>

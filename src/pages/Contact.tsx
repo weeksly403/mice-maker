@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: t('emailAddress'),
-      content: 'info@moroccomice.com',
+      content: 'info@eventsmorocco.com',
       subContent: t('responseTime24h')
     },
     {

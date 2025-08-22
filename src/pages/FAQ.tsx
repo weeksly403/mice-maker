@@ -161,7 +161,7 @@ const FAQ: React.FC = () => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  onClick={() => window.open('mailto:info@moroccomice.com', '_self')}
+                  onClick={() => window.open('mailto:info@eventsmorocco.com', '_self')}
                 >
                   {t('sendEmail')}
                 </Button>
