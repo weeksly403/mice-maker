@@ -312,7 +312,10 @@ export const HomePage: React.FC = () => {
                 variant="hero" 
                 size="lg" 
                 className="mt-8"
-                onClick={() => navigate('/destinations')}
+                onClick={() => {
+                  const destinationsSection = document.getElementById('destinations-section');
+                  destinationsSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 {t('discoverMorocco')}
               </Button>
@@ -359,7 +362,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Enhanced Destinations Section */}
-      <section className="py-20">
+      <section id="destinations-section" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
@@ -369,7 +372,8 @@ export const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {destinations.map((destination, index) => (
-              <Card key={index} className="group cursor-pointer overflow-hidden shadow-card hover:shadow-elegant transition-smooth border-0">
+              <Card key={index} className="group cursor-pointer overflow-hidden shadow-card hover:shadow-elegant transition-smooth border-0" 
+                onClick={() => navigate(`/destinations/${destination.name.toLowerCase()}`)}>
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={destination.image} 
