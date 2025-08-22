@@ -8,6 +8,7 @@ import { LanguageProvider } from "./components/LanguageProvider";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Destinations from "./pages/Destinations";
@@ -38,9 +39,10 @@ const App = () => (
         <ScrollToTop />
         <LanguageProvider>
           <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <div className="min-h-screen flex flex-col">
+            <ErrorBoundary>
+              <Toaster />
+              <Sonner />
+              <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-1">
                 <Routes>
@@ -93,8 +95,9 @@ const App = () => (
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
-              <Footer />
-            </div>
+                <Footer />
+              </div>
+            </ErrorBoundary>
           </TooltipProvider>
         </LanguageProvider>
       </BrowserRouter>
