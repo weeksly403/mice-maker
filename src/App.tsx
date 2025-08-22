@@ -12,6 +12,10 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Destinations from "./pages/Destinations";
 import MarrakechDestination from "./pages/destinations/Marrakech";
+import CasablancaDestination from "./pages/destinations/Casablanca";
+import AgadirDestination from "./pages/destinations/Agadir";
+import FesDestination from "./pages/destinations/Fes";
+import SaharaDestination from "./pages/destinations/Sahara";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import BlogArticleMarrakech from "./pages/blog/BlogArticleMarrakech";
@@ -43,6 +47,10 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="/destinations" element={<Destinations />} />
                   <Route path="/destinations/marrakech" element={<MarrakechDestination />} />
+                  <Route path="/destinations/casablanca" element={<CasablancaDestination />} />
+                  <Route path="/destinations/agadir" element={<AgadirDestination />} />
+                  <Route path="/destinations/fes" element={<FesDestination />} />
+                  <Route path="/destinations/sahara" element={<SaharaDestination />} />
                   <Route path="/services" element={<Services />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
