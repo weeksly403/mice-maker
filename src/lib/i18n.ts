@@ -1356,13 +1356,6 @@ export const translations = {
     aboutCtaButton: 'Obtener Mi Propuesta',
     exploreServices: 'Explorar Nuestros Servicios'
   },
-
-    finalCtaTitle: '¿Listo para Planificar tu Evento Corporativo en Marruecos?',
-    finalCtaSubtitle: 'Obtén tu propuesta personalizada gratuita en 24 horas',
-    finalCtaDescription: 'Únete a cientos de empresas que han elegido Marruecos para experiencias corporativas inolvidables. Nuestros expertos MICE están listos para crear tu evento perfecto.',
-    getProposal24h: 'Propuesta Gratis en 24h',
-    bookCall: 'Programar una Llamada'
-  },
   
   ar: {
     // Navigation
