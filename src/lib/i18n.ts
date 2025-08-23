@@ -49,7 +49,7 @@ export const translations = {
     // Services
     servicesTitle: 'Nos Expertises MICE',
     incentiveTravel: 'Voyages Incentive',
-    teamBuilding: 'Cohésion d\'Équipe',
+    teamBuilding: "Cohésion d'Équipe",
     corporateRetreats: 'Séminaires Résidentiels',
     conferences: 'Conférences',
     galaDinners: 'Soirées de Gala',
@@ -66,15 +66,15 @@ export const translations = {
 
     // Page Titles & Descriptions
     destinationsPageTitle: 'Destinations MICE au Maroc',
-    destinationsPageDesc: 'Les plus belles destinations pour vos événements d\'entreprise au Maroc',
+    destinationsPageDesc: "Les plus belles destinations pour vos événements d'entreprise au Maroc",
     servicesPageTitle: 'Services MICE Professionnels',
-    servicesPageDesc: 'Solutions sur mesure pour vos événements d\'entreprise au Maroc',
+    servicesPageDesc: "Solutions sur mesure pour vos événements d'entreprise au Maroc",
     faqPageTitle: 'Vos Questions, Nos Réponses',
-    faqPageDesc: 'Tout ce que vous devez savoir sur l\'organisation d\'événements au Maroc',
+    faqPageDesc: "Tout ce que vous devez savoir sur l'organisation d'événements au Maroc",
     contactPageTitle: 'Contactez nos Experts',
     contactPageDesc: 'Votre devis personnalisé en 24h pour votre événement au Maroc',
-    blogPageTitle: 'Blog MICE Maroc - Conseils d\'Experts',
-    blogPageDesc: 'Conseils et tendances pour réussir vos événements d\'entreprise au Maroc',
+    blogPageTitle: "Blog MICE Maroc - Conseils d'Experts",
+    blogPageDesc: "Conseils et tendances pour réussir vos événements d'entreprise au Maroc",
     featuredPosts: 'À la Une',
     latestArticles: 'Derniers Articles', 
     readMore: 'Lire la Suite',
@@ -741,7 +741,7 @@ export const translations = {
 
     // Case Studies
     caseStudiesTitle: 'Success Stories',
-    caseStudiesSubtitle: 'Recent corporate events we\'ve organized',
+    caseStudiesSubtitle: "Recent corporate events we've organized",
     
     caseStudy1Title: 'Marrakech Incentive - 80 Participants',
     caseStudy1Desc: 'Luxury desert gala dinner, Atlas excursions, traditional spa experiences',
