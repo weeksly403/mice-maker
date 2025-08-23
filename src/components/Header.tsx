@@ -97,6 +97,17 @@ export const Header: React.FC = () => {
               )}
             </div>
 
+            <Button 
+              asChild 
+              variant="ghost" 
+              size="sm" 
+              className="mr-2 text-primary hover:bg-primary/10"
+            >
+              <a href="/auth">
+                CRM Login
+              </a>
+            </Button>
+
             <Button variant="cta" size="sm" className="hover-lift hover-glow">
               {t('getProposal')}
             </Button>
@@ -150,11 +161,21 @@ export const Header: React.FC = () => {
                     {languageNames[lang]}
                   </a>
                 ))}
-              </div>
-              
-              <Button variant="cta" className="w-full hover-lift hover-glow">
-                {t('getProposal')}
-              </Button>
+               </div>
+               
+               <Button 
+                 asChild 
+                 variant="ghost" 
+                 className="w-full mb-3 text-primary hover:bg-primary/10"
+               >
+                 <a href="/auth">
+                   CRM Login
+                 </a>
+               </Button>
+               
+               <Button variant="cta" className="w-full hover-lift hover-glow">
+                 {t('getProposal')}
+               </Button>
             </div>
           </div>
         )}

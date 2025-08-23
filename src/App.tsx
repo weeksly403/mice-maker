@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from "./components/LanguageProvider";
+import { AuthProvider } from "./components/auth/AuthProvider";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -31,6 +32,10 @@ import SaharaRetreats from "./pages/blog/SaharaRetreats";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import AuthPage from "./pages/auth/AuthPage";
+import CRMLayout from "./components/crm/CRMLayout";
+import Dashboard from "./pages/crm/Dashboard";
+import Leads from "./pages/crm/Leads";
 
 const queryClient = new QueryClient();
 
@@ -40,8 +45,9 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <LanguageProvider>
-          <TooltipProvider>
-            <ErrorBoundary>
+          <AuthProvider>
+            <TooltipProvider>
+              <ErrorBoundary>
               <Toaster />
               <Sonner />
               <div className="min-h-screen flex flex-col">
@@ -69,6 +75,15 @@ const App = () => (
                   <Route path="/about" element={<About />} />
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/contact" element={<Contact />} />
+                  
+                  {/* Authentication Routes */}
+                  <Route path="/auth" element={<AuthPage />} />
+                  
+                  {/* CRM Routes */}
+                  <Route path="/crm" element={<CRMLayout />}>
+                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="leads" element={<Leads />} />
+                  </Route>
                   
                   {/* French Routes */}
                   <Route path="/fr" element={<Index />} />
@@ -145,6 +160,7 @@ const App = () => (
               </div>
             </ErrorBoundary>
           </TooltipProvider>
+          </AuthProvider>
         </LanguageProvider>
       </BrowserRouter>
     </HelmetProvider>
