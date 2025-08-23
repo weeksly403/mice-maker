@@ -261,7 +261,7 @@ export const HomePage: React.FC = () => {
           <iframe
             src="https://www.youtube.com/embed/p6dAOmN0zdg?autoplay=1&mute=1&loop=1&playlist=p6dAOmN0zdg&controls=0&showinfo=0&rel=0&modestbranding=1"
             title="Morocco MICE Destination Video"
-            className="w-full h-full object-cover scale-[1.77] origin-center pointer-events-none"
+            className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 pointer-events-none sm:w-[200%] sm:h-[200%] md:w-[150%] md:h-[150%] lg:w-[120%] lg:h-[120%] xl:w-full xl:h-full"
             allow="autoplay; encrypted-media"
             allowFullScreen={false}
             loading="lazy"
