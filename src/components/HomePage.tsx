@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from './LanguageProvider';
 import { Button } from '@/components/ui/button';
@@ -26,6 +26,33 @@ export const HomePage: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const heroRef = useScrollReveal(0.1);
+
+  // Initialize scroll reveal animations on mount
+  useEffect(() => {
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const benefits = [
     {
@@ -295,7 +322,7 @@ export const HomePage: React.FC = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="scroll-reveal">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
                 {t('moroccoMiceTitle')}
               </h2>
@@ -310,8 +337,8 @@ export const HomePage: React.FC = () => {
                   { icon: Palette, text: t('moroccoMiceHighlight3') },
                   { icon: TrendingUp, text: t('moroccoMiceHighlight4') }
                 ].map((highlight, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="w-10 h-10 gradient-primary rounded-full flex items-center justify-center mr-4">
+                  <div key={index} className={`flex items-center animate-fade-in-up stagger-${index + 1}`}>
+                    <div className="w-10 h-10 gradient-primary rounded-full flex items-center justify-center mr-4 hover-scale transition-corporate">
                       <highlight.icon className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <span className="text-foreground">{highlight.text}</span>
@@ -322,7 +349,7 @@ export const HomePage: React.FC = () => {
               <Button 
                 variant="hero" 
                 size="lg" 
-                className="mt-8"
+                className="mt-8 hover-lift hover-glow transition-corporate"
                 onClick={() => {
                   const destinationsSection = document.getElementById('destinations-section');
                   destinationsSection?.scrollIntoView({ behavior: 'smooth' });
@@ -332,11 +359,11 @@ export const HomePage: React.FC = () => {
               </Button>
             </div>
             
-            <div className="relative">
+            <div className="relative scroll-reveal">
               <img 
                 src={moroccoMapImage} 
                 alt="Morocco MICE destinations map"
-                className="w-full h-auto rounded-lg shadow-elegant"
+                className="w-full h-auto rounded-lg shadow-elegant hover-scale transition-corporate"
               />
             </div>
           </div>
@@ -346,7 +373,7 @@ export const HomePage: React.FC = () => {
       {/* Benefits Section - Keeping existing */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
               {t('benefitsTitle')}
             </h2>
@@ -354,9 +381,9 @@ export const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="shadow-card hover:shadow-elegant transition-smooth border-0 bg-background/80 backdrop-blur-sm">
+              <AnimatedCard key={index} delay={index + 1} className="shadow-card hover:shadow-elegant transition-corporate border-0 bg-background/80 backdrop-blur-sm">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 gradient-primary rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 gradient-primary rounded-full flex items-center justify-center hover-scale transition-corporate">
                     <benefit.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">
@@ -366,7 +393,7 @@ export const HomePage: React.FC = () => {
                     {benefit.description}
                   </p>
                 </CardContent>
-              </Card>
+              </AnimatedCard>
             ))}
           </div>
         </div>
@@ -375,7 +402,7 @@ export const HomePage: React.FC = () => {
       {/* Enhanced Destinations Section */}
       <section id="destinations-section" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
               {t('destinationsTitle')}
             </h2>
@@ -383,13 +410,13 @@ export const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {destinations.map((destination, index) => (
-              <Card key={index} className="group cursor-pointer overflow-hidden shadow-card hover:shadow-elegant transition-smooth border-0" 
+              <AnimatedCard key={index} delay={index + 1} className="group cursor-pointer overflow-hidden shadow-card hover:shadow-glow border-0 hover-lift" 
                 onClick={() => navigate(`/destinations/${destination.name.toLowerCase()}`)}>
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={destination.image} 
                     alt={destination.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-corporate"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
@@ -408,7 +435,7 @@ export const HomePage: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </AnimatedCard>
             ))}
           </div>
         </div>
