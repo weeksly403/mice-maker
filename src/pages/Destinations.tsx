@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin, Star, Users, Calendar } from 'lucide-react';
 import { getLocalizedPath } from '@/lib/i18n';
+import { QuoteDialog } from '@/components/QuoteDialog';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -143,9 +144,11 @@ const Destinations: React.FC = () => {
                         {t('exploreDestination')}
                       </Link>
                     </Button>
-                    <Button variant="outline" size="default">
-                      {t('getQuote')}
-                    </Button>
+                    <QuoteDialog>
+                      <Button variant="outline" size="default">
+                        {t('getQuote')}
+                      </Button>
+                    </QuoteDialog>
                   </div>
                 </CardContent>
               </Card>
@@ -163,9 +166,11 @@ const Destinations: React.FC = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             {t('planYourEventDesc')}
           </p>
-          <Button variant="cta" size="lg" className="text-lg px-12 py-6">
-            {t('getProposal')}
-          </Button>
+          <QuoteDialog>
+            <Button variant="cta" size="lg" className="text-lg px-12 py-6">
+              {t('getProposal')}
+            </Button>
+          </QuoteDialog>
         </div>
       </section>
     </div>
