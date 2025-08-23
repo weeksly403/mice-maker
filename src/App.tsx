@@ -30,6 +30,7 @@ import SpanishCorporate from "./pages/blog/SpanishCorporate";
 import SaharaRetreats from "./pages/blog/SaharaRetreats";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -65,6 +66,7 @@ const App = () => (
             <Route path="/blog/gulf-team-building" element={<GulfTeamBuilding />} />
             <Route path="/blog/spanish-corporate-morocco" element={<SpanishCorporate />} />
             <Route path="/blog/sahara-retreats" element={<SaharaRetreats />} />
+                  <Route path="/about" element={<About />} />
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/contact" element={<Contact />} />
                   
@@ -73,6 +75,7 @@ const App = () => (
                   <Route path="/fr/destinations" element={<Index />} />
                   <Route path="/fr/services" element={<Index />} />
                   <Route path="/fr/blog" element={<Index />} />
+                  <Route path="/fr/a-propos" element={<About />} />
                   <Route path="/fr/faq" element={<Index />} />
                   <Route path="/fr/contact" element={<Index />} />
                   
@@ -81,6 +84,7 @@ const App = () => (
                   <Route path="/es/destinos" element={<Index />} />
                   <Route path="/es/servicios" element={<Index />} />
                   <Route path="/es/blog" element={<Index />} />
+                  <Route path="/es/acerca-de" element={<About />} />
                   <Route path="/es/faq" element={<Index />} />
                   <Route path="/es/contacto" element={<Index />} />
                   
@@ -89,6 +93,7 @@ const App = () => (
                   <Route path="/ar/الوجهات" element={<Index />} />
                   <Route path="/ar/الخدمات" element={<Index />} />
                   <Route path="/ar/المدونة" element={<Index />} />
+                  <Route path="/ar/من-نحن" element={<About />} />
                   <Route path="/ar/الأسئلة-الشائعة" element={<Index />} />
                   <Route path="/ar/اتصل-بنا" element={<Index />} />
                   
