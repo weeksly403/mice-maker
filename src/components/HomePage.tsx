@@ -394,8 +394,8 @@ export const HomePage: React.FC = () => {
               className="relative overflow-hidden shadow-none border-0 bg-transparent p-0"
             >
               <img 
-                src={moroccoMapImage} 
-                alt="Morocco MICE destinations map"
+                src="/lovable-uploads/9972a502-cb1d-485b-bd47-ed78652f5705.png" 
+                alt="Elegant corporate event setup in Morocco with Event Morocco branding"
                 className="w-full h-auto rounded-lg shadow-elegant hover-scale transition-corporate"
               />
             </AnimatedCard>
