@@ -116,6 +116,21 @@ const AuthPage = () => {
               </TabsTrigger>
             </TabsList>
 
+            <div className="mt-4 text-center">
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setEmail('admin@eventmorocco.com');
+                  setPassword('EventMorocco2024!');
+                }}
+                className="text-xs"
+              >
+                Use Admin Credentials
+              </Button>
+            </div>
+
             {error && (
               <Alert variant="destructive" className="mt-4">
                 <AlertDescription>{error}</AlertDescription>
