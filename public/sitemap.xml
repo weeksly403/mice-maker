@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+   
+   <!-- Home Pages -->
+   <url>
+      <loc>https://eventmorocco.com/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://eventmorocco.com/" />
+      <xhtml:link rel="alternate" hreflang="fr" href="https://eventmorocco.com/fr/" />
+      <xhtml:link rel="alternate" hreflang="es" href="https://eventmorocco.com/es/" />
+      <xhtml:link rel="alternate" hreflang="ar" href="https://eventmorocco.com/ar/" />
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   
+   <!-- Services Hub -->
+   <url>
+      <loc>https://eventmorocco.com/services</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   
+   <!-- SEO-Optimized Service Pages -->
+   <url>
+      <loc>https://eventmorocco.com/corporate-event-planning</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/incentive-travel</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/conference-venues</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/team-building</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   
+   <!-- Destinations Hub -->
+   <url>
+      <loc>https://eventmorocco.com/destinations</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   
+   <!-- SEO-Enhanced Destination Pages -->
+   <url>
+      <loc>https://eventmorocco.com/destinations/marrakech-events</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/destinations/casablanca-conferences</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/destinations/agadir-incentives</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/destinations/fes-seminars</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/destinations/sahara-retreats</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   
+   <!-- Case Studies -->
+   <url>
+      <loc>https://eventmorocco.com/case-studies</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   
+   <!-- Blog Hub -->
+   <url>
+      <loc>https://eventmorocco.com/blog</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   
+   <!-- SEO-Optimized Blog Articles -->
+   <url>
+      <loc>https://eventmorocco.com/blog/seminars-marrakech</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/blog/conference-venues-morocco</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/blog/incentive-travel-marrakech</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/blog/agadir-team-building</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/blog/team-building-gulf-corporates</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/blog/spain-corporate-events-morocco</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/blog/sahara-retreats</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   
+   <!-- Core Pages -->
+   <url>
+      <loc>https://eventmorocco.com/about</loc>
+      <changefreq>quarterly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/faq</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/contact</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   
+   <!-- French Pages -->
+   <url>
+      <loc>https://eventmorocco.com/fr/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://eventmorocco.com/" />
+      <xhtml:link rel="alternate" hreflang="fr" href="https://eventmorocco.com/fr/" />
+      <xhtml:link rel="alternate" hreflang="es" href="https://eventmorocco.com/es/" />
+      <xhtml:link rel="alternate" hreflang="ar" href="https://eventmorocco.com/ar/" />
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/fr/services</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/fr/planification-evenements-entreprise</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/fr/voyage-incentive</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/fr/destinations</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/fr/etudes-de-cas</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/fr/blog</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/fr/a-propos</loc>
+      <changefreq>quarterly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/fr/contact</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   
+   <!-- Spanish Pages -->
+   <url>
+      <loc>https://eventmorocco.com/es/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://eventmorocco.com/" />
+      <xhtml:link rel="alternate" hreflang="fr" href="https://eventmorocco.com/fr/" />
+      <xhtml:link rel="alternate" hreflang="es" href="https://eventmorocco.com/es/" />
+      <xhtml:link rel="alternate" hreflang="ar" href="https://eventmorocco.com/ar/" />
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/es/servicios</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/es/planificacion-eventos-corporativos</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/es/viajes-incentivo</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/es/destinos</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/es/casos-de-estudio</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/es/blog</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/es/acerca-de</loc>
+      <changefreq>quarterly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/es/contacto</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   
+   <!-- Arabic Pages -->
+   <url>
+      <loc>https://eventmorocco.com/ar/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://eventmorocco.com/" />
+      <xhtml:link rel="alternate" hreflang="fr" href="https://eventmorocco.com/fr/" />
+      <xhtml:link rel="alternate" hreflang="es" href="https://eventmorocco.com/es/" />
+      <xhtml:link rel="alternate" hreflang="ar" href="https://eventmorocco.com/ar/" />
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/ar/الخدمات</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/ar/الوجهات</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/ar/قصص-النجاح</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/ar/المدونة</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/ar/من-نحن</loc>
+      <changefreq>quarterly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://eventmorocco.com/ar/اتصل-بنا</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   
+</urlset>

@@ -20,8 +20,34 @@ Disallow: /auth/
 
 User-agent: *
 Allow: /
+
+# Important SEO pages
+Allow: /corporate-event-planning
+Allow: /incentive-travel
+Allow: /conference-venues
+Allow: /team-building
+Allow: /destinations/*
+Allow: /case-studies
+Allow: /blog/*
+Allow: /contact
+
+# Multilingual content
+Allow: /fr/*
+Allow: /es/*
+Allow: /ar/*
+
+# Block admin/CRM areas
 Disallow: /crm/
 Disallow: /auth/
 
+# Block assets that don't need indexing
+Disallow: /lovable-uploads/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+
 # Security headers
 Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://eventmorocco.com/sitemap.xml

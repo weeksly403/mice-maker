@@ -11,6 +11,9 @@ import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { ChatBotButton } from "./components/chatbot/ChatBotButton";
+import { SEOEnhancer } from "./components/SEO/SEOEnhancer";
+import { StickyCTA } from "./components/conversion/StickyCTA";
+import { WhatsAppBusinessButton } from "./components/conversion/WhatsAppBusinessButton";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Destinations from "./pages/Destinations";
@@ -48,30 +51,60 @@ const App = () => (
           <AuthProvider>
             <TooltipProvider>
               <ErrorBoundary>
-              <Toaster />
-              <Sonner />
-              <div className="min-h-screen flex flex-col">
-              <Header />
-              <main className="flex-1">
+                <SEOEnhancer />
+                <Toaster />
+                <Sonner />
+                <div className="min-h-screen flex flex-col">
+                <Header />
+                <main className="flex-1">
                 <Routes>
-                  {/* English Routes (default) */}
+                  {/* English Routes (default) - SEO Optimized */}
                   <Route path="/" element={<Index />} />
+                  
+                  {/* Services - Keyword-rich URLs */}
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/corporate-event-planning" element={<Services />} />
+                  <Route path="/incentive-travel" element={<Services />} />
+                  <Route path="/conference-venues" element={<Services />} />
+                  <Route path="/team-building" element={<Services />} />
+                  
+                  {/* Destinations - SEO Enhanced */}
                   <Route path="/destinations" element={<Destinations />} />
+                  <Route path="/destinations/marrakech-events" element={<MarrakechDestination />} />
+                  <Route path="/destinations/casablanca-conferences" element={<CasablancaDestination />} />
+                  <Route path="/destinations/agadir-incentives" element={<AgadirDestination />} />
+                  <Route path="/destinations/fes-seminars" element={<FesDestination />} />
+                  <Route path="/destinations/sahara-retreats" element={<SaharaDestination />} />
+                  
+                  {/* Legacy destination redirects */}
                   <Route path="/destinations/marrakech" element={<MarrakechDestination />} />
                   <Route path="/destinations/casablanca" element={<CasablancaDestination />} />
                   <Route path="/destinations/agadir" element={<AgadirDestination />} />
                   <Route path="/destinations/fes" element={<FesDestination />} />
                   <Route path="/destinations/sahara" element={<SaharaDestination />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/success-stories" element={<SuccessStories />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
-            <Route path="/blog/top-venues-morocco-conferences" element={<TopVenuesMorocco />} />
-            <Route path="/blog/marrakech-incentive-capital" element={<MarrakechIncentive />} />
-            <Route path="/blog/agadir-team-building" element={<AgadirTeamBuilding />} />
-            <Route path="/blog/gulf-team-building" element={<GulfTeamBuilding />} />
-            <Route path="/blog/spanish-corporate-morocco" element={<SpanishCorporate />} />
-            <Route path="/blog/sahara-retreats" element={<SaharaRetreats />} />
+                  
+                  {/* Case Studies (renamed from success-stories) */}
+                  <Route path="/case-studies" element={<SuccessStories />} />
+                  <Route path="/success-stories" element={<SuccessStories />} /> {/* Legacy redirect */}
+                  
+                  {/* Blog - SEO Optimized URLs */}
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/seminars-marrakech" element={<BlogArticleMarrakech />} />
+                  <Route path="/blog/conference-venues-morocco" element={<TopVenuesMorocco />} />
+                  <Route path="/blog/incentive-travel-marrakech" element={<MarrakechIncentive />} />
+                  <Route path="/blog/agadir-team-building" element={<AgadirTeamBuilding />} />
+                  <Route path="/blog/team-building-gulf-corporates" element={<GulfTeamBuilding />} />
+                  <Route path="/blog/spain-corporate-events-morocco" element={<SpanishCorporate />} />
+                  <Route path="/blog/sahara-retreats" element={<SaharaRetreats />} />
+                  
+                  {/* Legacy blog redirects */}
+                  <Route path="/blog/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
+                  <Route path="/blog/top-venues-morocco-conferences" element={<TopVenuesMorocco />} />
+                  <Route path="/blog/marrakech-incentive-capital" element={<MarrakechIncentive />} />
+                  <Route path="/blog/gulf-team-building" element={<GulfTeamBuilding />} />
+                  <Route path="/blog/spanish-corporate-morocco" element={<SpanishCorporate />} />
+                  
+                  {/* Core Pages */}
                   <Route path="/about" element={<About />} />
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/contact" element={<Contact />} />
@@ -85,17 +118,46 @@ const App = () => (
                     <Route path="leads" element={<Leads />} />
                   </Route>
                   
-                  {/* French Routes */}
+                  {/* French Routes - SEO Optimized */}
                   <Route path="/fr" element={<Index />} />
+                  
+                  {/* Services - French */}
+                  <Route path="/fr/services" element={<Services />} />
+                  <Route path="/fr/planification-evenements-entreprise" element={<Services />} />
+                  <Route path="/fr/voyage-incentive" element={<Services />} />
+                  <Route path="/fr/lieux-conferences" element={<Services />} />
+                  <Route path="/fr/team-building" element={<Services />} />
+                  
+                  {/* Destinations - French */}
                   <Route path="/fr/destinations" element={<Destinations />} />
+                  <Route path="/fr/destinations/marrakech-evenements" element={<MarrakechDestination />} />
+                  <Route path="/fr/destinations/casablanca-conferences" element={<CasablancaDestination />} />
+                  <Route path="/fr/destinations/agadir-incentives" element={<AgadirDestination />} />
+                  <Route path="/fr/destinations/fes-seminaires" element={<FesDestination />} />
+                  <Route path="/fr/destinations/sahara-retraites" element={<SaharaDestination />} />
+                  
+                  {/* Legacy French destinations */}
                   <Route path="/fr/destinations/marrakech" element={<MarrakechDestination />} />
                   <Route path="/fr/destinations/casablanca" element={<CasablancaDestination />} />
                   <Route path="/fr/destinations/agadir" element={<AgadirDestination />} />
                   <Route path="/fr/destinations/fes" element={<FesDestination />} />
                   <Route path="/fr/destinations/sahara" element={<SaharaDestination />} />
-                  <Route path="/fr/services" element={<Services />} />
-                  <Route path="/fr/success-stories" element={<SuccessStories />} />
+                  
+                  {/* Case Studies - French */}
+                  <Route path="/fr/etudes-de-cas" element={<SuccessStories />} />
+                  <Route path="/fr/success-stories" element={<SuccessStories />} /> {/* Legacy */}
+                  
+                  {/* Blog - French */}
                   <Route path="/fr/blog" element={<Blog />} />
+                  <Route path="/fr/blog/seminaires-marrakech" element={<BlogArticleMarrakech />} />
+                  <Route path="/fr/blog/lieux-conferences-maroc" element={<TopVenuesMorocco />} />
+                  <Route path="/fr/blog/voyage-incentive-marrakech" element={<MarrakechIncentive />} />
+                  <Route path="/fr/blog/team-building-agadir" element={<AgadirTeamBuilding />} />
+                  <Route path="/fr/blog/team-building-golfe-entreprises" element={<GulfTeamBuilding />} />
+                  <Route path="/fr/blog/evenements-entreprise-espagne-maroc" element={<SpanishCorporate />} />
+                  <Route path="/fr/blog/retraites-sahara" element={<SaharaRetreats />} />
+                  
+                  {/* Legacy French blog redirects */}
                   <Route path="/fr/blog/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
                   <Route path="/fr/blog/top-venues-morocco-conferences" element={<TopVenuesMorocco />} />
                   <Route path="/fr/blog/marrakech-incentive-capital" element={<MarrakechIncentive />} />
@@ -103,21 +165,52 @@ const App = () => (
                   <Route path="/fr/blog/gulf-team-building" element={<GulfTeamBuilding />} />
                   <Route path="/fr/blog/spanish-corporate-morocco" element={<SpanishCorporate />} />
                   <Route path="/fr/blog/sahara-retreats" element={<SaharaRetreats />} />
+                  
+                  {/* Core Pages - French */}
                   <Route path="/fr/a-propos" element={<About />} />
                   <Route path="/fr/faq" element={<FAQ />} />
                   <Route path="/fr/contact" element={<Contact />} />
                   
-                  {/* Spanish Routes */}
+                  {/* Spanish Routes - SEO Optimized */}
                   <Route path="/es" element={<Index />} />
+                  
+                  {/* Services - Spanish */}
+                  <Route path="/es/servicios" element={<Services />} />
+                  <Route path="/es/planificacion-eventos-corporativos" element={<Services />} />
+                  <Route path="/es/viajes-incentivo" element={<Services />} />
+                  <Route path="/es/salas-conferencias" element={<Services />} />
+                  <Route path="/es/team-building" element={<Services />} />
+                  
+                  {/* Destinations - Spanish */}
                   <Route path="/es/destinos" element={<Destinations />} />
+                  <Route path="/es/destinos/marrakech-eventos" element={<MarrakechDestination />} />
+                  <Route path="/es/destinos/casablanca-conferencias" element={<CasablancaDestination />} />
+                  <Route path="/es/destinos/agadir-incentivos" element={<AgadirDestination />} />
+                  <Route path="/es/destinos/fes-seminarios" element={<FesDestination />} />
+                  <Route path="/es/destinos/sahara-retiros" element={<SaharaDestination />} />
+                  
+                  {/* Legacy Spanish destinations */}
                   <Route path="/es/destinos/marrakech" element={<MarrakechDestination />} />
                   <Route path="/es/destinos/casablanca" element={<CasablancaDestination />} />
                   <Route path="/es/destinos/agadir" element={<AgadirDestination />} />
                   <Route path="/es/destinos/fes" element={<FesDestination />} />
                   <Route path="/es/destinos/sahara" element={<SaharaDestination />} />
-                  <Route path="/es/servicios" element={<Services />} />
-                  <Route path="/es/success-stories" element={<SuccessStories />} />
+                  
+                  {/* Case Studies - Spanish */}
+                  <Route path="/es/casos-de-estudio" element={<SuccessStories />} />
+                  <Route path="/es/success-stories" element={<SuccessStories />} /> {/* Legacy */}
+                  
+                  {/* Blog - Spanish */}
                   <Route path="/es/blog" element={<Blog />} />
+                  <Route path="/es/blog/seminarios-marrakech" element={<BlogArticleMarrakech />} />
+                  <Route path="/es/blog/salas-conferencias-marruecos" element={<TopVenuesMorocco />} />
+                  <Route path="/es/blog/viaje-incentivo-marrakech" element={<MarrakechIncentive />} />
+                  <Route path="/es/blog/team-building-agadir" element={<AgadirTeamBuilding />} />
+                  <Route path="/es/blog/team-building-golfo-empresas" element={<GulfTeamBuilding />} />
+                  <Route path="/es/blog/eventos-corporativos-espana-marruecos" element={<SpanishCorporate />} />
+                  <Route path="/es/blog/retiros-sahara" element={<SaharaRetreats />} />
+                  
+                  {/* Legacy Spanish blog redirects */}
                   <Route path="/es/blog/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
                   <Route path="/es/blog/top-venues-morocco-conferences" element={<TopVenuesMorocco />} />
                   <Route path="/es/blog/marrakech-incentive-capital" element={<MarrakechIncentive />} />
@@ -125,6 +218,8 @@ const App = () => (
                   <Route path="/es/blog/gulf-team-building" element={<GulfTeamBuilding />} />
                   <Route path="/es/blog/spanish-corporate-morocco" element={<SpanishCorporate />} />
                   <Route path="/es/blog/sahara-retreats" element={<SaharaRetreats />} />
+                  
+                  {/* Core Pages - Spanish */}
                   <Route path="/es/acerca-de" element={<About />} />
                   <Route path="/es/faq" element={<FAQ />} />
                   <Route path="/es/contacto" element={<Contact />} />
@@ -157,6 +252,8 @@ const App = () => (
                </main>
                 <Footer />
                 <ChatBotButton />
+                <StickyCTA />
+                <WhatsAppBusinessButton />
               </div>
             </ErrorBoundary>
           </TooltipProvider>
