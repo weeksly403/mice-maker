@@ -74,6 +74,28 @@ export const translations = {
     faqPageDesc: "Tout ce que vous devez savoir sur l'organisation d'événements au Maroc",
     contactPageTitle: 'Contactez nos Experts',
     contactPageDesc: 'Votre devis personnalisé en 24h pour votre événement au Maroc',
+    
+    // Form benefits
+    responseWithin24h: 'Réponse sous 24h',
+    freeQuote100: 'Devis 100% gratuit',
+    localMiceExpert: 'Expert MICE local',
+    personalizedConsultation: 'Consultation personnalisée',
+    
+    // Form sections
+    contactInformation: 'Informations de Contact',
+    eventDetails: 'Détails de l\'Événement',
+    budgetAndRequirements: 'Budget et Exigences',
+    
+    // New form fields
+    corporateConvention: 'Convention d\'Entreprise',
+    productLaunch: 'Lancement de Produit',
+    trainingWorkshop: 'Formation/Atelier',
+    networkingEvent: 'Événement de Networking',
+    startDate: 'Date de Début',
+    endDate: 'Date de Fin',
+    pickStartDate: 'Choisir date de début',
+    pickEndDate: 'Choisir date de fin',
+    sending: 'Envoi en cours...',
     blogPageTitle: "Blog MICE Maroc - Conseils d'Experts",
     blogPageDesc: "Conseils et tendances pour réussir vos événements d'entreprise au Maroc",
     featuredPosts: 'À la Une',
@@ -453,6 +475,28 @@ export const translations = {
     faqPageDesc: 'All answers to your questions about organizing events in Morocco',
     contactPageTitle: 'Contact Us',
     contactPageDesc: 'Get your personalized quote in 24h for your event in Morocco',
+    
+    // Form benefits
+    responseWithin24h: 'Response within 24h',
+    freeQuote100: '100% free quote',
+    localMiceExpert: 'Local MICE expert',
+    personalizedConsultation: 'Personalized consultation',
+    
+    // Form sections
+    contactInformation: 'Contact Information',
+    eventDetails: 'Event Details',
+    budgetAndRequirements: 'Budget & Requirements',
+    
+    // New form fields
+    corporateConvention: 'Corporate Convention',
+    productLaunch: 'Product Launch',
+    trainingWorkshop: 'Training/Workshop',
+    networkingEvent: 'Networking Event',
+    startDate: 'Start Date',
+    endDate: 'End Date',
+    pickStartDate: 'Pick start date',
+    pickEndDate: 'Pick end date',
+    sending: 'Sending...',
     blogPageTitle: 'Morocco MICE Blog - Corporate Retreat Morocco',
     blogPageDesc: 'Expert insights on conference venues Morocco, team building Marrakech, and MICE Morocco 2025 solutions',
     featuredPosts: 'Featured Articles',
@@ -971,6 +1015,28 @@ export const translations = {
     faqPageDesc: 'Todo lo que necesitas saber sobre organizar eventos en Marruecos',
     contactPageTitle: 'Contacta con Nuestros Expertos',
     contactPageDesc: 'Tu presupuesto personalizado en 24h para tu evento en Marruecos',
+    
+    // Form benefits
+    responseWithin24h: 'Respuesta en 24h',
+    freeQuote100: 'Cotización 100% gratuita',
+    localMiceExpert: 'Experto MICE local',
+    personalizedConsultation: 'Consulta personalizada',
+    
+    // Form sections
+    contactInformation: 'Información de Contacto',
+    eventDetails: 'Detalles del Evento',
+    budgetAndRequirements: 'Presupuesto y Requisitos',
+    
+    // New form fields
+    corporateConvention: 'Convención Corporativa',
+    productLaunch: 'Lanzamiento de Producto',
+    trainingWorkshop: 'Capacitación/Taller',
+    networkingEvent: 'Evento de Networking',
+    startDate: 'Fecha de Inicio',
+    endDate: 'Fecha de Fin',
+    pickStartDate: 'Elegir fecha de inicio',
+    pickEndDate: 'Elegir fecha de fin',
+    sending: 'Enviando...',
     blogPageTitle: 'Blog MICE Marruecos - Consejos de Expertos',
     blogPageDesc: 'Consejos y tendencias para el éxito de tus eventos corporativos en Marruecos',
     featuredPosts: 'Destacados',
@@ -1471,6 +1537,28 @@ export const translations = {
     faqPageDesc: 'كل ما تحتاج معرفته عن تنظيم الفعاليات في المغرب',
     contactPageTitle: 'تواصل مع خبرائنا',
     contactPageDesc: 'عرضك المخصص خلال 24 ساعة لفعاليتك في المغرب',
+    
+    // Form benefits
+    responseWithin24h: 'الرد خلال 24 ساعة',
+    freeQuote100: 'عرض سعر مجاني 100%',
+    localMiceExpert: 'خبير السياحة التجارية المحلي',
+    personalizedConsultation: 'استشارة مخصصة',
+    
+    // Form sections
+    contactInformation: 'معلومات الاتصال',
+    eventDetails: 'تفاصيل الفعالية',
+    budgetAndRequirements: 'الميزانية والمتطلبات',
+    
+    // New form fields
+    corporateConvention: 'مؤتمر شركات',
+    productLaunch: 'إطلاق منتج',
+    trainingWorkshop: 'تدريب/ورشة عمل',
+    networkingEvent: 'فعالية تواصل',
+    startDate: 'تاريخ البداية',
+    endDate: 'تاريخ النهاية',
+    pickStartDate: 'اختر تاريخ البداية',
+    pickEndDate: 'اختر تاريخ النهاية',
+    sending: 'جاري الإرسال...',
     blogPageTitle: 'مدونة الفعاليات التجارية المغرب - نصائح الخبراء',
     blogPageDesc: 'نصائح واتجاهات لنجاح فعاليات شركتك في المغرب',
     featuredPosts: 'المميز',

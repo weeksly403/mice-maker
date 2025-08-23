@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { format } from 'date-fns';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 import { useLanguage } from '@/components/LanguageProvider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,54 +10,84 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { Calendar } from '@/components/ui/calendar';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Calendar as CalendarIcon, Users, Star, Shield, CheckCircle, Building } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
 import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
+
+const formSchema = z.object({
+  company: z.string().min(2, 'Company name is required'),
+  name: z.string().min(2, 'Contact name is required'),
+  email: z.string().email('Valid email is required'),
+  phone: z.string().optional(),
+  eventType: z.string().min(1, 'Please select an event type'),
+  groupSize: z.string().min(1, 'Please select group size'),
+  city: z.string().optional(),
+  startDate: z.date().optional(),
+  endDate: z.date().optional(),
+  budget: z.string().optional(),
+  message: z.string().optional(),
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 const Contact: React.FC = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    company: '',
-    name: '',
-    email: '',
-    phone: '',
-    groupSize: '',
-    dates: '',
-    budget: '',
-    city: '',
-    eventType: '',
-    message: ''
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      company: '',
+      name: '',
+      email: '',
+      phone: '',
+      eventType: '',
+      groupSize: '',
+      city: '',
+      budget: '',
+      message: '',
+    },
   });
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
     
-    // Show toast notification
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
     toast({
       title: t('quoteSent'),
       description: t('quoteSentDesc'),
     });
     
-    // Reset form
-    setFormData({
-      company: '',
-      name: '',
-      email: '',
-      phone: '',
-      groupSize: '',
-      dates: '',
-      budget: '',
-      city: '',
-      eventType: '',
-      message: ''
-    });
+    form.reset();
+    setIsSubmitting(false);
   };
+
+  const benefits = [
+    {
+      icon: Clock,
+      text: t('responseWithin24h')
+    },
+    {
+      icon: Shield,
+      text: t('freeQuote100')
+    },
+    {
+      icon: Star,
+      text: t('localMiceExpert')
+    },
+    {
+      icon: Users,
+      text: t('personalizedConsultation')
+    }
+  ];
 
   const contactInfo = [
     {
@@ -165,156 +199,341 @@ const Contact: React.FC = () => {
             <div className="lg:col-span-2">
               <Card className="shadow-card border-0">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-serif font-bold text-foreground mb-6">
-                    {t('requestProposal')}
-                  </h2>
-                  
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="company">{t('companyName')} *</Label>
-                        <Input
-                          id="company"
-                          value={formData.company}
-                          onChange={(e) => handleInputChange('company', e.target.value)}
-                          placeholder={t('companyNamePlaceholder')}
-                          required
-                        />
-                      </div>
+                  <div className="space-y-6">
+                    <div className="text-center">
+                      <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
+                        {t('requestProposal')}
+                      </h2>
                       
-                      <div className="space-y-2">
-                        <Label htmlFor="name">{t('contactName')} *</Label>
-                        <Input
-                          id="name"
-                          value={formData.name}
-                          onChange={(e) => handleInputChange('name', e.target.value)}
-                          placeholder={t('contactNamePlaceholder')}
-                          required
-                        />
+                      {/* Benefits bar */}
+                      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 bg-muted/30 rounded-lg mb-8">
+                        {benefits.map((benefit, index) => (
+                          <div key={index} className="flex items-center space-x-2 text-sm">
+                            <div className="w-8 h-8 gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
+                              <benefit.icon className="w-4 h-4 text-primary-foreground" />
+                            </div>
+                            <span className="text-muted-foreground">{benefit.text}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="email">{t('emailAddress')} *</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) => handleInputChange('email', e.target.value)}
-                          placeholder={t('emailPlaceholder')}
-                          required
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">{t('phoneNumber')}</Label>
-                        <Input
-                          id="phone"
-                          value={formData.phone}
-                          onChange={(e) => handleInputChange('phone', e.target.value)}
-                          placeholder={t('phonePlaceholder')}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="eventType">{t('eventType')} *</Label>
-                        <Select value={formData.eventType} onValueChange={(value) => handleInputChange('eventType', value)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder={t('selectEventType')} />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="conference">{t('conferences')}</SelectItem>
-                            <SelectItem value="incentive">{t('incentiveTravel')}</SelectItem>
-                            <SelectItem value="teambuilding">{t('teamBuilding')}</SelectItem>
-                            <SelectItem value="retreat">{t('corporateRetreats')}</SelectItem>
-                            <SelectItem value="gala">{t('galaDinners')}</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="groupSize">{t('groupSize')} *</Label>
-                        <Select value={formData.groupSize} onValueChange={(value) => handleInputChange('groupSize', value)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder={t('selectGroupSize')} />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="10-25">10-25 {t('people')}</SelectItem>
-                            <SelectItem value="25-50">25-50 {t('people')}</SelectItem>
-                            <SelectItem value="50-100">50-100 {t('people')}</SelectItem>
-                            <SelectItem value="100-200">100-200 {t('people')}</SelectItem>
-                            <SelectItem value="200+">200+ {t('people')}</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="city">{t('preferredCity')}</Label>
-                        <Select value={formData.city} onValueChange={(value) => handleInputChange('city', value)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder={t('selectCity')} />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="marrakech">{t('marrakech')}</SelectItem>
-                            <SelectItem value="casablanca">{t('casablanca')}</SelectItem>
-                            <SelectItem value="agadir">{t('agadir')}</SelectItem>
-                            <SelectItem value="fes">{t('fes')}</SelectItem>
-                            <SelectItem value="sahara">{t('sahara')}</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="dates">{t('preferredDates')}</Label>
-                        <Input
-                          id="dates"
-                          value={formData.dates}
-                          onChange={(e) => handleInputChange('dates', e.target.value)}
-                          placeholder={t('datesPlaceholder')}
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="budget">{t('estimatedBudget')}</Label>
-                        <Select value={formData.budget} onValueChange={(value) => handleInputChange('budget', value)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder={t('selectBudget')} />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="under-50k">{t('under')} €50,000</SelectItem>
-                            <SelectItem value="50k-100k">€50,000 - €100,000</SelectItem>
-                            <SelectItem value="100k-200k">€100,000 - €200,000</SelectItem>
-                            <SelectItem value="200k-500k">€200,000 - €500,000</SelectItem>
-                            <SelectItem value="over-500k">{t('over')} €500,000</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="message">{t('additionalRequirements')}</Label>
-                      <Textarea
-                        id="message"
-                        value={formData.message}
-                        onChange={(e) => handleInputChange('message', e.target.value)}
-                        placeholder={t('messagePlaceholder')}
-                        rows={4}
-                      />
-                    </div>
-
-                    <Button type="submit" variant="cta" size="lg" className="w-full text-lg py-6">
-                      {t('sendProposalRequest')}
-                    </Button>
                     
-                    <p className="text-sm text-muted-foreground text-center">
-                      {t('formDisclaimer')}
-                    </p>
-                  </form>
+                    <Form {...form}>
+                      <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
+                        {/* Contact Information */}
+                        <div className="space-y-4">
+                          <h3 className="text-lg font-semibold text-foreground flex items-center">
+                            <Building className="w-5 h-5 mr-2 text-primary" />
+                            {t('contactInformation')}
+                          </h3>
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <FormField
+                              control={form.control}
+                              name="company"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>{t('companyName')} *</FormLabel>
+                                  <FormControl>
+                                    <Input placeholder={t('companyNamePlaceholder')} {...field} />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="name"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>{t('contactName')} *</FormLabel>
+                                  <FormControl>
+                                    <Input placeholder={t('contactNamePlaceholder')} {...field} />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <FormField
+                              control={form.control}
+                              name="email"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>{t('emailAddress')} *</FormLabel>
+                                  <FormControl>
+                                    <Input type="email" placeholder={t('emailPlaceholder')} {...field} />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="phone"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>{t('phoneNumber')}</FormLabel>
+                                  <FormControl>
+                                    <Input placeholder={t('phonePlaceholder')} {...field} />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Event Details */}
+                        <div className="space-y-4">
+                          <h3 className="text-lg font-semibold text-foreground flex items-center">
+                            <CalendarIcon className="w-5 h-5 mr-2 text-primary" />
+                            {t('eventDetails')}
+                          </h3>
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <FormField
+                              control={form.control}
+                              name="eventType"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>{t('eventType')} *</FormLabel>
+                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                      <SelectTrigger>
+                                        <SelectValue placeholder={t('selectEventType')} />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      <SelectItem value="conference">{t('conferences')}</SelectItem>
+                                      <SelectItem value="incentive">{t('incentiveTravel')}</SelectItem>
+                                      <SelectItem value="teambuilding">{t('teamBuilding')}</SelectItem>
+                                      <SelectItem value="retreat">{t('corporateRetreats')}</SelectItem>
+                                      <SelectItem value="gala">{t('galaDinners')}</SelectItem>
+                                      <SelectItem value="convention">{t('corporateConvention')}</SelectItem>
+                                      <SelectItem value="product-launch">{t('productLaunch')}</SelectItem>
+                                      <SelectItem value="training">{t('trainingWorkshop')}</SelectItem>
+                                      <SelectItem value="networking">{t('networkingEvent')}</SelectItem>
+                                      <SelectItem value="other">{t('other')}</SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="groupSize"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>{t('groupSize')} *</FormLabel>
+                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                      <SelectTrigger>
+                                        <SelectValue placeholder={t('selectGroupSize')} />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      <SelectItem value="10-25">10-25 {t('people')}</SelectItem>
+                                      <SelectItem value="25-50">25-50 {t('people')}</SelectItem>
+                                      <SelectItem value="50-100">50-100 {t('people')}</SelectItem>
+                                      <SelectItem value="100-200">100-200 {t('people')}</SelectItem>
+                                      <SelectItem value="200+">200+ {t('people')}</SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <FormField
+                              control={form.control}
+                              name="city"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>{t('preferredCity')}</FormLabel>
+                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                      <SelectTrigger>
+                                        <SelectValue placeholder={t('selectCity')} />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      <SelectItem value="marrakech">{t('marrakech')}</SelectItem>
+                                      <SelectItem value="casablanca">{t('casablanca')}</SelectItem>
+                                      <SelectItem value="agadir">{t('agadir')}</SelectItem>
+                                      <SelectItem value="fes">{t('fes')}</SelectItem>
+                                      <SelectItem value="sahara">{t('sahara')}</SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="startDate"
+                              render={({ field }) => (
+                                <FormItem className="flex flex-col">
+                                  <FormLabel>{t('startDate')}</FormLabel>
+                                  <Popover>
+                                    <PopoverTrigger asChild>
+                                      <FormControl>
+                                        <Button
+                                          variant="outline"
+                                          className={cn(
+                                            "pl-3 text-left font-normal",
+                                            !field.value && "text-muted-foreground"
+                                          )}
+                                        >
+                                          {field.value ? (
+                                            format(field.value, "PPP")
+                                          ) : (
+                                            <span>{t('pickStartDate')}</span>
+                                          )}
+                                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                        </Button>
+                                      </FormControl>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-auto p-0" align="start">
+                                      <Calendar
+                                        mode="single"
+                                        selected={field.value}
+                                        onSelect={field.onChange}
+                                        disabled={(date) =>
+                                          date < new Date() || date < new Date("1900-01-01")
+                                        }
+                                        initialFocus
+                                      />
+                                    </PopoverContent>
+                                  </Popover>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="endDate"
+                              render={({ field }) => (
+                                <FormItem className="flex flex-col">
+                                  <FormLabel>{t('endDate')}</FormLabel>
+                                  <Popover>
+                                    <PopoverTrigger asChild>
+                                      <FormControl>
+                                        <Button
+                                          variant="outline"
+                                          className={cn(
+                                            "pl-3 text-left font-normal",
+                                            !field.value && "text-muted-foreground"
+                                          )}
+                                        >
+                                          {field.value ? (
+                                            format(field.value, "PPP")
+                                          ) : (
+                                            <span>{t('pickEndDate')}</span>
+                                          )}
+                                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                        </Button>
+                                      </FormControl>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-auto p-0" align="start">
+                                      <Calendar
+                                        mode="single"
+                                        selected={field.value}
+                                        onSelect={field.onChange}
+                                        disabled={(date) =>
+                                          date < new Date() || date < new Date("1900-01-01")
+                                        }
+                                        initialFocus
+                                      />
+                                    </PopoverContent>
+                                  </Popover>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Budget & Additional Info */}
+                        <div className="space-y-4">
+                          <h3 className="text-lg font-semibold text-foreground flex items-center">
+                            <Star className="w-5 h-5 mr-2 text-primary" />
+                            {t('budgetAndRequirements')}
+                          </h3>
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <FormField
+                              control={form.control}
+                              name="budget"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>{t('estimatedBudget')}</FormLabel>
+                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                      <SelectTrigger>
+                                        <SelectValue placeholder={t('selectBudget')} />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      <SelectItem value="under-50k">{t('under')} €50,000</SelectItem>
+                                      <SelectItem value="50k-100k">€50,000 - €100,000</SelectItem>
+                                      <SelectItem value="100k-200k">€100,000 - €200,000</SelectItem>
+                                      <SelectItem value="200k-500k">€200,000 - €500,000</SelectItem>
+                                      <SelectItem value="over-500k">{t('over')} €500,000</SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+
+                          <FormField
+                            control={form.control}
+                            name="message"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>{t('additionalRequirements')}</FormLabel>
+                                <FormControl>
+                                  <Textarea
+                                    placeholder={t('messagePlaceholder')}
+                                    rows={4}
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+
+                        <Button type="submit" variant="cta" size="lg" className="w-full text-lg py-6" disabled={isSubmitting}>
+                          {isSubmitting ? (
+                            <div className="flex items-center">
+                              <div className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin mr-2"></div>
+                              {t('sending')}
+                            </div>
+                          ) : (
+                            t('sendProposalRequest')
+                          )}
+                        </Button>
+                        
+                        <p className="text-sm text-muted-foreground text-center">
+                          {t('formDisclaimer')}
+                        </p>
+                      </form>
+                    </Form>
+                  </div>
                 </CardContent>
               </Card>
             </div>
