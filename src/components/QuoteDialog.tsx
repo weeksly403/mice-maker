@@ -214,6 +214,18 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({ children, title }) => 
                           <SelectItem value="teambuilding">{language === 'fr' ? 'Team Building' : language === 'es' ? 'Team Building' : language === 'ar' ? 'بناء الفريق' : 'Team Building'}</SelectItem>
                           <SelectItem value="retreat">{language === 'fr' ? 'Séminaire' : language === 'es' ? 'Seminario' : language === 'ar' ? 'ندوة' : 'Corporate Retreat'}</SelectItem>
                           <SelectItem value="gala">{language === 'fr' ? 'Dîner de Gala' : language === 'es' ? 'Cena de Gala' : language === 'ar' ? 'عشاء احتفالي' : 'Gala Dinner'}</SelectItem>
+                          <SelectItem value="convention">{language === 'fr' ? 'Convention d\'Entreprise' : language === 'es' ? 'Convención Corporativa' : language === 'ar' ? 'مؤتمر شركات' : 'Corporate Convention'}</SelectItem>
+                          <SelectItem value="product-launch">{language === 'fr' ? 'Lancement de Produit' : language === 'es' ? 'Lanzamiento de Producto' : language === 'ar' ? 'إطلاق منتج' : 'Product Launch'}</SelectItem>
+                          <SelectItem value="board-meeting">{language === 'fr' ? 'Réunion Conseil d\'Administration' : language === 'es' ? 'Reunión Junta Directiva' : language === 'ar' ? 'اجتماع مجلس إدارة' : 'Board Meeting'}</SelectItem>
+                          <SelectItem value="training">{language === 'fr' ? 'Formation/Workshop' : language === 'es' ? 'Capacitación/Taller' : language === 'ar' ? 'تدريب/ورشة عمل' : 'Training/Workshop'}</SelectItem>
+                          <SelectItem value="wedding">{language === 'fr' ? 'Mariage d\'Entreprise' : language === 'es' ? 'Boda Corporativa' : language === 'ar' ? 'زفاف شركات' : 'Corporate Wedding'}</SelectItem>
+                          <SelectItem value="family-trip">{language === 'fr' ? 'Voyage de Famille/Familial' : language === 'es' ? 'Viaje Familiar/Fam Trip' : language === 'ar' ? 'رحلة عائلية' : 'Family Trip/Fam Trip'}</SelectItem>
+                          <SelectItem value="networking">{language === 'fr' ? 'Événement de Networking' : language === 'es' ? 'Evento de Networking' : language === 'ar' ? 'فعالية تواصل' : 'Networking Event'}</SelectItem>
+                          <SelectItem value="exhibition">{language === 'fr' ? 'Salon/Exposition' : language === 'es' ? 'Feria/Exposición' : language === 'ar' ? 'معرض/عرض تجاري' : 'Trade Show/Exhibition'}</SelectItem>
+                          <SelectItem value="medical">{language === 'fr' ? 'Congrès Médical' : language === 'es' ? 'Congreso Médico' : language === 'ar' ? 'مؤتمر طبي' : 'Medical Congress'}</SelectItem>
+                          <SelectItem value="awards">{language === 'fr' ? 'Récompenses/Awards' : language === 'es' ? 'Ceremonia de Premios' : language === 'ar' ? 'حفل جوائز' : 'Awards Ceremony'}</SelectItem>
+                          <SelectItem value="press-trip">{language === 'fr' ? 'Voyage de Presse' : language === 'es' ? 'Viaje de Prensa' : language === 'ar' ? 'رحلة صحفية' : 'Press Trip'}</SelectItem>
+                          <SelectItem value="other">{language === 'fr' ? 'Autre' : language === 'es' ? 'Otro' : language === 'ar' ? 'أخرى' : 'Other'}</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
