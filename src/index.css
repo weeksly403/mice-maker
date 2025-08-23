@@ -218,16 +218,141 @@
   animation: fade-in-up 0.6s ease-out;
 }
 
-/* Scroll Reveal Animation */
+/* Enhanced Scroll Reveal Animations */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--reveal-duration, 0.6s) cubic-bezier(0.4, 0, 0.2, 1), 
+              transform var(--reveal-duration, 0.6s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
 }
 
 .scroll-reveal.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Animation Type Variations */
+.scroll-reveal-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all var(--reveal-duration, 0.6s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.scroll-reveal-fade-down {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all var(--reveal-duration, 0.6s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.scroll-reveal-fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all var(--reveal-duration, 0.7s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.scroll-reveal-fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all var(--reveal-duration, 0.7s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--reveal-duration, 0.6s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.scroll-reveal-rotate {
+  opacity: 0;
+  transform: rotate(-5deg) scale(0.9);
+  transition: all var(--reveal-duration, 0.7s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.scroll-reveal-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--reveal-duration, 0.5s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.scroll-reveal-slide-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all var(--reveal-duration, 0.5s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+/* All reveal types - revealed state */
+.scroll-reveal-fade-up.revealed,
+.scroll-reveal-fade-down.revealed,
+.scroll-reveal-fade-left.revealed,
+.scroll-reveal-fade-right.revealed,
+.scroll-reveal-scale.revealed,
+.scroll-reveal-rotate.revealed,
+.scroll-reveal-slide-up.revealed,
+.scroll-reveal-slide-down.revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+}
+
+/* Stagger Animation Utilities */
+.stagger-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--stagger-duration, 0.6s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--stagger-delay, 0s);
+}
+
+.stagger-fade-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all var(--stagger-duration, 0.6s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--stagger-delay, 0s);
+}
+
+.stagger-fade-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all var(--stagger-duration, 0.6s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--stagger-delay, 0s);
+}
+
+.stagger-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--stagger-duration, 0.6s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--stagger-delay, 0s);
+}
+
+.stagger-slide-up {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all var(--stagger-duration, 0.5s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--stagger-delay, 0s);
+}
+
+/* Stagger revealed states */
+.stagger-fade-up.stagger-revealed,
+.stagger-fade-left.stagger-revealed,
+.stagger-fade-right.stagger-revealed,
+.stagger-scale.stagger-revealed,
+.stagger-slide-up.stagger-revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Parallax Optimization */
+.parallax-element {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 /* Immediate animations for buttons and interactive elements */

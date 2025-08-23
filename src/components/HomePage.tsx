@@ -4,8 +4,10 @@ import { useLanguage } from './LanguageProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { AnimatedCard } from '@/components/AnimatedCard';
+import { AnimatedSection } from '@/components/AnimatedSection';
 import { PageTransition } from '@/components/PageTransition';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useStaggerAnimation } from '@/hooks/useStaggerAnimation';
 import { CheckCircle, Clock, Users, Star, MapPin, MessageCircle, Trophy, Briefcase, Presentation, Utensils, Plane, Building, Palette, TrendingUp, DollarSign, Timer, Target, Quote, Eye, BookOpen, HelpCircle, Phone, Mail } from 'lucide-react';
 import { QuoteDialog } from './QuoteDialog';
 import { CaseStudyDialog } from './CaseStudyDialog';
@@ -25,9 +27,21 @@ import blogSaharaImage from '@/assets/blog-sahara-retreat.jpg';
 export const HomePage: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
-  const heroRef = useScrollReveal(0.1);
+  const heroRef = useScrollReveal({ 
+    threshold: 0.1, 
+    animationType: 'fade-up', 
+    duration: 0.8 
+  });
+  const benefitsRef = useStaggerAnimation({ 
+    staggerDelay: 0.15, 
+    animationType: 'scale' 
+  });
+  const destinationsRef = useStaggerAnimation({ 
+    staggerDelay: 0.2, 
+    animationType: 'fade-left' 
+  });
 
-  // Initialize scroll reveal animations on mount
+  // Initialize scroll reveal animations on mount - keeping for compatibility
   useEffect(() => {
     const revealElements = document.querySelectorAll('.scroll-reveal');
     
@@ -331,10 +345,13 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Morocco as MICE Destination - Storytelling Section */}
-      <section className="py-20 bg-background">
+      <AnimatedSection 
+        className="py-20 bg-background"
+        animationOptions={{ animationType: 'fade-right', threshold: 0.2 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="scroll-reveal">
+            <div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
                 {t('moroccoMiceTitle')}
               </h2>
@@ -342,14 +359,14 @@ export const HomePage: React.FC = () => {
                 {t('moroccoMiceStory')}
               </p>
               
-              <div className="space-y-4">
+              <div className="space-y-4" ref={useStaggerAnimation({ staggerDelay: 0.1, animationType: 'fade-left' })}>
                 {[
                   { icon: Plane, text: t('moroccoMiceHighlight1') },
                   { icon: Building, text: t('moroccoMiceHighlight2') },
                   { icon: Palette, text: t('moroccoMiceHighlight3') },
                   { icon: TrendingUp, text: t('moroccoMiceHighlight4') }
                 ].map((highlight, index) => (
-                  <div key={index} className={`flex items-center animate-fade-in-up stagger-${index + 1}`}>
+                  <div key={index} className="flex items-center">
                     <div className="w-10 h-10 gradient-primary rounded-full flex items-center justify-center mr-4 hover-scale transition-corporate">
                       <highlight.icon className="w-5 h-5 text-primary-foreground" />
                     </div>
@@ -371,29 +388,41 @@ export const HomePage: React.FC = () => {
               </Button>
             </div>
             
-            <div className="relative scroll-reveal">
+            <AnimatedCard 
+              animationType="scale" 
+              delay={0.3}
+              className="relative overflow-hidden shadow-none border-0 bg-transparent p-0"
+            >
               <img 
                 src={moroccoMapImage} 
                 alt="Morocco MICE destinations map"
                 className="w-full h-auto rounded-lg shadow-elegant hover-scale transition-corporate"
               />
-            </div>
+            </AnimatedCard>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Benefits Section - Keeping existing */}
-      <section className="py-20 bg-muted/30">
+      {/* Benefits Section - Enhanced with stagger animation */}
+      <AnimatedSection className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 scroll-reveal">
+          <AnimatedCard 
+            animationType="fade-up" 
+            className="text-center mb-16 shadow-none border-0 bg-transparent p-0"
+          >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
               {t('benefitsTitle')}
             </h2>
-          </div>
+          </AnimatedCard>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" ref={benefitsRef}>
             {benefits.map((benefit, index) => (
-              <AnimatedCard key={index} delay={index + 1} className="shadow-card hover:shadow-elegant transition-corporate border-0 bg-background/80 backdrop-blur-sm">
+              <AnimatedCard 
+                key={index} 
+                animationType="scale" 
+                delay={index * 0.1}
+                className="shadow-card hover:shadow-elegant transition-corporate border-0 bg-background/80 backdrop-blur-sm"
+              >
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 gradient-primary rounded-full flex items-center justify-center hover-scale transition-corporate">
                     <benefit.icon className="w-8 h-8 text-primary-foreground" />
@@ -409,21 +438,29 @@ export const HomePage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Enhanced Destinations Section */}
-      <section id="destinations-section" className="py-20">
+      <AnimatedSection id="destinations-section" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 scroll-reveal">
+          <AnimatedCard 
+            animationType="fade-up" 
+            className="text-center mb-16 shadow-none border-0 bg-transparent p-0"
+          >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
               {t('destinationsTitle')}
             </h2>
-          </div>
+          </AnimatedCard>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref={destinationsRef}>
             {destinations.map((destination, index) => (
-              <AnimatedCard key={index} delay={index + 1} className="group cursor-pointer overflow-hidden shadow-card hover:shadow-glow border-0 hover-lift" 
-                onClick={() => navigate(`/destinations/${destination.name.toLowerCase()}`)}>
+              <AnimatedCard 
+                key={index} 
+                animationType="fade-right" 
+                delay={index * 0.15}
+                className="group cursor-pointer overflow-hidden shadow-card hover:shadow-glow border-0" 
+                onClick={() => navigate(`/destinations/${destination.name.toLowerCase()}`)}
+              >
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={destination.image} 
@@ -451,23 +488,34 @@ export const HomePage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Services Deep Dive Section */}
-      <section className="py-20 bg-muted/30">
+      <AnimatedSection 
+        className="py-20 bg-muted/30"
+        animationOptions={{ animationType: 'fade-up', threshold: 0.15 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <AnimatedCard 
+            animationType="fade-up" 
+            className="text-center mb-16 shadow-none border-0 bg-transparent p-0"
+          >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
               {t('servicesDeepDiveTitle')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               {t('servicesDeepDiveDesc')}
             </p>
-          </div>
+          </AnimatedCard>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" ref={useStaggerAnimation({ staggerDelay: 0.2, animationType: 'slide-up' })}>
             {servicesDeepDive.map((service, index) => (
-              <Card key={index} className="shadow-card hover:shadow-elegant transition-smooth border-0 bg-background/80 backdrop-blur-sm">
+              <AnimatedCard 
+                key={index} 
+                animationType="rotate" 
+                delay={index * 0.2}
+                className="shadow-card hover:shadow-elegant transition-smooth border-0 bg-background/80 backdrop-blur-sm"
+              >
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
                     <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mr-4">
@@ -499,11 +547,11 @@ export const HomePage: React.FC = () => {
                     {t('learnMore')}
                   </Button>
                 </CardContent>
-              </Card>
+              </AnimatedCard>
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* ROI / Value Section */}
       <section className="py-20 gradient-secondary">
