@@ -72,30 +72,69 @@ const App = () => (
                   
                   {/* French Routes */}
                   <Route path="/fr" element={<Index />} />
-                  <Route path="/fr/destinations" element={<Index />} />
-                  <Route path="/fr/services" element={<Index />} />
-                  <Route path="/fr/blog" element={<Index />} />
+                  <Route path="/fr/destinations" element={<Destinations />} />
+                  <Route path="/fr/destinations/marrakech" element={<MarrakechDestination />} />
+                  <Route path="/fr/destinations/casablanca" element={<CasablancaDestination />} />
+                  <Route path="/fr/destinations/agadir" element={<AgadirDestination />} />
+                  <Route path="/fr/destinations/fes" element={<FesDestination />} />
+                  <Route path="/fr/destinations/sahara" element={<SaharaDestination />} />
+                  <Route path="/fr/services" element={<Services />} />
+                  <Route path="/fr/success-stories" element={<SuccessStories />} />
+                  <Route path="/fr/blog" element={<Blog />} />
+                  <Route path="/fr/blog/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
+                  <Route path="/fr/blog/top-venues-morocco-conferences" element={<TopVenuesMorocco />} />
+                  <Route path="/fr/blog/marrakech-incentive-capital" element={<MarrakechIncentive />} />
+                  <Route path="/fr/blog/agadir-team-building" element={<AgadirTeamBuilding />} />
+                  <Route path="/fr/blog/gulf-team-building" element={<GulfTeamBuilding />} />
+                  <Route path="/fr/blog/spanish-corporate-morocco" element={<SpanishCorporate />} />
+                  <Route path="/fr/blog/sahara-retreats" element={<SaharaRetreats />} />
                   <Route path="/fr/a-propos" element={<About />} />
-                  <Route path="/fr/faq" element={<Index />} />
-                  <Route path="/fr/contact" element={<Index />} />
+                  <Route path="/fr/faq" element={<FAQ />} />
+                  <Route path="/fr/contact" element={<Contact />} />
                   
                   {/* Spanish Routes */}
                   <Route path="/es" element={<Index />} />
-                  <Route path="/es/destinos" element={<Index />} />
-                  <Route path="/es/servicios" element={<Index />} />
-                  <Route path="/es/blog" element={<Index />} />
+                  <Route path="/es/destinos" element={<Destinations />} />
+                  <Route path="/es/destinos/marrakech" element={<MarrakechDestination />} />
+                  <Route path="/es/destinos/casablanca" element={<CasablancaDestination />} />
+                  <Route path="/es/destinos/agadir" element={<AgadirDestination />} />
+                  <Route path="/es/destinos/fes" element={<FesDestination />} />
+                  <Route path="/es/destinos/sahara" element={<SaharaDestination />} />
+                  <Route path="/es/servicios" element={<Services />} />
+                  <Route path="/es/success-stories" element={<SuccessStories />} />
+                  <Route path="/es/blog" element={<Blog />} />
+                  <Route path="/es/blog/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
+                  <Route path="/es/blog/top-venues-morocco-conferences" element={<TopVenuesMorocco />} />
+                  <Route path="/es/blog/marrakech-incentive-capital" element={<MarrakechIncentive />} />
+                  <Route path="/es/blog/agadir-team-building" element={<AgadirTeamBuilding />} />
+                  <Route path="/es/blog/gulf-team-building" element={<GulfTeamBuilding />} />
+                  <Route path="/es/blog/spanish-corporate-morocco" element={<SpanishCorporate />} />
+                  <Route path="/es/blog/sahara-retreats" element={<SaharaRetreats />} />
                   <Route path="/es/acerca-de" element={<About />} />
-                  <Route path="/es/faq" element={<Index />} />
-                  <Route path="/es/contacto" element={<Index />} />
+                  <Route path="/es/faq" element={<FAQ />} />
+                  <Route path="/es/contacto" element={<Contact />} />
                   
                   {/* Arabic Routes */}
                   <Route path="/ar" element={<Index />} />
-                  <Route path="/ar/الوجهات" element={<Index />} />
-                  <Route path="/ar/الخدمات" element={<Index />} />
-                  <Route path="/ar/المدونة" element={<Index />} />
+                  <Route path="/ar/الوجهات" element={<Destinations />} />
+                  <Route path="/ar/الوجهات/مراكش" element={<MarrakechDestination />} />
+                  <Route path="/ar/الوجهات/الدار-البيضاء" element={<CasablancaDestination />} />
+                  <Route path="/ar/الوجهات/أكادير" element={<AgadirDestination />} />
+                  <Route path="/ar/الوجهات/فاس" element={<FesDestination />} />
+                  <Route path="/ar/الوجهات/الصحراء" element={<SaharaDestination />} />
+                  <Route path="/ar/الخدمات" element={<Services />} />
+                  <Route path="/ar/قصص-النجاح" element={<SuccessStories />} />
+                  <Route path="/ar/المدونة" element={<Blog />} />
+                  <Route path="/ar/المدونة/organizing-successful-seminars-marrakech" element={<BlogArticleMarrakech />} />
+                  <Route path="/ar/المدونة/top-venues-morocco-conferences" element={<TopVenuesMorocco />} />
+                  <Route path="/ar/المدونة/marrakech-incentive-capital" element={<MarrakechIncentive />} />
+                  <Route path="/ar/المدونة/agadir-team-building" element={<AgadirTeamBuilding />} />
+                  <Route path="/ar/المدونة/gulf-team-building" element={<GulfTeamBuilding />} />
+                  <Route path="/ar/المدونة/spanish-corporate-morocco" element={<SpanishCorporate />} />
+                  <Route path="/ar/المدونة/sahara-retreats" element={<SaharaRetreats />} />
                   <Route path="/ar/من-نحن" element={<About />} />
-                  <Route path="/ar/الأسئلة-الشائعة" element={<Index />} />
-                  <Route path="/ar/اتصل-بنا" element={<Index />} />
+                  <Route path="/ar/الأسئلة-الشائعة" element={<FAQ />} />
+                  <Route path="/ar/اتصل-بنا" element={<Contact />} />
                   
                   {/* Catch-all route */}
                   <Route path="*" element={<NotFound />} />
