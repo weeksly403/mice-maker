@@ -163,8 +163,24 @@ export const translations = {
     activitiesCompleted: 'Activités Complétées',
     overallRating: 'Note Globale',
     inspiredByThisCase: 'Inspiré par cette Étude de Cas ?',
-    inspiredByThisCaseDesc: 'Discutons de votre projet et voyons comment nous pouvons créer une expérience similaire.',
+    inspiredByThisCaseDesc: "Discutons de votre projet et voyons comment nous pouvons créer une expérience similaire.",
     discussYourProject: 'Discuter de Votre Projet',
+    
+    // Case Study Highlights - French
+    caseStudyHighlight1_1: 'Campement de luxe dans le désert avec décoration marocaine traditionnelle',
+    caseStudyHighlight1_2: "Excursions privées dans l'Atlas avec des guides locaux",
+    caseStudyHighlight1_3: 'Expériences spa authentiques dans des hammams traditionnels',
+    caseStudyHighlight1_4: "Dîner de gala sous les étoiles dans le désert d'Agafay",
+    
+    caseStudyHighlight2_1: 'Installations de conférence ultramodernes avec traduction simultanée',
+    caseStudyHighlight2_2: "Transferts VIP aéroport et hébergement de luxe",
+    caseStudyHighlight2_3: "Événements de réseautage professionnel avec des leaders d'entreprise locaux",
+    caseStudyHighlight2_4: 'Soirée showcase culturel dans des lieux historiques de Casablanca',
+    
+    caseStudyHighlight3_1: 'Cours de surf professionnels avec instructeurs certifiés',
+    caseStudyHighlight3_2: 'Programmes de retraite bien-être avec yoga et méditation',
+    caseStudyHighlight3_3: "Défis et activités d'équipe en bord de mer",
+    caseStudyHighlight3_4: 'Dîner de gala exclusif en bord de mer avec animation live',
     chatNow: 'Chatter Maintenant',
     callNow: 'Appeler Maintenant',
     sendEmail: 'Envoyer un Email',
@@ -508,8 +524,24 @@ export const translations = {
     activitiesCompleted: 'Activities Completed',
     overallRating: 'Overall Rating',
     inspiredByThisCase: 'Inspired by This Case Study?',
-    inspiredByThisCaseDesc: 'Let\'s discuss your project and see how we can create a similar experience.',
+    inspiredByThisCaseDesc: "Let's discuss your project and see how we can create a similar experience.",
     discussYourProject: 'Discuss Your Project',
+    
+    // Case Study Highlights
+    caseStudyHighlight1_1: 'Luxury desert camp setup with traditional Moroccan décor',
+    caseStudyHighlight1_2: 'Private Atlas Mountains excursions with local guides',
+    caseStudyHighlight1_3: 'Authentic spa experiences in traditional hammams',
+    caseStudyHighlight1_4: 'Gala dinner under the stars in Agafay Desert',
+    
+    caseStudyHighlight2_1: 'State-of-the-art conference facilities with simultaneous translation',
+    caseStudyHighlight2_2: 'VIP airport transfers and luxury accommodation',
+    caseStudyHighlight2_3: 'Professional networking events with local business leaders',
+    caseStudyHighlight2_4: 'Cultural showcase evening in historic Casablanca venues',
+    
+    caseStudyHighlight3_1: 'Professional surf lessons with certified instructors',
+    caseStudyHighlight3_2: 'Wellness retreat programs with yoga and meditation',
+    caseStudyHighlight3_3: 'Beachfront team challenges and activities',
+    caseStudyHighlight3_4: 'Exclusive beachfront gala dinner with live entertainment',
     chatNow: 'Chat Now',
     callNow: 'Call Now',
     sendEmail: 'Send Email',
@@ -949,6 +981,22 @@ export const translations = {
     inspiredByThisCase: '¿Inspirado por este Caso de Estudio?',
     inspiredByThisCaseDesc: 'Hablemos de tu proyecto y veamos cómo podemos crear una experiencia similar.',
     discussYourProject: 'Discutir Tu Proyecto',
+    
+    // Case Study Highlights - Spanish
+    caseStudyHighlight1_1: 'Campamento de lujo en el desierto con decoración marroquí tradicional',
+    caseStudyHighlight1_2: 'Excursiones privadas en el Atlas con guías locales',
+    caseStudyHighlight1_3: 'Experiencias auténticas de spa en hammams tradicionales',
+    caseStudyHighlight1_4: 'Cena de gala bajo las estrellas en el desierto de Agafay',
+    
+    caseStudyHighlight2_1: 'Instalaciones de conferencias de última generación con traducción simultánea',
+    caseStudyHighlight2_2: 'Traslados VIP al aeropuerto y alojamiento de lujo',
+    caseStudyHighlight2_3: 'Eventos de networking profesional con líderes empresariales locales',
+    caseStudyHighlight2_4: 'Noche de exhibición cultural en lugares históricos de Casablanca',
+    
+    caseStudyHighlight3_1: 'Clases profesionales de surf con instructores certificados',
+    caseStudyHighlight3_2: 'Programas de retiro de bienestar con yoga y meditación',
+    caseStudyHighlight3_3: 'Desafíos y actividades de equipo frente al mar',
+    caseStudyHighlight3_4: 'Cena de gala exclusiva frente al mar con entretenimiento en vivo',
     chatNow: 'Chatear Ahora',
     callNow: 'Llamar Ahora',
     sendEmail: 'Enviar Email',
@@ -1370,6 +1418,22 @@ export const translations = {
     inspiredByThisCase: 'مستوحى من دراسة الحالة هذه؟',
     inspiredByThisCaseDesc: 'لنتحدث عن مشروعك ونرى كيف يمكننا إنشاء تجربة مماثلة.',
     discussYourProject: 'ناقش مشروعك',
+    
+    // Case Study Highlights - Arabic
+    caseStudyHighlight1_1: 'مخيم فاخر في الصحراء مع الديكور المغربي التقليدي',
+    caseStudyHighlight1_2: 'رحلات خاصة في جبال الأطلس مع مرشدين محليين',
+    caseStudyHighlight1_3: 'تجارب سبا أصيلة في الحمامات التقليدية',
+    caseStudyHighlight1_4: 'عشاء احتفالي تحت النجوم في صحراء أكافاي',
+    
+    caseStudyHighlight2_1: 'مرافق مؤتمرات حديثة مع ترجمة فورية',
+    caseStudyHighlight2_2: 'نقل كبار الشخصيات من المطار وإقامة فاخرة',
+    caseStudyHighlight2_3: 'فعاليات تواصل مهنية مع قادة الأعمال المحليين',
+    caseStudyHighlight2_4: 'أمسية عرض ثقافي في أماكن تاريخية في الدار البيضاء',
+    
+    caseStudyHighlight3_1: 'دروس ركوب الأمواج المهنية مع مدربين معتمدين',
+    caseStudyHighlight3_2: 'برامج العافية مع اليوغا والتأمل',
+    caseStudyHighlight3_3: 'تحديات وأنشطة الفريق على شاطئ البحر',
+    caseStudyHighlight3_4: 'عشاء احتفالي حصري على شاطئ البحر مع الترفيه المباشر',
     chatNow: 'تحدث الآن',
     callNow: 'اتصل الآن',
     sendEmail: 'أرسل بريد إلكتروني',
