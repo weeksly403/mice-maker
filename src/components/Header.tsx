@@ -42,11 +42,11 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to={getLocalizedPath('/')} className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 flex items-center justify-center transition-corporate group-hover:scale-105">
+            <div className="w-12 h-12 flex items-center justify-center transition-corporate group-hover:scale-105">
               <img 
                 src="/lovable-uploads/cfc08f51-9311-488b-aa3c-cd9ef1376332.png" 
                 alt="Event Morocco Logo" 
-                className="w-10 h-10 object-contain"
+                className="w-12 h-12 object-contain"
               />
             </div>
             <span className="font-serif font-bold text-xl text-foreground transition-corporate group-hover:text-primary">
