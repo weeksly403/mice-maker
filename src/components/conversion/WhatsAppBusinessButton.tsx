@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '../LanguageProvider';
 
 export const WhatsAppBusinessButton = () => {
+  // Temporarily hidden
+  return null;
+  
   const [showTooltip, setShowTooltip] = useState(false);
   const { t, language } = useLanguage();
   
