@@ -9,6 +9,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import { ChatBotButton } from "./components/chatbot/ChatBotButton";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Destinations from "./pages/Destinations";
@@ -94,8 +95,9 @@ const App = () => (
                   {/* Catch-all route */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-              </main>
+               </main>
                 <Footer />
+                <ChatBotButton />
               </div>
             </ErrorBoundary>
           </TooltipProvider>
