@@ -369,7 +369,24 @@ export const translations = {
     corporate: 'Corporate',
     retreats: 'Séminaires',
     allCategories: 'Toutes les Catégories',
-    featured: 'À la Une'
+    featured: 'À la Une',
+
+    // How It Works Section
+    howItWorksTitle: 'Notre Processus',
+    howItWorksDescription: 'Chez Event Morocco, nous croyons en la clarté et la rapidité. Voici comment nous organisons votre séminaire, incentive ou conférence au Maroc :',
+    howItWorksStep1Title: 'Partagez vos besoins',
+    howItWorksStep1Description: 'Type d\'événement, nombre de participants, ville, budget et dates.',
+    howItWorksStep2Title: 'Mise en relation',
+    howItWorksStep2Description: 'Nous vous assignons l\'agence agréée par le Ministère du Tourisme la plus adaptée à vos besoins.',
+    howItWorksStep3Title: 'Proposition en 24h',
+    howItWorksStep3Description: 'Options de lieux, programmes types et tarification transparente.',
+    howItWorksStep4Title: 'Accompagnement',
+    howItWorksStep4Description: 'Négociation fournisseurs, conformité, suivi personnalisé.',
+    howItWorksStep5Title: 'Livraison de l\'événement',
+    howItWorksStep5Description: 'Profitez d\'un événement réussi, sans stress.',
+    howItWorksCtaTitle: 'Commencez votre projet dès aujourd\'hui',
+    howItWorksCtaDescription: 'Proposition gratuite en 24h avec l\'accompagnement de nos experts.',
+    howItWorksCtaButton: 'Proposition Gratuite en 24h'
   },
   
   en: {
@@ -870,7 +887,24 @@ export const translations = {
     aboutCtaTitle: 'Ready to plan your next corporate event in Morocco?',
     aboutCtaSubtitle: 'Request your free 24h proposal today.',
     aboutCtaButton: 'Get My Proposal',
-    exploreServices: 'Explore Our Services'
+    exploreServices: 'Explore Our Services',
+
+    // How It Works Section
+    howItWorksTitle: 'How We Work',
+    howItWorksDescription: 'At Event Morocco, our process is designed for transparency and speed. Here\'s how we help you plan a corporate event, incentive, or conference in Morocco:',
+    howItWorksStep1Title: 'Tell us about your event',
+    howItWorksStep1Description: 'Share event type, group size, city, budget, and dates.',
+    howItWorksStep2Title: 'Match with the right agency',
+    howItWorksStep2Description: 'We connect you with a Ministry-authorized agency specialized in your type of event.',
+    howItWorksStep3Title: 'Receive your proposal in 24h',
+    howItWorksStep3Description: 'You\'ll get venue options, sample programs, and transparent pricing.',
+    howItWorksStep4Title: 'Support at every step',
+    howItWorksStep4Description: 'We negotiate with suppliers, ensure compliance, and accompany you until final confirmation.',
+    howItWorksStep5Title: 'Deliver your event',
+    howItWorksStep5Description: 'You enjoy a seamless, stress-free event in Morocco.',
+    howItWorksCtaTitle: 'Start your event journey today',
+    howItWorksCtaDescription: 'Get a free 24h proposal and let our experts handle everything for you.',
+    howItWorksCtaButton: 'Get Free 24h Proposal'
   },
   
   es: {
@@ -1354,7 +1388,24 @@ export const translations = {
     aboutCtaTitle: '¿Listo para organizar su próximo evento en Marruecos?',
     aboutCtaSubtitle: 'Solicite su propuesta gratuita en 24h.',
     aboutCtaButton: 'Obtener Mi Propuesta',
-    exploreServices: 'Explorar Nuestros Servicios'
+    exploreServices: 'Explorar Nuestros Servicios',
+
+    // How It Works Section
+    howItWorksTitle: 'Nuestro Proceso',
+    howItWorksDescription: 'En Event Morocco, ofrecemos un proceso claro y ágil para empresas internacionales:',
+    howItWorksStep1Title: 'Comparta sus necesidades',
+    howItWorksStep1Description: 'Tipo de evento, número de asistentes, ciudad, presupuesto y fechas.',
+    howItWorksStep2Title: 'Agencia adecuada',
+    howItWorksStep2Description: 'Le asignamos la agencia autorizada por el Ministerio de Turismo más especializada.',
+    howItWorksStep3Title: 'Propuesta en 24h',
+    howItWorksStep3Description: 'Opciones de lugares, programas de muestra y precios transparentes.',
+    howItWorksStep4Title: 'Acompañamiento total',
+    howItWorksStep4Description: 'Negociamos con proveedores y garantizamos cumplimiento.',
+    howItWorksStep5Title: 'Ejecución',
+    howItWorksStep5Description: 'Usted disfruta de un evento sin preocupaciones en Marruecos.',
+    howItWorksCtaTitle: 'Comience su evento hoy',
+    howItWorksCtaDescription: 'Propuesta gratuita en 24h con el respaldo de nuestros expertos.',
+    howItWorksCtaButton: 'Propuesta Gratuita en 24h'
   },
   
   ar: {
@@ -1836,7 +1887,24 @@ export const translations = {
     aboutCtaTitle: 'هل أنتم مستعدون لتنظيم فعاليّتكم القادمة في المغرب؟',
     aboutCtaSubtitle: 'اطلبوا عرضاً مجانياً خلال 24 ساعة.',
     aboutCtaButton: 'احصل على عرضي',
-    exploreServices: 'استكشف خدماتنا'
+    exploreServices: 'استكشف خدماتنا',
+
+    // How It Works Section
+    howItWorksTitle: 'كيف نعمل',
+    howItWorksDescription: 'في Event Morocco نعتمد الشفافية والسرعة في تنظيم فعاليات الشركات:',
+    howItWorksStep1Title: 'شاركونا احتياجاتكم',
+    howItWorksStep1Description: 'نوع الفعالية، عدد المشاركين، المدينة، الميزانية، والتواريخ.',
+    howItWorksStep2Title: 'اختيار الوكالة المناسبة',
+    howItWorksStep2Description: 'نربطكم بوكالة معتمدة من وزارة السياحة ومتخصصة في نوع فعاليتكم.',
+    howItWorksStep3Title: 'استلام العرض خلال 24 ساعة',
+    howItWorksStep3Description: 'ستتلقون خيارات أماكن، برامج نموذجية وأسعار شفافة.',
+    howItWorksStep4Title: 'مرافقة في كل المراحل',
+    howItWorksStep4Description: 'نتولى المفاوضات والمتابعة لضمان الامتثال والجودة.',
+    howItWorksStep5Title: 'التنفيذ',
+    howItWorksStep5Description: 'استمتعوا بفعالية ناجحة وخالية من التوتر في المغرب.',
+    howItWorksCtaTitle: 'ابدأ رحلتك التنظيمية اليوم',
+    howItWorksCtaDescription: 'عرض مجاني خلال 24 ساعة مع دعم خبرائنا.',
+    howItWorksCtaButton: 'عرض مجاني خلال 24 ساعة'
   }
 };
 

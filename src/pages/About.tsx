@@ -6,17 +6,18 @@ import { AnimatedCard } from '@/components/AnimatedCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Users, Award, Shield, MapPin, Clock, Target, Globe } from 'lucide-react';
+import { CheckCircle, Users, Award, Shield, MapPin, Clock, Target, Globe, MessageSquare, Users2, FileText, Settings, PartyPopper } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const About: React.FC = () => {
   const { t, language } = useLanguage();
 
   const icons = {
-    match: Target,
-    plan: MapPin,
-    deliver: CheckCircle,
-    celebrate: Award
+    step1: MessageSquare,
+    step2: Users2,
+    step3: FileText,
+    step4: Settings,
+    step5: PartyPopper
   };
 
   const trustPoints = [
@@ -90,6 +91,43 @@ const About: React.FC = () => {
             }
           })}
         </script>
+        
+        {/* HowTo Schema for How It Works */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": t('howItWorksTitle'),
+            "description": t('howItWorksDescription'),
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": t('howItWorksStep1Title'),
+                "text": t('howItWorksStep1Description')
+              },
+              {
+                "@type": "HowToStep", 
+                "name": t('howItWorksStep2Title'),
+                "text": t('howItWorksStep2Description')
+              },
+              {
+                "@type": "HowToStep",
+                "name": t('howItWorksStep3Title'),
+                "text": t('howItWorksStep3Description')
+              },
+              {
+                "@type": "HowToStep",
+                "name": t('howItWorksStep4Title'),
+                "text": t('howItWorksStep4Description')
+              },
+              {
+                "@type": "HowToStep",
+                "name": t('howItWorksStep5Title'),
+                "text": t('howItWorksStep5Description')
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen">
@@ -132,36 +170,54 @@ const About: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                {t('aboutHowWeWorkTitle')}
+                {t('howItWorksTitle')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                {t('aboutHowWeWorkDescription')}
+                {t('howItWorksDescription')}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {['match', 'plan', 'deliver', 'celebrate'].map((step, index) => {
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+              {['step1', 'step2', 'step3', 'step4', 'step5'].map((step, index) => {
                 const IconComponent = icons[step as keyof typeof icons];
                 return (
                   <AnimatedCard key={step} delay={index * 0.1}>
-                    <Card className="text-center p-6 h-full hover:shadow-lg transition-all duration-300">
+                    <Card className="text-center p-6 h-full hover:shadow-lg transition-all duration-300 relative">
                       <CardContent className="p-0">
                         <div className="mb-4">
                           <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
                             <IconComponent className="w-8 h-8 text-primary" />
                           </div>
+                          <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            {index + 1}
+                          </div>
                         </div>
                         <h3 className="text-xl font-semibold mb-3 text-foreground">
-                          {t(`aboutStep${step.charAt(0).toUpperCase() + step.slice(1)}Title`)}
+                          {t(`howItWorks${step.charAt(0).toUpperCase() + step.slice(1)}Title`)}
                         </h3>
-                        <p className="text-muted-foreground">
-                          {t(`aboutStep${step.charAt(0).toUpperCase() + step.slice(1)}Description`)}
+                        <p className="text-muted-foreground text-sm">
+                          {t(`howItWorks${step.charAt(0).toUpperCase() + step.slice(1)}Description`)}
                         </p>
                       </CardContent>
                     </Card>
                   </AnimatedCard>
                 );
               })}
+            </div>
+
+            {/* CTA for How It Works */}
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-4 text-foreground">
+                {t('howItWorksCtaTitle')}
+              </h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                {t('howItWorksCtaDescription')}
+              </p>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                <Link to="/contact">
+                  {t('howItWorksCtaButton')}
+                </Link>
+              </Button>
             </div>
           </div>
         </AnimatedSection>
