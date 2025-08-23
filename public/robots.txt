@@ -1,14 +1,27 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /crm/
+Disallow: /auth/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /crm/
+Disallow: /auth/
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /crm/
+Disallow: /auth/
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /crm/
+Disallow: /auth/
 
 User-agent: *
 Allow: /
+Disallow: /crm/
+Disallow: /auth/
+
+# Security headers
+Crawl-delay: 1

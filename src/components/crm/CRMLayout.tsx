@@ -1,4 +1,5 @@
 import { Outlet, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { Sidebar, SidebarContent, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { CRMSidebar } from './CRMSidebar';
@@ -20,7 +21,12 @@ const CRMLayout = () => {
   }
 
   return (
-    <SidebarProvider>
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
+      </Helmet>
+      <SidebarProvider>
       <div className="min-h-screen flex w-full">
         <CRMSidebar />
         <div className="flex-1 flex flex-col">
@@ -35,7 +41,8 @@ const CRMLayout = () => {
           </main>
         </div>
       </div>
-    </SidebarProvider>
+      </SidebarProvider>
+    </>
   );
 };
 
