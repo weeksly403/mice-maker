@@ -86,7 +86,8 @@ const Leads = () => {
     switch (status) {
       case 'New': return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100';
       case 'Qualified': return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-100';
-      case 'Proposal': return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100';
+      case 'Quoted': return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100';
+      case 'Negotiation': return 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-100';
       case 'Won': return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100';
       case 'Lost': return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100';
       case 'OnHold': return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-100';
@@ -148,7 +149,8 @@ const Leads = () => {
                     <SelectItem value="all">All Statuses</SelectItem>
                     <SelectItem value="New">New</SelectItem>
                     <SelectItem value="Qualified">Qualified</SelectItem>
-                    <SelectItem value="Proposal">Proposal</SelectItem>
+                    <SelectItem value="Quoted">Quoted</SelectItem>
+                    <SelectItem value="Negotiation">Negotiation</SelectItem>
                     <SelectItem value="Won">Won</SelectItem>
                     <SelectItem value="Lost">Lost</SelectItem>
                     <SelectItem value="OnHold">On Hold</SelectItem>

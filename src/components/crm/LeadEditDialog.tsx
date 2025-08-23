@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -89,8 +89,8 @@ const LeadEditDialog = ({ lead, isOpen, onClose, onSave }: LeadEditDialogProps) 
     }
   };
 
-  const statusOptions = ['New', 'Qualified', 'Proposal', 'Won', 'Lost', 'OnHold'];
-  const currencyOptions = ['EUR', 'USD', 'GBP', 'MAD'];
+  const statusOptions = ['New', 'Qualified', 'Quoted', 'Negotiation', 'Won', 'Lost', 'OnHold'];
+  const currencyOptions = ['MAD', 'EUR', 'USD'];
   const groupSizeOptions = ['<30', '30-80', '80-150', '150-300', '300+'];
 
   if (!lead) return null;
@@ -105,6 +105,9 @@ const LeadEditDialog = ({ lead, isOpen, onClose, onSave }: LeadEditDialogProps) 
               <X className="h-4 w-4" />
             </Button>
           </DialogTitle>
+          <DialogDescription>
+            Update lead information and track progress through your sales pipeline.
+          </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6">
@@ -171,7 +174,7 @@ const LeadEditDialog = ({ lead, isOpen, onClose, onSave }: LeadEditDialogProps) 
               <div className="space-y-2">
                 <Label htmlFor="status">Status</Label>
                 <Select 
-                  value={formData.status} 
+                  value={formData.status || ''} 
                   onValueChange={(value) => setFormData({ ...formData, status: value })}
                 >
                   <SelectTrigger>
