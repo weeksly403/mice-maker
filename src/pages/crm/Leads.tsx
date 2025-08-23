@@ -5,9 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Eye, Search, Filter } from 'lucide-react';
+import { Eye, Search, Filter, Edit } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/components/auth/AuthProvider';
+import LeadEditDialog from '@/components/crm/LeadEditDialog';
 
 interface Lead {
   id: string;
@@ -15,12 +16,17 @@ interface Lead {
   company: string;
   contact_name: string;
   email: string;
+  phone?: string;
   status: string;
   created_at: string;
-  total_offer_budget: number;
-  commission_value: number;
+  total_offer_budget?: number;
+  commission_percent?: number;
+  commission_value?: number;
   event_types: string[];
-  group_size: string;
+  group_size?: string;
+  follow_up_remark?: string;
+  partner_agency?: string;
+  currency?: string;
 }
 
 const Leads = () => {
@@ -30,6 +36,8 @@ const Leads = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
 
   useEffect(() => {
     loadLeads();
@@ -76,13 +84,28 @@ const Leads = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'New': return 'bg-blue-100 text-blue-800';
-      case 'Qualified': return 'bg-yellow-100 text-yellow-800';
-      case 'Proposal': return 'bg-purple-100 text-purple-800';
-      case 'Won': return 'bg-green-100 text-green-800';
-      case 'Lost': return 'bg-red-100 text-red-800';
-      default: return 'bg-gray-100 text-gray-800';
+      case 'New': return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100';
+      case 'Qualified': return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-100';
+      case 'Proposal': return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100';
+      case 'Won': return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100';
+      case 'Lost': return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100';
+      case 'OnHold': return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-100';
+      default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100';
     }
+  };
+
+  const handleEditLead = (lead: Lead) => {
+    setSelectedLead(lead);
+    setIsEditDialogOpen(true);
+  };
+
+  const handleCloseEditDialog = () => {
+    setSelectedLead(null);
+    setIsEditDialogOpen(false);
+  };
+
+  const handleSaveLead = () => {
+    loadLeads(); // Reload leads after save
   };
 
   if (isLoading) {
@@ -117,19 +140,20 @@ const Leads = () => {
                 />
               </div>
             </div>
-            <Select value={statusFilter} onValueChange={setStatusFilter}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Filter by status" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Statuses</SelectItem>
-                <SelectItem value="New">New</SelectItem>
-                <SelectItem value="Qualified">Qualified</SelectItem>
-                <SelectItem value="Proposal">Proposal</SelectItem>
-                <SelectItem value="Won">Won</SelectItem>
-                <SelectItem value="Lost">Lost</SelectItem>
-              </SelectContent>
-            </Select>
+                <Select value={statusFilter} onValueChange={setStatusFilter}>
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Filter by status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Statuses</SelectItem>
+                    <SelectItem value="New">New</SelectItem>
+                    <SelectItem value="Qualified">Qualified</SelectItem>
+                    <SelectItem value="Proposal">Proposal</SelectItem>
+                    <SelectItem value="Won">Won</SelectItem>
+                    <SelectItem value="Lost">Lost</SelectItem>
+                    <SelectItem value="OnHold">On Hold</SelectItem>
+                  </SelectContent>
+                </Select>
           </div>
         </CardContent>
       </Card>
@@ -196,9 +220,14 @@ const Leads = () => {
                     </TableCell>
                     <TableCell>{new Date(lead.created_at).toLocaleDateString()}</TableCell>
                     <TableCell>
-                      <Button variant="ghost" size="sm">
-                        <Eye className="h-4 w-4" />
-                      </Button>
+                      <div className="flex gap-1">
+                        <Button variant="ghost" size="sm" onClick={() => handleEditLead(lead)}>
+                          <Edit className="h-4 w-4" />
+                        </Button>
+                        <Button variant="ghost" size="sm">
+                          <Eye className="h-4 w-4" />
+                        </Button>
+                      </div>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -214,6 +243,14 @@ const Leads = () => {
           </div>
         </CardContent>
       </Card>
+
+      {/* Lead Edit Dialog */}
+      <LeadEditDialog
+        lead={selectedLead}
+        isOpen={isEditDialogOpen}
+        onClose={handleCloseEditDialog}
+        onSave={handleSaveLead}
+      />
     </div>
   );
 };
