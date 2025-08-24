@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, MessageCircle, Phone, FileText } from 'lucide-react';
 import { useLanguage } from '../LanguageProvider';
+import { analytics } from '@/utils/analytics';
 import { QuoteDialog } from '../QuoteDialog';
 import { ScheduleCallDialog } from '../ScheduleCallDialog';
 
@@ -63,7 +64,10 @@ export const StickyCTA = () => {
           
           <div className="flex gap-2">
             <QuoteDialog>
-              <Button className="flex-1 bg-primary hover:bg-primary/90 text-white text-xs h-8">
+              <Button 
+                className="flex-1 bg-primary hover:bg-primary/90 text-white text-xs h-8"
+                onClick={() => analytics.trackCTA('quote_button', 'sticky_cta')}
+              >
                 <FileText className="h-3 w-3 mr-1" />
                 {t('Get Quote')}
               </Button>
@@ -73,6 +77,7 @@ export const StickyCTA = () => {
               <Button
                 variant="outline"
                 className="flex-1 text-xs h-8"
+                onClick={() => analytics.trackCTA('call_button', 'sticky_cta')}
               >
                 <Phone className="h-3 w-3 mr-1" />
                 {t('Book Call')}

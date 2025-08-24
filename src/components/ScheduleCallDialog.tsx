@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from './LanguageProvider';
+import { analytics } from '@/utils/analytics';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -35,6 +36,10 @@ export const ScheduleCallDialog: React.FC<ScheduleCallDialogProps> = ({ children
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Track call scheduling conversion
+    analytics.trackCallScheduled();
+    analytics.trackFormSubmit('schedule_call');
     
     toast({
       title: t('callScheduled'),

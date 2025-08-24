@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useLanguage } from './LanguageProvider';
+import { analytics } from '@/utils/analytics';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -61,6 +62,10 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({ children, title }) => 
 
   const handleSubmit = async (data: FormData) => {
     setIsSubmitting(true);
+    
+    // Track quote request conversion
+    analytics.trackQuoteRequest();
+    analytics.trackFormSubmit('quote');
     
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
