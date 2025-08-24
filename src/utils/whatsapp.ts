@@ -4,7 +4,7 @@ interface WhatsAppConfig {
 }
 
 const whatsappConfig: WhatsAppConfig = {
-  phoneNumber: '+212600000000', // Replace with actual WhatsApp number
+  phoneNumber: '+212684848487', // Replace with actual WhatsApp number
   defaultMessage: 'Hello! I\'m interested in organizing a corporate event in Morocco. Could you please provide more information?'
 };
 
