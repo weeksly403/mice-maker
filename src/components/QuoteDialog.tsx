@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useLanguage } from './LanguageProvider';
 import { analytics } from '@/utils/analytics';
+import { supabase } from '@/integrations/supabase/client';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -63,21 +64,102 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({ children, title }) => 
   const handleSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    // Track quote request conversion
-    analytics.trackQuoteRequest();
-    analytics.trackFormSubmit('quote');
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: language === 'fr' ? 'Demande envoyée !' : language === 'es' ? '¡Solicitud enviada!' : language === 'ar' ? 'تم إرسال الطلب!' : 'Request sent!',
-      description: language === 'fr' ? 'Nous vous répondrons dans les 24h avec une proposition personnalisée.' : language === 'es' ? 'Le responderemos en 24h con una propuesta personalizada.' : language === 'ar' ? 'سنرد عليك خلال 24 ساعة مع اقتراح مخصص.' : 'We will respond within 24h with a personalized proposal.',
-    });
-    
-    form.reset();
-    setOpen(false);
-    setIsSubmitting(false);
+    try {
+      // Track quote request conversion
+      analytics.trackQuoteRequest();
+      analytics.trackFormSubmit('quote');
+      
+      // Map form data to database schema
+      const eventTypeMap: Record<string, string> = {
+        'conference': 'Conference',
+        'incentive': 'Incentive',
+        'teambuilding': 'TeamBuilding',
+        'retreat': 'Retreat',
+        'gala': 'GalaDinner',
+        'convention': 'Convention',
+        'product-launch': 'ProductLaunch',
+        'board-meeting': 'BoardMeeting',
+        'training': 'Training',
+        'wedding': 'Wedding',
+        'family-trip': 'FamilyTrip',
+        'networking': 'Networking',
+        'exhibition': 'Exhibition',
+        'medical': 'Medical',
+        'awards': 'Awards',
+        'press-trip': 'PressTrip',
+        'other': 'Other'
+      };
+
+      const groupSizeMap: Record<string, string> = {
+        '10-25': '10-25',
+        '25-50': '25-50', 
+        '50-100': '50-100',
+        '100-200': '100-200',
+        '200+': '200+'
+      };
+
+      const cityMap: Record<string, string> = {
+        'marrakech': 'Marrakech',
+        'casablanca': 'Casablanca',
+        'agadir': 'Agadir',
+        'fes': 'Fes',
+        'sahara': 'Sahara'
+      };
+
+      // Format dates for dates_text
+      let datesText = '';
+      if (data.startDate || data.endDate) {
+        const startDateStr = data.startDate ? format(data.startDate, 'yyyy-MM-dd') : '';
+        const endDateStr = data.endDate ? format(data.endDate, 'yyyy-MM-dd') : '';
+        if (startDateStr && endDateStr) {
+          datesText = `${startDateStr} to ${endDateStr}`;
+        } else if (startDateStr) {
+          datesText = `From ${startDateStr}`;
+        } else if (endDateStr) {
+          datesText = `Until ${endDateStr}`;
+        }
+      }
+
+      // Create lead in database
+      const { error } = await supabase
+        .from('leads')
+        .insert({
+          company: data.company,
+          contact_name: data.name,
+          email: data.email,
+          phone: data.phone || null,
+          event_types: data.eventType ? [eventTypeMap[data.eventType] || 'Other'] : ['Conference'],
+          group_size: data.groupSize ? groupSizeMap[data.groupSize] || null : null,
+          preferred_cities: data.city ? [cityMap[data.city] || 'NotSure'] : ['NotSure'],
+          dates_text: datesText || null,
+          budget_per_person: data.budget ? parseFloat(data.budget) || null : null,
+          follow_up_remark: data.message || null,
+          source: 'Website',
+          language: language === 'fr' ? 'FR' : language === 'es' ? 'ES' : language === 'ar' ? 'AR' : 'EN',
+          status: 'New'
+        } as any);
+
+      if (error) {
+        throw error;
+      }
+      
+      toast({
+        title: language === 'fr' ? 'Demande envoyée !' : language === 'es' ? '¡Solicitud enviada!' : language === 'ar' ? 'تم إرسال الطلب!' : 'Request sent!',
+        description: language === 'fr' ? 'Nous vous répondrons dans les 24h avec une proposition personnalisée.' : language === 'es' ? 'Le responderemos en 24h con una propuesta personalizada.' : language === 'ar' ? 'سنرد عليك خلال 24 ساعة مع اقتراح مخصص.' : 'We will respond within 24h with a personalized proposal.',
+      });
+      
+      form.reset();
+      setOpen(false);
+    } catch (error) {
+      console.error('Error submitting quote request:', error);
+      toast({
+        title: language === 'fr' ? 'Erreur' : language === 'es' ? 'Error' : language === 'ar' ? 'خطأ' : 'Error',
+        description: language === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : language === 'es' ? 'Ocurrió un error. Por favor intente de nuevo.' : language === 'ar' ? 'حدث خطأ. يرجى المحاولة مرة أخرى.' : 'An error occurred. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const benefits = [
