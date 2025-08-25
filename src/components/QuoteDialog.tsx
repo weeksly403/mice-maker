@@ -135,7 +135,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({ children, title }) => 
           dates_text: datesText || null,
           budget_per_person: data.budget ? parseFloat(data.budget) || null : null,
           follow_up_remark: data.message || null,
-          source: 'Website',
+          source: 'WebsiteForm',
           language: language === 'fr' ? 'FR' : language === 'es' ? 'ES' : language === 'ar' ? 'AR' : 'EN',
           status: 'New'
         } as any);
