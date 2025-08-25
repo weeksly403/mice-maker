@@ -37,6 +37,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import AuthPage from "./pages/auth/AuthPage";
 import CRMLayout from "./components/crm/CRMLayout";
+// Force reimport of components to clear any cache issues
 import Dashboard from "./pages/crm/Dashboard";
 import Leads from "./pages/crm/Leads";
 import Calls from "./pages/crm/Calls";
