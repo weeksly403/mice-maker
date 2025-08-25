@@ -449,16 +449,27 @@ export const translations = {
     getProposal: 'Free Quote 24h',
     whatsappContact: 'WhatsApp',
     
-    // Benefits
-    benefitsTitle: 'Why Choose Morocco?',
-    fastProposal: 'Quick Response',
-    fastProposalDesc: 'Personalized quote in 24h',
-    trustedPartners: 'Reliable Partners',
-    trustedPartnersDesc: 'Handpicked hotels & DMCs',
-    uniqueExperiences: 'Authentic Experiences',
-    uniqueExperiencesDesc: 'Moroccan lifestyle & culture',
-    bestPrice: 'Competitive Pricing',
-    bestPriceDesc: 'Exceptional value for money',
+    // Morocco Destination Advantages
+    moroccoAdvantagesTitle: 'Morocco: The Perfect MICE Destination',
+    moroccoAdvantagesDesc: 'Discover why Morocco combines ancient heritage with modern infrastructure to create the ideal backdrop for your corporate events.',
+    
+    historicalAdvantage: 'Rich Historical Heritage',
+    historicalAdvantageDesc: '1,200 years of imperial history with UNESCO World Heritage sites',
+    
+    geographicalAdvantage: 'Strategic Location',
+    geographicalAdvantageDesc: 'Gateway between Europe & Africa, just 3 hours from major European cities',
+    
+    economicAdvantage: 'Growing Economy',
+    economicAdvantageDesc: 'Stable political environment and strong business-friendly policies',
+    
+    infrastructureAdvantage: 'Modern Infrastructure',
+    infrastructureAdvantageDesc: 'World-class airports, high-speed rail, 5-star hotels and conference centers',
+    
+    culturalAdvantage: 'Authentic Culture',
+    culturalAdvantageDesc: 'Unique blend of Arab, Berber and European influences for memorable experiences',
+    
+    costAdvantage: 'Exceptional Value',
+    costAdvantageDesc: '30-40% cost savings compared to European destinations without compromising quality',
     
     // Destinations
     destinationsTitle: 'Our MICE Destinations',
@@ -999,16 +1010,27 @@ export const translations = {
     getProposal: 'Presupuesto Gratis 24h',
     whatsappContact: 'WhatsApp',
     
-    // Benefits
-    benefitsTitle: '¿Por Qué Elegir Marruecos?',
-    fastProposal: 'Respuesta Rápida',
-    fastProposalDesc: 'Presupuesto personalizado en 24h',
-    trustedPartners: 'Socios de Confianza',
-    trustedPartnersDesc: 'Hoteles y DMCs seleccionados',
-    uniqueExperiences: 'Experiencias Auténticas',
-    uniqueExperiencesDesc: 'El estilo de vida marroquí',
-    bestPrice: 'Precios Competitivos',
-    bestPriceDesc: 'Relación calidad-precio excepcional',
+    // Morocco Destination Advantages
+    moroccoAdvantagesTitle: 'Marruecos: El Destino MICE Perfecto',
+    moroccoAdvantagesDesc: 'Descubre por qué Marruecos combina patrimonio ancestral con infraestructura moderna para crear el marco ideal para tus eventos corporativos.',
+    
+    historicalAdvantage: 'Rico Patrimonio Histórico',
+    historicalAdvantageDesc: '1,200 años de historia imperial con sitios Patrimonio Mundial UNESCO',
+    
+    geographicalAdvantage: 'Ubicación Estratégica',
+    geographicalAdvantageDesc: 'Puerta entre Europa y África, a solo 3 horas de las principales ciudades europeas',
+    
+    economicAdvantage: 'Economía Creciente',
+    economicAdvantageDesc: 'Ambiente político estable y políticas favorables a los negocios',
+    
+    infrastructureAdvantage: 'Infraestructura Moderna',
+    infrastructureAdvantageDesc: 'Aeropuertos de clase mundial, tren de alta velocidad, hoteles 5 estrellas y centros de conferencias',
+    
+    culturalAdvantage: 'Cultura Auténtica',
+    culturalAdvantageDesc: 'Mezcla única de influencias árabes, bereberes y europeas para experiencias memorables',
+    
+    costAdvantage: 'Valor Excepcional',
+    costAdvantageDesc: '30-40% de ahorro comparado con destinos europeos sin comprometer la calidad',
     
     // Destinations
     destinationsTitle: 'Nuestros Destinos MICE',
@@ -1531,16 +1553,27 @@ export const translations = {
     getProposal: 'عرض مجاني خلال 24 ساعة',
     whatsappContact: 'واتساب',
     
-    // Benefits
-    benefitsTitle: 'لماذا تختار المغرب؟',
-    fastProposal: 'استجابة سريعة',
-    fastProposalDesc: 'عرض مخصص خلال 24 ساعة',
-    trustedPartners: 'شركاء موثوقون',
-    trustedPartnersDesc: 'فنادق وشركات منتقاة بعناية',
-    uniqueExperiences: 'تجارب أصيلة',
-    uniqueExperiencesDesc: 'أسلوب الحياة المغربي الأصيل',
-    bestPrice: 'أسعار تنافسية',
-    bestPriceDesc: 'قيمة استثنائية مقابل المال',
+    // Morocco Destination Advantages
+    moroccoAdvantagesTitle: 'المغرب: وجهة MICE المثالية',
+    moroccoAdvantagesDesc: 'اكتشف لماذا يجمع المغرب بين التراث القديم والبنية التحتية الحديثة لخلق الإطار المثالي لفعاليات الشركات.',
+    
+    historicalAdvantage: 'تراث تاريخي غني',
+    historicalAdvantageDesc: '1200 عام من التاريخ الإمبراطوري مع مواقع التراث العالمي لليونسكو',
+    
+    geographicalAdvantage: 'موقع استراتيجي',
+    geographicalAdvantageDesc: 'بوابة بين أوروبا وأفريقيا، 3 ساعات فقط من المدن الأوروبية الرئيسية',
+    
+    economicAdvantage: 'اقتصاد متنام',
+    economicAdvantageDesc: 'بيئة سياسية مستقرة وسياسات صديقة للأعمال',
+    
+    infrastructureAdvantage: 'بنية تحتية حديثة',
+    infrastructureAdvantageDesc: 'مطارات عالمية المستوى، قطار عالي السرعة، فنادق 5 نجوم ومراكز مؤتمرات',
+    
+    culturalAdvantage: 'ثقافة أصيلة',
+    culturalAdvantageDesc: 'مزج فريد من التأثيرات العربية والأمازيغية والأوروبية لتجارب لا تُنسى',
+    
+    costAdvantage: 'قيمة استثنائية',
+    costAdvantageDesc: 'توفير 30-40% مقارنة بالوجهات الأوروبية دون المساس بالجودة',
     
     // Destinations
     destinationsTitle: 'وجهاتنا للفعاليات التجارية',

@@ -83,24 +83,34 @@ export const HomePage: React.FC = () => {
 
   const benefits = [
     {
-      icon: Clock,
-      title: t('fastProposal'),
-      description: t('fastProposalDesc')
+      icon: Building,
+      title: t('historicalAdvantage'),
+      description: t('historicalAdvantageDesc')
     },
     {
-      icon: CheckCircle,
-      title: t('trustedPartners'),
-      description: t('trustedPartnersDesc')
+      icon: MapPin,
+      title: t('geographicalAdvantage'),
+      description: t('geographicalAdvantageDesc')
     },
     {
-      icon: Star,
-      title: t('uniqueExperiences'),
-      description: t('uniqueExperiencesDesc')
+      icon: TrendingUp,
+      title: t('economicAdvantage'),
+      description: t('economicAdvantageDesc')
     },
     {
-      icon: Users,
-      title: t('bestPrice'),
-      description: t('bestPriceDesc')
+      icon: Plane,
+      title: t('infrastructureAdvantage'),
+      description: t('infrastructureAdvantageDesc')
+    },
+    {
+      icon: Palette,
+      title: t('culturalAdvantage'),
+      description: t('culturalAdvantageDesc')
+    },
+    {
+      icon: DollarSign,
+      title: t('costAdvantage'),
+      description: t('costAdvantageDesc')
     }
   ];
 
@@ -471,11 +481,14 @@ export const HomePage: React.FC = () => {
             className="text-center mb-16 shadow-none border-0 bg-transparent p-0"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
-              {t('benefitsTitle')}
+              {t('moroccoAdvantagesTitle')}
             </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              {t('moroccoAdvantagesDesc')}
+            </p>
           </AnimatedCard>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" ref={benefitsRef}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref={benefitsRef}>
             {benefits.map((benefit, index) => (
               <AnimatedCard 
                 key={index} 
