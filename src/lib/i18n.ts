@@ -80,8 +80,8 @@ export const translations = {
     destinationsPageDesc: "Les plus belles destinations pour vos événements d'entreprise au Maroc",
     servicesPageTitle: 'Services MICE Professionnels',
     servicesPageDesc: "Solutions sur mesure pour vos événements d'entreprise au Maroc",
-    faqPageTitle: 'Vos Questions, Nos Réponses',
-    faqPageDesc: "Tout ce que vous devez savoir sur l'organisation d'événements au Maroc",
+    faqPageTitle: 'Questions Fréquentes - DMC Événements Maroc',
+    faqPageDesc: 'Obtenez des réponses aux questions courantes sur l\'organisation d\'événements d\'entreprise au Maroc avec notre équipe DMC experte.',
     contactPageTitle: 'Contactez nos Experts',
     contactPageDesc: 'Votre devis personnalisé en 24h pour votre événement au Maroc',
     
@@ -306,6 +306,9 @@ export const translations = {
     generalQuestions: 'Questions Générales',
     planningQuestions: 'Planification d\'Événements',
     logisticsQuestions: 'Logistique et Transport',
+    dmcQuestions: 'DMC et Gestion de Destination',
+    comparisonQuestions: 'Maroc vs Autres Destinations',
+    specificServicesQuestions: 'Services et Spécialités',
 
     faq1Q: 'Pourquoi choisir le Maroc pour un séminaire d\'entreprise ?',
     faq1A: 'Le Maroc offre un cadre exceptionnel alliant professionnalisme et dépaysement, avec des infrastructures modernes, une hospitalité légendaire et une richesse culturelle unique.',
@@ -340,8 +343,18 @@ export const translations = {
     faq11Q: 'Comment garantissez-vous la qualité des prestataires ?',
     faq11A: 'Tous nos partenaires sont certifiés et audités régulièrement. Nous travaillons uniquement avec des hôtels 4-5 étoiles et DMC agréés.',
 
-    faq12Q: 'Que se passe-t-il en cas d\'annulation ?',
-    faq12A: 'Conditions d\'annulation flexibles selon les délais. Nous recommandons une assurance annulation pour les gros événements.',
+    // Enhanced DMC Questions - French
+    faq13Q: 'Qu\'est-ce qu\'un DMC Maroc (Destination Management Company) ?',
+    faq13A: 'Un DMC Maroc comme EventMorocco gère tous les arrangements locaux pour vos événements d\'entreprise : recherche de lieux, réservations d\'hébergement, transport, planification d\'activités, expériences culturelles et coordination sur site. Nous sommes votre partenaire local avec une connaissance approfondie de l\'infrastructure MICE du Maroc.',
+    
+    faq14Q: 'Pourquoi choisir un DMC local au Maroc plutôt qu\'une agence événementielle internationale ?',
+    faq14A: 'Les DMC locaux offrent des avantages inégalés : relations directes avec les lieux (meilleurs tarifs), expertise locale pour les activités culturelles, capacités de résolution immédiate de problèmes, compétences linguistiques, connaissance de la conformité gouvernementale et support 24/7 sur site dans tout le Maroc.',
+    
+    faq15Q: 'Quels sont les meilleurs lieux de conférence à Marrakech pour 100-300 personnes ?',
+    faq15A: 'Les meilleurs lieux de conférence à Marrakech incluent : Palmeraie Golf Palace (500 pax), Four Seasons Resort (300 pax), La Mamounia (200 pax), Atlas Asni (150 pax), et Pullman Marrakech (400 pax). Tous offrent équipement AV moderne, salles de réunion et hébergement de luxe.',
+    
+    faq16Q: 'Comment le Maroc se compare-t-il à Dubaï pour les voyages incentive d\'entreprise ?',
+    faq16A: 'Le Maroc offre 40% d\'économies vs Dubaï, des expériences culturelles plus riches, pas d\'exigences de visa pour les Européens, temps de vol plus courts depuis l\'Europe (3h vs 6-7h), expériences authentiques (pas artificielles), et sites du patrimoine mondial UNESCO. Dubaï offre plus de shopping de luxe et d\'attractions modernes.',
 
     stillHaveQuestions: 'Encore des Questions ?',
     stillHaveQuestionsDesc: 'Notre équipe est là pour vous aider',
@@ -502,8 +515,8 @@ export const translations = {
     destinationsPageDesc: 'Discover the best destinations for your corporate events in Morocco',
     servicesPageTitle: 'Professional MICE Services',
     servicesPageDesc: 'Complete solutions for your corporate events in Morocco',
-    faqPageTitle: 'Frequently Asked Questions',
-    faqPageDesc: 'All answers to your questions about organizing events in Morocco',
+    faqPageTitle: 'Frequently Asked Questions - Morocco DMC Events',
+    faqPageDesc: 'Get answers to common questions about organizing corporate events in Morocco with our expert DMC team.',
     contactPageTitle: 'Contact Us',
     contactPageDesc: 'Get your personalized quote in 24h for your event in Morocco',
     
@@ -728,6 +741,9 @@ export const translations = {
     generalQuestions: 'General Questions',
     planningQuestions: 'Event Planning',
     logisticsQuestions: 'Logistics and Transport',
+    dmcQuestions: 'DMC & Destination Management',
+    comparisonQuestions: 'Morocco vs Other Destinations',
+    specificServicesQuestions: 'Services & Specialties',
 
     faq1Q: 'Why choose Morocco for corporate retreats?',
     faq1A: 'Morocco offers an exceptional setting combining professionalism and change of scenery, with modern infrastructure, legendary hospitality and unique cultural richness.',
@@ -762,9 +778,41 @@ export const translations = {
     faq11Q: 'How do you guarantee the quality of service providers?',
     faq11A: 'All our partners are certified and regularly audited. We work only with 4-5 star hotels and approved DMCs.',
 
-    faq12Q: 'What happens in case of cancellation?',
-    faq12A: 'Flexible cancellation conditions according to deadlines. We recommend cancellation insurance for large events.',
-
+    // Enhanced DMC Questions
+    faq13Q: 'What does a Morocco DMC (Destination Management Company) do?',
+    faq13A: 'A Morocco DMC like EventMorocco handles all local arrangements for corporate events: venue sourcing, accommodation booking, transportation, activities planning, cultural experiences, and on-site coordination. We act as your local partner with deep knowledge of Morocco\'s MICE infrastructure.',
+    
+    faq14Q: 'Why choose a local DMC in Morocco instead of international event agencies?',
+    faq14A: 'Local DMCs offer unmatched advantages: direct relationships with venues (better rates), local expertise for cultural activities, immediate problem-solving capabilities, language skills, government compliance knowledge, and 24/7 on-site support throughout Morocco.',
+    
+    faq15Q: 'What are the best conference venues in Marrakech for 100-300 people?',
+    faq15A: 'Top Marrakech conference venues include: Palmeraie Golf Palace (500 pax capacity), Four Seasons Resort (300 pax), La Mamounia (200 pax), Atlas Asni (150 pax), and Pullman Marrakech (400 pax). All offer modern AV equipment, breakout rooms, and luxury accommodation.',
+    
+    faq16Q: 'How does Morocco compare to Dubai for corporate incentive trips?',
+    faq16A: 'Morocco offers 40% cost savings vs Dubai, richer cultural experiences, no visa requirements for Europeans, shorter flight times from Europe (3h vs 6-7h), authentic experiences (not artificial), and UNESCO World Heritage sites. Dubai offers more luxury shopping and modern attractions.',
+    
+    faq17Q: 'What team building activities are unique to Morocco?',
+    faq17A: 'Morocco-specific team building includes: desert camp challenges in Sahara, traditional cooking workshops with Moroccan chefs, Atlas Mountains hiking and survival games, authentic souk treasure hunts, pottery and crafts workshops in Fes, and Berber cultural immersion experiences.',
+    
+    faq18Q: 'Can you organize halal-compliant corporate events in Morocco?',
+    faq18A: 'Absolutely. Morocco naturally caters to halal requirements. All our partner restaurants serve halal food, alcohol is optional, prayer facilities are available, and we ensure culturally respectful programming. This makes Morocco ideal for international companies with diverse teams.',
+    
+    faq19Q: 'What\'s the difference between Marrakech and Casablanca for business events?',
+    faq19A: 'Marrakech: Imperial city, luxury resorts, cultural activities, desert proximity, more leisure-focused. Casablanca: Business capital, modern facilities, larger venues, international airport hub, more corporate-focused. Choose based on event style: incentive (Marrakech) vs conference (Casablanca).',
+    
+    faq20Q: 'How do you handle language barriers during corporate events in Morocco?',
+    faq20A: 'Our team speaks French, English, Spanish, and Arabic fluently. We provide professional interpreters for conferences, all venue staff speak international languages, signage can be multilingual, and we brief all local suppliers on international business etiquette.',
+    
+    faq21Q: 'What are the visa requirements for corporate groups visiting Morocco?',
+    faq21A: 'EU, US, Canada, Australia, and GCC citizens need only a passport (no visa) for stays up to 90 days. Other nationalities may need a visa - we provide full support and documentation. Business visas are processed quickly through our government contacts.',
+    
+    faq22Q: 'How reliable is Morocco\'s infrastructure for international corporate events?',
+    faq22A: 'Morocco has invested heavily in MICE infrastructure: Mohammed V Airport is a major hub, high-speed rail connects main cities, 5-star international hotel chains, fiber optic internet, modern conference centers, and reliable electricity. Infrastructure matches European standards.',
+    
+    faq23Q: 'What\'s included in a typical DMC package for Morocco corporate events?',
+    faq23A: 'Complete DMC packages include: airport transfers, accommodation booking, venue sourcing, catering arrangements, activity planning, transportation, local guides, cultural entertainment, technical support, 24/7 coordination, emergency assistance, and post-event reporting.',
+    
+    faq24Q: 'How far in advance should we book corporate events in Morocco with a DMC?',
     stillHaveQuestions: 'Still Have Questions?',
     stillHaveQuestionsDesc: 'Our team is here to help you',
 
@@ -991,6 +1039,8 @@ export const translations = {
     blog: 'Blog',
     about: 'Acerca de',
     faq: 'Preguntas Frecuentes',
+    faqPageTitle: 'Preguntas Frecuentes - DMC Eventos Marruecos',
+    faqPageDesc: 'Obtén respuestas a preguntas comunes sobre organización de eventos corporativos en Marruecos con nuestro equipo DMC experto.',
     contact: 'Contacto',
     
     // Hero Section
@@ -1063,8 +1113,6 @@ export const translations = {
     destinationsPageDesc: 'Los mejores destinos para tus eventos corporativos en Marruecos',
     servicesPageTitle: 'Servicios MICE Profesionales',
     servicesPageDesc: 'Soluciones a medida para tus eventos corporativos en Marruecos',
-    faqPageTitle: 'Preguntas y Respuestas',
-    faqPageDesc: 'Todo lo que necesitas saber sobre organizar eventos en Marruecos',
     contactPageTitle: 'Contacta con Nuestros Expertos',
     contactPageDesc: 'Tu presupuesto personalizado en 24h para tu evento en Marruecos',
     
@@ -1323,8 +1371,18 @@ export const translations = {
     faq11Q: '¿Cómo garantizan la calidad de los proveedores de servicios?',
     faq11A: 'Todos nuestros socios están certificados y auditados regularmente. Trabajamos solo con hoteles 4-5 estrellas y DMCs aprobados.',
 
-    faq12Q: '¿Qué pasa en caso de cancelación?',
-    faq12A: 'Condiciones de cancelación flexibles según los plazos. Recomendamos seguro de cancelación para eventos grandes.',
+    // Enhanced DMC Questions - Spanish
+    faq13Q: '¿Qué hace un DMC Marruecos (Destination Management Company)?',
+    faq13A: 'Un DMC Marruecos como EventMorocco maneja todos los arreglos locales para eventos corporativos: búsqueda de venues, reservas de alojamiento, transporte, planificación de actividades, experiencias culturales y coordinación en sitio. Actuamos como su socio local con profundo conocimiento de la infraestructura MICE de Marruecos.',
+    
+    faq14Q: '¿Por qué elegir un DMC local en Marruecos en lugar de agencias internacionales?',
+    faq14A: 'Los DMC locales ofrecen ventajas incomparables: relaciones directas con venues (mejores tarifas), expertise local para actividades culturales, capacidades inmediatas de resolución de problemas, habilidades lingüísticas, conocimiento de cumplimiento gubernamental y soporte 24/7 en sitio en todo Marruecos.',
+    
+    faq15Q: '¿Cuáles son los mejores venues de conferencias en Marrakech para 100-300 personas?',
+    faq15A: 'Los mejores venues de conferencias en Marrakech incluyen: Palmeraie Golf Palace (500 pax capacidad), Four Seasons Resort (300 pax), La Mamounia (200 pax), Atlas Asni (150 pax), y Pullman Marrakech (400 pax). Todos ofrecen equipo AV moderno, salas de reuniones y alojamiento de lujo.',
+    
+    faq16Q: '¿Cómo se compara Marruecos con Dubai para viajes incentivo corporativos?',
+    faq16A: 'Marruecos ofrece 40% de ahorro vs Dubai, experiencias culturales más ricas, sin requisitos de visa para europeos, tiempos de vuelo más cortos desde Europa (3h vs 6-7h), experiencias auténticas (no artificiales), y sitios Patrimonio Mundial UNESCO. Dubai ofrece más shopping de lujo y atracciones modernas.',
 
     stillHaveQuestions: '¿Aún Tienes Preguntas?',
     stillHaveQuestionsDesc: 'Nuestro equipo está aquí para ayudarte',
@@ -1533,6 +1591,8 @@ export const translations = {
     services: 'خدماتنا',
     successStories: 'قصص نجاح',
     faq: 'أسئلة شائعة',
+    faqPageTitle: 'الأسئلة الشائعة - DMC فعاليات المغرب',
+    faqPageDesc: 'احصل على إجابات للأسئلة الشائعة حول تنظيم فعاليات الشركات في المغرب مع فريق DMC الخبير.',
     contact: 'اتصل بنا',
     blog: 'المدونة',
     
@@ -1606,8 +1666,6 @@ export const translations = {
     destinationsPageDesc: 'أفضل الوجهات لفعاليات شركتك في المغرب',
     servicesPageTitle: 'خدمات الفعاليات التجارية المتخصصة',
     servicesPageDesc: 'حلول مخصصة لفعاليات شركتك في المغرب',
-    faqPageTitle: 'أسئلة وأجوبة',
-    faqPageDesc: 'كل ما تحتاج معرفته عن تنظيم الفعاليات في المغرب',
     contactPageTitle: 'تواصل مع خبرائنا',
     contactPageDesc: 'عرضك المخصص خلال 24 ساعة لفعاليتك في المغرب',
     

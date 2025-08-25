@@ -38,6 +38,33 @@ const FAQ: React.FC = () => {
         { q: t('faq11Q'), a: t('faq11A') },
         { q: t('faq12Q'), a: t('faq12A') }
       ]
+    },
+    {
+      title: t('dmcQuestions'),
+      questions: [
+        { q: t('faq13Q'), a: t('faq13A') },
+        { q: t('faq14Q'), a: t('faq14A') },
+        { q: t('faq15Q'), a: t('faq15A') },
+        { q: t('faq16Q'), a: t('faq16A') }
+      ]
+    },
+    {
+      title: t('comparisonQuestions'),
+      questions: [
+        { q: t('faq17Q'), a: t('faq17A') },
+        { q: t('faq18Q'), a: t('faq18A') },
+        { q: t('faq19Q'), a: t('faq19A') },
+        { q: t('faq20Q'), a: t('faq20A') }
+      ]
+    },
+    {
+      title: t('specificServicesQuestions'),
+      questions: [
+        { q: t('faq21Q'), a: t('faq21A') },
+        { q: t('faq22Q'), a: t('faq22A') },
+        { q: t('faq23Q'), a: t('faq23A') },
+        { q: t('faq24Q'), a: t('faq24A') }
+      ]
     }
   ];
 
