@@ -14,6 +14,80 @@ export type Database = {
   }
   public: {
     Tables: {
+      calls: {
+        Row: {
+          call_notes: string | null
+          call_reason: string
+          called_at: string | null
+          company: string
+          contact_name: string
+          created_at: string
+          email: string
+          id: string
+          lead_id: string | null
+          message: string | null
+          next_action: string | null
+          partner_id: string | null
+          phone: string | null
+          preferred_date: string
+          preferred_time: string
+          ref_code: string | null
+          status: string
+          timezone: string
+          updated_at: string
+        }
+        Insert: {
+          call_notes?: string | null
+          call_reason: string
+          called_at?: string | null
+          company: string
+          contact_name: string
+          created_at?: string
+          email: string
+          id?: string
+          lead_id?: string | null
+          message?: string | null
+          next_action?: string | null
+          partner_id?: string | null
+          phone?: string | null
+          preferred_date: string
+          preferred_time: string
+          ref_code?: string | null
+          status?: string
+          timezone?: string
+          updated_at?: string
+        }
+        Update: {
+          call_notes?: string | null
+          call_reason?: string
+          called_at?: string | null
+          company?: string
+          contact_name?: string
+          created_at?: string
+          email?: string
+          id?: string
+          lead_id?: string | null
+          message?: string | null
+          next_action?: string | null
+          partner_id?: string | null
+          phone?: string | null
+          preferred_date?: string
+          preferred_time?: string
+          ref_code?: string | null
+          status?: string
+          timezone?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "calls_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       lead_notes: {
         Row: {
           author_id: string | null
@@ -253,6 +327,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      generate_call_ref_code: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
       generate_ref_code: {
         Args: Record<PropertyKey, never>
         Returns: string

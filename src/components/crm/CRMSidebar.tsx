@@ -4,6 +4,7 @@ import {
   LayoutDashboard, 
   Users, 
   UserCheck, 
+  Phone,
   Settings, 
   LogOut,
   Calendar,
@@ -27,6 +28,7 @@ import { toast } from '@/hooks/use-toast';
 const navigationItems = [
   { title: 'Dashboard', url: '/crm/dashboard', icon: LayoutDashboard },
   { title: 'Leads', url: '/crm/leads', icon: Users },
+  { title: 'Calls', url: '/crm/calls', icon: Phone },
   { title: 'Partners', url: '/crm/partners', icon: UserCheck, adminOnly: true },
   { title: 'Analytics', url: '/crm/analytics', icon: BarChart3 },
   { title: 'Profile', url: '/crm/profile', icon: Settings },
