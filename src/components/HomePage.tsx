@@ -41,6 +41,18 @@ export const HomePage: React.FC = () => {
     staggerDelay: 0.2, 
     animationType: 'fade-left' 
   });
+  const dmcExpertiseRef = useStaggerAnimation({ 
+    staggerDelay: 0.1, 
+    animationType: 'fade-up' 
+  });
+  const moroccoHighlightsRef = useStaggerAnimation({ 
+    staggerDelay: 0.1, 
+    animationType: 'fade-left' 
+  });
+  const servicesRef = useStaggerAnimation({ 
+    staggerDelay: 0.2, 
+    animationType: 'slide-up' 
+  });
 
   // Initialize scroll reveal animations on mount - keeping for compatibility
   useEffect(() => {
@@ -363,7 +375,7 @@ export const HomePage: React.FC = () => {
             </p>
           </AnimatedCard>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref={useStaggerAnimation({ staggerDelay: 0.1, animationType: 'fade-up' })}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref={dmcExpertiseRef}>
             {[
               { text: t('dmcExpertise1'), icon: CheckCircle },
               { text: t('dmcExpertise2'), icon: Users },
@@ -407,7 +419,7 @@ export const HomePage: React.FC = () => {
                 {t('moroccoMiceStory')}
               </p>
               
-              <div className="space-y-4" ref={useStaggerAnimation({ staggerDelay: 0.1, animationType: 'fade-left' })}>
+              <div className="space-y-4" ref={moroccoHighlightsRef}>
                 {[
                   { icon: Plane, text: t('moroccoMiceHighlight1') },
                   { icon: Building, text: t('moroccoMiceHighlight2') },
@@ -556,7 +568,7 @@ export const HomePage: React.FC = () => {
             </p>
           </AnimatedCard>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" ref={useStaggerAnimation({ staggerDelay: 0.2, animationType: 'slide-up' })}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" ref={servicesRef}>
             {servicesDeepDive.map((service, index) => (
               <AnimatedCard 
                 key={index} 
