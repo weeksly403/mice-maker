@@ -8,6 +8,7 @@ import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
 import { Waves, MapPin, Users, Calendar, Star, Plane, Palmtree, Phone, Mail, Clock, Wifi, Coffee, Utensils, Shield, Sun } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
+import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
 import heroImage from '@/assets/agadir-beach-teambuilding.jpg';
 import conferenceImage from '@/assets/agadir-conference-room.jpg';
 import dinnerImage from '@/assets/agadir-corporate-dinner.jpg';
@@ -115,11 +116,12 @@ const AgadirDestination: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{language === 'fr' ? 'Team Building & Séminaires Agadir - Plage & Golf MICE Maroc' : language === 'es' ? 'Team Building y Seminarios Agadir - Playa y Golf MICE Marruecos' : language === 'ar' ? 'بناء الفريق والندوات أكادير - الشاطئ والجولف السياحة التجارية المغرب' : 'Team Building & Seminars Agadir - Beach & Golf MICE Morocco'}</title>
-        <meta name="description" content={language === 'fr' ? 'Organisez vos séminaires et team building à Agadir. Station balnéaire premium avec plages, golf, resorts de luxe et activités nautiques pour événements d\'entreprise.' : language === 'es' ? 'Organice sus seminarios y team building en Agadir. Estación balnearia premium con playas, golf, resorts de lujo y actividades náuticas para eventos corporativos.' : language === 'ar' ? 'نظم ندواتك وبناء الفريق في أكادير. منتجع ساحلي مميز مع الشواطئ والجولف والمنتجعات الفاخرة والأنشطة المائية للفعاليات الشركاتية.' : 'Organize your seminars and team building in Agadir. Premium beach resort with beaches, golf, luxury resorts and water activities for corporate events.'} />
-        <meta name="keywords" content={language === 'fr' ? 'team building Agadir, séminaire Agadir, événement plage Maroc, golf Agadir, resort Agadir, MICE Agadir' : language === 'es' ? 'team building Agadir, seminario Agadir, evento playa Marruecos, golf Agadir, resort Agadir, MICE Agadir' : language === 'ar' ? 'بناء الفريق أكادير، ندوة أكادير، حدث الشاطئ المغرب، جولف أكادير، منتجع أكادير' : 'team building Agadir, seminar Agadir, beach event Morocco, golf Agadir, resort Agadir, MICE Agadir'} />
-      </Helmet>
+      <SEOEnhancer
+        title={t('agadirPageTitle')}
+        description={t('agadirPageDesc')}
+        keywords={t('agadirPageKeywords')}
+        type="website"
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
@@ -133,14 +135,14 @@ const AgadirDestination: React.FC = () => {
           
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
             <Badge variant="secondary" className="mb-4 text-sm font-medium">
-              {language === 'fr' ? 'Station Balnéaire Premium du Maroc' : language === 'es' ? 'Estación Balnearia Premium de Marruecos' : language === 'ar' ? 'المنتجع الساحلي المميز في المغرب' : 'Premium Beach Resort of Morocco'}
+              {t('agadirHeroBadge')}
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold text-primary-foreground mb-6 leading-tight">
-              {language === 'fr' ? 'Team Building & Séminaires à Agadir' : language === 'es' ? 'Team Building y Seminarios en Agadir' : language === 'ar' ? 'بناء الفريق والندوات في أكادير' : 'Team Building & Seminars in Agadir'}
+              {t('agadirHeroTitle')}
             </h1>
             
             <p className="text-xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              {language === 'fr' ? 'Destination balnéaire idéale pour vos événements d\'entreprise avec plages de sable fin, golf de classe mondiale et resorts de luxe face à l\'océan.' : language === 'es' ? 'Destino costero ideal para sus eventos corporativos con playas de arena fina, golf de clase mundial y resorts de lujo frente al océano.' : language === 'ar' ? 'وجهة ساحلية مثالية لفعالياتك الشركاتية مع شواطئ رملية ناعمة وجولف عالمي المستوى ومنتجعات فاخرة أمام المحيط.' : 'Ideal coastal destination for your corporate events with fine sandy beaches, world-class golf and luxury oceanfront resorts.'}
+              {t('agadirHeroSubtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -166,19 +168,39 @@ const AgadirDestination: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">25+</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Resorts & Hôtels' : language === 'es' ? 'Resorts y Hoteles' : language === 'ar' ? 'منتجعات وفنادق' : 'Resorts & Hotels'}</div>
+                <div className="text-sm text-muted-foreground">
+                  {language === 'fr' ? 'Resorts & Hôtels' : 
+                   language === 'es' ? 'Resorts y Hoteles' : 
+                   language === 'ar' ? 'منتجعات وفنادق' : 
+                   'Resorts & Hotels'}
+                </div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">300+</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Jours de Soleil/An' : language === 'es' ? 'Días de Sol/Año' : language === 'ar' ? 'يوم مشمس/سنة' : 'Sunny Days/Year'}</div>
+                <div className="text-sm text-muted-foreground">
+                  {language === 'fr' ? 'Jours de Soleil/An' : 
+                   language === 'es' ? 'Días de Sol/Año' : 
+                   language === 'ar' ? 'يوم مشمس/سنة' : 
+                   'Sunny Days/Year'}
+                </div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">10km</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Plages de Sable' : language === 'es' ? 'Playas de Arena' : language === 'ar' ? 'شواطئ رملية' : 'Sandy Beaches'}</div>
+                <div className="text-sm text-muted-foreground">
+                  {language === 'fr' ? 'Plages de Sable' : 
+                   language === 'es' ? 'Playas de Arena' : 
+                   language === 'ar' ? 'شواطئ رملية' : 
+                   'Sandy Beaches'}
+                </div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">5</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Parcours de Golf' : language === 'es' ? 'Campos de Golf' : language === 'ar' ? 'ملاعب جولف' : 'Golf Courses'}</div>
+                <div className="text-sm text-muted-foreground">
+                  {language === 'fr' ? 'Parcours de Golf' : 
+                   language === 'es' ? 'Campos de Golf' : 
+                   language === 'ar' ? 'ملاعب جولف' : 
+                   'Golf Courses'}
+                </div>
               </div>
             </div>
           </div>
@@ -190,17 +212,20 @@ const AgadirDestination: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
-                  {language === 'fr' ? 'Pourquoi Choisir Agadir ?' : language === 'es' ? '¿Por Qué Elegir Agadir?' : language === 'ar' ? 'لماذا اختيار أكادير؟' : 'Why Choose Agadir?'}
+                  {t('agadirWhyChooseTitle')}
                 </h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <Sun className="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">
-                        {language === 'fr' ? 'Climat Parfait Toute l\'Année' : language === 'es' ? 'Clima Perfecto Todo el Año' : language === 'ar' ? 'مناخ مثالي طوال السنة' : 'Perfect Climate Year-Round'}
+                        {t('agadirAdvantage1')}
                       </h3>
                       <p className="text-muted-foreground">
-                        {language === 'fr' ? '300 jours de soleil par an avec températures douces, idéal pour événements outdoor.' : language === 'es' ? '300 días de sol al año con temperaturas suaves, ideal para eventos al aire libre.' : language === 'ar' ? '300 يوم مشمس في السنة مع درجات حرارة معتدلة، مثالي للفعاليات الخارجية.' : '300 sunny days per year with mild temperatures, ideal for outdoor events.'}
+                        {language === 'fr' ? '300 jours de soleil par an avec températures douces, idéal pour événements outdoor.' : 
+                         language === 'es' ? '300 días de sol al año con temperaturas suaves, ideal para eventos al aire libre.' : 
+                         language === 'ar' ? '300 يوم مشمس في السنة مع درجات حرارة معتدلة، مثالي للفعاليات الخارجية.' : 
+                         '300 sunny days per year with mild temperatures, ideal for outdoor events.'}
                       </p>
                     </div>
                   </div>
@@ -209,10 +234,13 @@ const AgadirDestination: React.FC = () => {
                     <Waves className="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">
-                        {language === 'fr' ? 'Plages & Activités Nautiques' : language === 'es' ? 'Playas y Actividades Náuticas' : language === 'ar' ? 'الشواطئ والأنشطة المائية' : 'Beaches & Water Activities'}
+                        {t('agadirAdvantage2')}
                       </h3>
                       <p className="text-muted-foreground">
-                        {language === 'fr' ? '10km de plages de sable fin avec sports nautiques, perfect pour team building original.' : language === 'es' ? '10km de playas de arena fina con deportes náuticos, perfecto para team building original.' : language === 'ar' ? '10 كم من الشواطئ الرملية الناعمة مع الرياضات المائية، مثالي لبناء الفريق الأصلي.' : '10km of fine sandy beaches with water sports, perfect for original team building.'}
+                        {language === 'fr' ? '10km de plages de sable fin avec sports nautiques, perfect pour team building original.' : 
+                         language === 'es' ? '10km de playas de arena fina con deportes náuticos, perfecto para team building original.' : 
+                         language === 'ar' ? '10 كم من الشواطئ الرملية الناعمة مع الرياضات المائية، مثالي لبناء الفريق الأصلي.' : 
+                         '10km of fine sandy beaches with water sports, perfect for original team building.'}
                       </p>
                     </div>
                   </div>
@@ -221,10 +249,13 @@ const AgadirDestination: React.FC = () => {
                     <Palmtree className="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">
-                        {language === 'fr' ? 'Resorts de Luxe All-Inclusive' : language === 'es' ? 'Resorts de Lujo Todo Incluido' : language === 'ar' ? 'منتجعات فاخرة شاملة كليًا' : 'Luxury All-Inclusive Resorts'}
+                        {t('agadirAdvantage3')}
                       </h3>
                       <p className="text-muted-foreground">
-                        {language === 'fr' ? 'Complexes hôteliers 5 étoiles avec tout inclus, spas, golf et centres de congrès.' : language === 'es' ? 'Complejos hoteleros 5 estrellas con todo incluido, spas, golf y centros de congresos.' : language === 'ar' ? 'مجمعات فندقية 5 نجوم مع شامل كليًا، منتجعات صحية، جولف ومراكز مؤتمرات.' : '5-star hotel complexes with all-inclusive, spas, golf and conference centers.'}
+                        {language === 'fr' ? 'Complexes hôteliers 5 étoiles avec tout inclus, spas, golf et centres de congrès.' : 
+                         language === 'es' ? 'Complejos hoteleros 5 estrellas con todo incluido, spas, golf y centros de congresos.' : 
+                         language === 'ar' ? 'مجمعات فندقية 5 نجوم مع شامل كليًا، منتجعات صحية، جولف ومراكز مؤتمرات.' : 
+                         '5-star hotel complexes with all-inclusive, spas, golf and conference centers.'}
                       </p>
                     </div>
                   </div>
@@ -234,7 +265,10 @@ const AgadirDestination: React.FC = () => {
               <div className="relative">
                 <img 
                   src={conferenceImage} 
-                  alt="Agadir beach conference room"
+                  alt={language === 'fr' ? 'Salle de conférence à Agadir avec vue plage' :
+                       language === 'es' ? 'Sala de conferencias en Agadir con vista a la playa' :
+                       language === 'ar' ? 'قاعة مؤتمرات في أكادير مع إطلالة على الشاطئ' :
+                       'Agadir beach conference room'}
                   className="w-full h-96 object-cover rounded-lg shadow-elegant"
                 />
               </div>
@@ -247,7 +281,7 @@ const AgadirDestination: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
-                {language === 'fr' ? 'Resorts & Hôtels Premium' : language === 'es' ? 'Resorts y Hoteles Premium' : language === 'ar' ? 'المنتجعات والفنادق المميزة' : 'Premium Resorts & Hotels'}
+                {t('agadirVenuesTitle')}
               </h2>
             </div>
             
@@ -269,11 +303,17 @@ const AgadirDestination: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="flex items-center text-sm text-muted-foreground">
                         <Users className="w-4 h-4 mr-2" />
-                        {language === 'fr' ? 'Jusqu\'à' : language === 'es' ? 'Hasta' : language === 'ar' ? 'حتى' : 'Up to'} {venue.capacity}
+                        {language === 'fr' ? 'Jusqu\'à' : 
+                         language === 'es' ? 'Hasta' : 
+                         language === 'ar' ? 'حتى' : 
+                         'Up to'} {venue.capacity}
                       </div>
                       <div className="flex items-center text-sm text-muted-foreground">
                         <MapPin className="w-4 h-4 mr-2" />
-                        {venue.rooms} {language === 'fr' ? 'espaces' : language === 'es' ? 'espacios' : language === 'ar' ? 'مساحات' : 'spaces'}
+                        {venue.rooms} {language === 'fr' ? 'espaces' : 
+                                       language === 'es' ? 'espacios' : 
+                                       language === 'ar' ? 'مساحات' : 
+                                       'spaces'}
                       </div>
                     </div>
                     
@@ -296,7 +336,7 @@ const AgadirDestination: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
-                {language === 'fr' ? 'Activités Team Building' : language === 'es' ? 'Actividades Team Building' : language === 'ar' ? 'أنشطة بناء الفريق' : 'Team Building Activities'}
+                {t('agadirActivitiesTitle')}
               </h2>
             </div>
             

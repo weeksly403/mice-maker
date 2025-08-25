@@ -10,6 +10,7 @@ import { Building, MapPin, Users, Calendar, Star, Plane, Car, Phone, Mail, Clock
 import { openWhatsApp } from '@/utils/whatsapp';
 import { EnhancedStructuredData } from '@/components/SEO/EnhancedStructuredData';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
+import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
 
@@ -104,23 +105,12 @@ const CasablancaDestination: React.FC = () => {
 
   return (
     <>
-      {/* Enhanced SEO */}
-      <EnhancedStructuredData type="localbusiness" data={{
-        name: "EventMorocco DMC Casablanca",
-        description: "DMC Casablanca - Destination Management Company for corporate conferences and MICE events",
-        city: "Casablanca"
-      }} />
-      <FAQSchema faqs={[
-        {
-          question: language === 'fr' ? "Pourquoi choisir Casablanca pour une conférence d'entreprise ?" : "Why choose Casablanca for corporate conferences?",
-          answer: language === 'fr' ? "Casablanca est le centre économique du Maroc avec des infrastructures modernes, un aéroport international et des hôtels d'affaires de qualité." : "Casablanca is Morocco's economic center with modern infrastructure, international airport and quality business hotels."
-        }
-      ]} />
-      <Helmet>
-        <title>{language === 'fr' ? 'Conférences & Séminaires à Casablanca - MICE Maroc' : language === 'es' ? 'Conferencias y Seminarios en Casablanca - MICE Marruecos' : language === 'ar' ? 'المؤتمرات والندوات في الدار البيضاء - السياحة التجارية المغرب' : 'Conferences & Seminars in Casablanca - Morocco MICE'}</title>
-        <meta name="description" content={language === 'fr' ? 'Organisez vos conférences d\'entreprise à Casablanca. Capital économique du Maroc avec infrastructures modernes, hôtels 5 étoiles et centres de congrès professionnels.' : language === 'es' ? 'Organice sus conferencias corporativas en Casablanca. Capital económica de Marruecos con infraestructuras modernas, hoteles 5 estrellas y centros de congresos profesionales.' : language === 'ar' ? 'نظم مؤتمراتك الشركاتية في الدار البيضاء. العاصمة الاقتصادية للمغرب مع البنية التحتية الحديثة وفنادق 5 نجوم ومراكز المؤتمرات المهنية.' : 'Organize your corporate conferences in Casablanca. Economic capital of Morocco with modern infrastructure, 5-star hotels and professional conference centers.'} />
-        <meta name="keywords" content={language === 'fr' ? 'conférence Casablanca, séminaire Casablanca, événement entreprise Casablanca, MICE Casablanca, centre congrès Casablanca' : language === 'es' ? 'conferencia Casablanca, seminario Casablanca, evento empresa Casablanca, MICE Casablanca, centro congresos Casablanca' : language === 'ar' ? 'مؤتمر الدار البيضاء، ندوة الدار البيضاء، حدث شركة الدار البيضاء، السياحة التجارية الدار البيضاء' : 'conference Casablanca, seminar Casablanca, corporate event Casablanca, MICE Casablanca, congress center Casablanca'} />
-      </Helmet>
+      <SEOEnhancer
+        title={t('casablancaPageTitle')}
+        description={t('casablancaPageDesc')}
+        keywords={t('casablancaPageKeywords')}
+        type="website"
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
@@ -134,14 +124,14 @@ const CasablancaDestination: React.FC = () => {
           
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
             <Badge variant="secondary" className="mb-4 text-sm font-medium">
-              {language === 'fr' ? 'Capital Économique du Maroc' : language === 'es' ? 'Capital Económica de Marruecos' : language === 'ar' ? 'العاصمة الاقتصادية للمغرب' : 'Economic Capital of Morocco'}
+              {t('casablancaHeroBadge')}
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold text-primary-foreground mb-6 leading-tight">
-              {language === 'fr' ? 'Conférences & Séminaires à Casablanca' : language === 'es' ? 'Conferencias y Seminarios en Casablanca' : language === 'ar' ? 'المؤتمرات والندوات في الدار البيضاء' : 'Conferences & Seminars in Casablanca'}
+              {t('casablancaHeroTitle')}
             </h1>
             
             <p className="text-xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              {language === 'fr' ? 'Centre d\'affaires moderne du Maroc avec infrastructures de pointe, hôtels internationaux et connectivité mondiale pour vos événements professionnels.' : language === 'es' ? 'Centro de negocios moderno de Marruecos con infraestructuras de vanguardia, hoteles internacionales y conectividad global para sus eventos profesionales.' : language === 'ar' ? 'مركز الأعمال الحديث في المغرب مع البنية التحتية المتطورة والفنادق الدولية والاتصال العالمي لفعالياتك المهنية.' : 'Modern business hub of Morocco with cutting-edge infrastructure, international hotels and global connectivity for your professional events.'}
+              {t('casablancaHeroSubtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -167,19 +157,39 @@ const CasablancaDestination: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">30+</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Lieux de Conférence' : language === 'es' ? 'Lugares de Conferencia' : language === 'ar' ? 'أماكن المؤتمرات' : 'Conference Venues'}</div>
+                <div className="text-sm text-muted-foreground">
+                  {language === 'fr' ? 'Lieux de Conférence' : 
+                   language === 'es' ? 'Lugares de Conferencia' : 
+                   language === 'ar' ? 'أماكن المؤتمرات' : 
+                   'Conference Venues'}
+                </div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">3000</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Capacité Max' : language === 'es' ? 'Capacidad Máx' : language === 'ar' ? 'السعة القصوى' : 'Max Capacity'}</div>
+                <div className="text-sm text-muted-foreground">
+                  {language === 'fr' ? 'Capacité Max' : 
+                   language === 'es' ? 'Capacidad Máx' : 
+                   language === 'ar' ? 'السعة القصوى' : 
+                   'Max Capacity'}
+                </div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">1h</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Aéroport Mohammed V' : language === 'es' ? 'Aeropuerto Mohammed V' : language === 'ar' ? 'مطار محمد الخامس' : 'Mohammed V Airport'}</div>
+                <div className="text-sm text-muted-foreground">
+                  {language === 'fr' ? 'Aéroport Mohammed V' : 
+                   language === 'es' ? 'Aeropuerto Mohammed V' : 
+                   language === 'ar' ? 'مطار محمد الخامس' : 
+                   'Mohammed V Airport'}
+                </div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">5★</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Hôtels de Luxe' : language === 'es' ? 'Hoteles de Lujo' : language === 'ar' ? 'فنادق فاخرة' : 'Luxury Hotels'}</div>
+                <div className="text-sm text-muted-foreground">
+                  {language === 'fr' ? 'Hôtels de Luxe' : 
+                   language === 'es' ? 'Hoteles de Lujo' : 
+                   language === 'ar' ? 'فنادق فاخرة' : 
+                   'Luxury Hotels'}
+                </div>
               </div>
             </div>
           </div>
@@ -191,17 +201,20 @@ const CasablancaDestination: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
-                  {language === 'fr' ? 'Pourquoi Choisir Casablanca ?' : language === 'es' ? '¿Por Qué Elegir Casablanca?' : language === 'ar' ? 'لماذا اختيار الدار البيضاء؟' : 'Why Choose Casablanca?'}
+                  {t('casablancaWhyChooseTitle')}
                 </h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <Building className="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">
-                        {language === 'fr' ? 'Centre Économique du Maroc' : language === 'es' ? 'Centro Económico de Marruecos' : language === 'ar' ? 'المركز الاقتصادي للمغرب' : 'Economic Center of Morocco'}
+                        {t('casablancaAdvantage1')}
                       </h3>
                       <p className="text-muted-foreground">
-                        {language === 'fr' ? 'Plus grande ville du Maroc avec 70% du secteur industriel et financier du pays.' : language === 'es' ? 'Ciudad más grande de Marruecos con el 70% del sector industrial y financiero del país.' : language === 'ar' ? 'أكبر مدينة في المغرب مع 70% من القطاع الصناعي والمالي في البلاد.' : 'Largest city in Morocco with 70% of the country\'s industrial and financial sector.'}
+                        {language === 'fr' ? 'Plus grande ville du Maroc avec 70% du secteur industriel et financier du pays.' : 
+                         language === 'es' ? 'Ciudad más grande de Marruecos con el 70% del sector industrial y financiero del país.' : 
+                         language === 'ar' ? 'أكبر مدينة في المغرب مع 70% من القطاع الصناعي والمالي في البلاد.' : 
+                         'Largest city in Morocco with 70% of the country\'s industrial and financial sector.'}
                       </p>
                     </div>
                   </div>
@@ -210,10 +223,13 @@ const CasablancaDestination: React.FC = () => {
                     <Plane className="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">
-                        {language === 'fr' ? 'Connectivité Internationale' : language === 'es' ? 'Conectividad Internacional' : language === 'ar' ? 'الاتصال الدولي' : 'International Connectivity'}
+                        {t('casablancaAdvantage2')}
                       </h3>
                       <p className="text-muted-foreground">
-                        {language === 'fr' ? 'Aéroport Mohammed V avec vols directs vers l\'Europe, l\'Afrique et le Moyen-Orient.' : language === 'es' ? 'Aeropuerto Mohammed V con vuelos directos a Europa, África y Medio Oriente.' : language === 'ar' ? 'مطار محمد الخامس مع رحلات مباشرة إلى أوروبا وأفريقيا والشرق الأوسط.' : 'Mohammed V Airport with direct flights to Europe, Africa and Middle East.'}
+                        {language === 'fr' ? 'Aéroport Mohammed V avec vols directs vers l\'Europe, l\'Afrique et le Moyen-Orient.' : 
+                         language === 'es' ? 'Aeropuerto Mohammed V con vuelos directos a Europa, África y Medio Oriente.' : 
+                         language === 'ar' ? 'مطار محمد الخامس مع رحلات مباشرة إلى أوروبا وأفريقيا والشرق الأوسط.' : 
+                         'Mohammed V Airport with direct flights to Europe, Africa and Middle East.'}
                       </p>
                     </div>
                   </div>
@@ -222,10 +238,13 @@ const CasablancaDestination: React.FC = () => {
                     <Wifi className="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">
-                        {language === 'fr' ? 'Infrastructure Moderne' : language === 'es' ? 'Infraestructura Moderna' : language === 'ar' ? 'البنية التحتية الحديثة' : 'Modern Infrastructure'}
+                        {t('casablancaAdvantage3')}
                       </h3>
                       <p className="text-muted-foreground">
-                        {language === 'fr' ? 'Centres de congrès équipés, technologies de pointe et services business de qualité.' : language === 'es' ? 'Centros de congresos equipados, tecnologías de vanguardia y servicios de negocio de calidad.' : language === 'ar' ? 'مراكز مؤتمرات مجهزة وتقنيات متطورة وخدمات أعمال عالية الجودة.' : 'Equipped conference centers, cutting-edge technologies and quality business services.'}
+                        {language === 'fr' ? 'Centres de congrès équipés, technologies de pointe et services business de qualité.' : 
+                         language === 'es' ? 'Centros de congresos equipados, tecnologías de vanguardia y servicios de negocio de calidad.' : 
+                         language === 'ar' ? 'مراكز مؤتمرات مجهزة وتقنيات متطورة وخدمات أعمال عالية الجودة.' : 
+                         'Equipped conference centers, cutting-edge technologies and quality business services.'}
                       </p>
                     </div>
                   </div>
@@ -235,7 +254,10 @@ const CasablancaDestination: React.FC = () => {
               <div className="relative">
                 <img 
                   src={conferenceImage} 
-                  alt="Casablanca business district"
+                  alt={language === 'fr' ? 'District d\'affaires de Casablanca' :
+                       language === 'es' ? 'Distrito de negocios de Casablanca' :
+                       language === 'ar' ? 'منطقة الأعمال في الدار البيضاء' :
+                       'Casablanca business district'}
                   className="w-full h-96 object-cover rounded-lg shadow-elegant"
                 />
               </div>
@@ -248,7 +270,7 @@ const CasablancaDestination: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
-                {language === 'fr' ? 'Lieux de Conférence Premium' : language === 'es' ? 'Lugares de Conferencia Premium' : language === 'ar' ? 'أماكن المؤتمرات المميزة' : 'Premium Conference Venues'}
+                {t('casablancaVenuesTitle')}
               </h2>
             </div>
             
@@ -270,11 +292,17 @@ const CasablancaDestination: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="flex items-center text-sm text-muted-foreground">
                         <Users className="w-4 h-4 mr-2" />
-                        {language === 'fr' ? 'Jusqu\'à' : language === 'es' ? 'Hasta' : language === 'ar' ? 'حتى' : 'Up to'} {venue.capacity}
+                        {language === 'fr' ? 'Jusqu\'à' : 
+                         language === 'es' ? 'Hasta' : 
+                         language === 'ar' ? 'حتى' : 
+                         'Up to'} {venue.capacity}
                       </div>
                       <div className="flex items-center text-sm text-muted-foreground">
                         <Building className="w-4 h-4 mr-2" />
-                        {venue.rooms} {language === 'fr' ? 'salles' : language === 'es' ? 'salas' : language === 'ar' ? 'قاعات' : 'rooms'}
+                        {venue.rooms} {language === 'fr' ? 'salles' : 
+                                       language === 'es' ? 'salas' : 
+                                       language === 'ar' ? 'قاعات' : 
+                                       'rooms'}
                       </div>
                     </div>
                     
@@ -297,7 +325,7 @@ const CasablancaDestination: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
-                {language === 'fr' ? 'Activités & Expériences' : language === 'es' ? 'Actividades y Experiencias' : language === 'ar' ? 'الأنشطة والتجارب' : 'Activities & Experiences'}
+                {t('casablancaActivitiesTitle')}
               </h2>
             </div>
             
