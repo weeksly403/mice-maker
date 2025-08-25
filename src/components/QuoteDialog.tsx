@@ -92,11 +92,11 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({ children, title }) => 
       };
 
       const groupSizeMap: Record<string, string> = {
-        '10-25': '10-25',
-        '25-50': '25-50', 
-        '50-100': '50-100',
-        '100-200': '100-200',
-        '200+': '200+'
+        '10-25': '<30',
+        '25-50': '30-80', 
+        '50-100': '80-150',
+        '100-200': '150-300',
+        '200+': '300+'
       };
 
       const cityMap: Record<string, string> = {
