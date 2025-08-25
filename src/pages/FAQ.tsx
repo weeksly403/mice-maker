@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { MessageCircle, Phone, Mail } from 'lucide-react';
 import { QuoteDialog } from '@/components/QuoteDialog';
+import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
+import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { openWhatsApp } from '@/utils/whatsapp';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 
@@ -68,8 +70,33 @@ const FAQ: React.FC = () => {
     }
   ];
 
+  // Create FAQ data for schema
+  const allFAQs = faqCategories.flatMap(category => 
+    category.questions.map(faq => ({
+      question: faq.q,
+      answer: faq.a
+    }))
+  );
+
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOEnhancer
+        title={t('faqMetaTitle')}
+        description={t('faqMetaDescription')}
+        keywords="FAQ Morocco DMC, corporate events Morocco questions, MICE services FAQ, event planning Morocco answers, conference venues FAQ, DMC Morocco help"
+        type="website"
+        structuredDataType="faq"
+        structuredData={{
+          faqs: allFAQs
+        }}
+      />
+      
+      <FAQSchema 
+        faqs={allFAQs}
+        title={t('faqMetaTitle')}
+      />
+      
+      <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div 
@@ -215,6 +242,7 @@ const FAQ: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

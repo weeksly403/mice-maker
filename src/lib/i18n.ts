@@ -462,6 +462,10 @@ export const translations = {
     getProposal: 'Free Quote 24h',
     whatsappContact: 'WhatsApp',
     
+    // FAQ Page Meta
+    faqMetaTitle: 'FAQ Morocco DMC | Corporate Events & MICE Services Questions',
+    faqMetaDescription: 'Get answers to frequently asked questions about Morocco DMC services, corporate event planning, conference venues, incentive travel & team building activities.',
+    
     // Morocco Destination Advantages
     moroccoAdvantagesTitle: 'Morocco: The Perfect MICE Destination',
     moroccoAdvantagesDesc: 'Discover why Morocco combines ancient heritage with modern infrastructure to create the ideal backdrop for your corporate events.',
@@ -1428,6 +1432,10 @@ export const translations = {
     preferredDates: 'Fechas Preferidas',
     datesPlaceholderForm: 'Ej: 15-18 junio 2024',
     estimatedBudgetForm: 'Presupuesto Estimado',
+    // FAQ Page Meta
+    faqMetaTitle: 'FAQ DMC Marruecos | Preguntas Eventos Corporativos & Servicios MICE',
+    faqMetaDescription: 'Obtén respuestas a preguntas frecuentes sobre servicios DMC Marruecos, planificación de eventos corporativos, salas de conferencias, viajes incentivo y actividades de team building.',
+    
     selectBudgetForm: 'Rango presupuestario',
     underBudget: 'Menos de',
     overBudget: 'Más de',
@@ -1912,6 +1920,10 @@ export const translations = {
     faq7Q: 'كيف تتعاملون مع القيود الغذائية والدينية؟',
     faq7A: 'نتكيف مع جميع الأنظمة الغذائية: حلال، كوشر، نباتي، حساسيات. المغرب يحترم طبيعياً القيود الحلال.',
 
+    // FAQ Page Meta
+    faqMetaTitle: 'أسئلة DMC المغرب | أسئلة الفعاليات المؤسسية وخدمات MICE',
+    faqMetaDescription: 'احصل على إجابات للأسئلة الشائعة حول خدمات DMC المغرب، تخطيط الفعاليات المؤسسية، قاعات المؤتمرات، السفر التحفيزي وأنشطة بناء الفريق.',
+    
     faq8Q: 'ما هي أسعاركم وشروط الدفع؟',
     faq8A: 'عرض مجاني خلال 24 ساعة. دفعة مقدمة 30% عند الحجز، الرصيد 30 يوماً قبل الفعالية. نقبل التحويلات والبطاقات التجارية.',
 

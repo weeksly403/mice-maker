@@ -133,11 +133,12 @@
       <changefreq>quarterly</changefreq>
       <priority>0.5</priority>
    </url>
-   <url>
-      <loc>https://eventmorocco.com/faq</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
+    <!-- FAQ Pages - Enhanced Priority for Rich Snippets -->
+    <url>
+       <loc>https://eventmorocco.com/faq</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+    </url>
    <url>
       <loc>https://eventmorocco.com/contact</loc>
       <changefreq>monthly</changefreq>
@@ -189,11 +190,16 @@
       <changefreq>quarterly</changefreq>
       <priority>0.4</priority>
    </url>
-   <url>
-      <loc>https://eventmorocco.com/fr/contact</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-   </url>
+    <url>
+       <loc>https://eventmorocco.com/fr/faq</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.7</priority>
+    </url>
+    <url>
+       <loc>https://eventmorocco.com/fr/contact</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+    </url>
    
    <!-- Spanish Pages -->
    <url>
@@ -240,11 +246,16 @@
       <changefreq>quarterly</changefreq>
       <priority>0.4</priority>
    </url>
-   <url>
-      <loc>https://eventmorocco.com/es/contacto</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-   </url>
+    <url>
+       <loc>https://eventmorocco.com/es/faq</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.7</priority>
+    </url>
+    <url>
+       <loc>https://eventmorocco.com/es/contacto</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+    </url>
    
    <!-- Arabic Pages -->
    <url>
@@ -281,10 +292,15 @@
       <changefreq>quarterly</changefreq>
       <priority>0.4</priority>
    </url>
-   <url>
-      <loc>https://eventmorocco.com/ar/اتصل-بنا</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-   </url>
+    <url>
+       <loc>https://eventmorocco.com/ar/الأسئلة-الشائعة</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.7</priority>
+    </url>
+    <url>
+       <loc>https://eventmorocco.com/ar/اتصل-بنا</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+    </url>
    
 </urlset>
