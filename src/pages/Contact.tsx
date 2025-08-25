@@ -60,17 +60,18 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Map form data to database schema
+      // Map form data to database schema - only using valid enum values
       const eventTypeMap: Record<string, string> = {
         'conference': 'Conference',
-        'incentive': 'Incentive', 
+        'seminar': 'Seminar',
+        'incentive': 'Incentive',
         'teambuilding': 'TeamBuilding',
         'retreat': 'Retreat',
-        'gala': 'GalaDinner',
-        'convention': 'Convention',
-        'product-launch': 'ProductLaunch',
-        'training': 'Training',
-        'networking': 'Networking',
+        'gala': 'Gala',
+        'convention': 'Conference', // Map to Conference as closest match
+        'product-launch': 'Other',
+        'training': 'Seminar', // Map to Seminar as closest match
+        'networking': 'Other',
         'other': 'Other'
       };
 

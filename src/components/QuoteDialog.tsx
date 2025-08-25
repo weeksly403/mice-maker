@@ -69,24 +69,25 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({ children, title }) => 
       analytics.trackQuoteRequest();
       analytics.trackFormSubmit('quote');
       
-      // Map form data to database schema
+      // Map form data to database schema - only using valid enum values
       const eventTypeMap: Record<string, string> = {
         'conference': 'Conference',
+        'seminar': 'Seminar',
         'incentive': 'Incentive',
         'teambuilding': 'TeamBuilding',
         'retreat': 'Retreat',
-        'gala': 'GalaDinner',
-        'convention': 'Convention',
-        'product-launch': 'ProductLaunch',
-        'board-meeting': 'BoardMeeting',
-        'training': 'Training',
-        'wedding': 'Wedding',
-        'family-trip': 'FamilyTrip',
-        'networking': 'Networking',
-        'exhibition': 'Exhibition',
-        'medical': 'Medical',
-        'awards': 'Awards',
-        'press-trip': 'PressTrip',
+        'gala': 'Gala',
+        'convention': 'Conference', // Map to Conference as closest match
+        'product-launch': 'Other',
+        'board-meeting': 'Conference', // Map to Conference as closest match
+        'training': 'Seminar', // Map to Seminar as closest match
+        'wedding': 'Other', // Map to Other since Wedding is not in enum
+        'family-trip': 'Incentive', // Map to Incentive as closest match
+        'networking': 'Other',
+        'exhibition': 'Other',
+        'medical': 'Conference', // Map to Conference as closest match
+        'awards': 'Gala', // Map to Gala as closest match
+        'press-trip': 'Other',
         'other': 'Other'
       };
 
