@@ -21,10 +21,20 @@ export const translations = {
     faq: 'Questions fréquentes',
     contact: 'Contact',
     
-    // Hero Section
-    heroTitle: 'Événements d\'Entreprise au Maroc',
-    heroSubtitle: 'Séminaires • Incentives • Conférences • Team-Building',
-    heroDescription: 'Confiez-nous l\'organisation de vos événements d\'entreprise au Maroc. Nos experts MICE vous accompagnent de A à Z, des séminaires à Marrakech aux incentives dans le Sahara.',
+    // Hero Section  
+    heroTitle: 'DMC Maroc - Événements d\'Entreprise & Services MICE',
+    heroSubtitle: 'Votre Destination Management Company au Maroc • MICE • Incentives • Conférences',
+    heroDescription: 'EventMorocco, votre DMC expert pour l\'organisation d\'événements d\'entreprise au Maroc. MICE, incentives, conférences et team building dans tout le royaume. De Marrakech aux déserts du Sahara.',
+    
+    // New DMC Section
+    dmcSectionTitle: 'Pourquoi Choisir EventMorocco comme votre DMC au Maroc ?',
+    dmcSectionDesc: 'En tant que Destination Management Company de référence au Maroc, nous offrons une expertise locale inégalée pour vos événements d\'entreprise.',
+    dmcExpertise1: 'DMC certifié avec 15 ans d\'expérience MICE au Maroc',
+    dmcExpertise2: 'Réseau de partenaires premium dans tout le royaume', 
+    dmcExpertise3: 'Gestion de destination complète : logistique, venues, activités',
+    dmcExpertise4: 'Équipe dédiée MICE parlant français, anglais, espagnol, arabe',
+    dmcExpertise5: 'Support 24/7 pendant vos événements au Maroc',
+    dmcExpertise6: 'Prix négociés directement avec nos partenaires DMC',
     getProposal: 'Devis Gratuit 24h',
     whatsappContact: 'WhatsApp',
     

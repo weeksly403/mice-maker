@@ -76,9 +76,9 @@ const MarrakechDestination: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Marrakech Corporate Events | MICE Destination Morocco | Seminars & Incentives</title>
-        <meta name="description" content="Plan your corporate event in Marrakech with expert MICE services. Luxury venues, incentives, conferences & team building in Morocco's imperial city. Get free quote!" />
-        <meta name="keywords" content="Marrakech corporate events, MICE Marrakech, séminaire Marrakech, incentive Marrakech, conference venues Marrakech, team building Morocco" />
+        <title>DMC Marrakech - Corporate Events & MICE Services | Morocco DMC Expert</title>
+        <meta name="description" content="EventMorocco DMC Marrakech: Expert destination management for corporate conferences, incentives & team building. Morocco DMC with 15+ years experience. Free quote 24h!" />
+        <meta name="keywords" content="DMC Marrakech, Morocco DMC, destination management company Marrakech, MICE Marrakech, corporate events Marrakech, conference venues Morocco DMC, incentive Morocco, team building Marrakech DMC" />
         <link rel="canonical" href={`${window.location.origin}/destinations/marrakech`} />
       </Helmet>
 
@@ -101,11 +101,11 @@ const MarrakechDestination: React.FC = () => {
             </Badge>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
-              Corporate Events in Marrakech
+              DMC Marrakech - Corporate Events & MICE
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Experience the perfect blend of luxury and tradition for your corporate events in Morocco's imperial city. From palace hotels to desert incentives.
+              EventMorocco, your expert DMC Marrakech for corporate conferences, incentives and team building. Destination Management Company with 15 years experience in Morocco's imperial city.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -127,20 +127,20 @@ const MarrakechDestination: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
-                  Why Choose Marrakech for Corporate Events?
+                  Why Choose Our DMC Marrakech Services?
                 </h2>
                 
                 <div className="space-y-6 text-muted-foreground">
                   <p className="leading-relaxed">
-                    Marrakech stands as Morocco's premier MICE destination, combining world-class infrastructure with authentic cultural experiences. The Red City offers over 50 luxury venues, from palatial hotels to modern convention centers.
+                    As your trusted Destination Management Company in Marrakech, EventMorocco combines world-class DMC expertise with authentic Morocco experiences. Our DMC Marrakech team manages over 50 luxury venues, from palatial hotels to modern conference venues Morocco.
                   </p>
                   
                   <p className="leading-relaxed">
-                    With direct flights from major European cities (just 3 hours from Paris, London, Madrid), Marrakech provides easy accessibility for international corporate groups. The city's year-round favorable climate makes it ideal for outdoor team-building activities and incentive programs.
+                    Our Morocco DMC provides seamless logistics with direct flights from major European cities (3 hours from Paris, London, Madrid). As a certified DMC, we ensure perfect accessibility for international corporate groups with year-round favorable climate for outdoor team building Morocco and incentive programs.
                   </p>
                   
                   <p className="leading-relaxed">
-                    From Atlas Mountain adventures to exclusive riad dinners, Marrakech delivers unforgettable experiences that boost team morale and create lasting business relationships.
+                    From Atlas Mountain corporate retreats to exclusive riad dinners, our DMC Marrakech expertise delivers unforgettable experiences that boost team morale and create lasting business relationships through authentic Morocco DMC services.
                   </p>
                 </div>
 

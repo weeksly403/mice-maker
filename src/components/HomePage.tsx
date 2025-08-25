@@ -13,6 +13,7 @@ import { QuoteDialog } from './QuoteDialog';
 import { CaseStudyDialog } from './CaseStudyDialog';
 import { ScheduleCallDialog } from './ScheduleCallDialog';
 import { openWhatsApp } from '@/utils/whatsapp';
+import { EnhancedStructuredData } from '@/components/SEO/EnhancedStructuredData';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -265,6 +266,9 @@ export const HomePage: React.FC = () => {
 
   return (
     <PageTransition className="min-h-screen bg-background">
+      {/* Enhanced SEO Structured Data */}
+      <EnhancedStructuredData type="organization" data={{}} />
+      <EnhancedStructuredData type="localbusiness" data={{}} />
       {/* Hero Section */}
       <section 
         ref={heroRef}
@@ -343,6 +347,50 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* DMC Section - New Strategic Section */}
+      <AnimatedSection className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedCard 
+            animationType="fade-up" 
+            className="text-center mb-16 shadow-none border-0 bg-transparent p-0"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
+              {t('dmcSectionTitle')}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              {t('dmcSectionDesc')}
+            </p>
+          </AnimatedCard>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref={useStaggerAnimation({ staggerDelay: 0.1, animationType: 'fade-up' })}>
+            {[
+              { text: t('dmcExpertise1'), icon: CheckCircle },
+              { text: t('dmcExpertise2'), icon: Users },
+              { text: t('dmcExpertise3'), icon: Star },
+              { text: t('dmcExpertise4'), icon: MapPin },
+              { text: t('dmcExpertise5'), icon: Clock },
+              { text: t('dmcExpertise6'), icon: Trophy }
+            ].map((expertise, index) => (
+              <AnimatedCard
+                key={index}
+                animationType="scale"
+                delay={index * 0.1}
+                className="shadow-card hover:shadow-elegant transition-corporate border-0 bg-background/80 backdrop-blur-sm"
+              >
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 gradient-primary rounded-full flex items-center justify-center hover-scale transition-corporate">
+                    <expertise.icon className="w-8 h-8 text-primary-foreground" />
+                  </div>
+                  <p className="text-foreground leading-relaxed font-medium">
+                    {expertise.text}
+                  </p>
+                </CardContent>
+              </AnimatedCard>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
 
       {/* Morocco as MICE Destination - Storytelling Section */}
       <AnimatedSection 

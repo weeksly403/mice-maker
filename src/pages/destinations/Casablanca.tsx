@@ -8,6 +8,8 @@ import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
 import { Building, MapPin, Users, Calendar, Star, Plane, Car, Phone, Mail, Clock, Wifi, Coffee, Car as ParkingIcon, Utensils, Shield } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
+import { EnhancedStructuredData } from '@/components/SEO/EnhancedStructuredData';
+import { FAQSchema } from '@/components/SEO/FAQSchema';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
 
@@ -102,6 +104,18 @@ const CasablancaDestination: React.FC = () => {
 
   return (
     <>
+      {/* Enhanced SEO */}
+      <EnhancedStructuredData type="localbusiness" data={{
+        name: "EventMorocco DMC Casablanca",
+        description: "DMC Casablanca - Destination Management Company for corporate conferences and MICE events",
+        city: "Casablanca"
+      }} />
+      <FAQSchema faqs={[
+        {
+          question: language === 'fr' ? "Pourquoi choisir Casablanca pour une conférence d'entreprise ?" : "Why choose Casablanca for corporate conferences?",
+          answer: language === 'fr' ? "Casablanca est le centre économique du Maroc avec des infrastructures modernes, un aéroport international et des hôtels d'affaires de qualité." : "Casablanca is Morocco's economic center with modern infrastructure, international airport and quality business hotels."
+        }
+      ]} />
       <Helmet>
         <title>{language === 'fr' ? 'Conférences & Séminaires à Casablanca - MICE Maroc' : language === 'es' ? 'Conferencias y Seminarios en Casablanca - MICE Marruecos' : language === 'ar' ? 'المؤتمرات والندوات في الدار البيضاء - السياحة التجارية المغرب' : 'Conferences & Seminars in Casablanca - Morocco MICE'}</title>
         <meta name="description" content={language === 'fr' ? 'Organisez vos conférences d\'entreprise à Casablanca. Capital économique du Maroc avec infrastructures modernes, hôtels 5 étoiles et centres de congrès professionnels.' : language === 'es' ? 'Organice sus conferencias corporativas en Casablanca. Capital económica de Marruecos con infraestructuras modernas, hoteles 5 estrellas y centros de congresos profesionales.' : language === 'ar' ? 'نظم مؤتمراتك الشركاتية في الدار البيضاء. العاصمة الاقتصادية للمغرب مع البنية التحتية الحديثة وفنادق 5 نجوم ومراكز المؤتمرات المهنية.' : 'Organize your corporate conferences in Casablanca. Economic capital of Morocco with modern infrastructure, 5-star hotels and professional conference centers.'} />
