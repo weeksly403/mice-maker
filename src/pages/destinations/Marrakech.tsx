@@ -9,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Users, Star, Calendar, Camera, Utensils, Briefcase, Car } from 'lucide-react';
 import { QuoteDialog } from '@/components/QuoteDialog';
+import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
 import marrakechConference from '@/assets/marrakech-conference.jpg';
 import heroMoroccoMice from '@/assets/hero-morocco-mice.jpg';
 
@@ -17,70 +18,70 @@ const MarrakechDestination: React.FC = () => {
 
   const venues = [
     {
-      name: 'La Mamounia',
-      category: 'Palace Hotel',
+      name: t('marrakechVenue1Name'),
+      category: t('marrakechVenue1Category'),
       capacity: '800',
-      features: ['Spa', 'Golf', 'Galas'],
+      features: t('marrakechVenue1Features'),
       rating: 5
     },
     {
-      name: 'Four Seasons Resort',
-      category: 'Luxury Resort', 
+      name: t('marrakechVenue2Name'),
+      category: t('marrakechVenue2Category'), 
       capacity: '600',
-      features: ['Atlas Views', 'Conference Rooms', 'Team Building'],
+      features: t('marrakechVenue2Features'),
       rating: 5
     },
     {
-      name: 'Royal Mansour',
-      category: 'Luxury Palace',
+      name: t('marrakechVenue3Name'),
+      category: t('marrakechVenue3Category'),
       capacity: '400',
-      features: ['Exclusive', 'Royal Treatment', 'Incentives'],
+      features: t('marrakechVenue3Features'),
       rating: 5
     },
     {
-      name: 'Palais des Congrès',
-      category: 'Convention Center',
+      name: t('marrakechVenue4Name'),
+      category: t('marrakechVenue4Category'),
       capacity: '2000',
-      features: ['Modern Tech', 'Large Events', 'Exhibitions'],
+      features: t('marrakechVenue4Features'),
       rating: 4
     }
   ];
 
   const experiences = [
     {
-      title: 'Atlas Mountains Excursion',
-      description: 'Team building adventures in the stunning Atlas Mountains with traditional Berber villages',
+      title: t('marrakechExp1Title'),
+      description: t('marrakechExp1Desc'),
       icon: Camera,
-      duration: 'Full Day'
+      duration: t('marrakechExp1Duration')
     },
     {
-      title: 'Cooking Class & Souk Tour',
-      description: 'Interactive cooking workshops followed by guided tours of traditional markets',
+      title: t('marrakechExp2Title'),
+      description: t('marrakechExp2Desc'),
       icon: Utensils,
-      duration: 'Half Day'
+      duration: t('marrakechExp2Duration')
     },
     {
-      title: 'Desert Incentive Experience',
-      description: 'Luxury desert camps with camel trekking and traditional entertainment',
+      title: t('marrakechExp3Title'),
+      description: t('marrakechExp3Desc'),
       icon: Star,
-      duration: '2-3 Days'
+      duration: t('marrakechExp3Duration')
     },
     {
-      title: 'Private Riad Events',
-      description: 'Exclusive corporate dinners in authentic Moroccan palaces and riads',
+      title: t('marrakechExp4Title'),
+      description: t('marrakechExp4Desc'),
       icon: Briefcase,
-      duration: 'Evening'
+      duration: t('marrakechExp4Duration')
     }
   ];
 
   return (
     <>
-      <Helmet>
-        <title>DMC Marrakech - Corporate Events & MICE Services | Morocco DMC Expert</title>
-        <meta name="description" content="EventMorocco DMC Marrakech: Expert destination management for corporate conferences, incentives & team building. Morocco DMC with 15+ years experience. Free quote 24h!" />
-        <meta name="keywords" content="DMC Marrakech, Morocco DMC, destination management company Marrakech, MICE Marrakech, corporate events Marrakech, conference venues Morocco DMC, incentive Morocco, team building Marrakech DMC" />
-        <link rel="canonical" href={`${window.location.origin}/destinations/marrakech`} />
-      </Helmet>
+      <SEOEnhancer
+        title={t('marrakechPageTitle')}
+        description={t('marrakechPageDesc')}
+        keywords={t('marrakechPageKeywords')}
+        type="website"
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
@@ -88,7 +89,10 @@ const MarrakechDestination: React.FC = () => {
           <div className="absolute inset-0">
             <img 
               src={marrakechConference}
-              alt="Marrakech conference venue with Atlas Mountains backdrop"
+              alt={language === 'fr' ? 'Lieu de conférence Marrakech avec vue sur l\'Atlas' : 
+                   language === 'es' ? 'Lugar de conferencias en Marrakech con vista del Atlas' :
+                   language === 'ar' ? 'مكان المؤتمرات في مراكش مع إطلالة على الأطلس' :
+                   'Marrakech conference venue with Atlas Mountains backdrop'}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/50"></div>
@@ -97,25 +101,25 @@ const MarrakechDestination: React.FC = () => {
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-4">
               <MapPin className="w-4 h-4 mr-2" />
-              Premium MICE Destination
+              {t('marrakechHeroBadge')}
             </Badge>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
-              DMC Marrakech - Corporate Events & MICE
+              {t('marrakechHeroTitle')}
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              EventMorocco, your expert DMC Marrakech for corporate conferences, incentives and team building. Destination Management Company with 15 years experience in Morocco's imperial city.
+              {t('marrakechHeroSubtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <QuoteDialog>
                 <Button variant="cta" size="lg">
-                  Get Free Proposal
+                  {t('marrakechGetProposal')}
                 </Button>
               </QuoteDialog>
               <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
-                View Venues
+                {t('marrakechViewVenues')}
               </Button>
             </div>
           </div>
@@ -127,29 +131,35 @@ const MarrakechDestination: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
-                  Why Choose Our DMC Marrakech Services?
+                  {t('marrakechWhyChooseTitle')}
                 </h2>
                 
                 <div className="space-y-6 text-muted-foreground">
                   <p className="leading-relaxed">
-                    As your trusted Destination Management Company in Marrakech, EventMorocco combines world-class DMC expertise with authentic Morocco experiences. Our DMC Marrakech team manages over 50 luxury venues, from palatial hotels to modern conference venues Morocco.
+                    {t('marrakechWhyChooseDesc')}
                   </p>
                   
                   <p className="leading-relaxed">
-                    Our Morocco DMC provides seamless logistics with direct flights from major European cities (3 hours from Paris, London, Madrid). As a certified DMC, we ensure perfect accessibility for international corporate groups with year-round favorable climate for outdoor team building Morocco and incentive programs.
+                    {language === 'fr' ? 'Notre DMC Maroc assure une logistique parfaite avec vols directs depuis les grandes villes européennes (3h depuis Paris, Londres, Madrid). En tant que DMC certifié, nous garantissons une accessibilité parfaite pour les groupes d\'entreprise internationaux.' :
+                     language === 'es' ? 'Nuestro DMC Marruecos asegura logística perfecta con vuelos directos desde las principales ciudades europeas (3h desde París, Londres, Madrid). Como DMC certificado, garantizamos accesibilidad perfecta para grupos corporativos internacionales.' :
+                     language === 'ar' ? 'شركة DMC المغرب تضمن لوجستيات مثالية مع رحلات مباشرة من المدن الأوروبية الرئيسية (3 ساعات من باريس ولندن ومدريد). كشركة DMC معتمدة، نضمن إمكانية وصول مثالية للمجموعات الشركاتية الدولية.' :
+                     'Our Morocco DMC provides seamless logistics with direct flights from major European cities (3 hours from Paris, London, Madrid). As a certified DMC, we ensure perfect accessibility for international corporate groups with year-round favorable climate for outdoor team building Morocco and incentive programs.'}
                   </p>
                   
                   <p className="leading-relaxed">
-                    From Atlas Mountain corporate retreats to exclusive riad dinners, our DMC Marrakech expertise delivers unforgettable experiences that boost team morale and create lasting business relationships through authentic Morocco DMC services.
+                    {language === 'fr' ? 'Des retraites d\'entreprise dans l\'Atlas aux dîners exclusifs dans des riads, notre expertise DMC Marrakech offre des expériences inoubliables qui renforcent le moral des équipes et créent des relations d\'affaires durables grâce aux services authentiques du DMC Maroc.' :
+                     language === 'es' ? 'Desde retiros corporativos en el Atlas hasta cenas exclusivas en riads, nuestra experiencia DMC Marrakech ofrece experiencias inolvidables que mejoran la moral del equipo y crean relaciones comerciales duraderas a través de servicios auténticos de DMC Marruecos.' :
+                     language === 'ar' ? 'من خلوات الشركات في الأطلس إلى العشاء الحصري في الرياضات، تقدم خبرتنا DMC مراكش تجارب لا تُنسى تعزز معنويات الفريق وتخلق علاقات تجارية دائمة من خلال خدمات DMC المغرب الأصيلة.' :
+                     'From Atlas Mountain corporate retreats to exclusive riad dinners, our DMC Marrakech expertise delivers unforgettable experiences that boost team morale and create lasting business relationships through authentic Morocco DMC services.'}
                   </p>
                 </div>
 
                 <div className="mt-8 grid grid-cols-2 gap-6">
                   {[
-                    { icon: Users, label: 'Up to 2,000 delegates', value: '50+ Venues' },
-                    { icon: Calendar, label: '300+ sunny days/year', value: 'Perfect Climate' },
-                    { icon: Car, label: '3 hours from Europe', value: 'Easy Access' },
-                    { icon: Star, label: '5-star luxury hotels', value: 'Premium Service' }
+                    { icon: Users, label: t('marrakechAdvantage1'), value: '50+' },
+                    { icon: Calendar, label: t('marrakechAdvantage2'), value: '300+' },
+                    { icon: Car, label: t('marrakechAdvantage3'), value: '3h' },
+                    { icon: Star, label: t('marrakechAdvantage4'), value: '5★' }
                   ].map((stat, index) => (
                     <div key={index} className="text-center">
                       <stat.icon className="w-8 h-8 text-primary mx-auto mb-2" />
@@ -163,7 +173,10 @@ const MarrakechDestination: React.FC = () => {
               <div className="relative">
                 <img 
                   src={heroMoroccoMice}
-                  alt="Marrakech corporate event venue with traditional Moroccan architecture"
+                  alt={language === 'fr' ? 'Lieu d\'événement d\'entreprise Marrakech avec architecture marocaine traditionnelle' :
+                       language === 'es' ? 'Lugar de evento corporativo en Marrakech con arquitectura marroquí tradicional' :
+                       language === 'ar' ? 'مكان فعالية شركاتية في مراكش مع العمارة المغربية التقليدية' :
+                       'Marrakech corporate event venue with traditional Moroccan architecture'}
                   className="w-full h-auto rounded-lg shadow-elegant"
                 />
               </div>
@@ -176,10 +189,10 @@ const MarrakechDestination: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4">
-                Premium Venues in Marrakech
+                {t('marrakechVenuesTitle')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                From intimate boardroom meetings to large-scale conferences, discover Marrakech's finest corporate venues.
+                {t('marrakechVenuesDesc')}
               </p>
             </div>
 
@@ -202,15 +215,15 @@ const MarrakechDestination: React.FC = () => {
                     
                     <div className="flex items-center text-muted-foreground mb-4">
                       <Users className="w-4 h-4 mr-2" />
-                      <span>Up to {venue.capacity} guests</span>
+                      <span>{t('upTo')} {venue.capacity} {t('guests')}</span>
                     </div>
                     
                     <div className="flex flex-wrap gap-2">
-                      {venue.features.map((feature, featureIndex) => (
+                      {Array.isArray(venue.features) ? venue.features.map((feature, featureIndex) => (
                         <Badge key={featureIndex} variant="secondary" className="text-xs">
                           {feature}
                         </Badge>
-                      ))}
+                      )) : null}
                     </div>
                   </CardContent>
                 </Card>
@@ -224,10 +237,10 @@ const MarrakechDestination: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4">
-                Unique Corporate Experiences
+                {t('marrakechExperiencesTitle')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Enhance your corporate events with authentic Moroccan experiences that create lasting memories and strengthen team bonds.
+                {t('marrakechExperiencesDesc')}
               </p>
             </div>
 
@@ -262,15 +275,15 @@ const MarrakechDestination: React.FC = () => {
         <section className="py-16 gradient-secondary">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-6">
-              Ready to Plan Your Marrakech Corporate Event?
+              {t('marrakechCtaTitle')}
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Get a personalized proposal for your corporate event in Marrakech. Our local experts will handle every detail.
+              {t('marrakechCtaDesc')}
             </p>
             
             <QuoteDialog>
               <Button variant="cta" size="lg" className="px-12">
-                Get Free Proposal for Marrakech
+                {t('marrakechCtaButton')}
               </Button>
             </QuoteDialog>
           </div>
