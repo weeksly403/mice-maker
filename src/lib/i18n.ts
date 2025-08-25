@@ -433,9 +433,19 @@ export const translations = {
     contact: 'Contact',
     
     // Hero Section
-    heroTitle: 'Corporate Events in Morocco',
-    heroSubtitle: 'Meetings • Incentives • Conferences • Team-Building',
-    heroDescription: 'Trust us with your corporate events in Morocco. Our MICE experts guide you every step of the way, from seminars in Marrakech to incentive trips in the Sahara.',
+    heroTitle: 'Morocco DMC - Corporate Events & MICE Services',
+    heroSubtitle: 'Your Destination Management Company in Morocco • MICE • Incentives • Conferences',
+    heroDescription: 'EventMorocco, your expert DMC for organizing corporate events in Morocco. MICE, incentives, conferences and team building throughout the kingdom. From Marrakech to the Sahara deserts.',
+    
+    // New DMC Section
+    dmcSectionTitle: 'Why Choose EventMorocco as Your Morocco DMC?',
+    dmcSectionDesc: 'As Morocco\'s leading Destination Management Company, we offer unmatched local expertise for your corporate events.',
+    dmcExpertise1: 'Certified DMC with 15 years of MICE experience in Morocco',
+    dmcExpertise2: 'Premium partner network throughout the kingdom', 
+    dmcExpertise3: 'Complete destination management: logistics, venues, activities',
+    dmcExpertise4: 'Dedicated MICE team speaking French, English, Spanish, Arabic',
+    dmcExpertise5: '24/7 support during your events in Morocco',
+    dmcExpertise6: 'Negotiated prices directly with our DMC partners',
     getProposal: 'Free Quote 24h',
     whatsappContact: 'WhatsApp',
     
@@ -973,9 +983,19 @@ export const translations = {
     contact: 'Contacto',
     
     // Hero Section
-    heroTitle: 'Eventos Corporativos en Marruecos',
-    heroSubtitle: 'Reuniones • Incentivos • Conferencias • Team-Building',
-    heroDescription: 'Confía en nosotros para tus eventos corporativos en Marruecos. Nuestros expertos MICE te acompañan paso a paso, desde seminarios en Marrakech hasta viajes incentivo en el Sahara.',
+    heroTitle: 'DMC Marruecos - Eventos Corporativos y Servicios MICE',
+    heroSubtitle: 'Su Empresa de Gestión de Destinos en Marruecos • MICE • Incentivos • Conferencias',
+    heroDescription: 'EventMorocco, su DMC experto para organizar eventos corporativos en Marruecos. MICE, incentivos, conferencias y team building en todo el reino. De Marrakech a los desiertos del Sahara.',
+    
+    // New DMC Section
+    dmcSectionTitle: '¿Por Qué Elegir EventMorocco como su DMC en Marruecos?',
+    dmcSectionDesc: 'Como empresa líder de Gestión de Destinos en Marruecos, ofrecemos experiencia local incomparable para sus eventos corporativos.',
+    dmcExpertise1: 'DMC certificado con 15 años de experiencia MICE en Marruecos',
+    dmcExpertise2: 'Red de socios premium en todo el reino', 
+    dmcExpertise3: 'Gestión completa de destino: logística, venues, actividades',
+    dmcExpertise4: 'Equipo MICE dedicado hablando francés, inglés, español, árabe',
+    dmcExpertise5: 'Soporte 24/7 durante sus eventos en Marruecos',
+    dmcExpertise6: 'Precios negociados directamente con nuestros socios DMC',
     getProposal: 'Presupuesto Gratis 24h',
     whatsappContact: 'WhatsApp',
     
@@ -1495,9 +1515,19 @@ export const translations = {
     blog: 'المدونة',
     
     // Hero Section
-    heroTitle: 'فعاليات الشركات في المغرب',
-    heroSubtitle: 'اجتماعات • رحلات تحفيزية • مؤتمرات • بناء الفرق',
-    heroDescription: 'ثق بنا في تنظيم فعاليات شركتك في المغرب. خبراؤنا في الفعاليات التجارية يرافقونك خطوة بخطوة، من الندوات في مراكش إلى الرحلات التحفيزية في الصحراء.',
+    heroTitle: 'DMC المغرب - فعاليات الشركات وخدمات MICE',
+    heroSubtitle: 'شركة إدارة الوجهات في المغرب • MICE • رحلات تحفيزية • مؤتمرات',
+    heroDescription: 'EventMorocco، شركة DMC الخبيرة في تنظيم فعاليات الشركات في المغرب. MICE، رحلات تحفيزية، مؤتمرات وبناء الفرق في جميع أنحاء المملكة. من مراكش إلى صحاري الصحراء.',
+    
+    // New DMC Section
+    dmcSectionTitle: 'لماذا تختار EventMorocco كشركة DMC في المغرب؟',
+    dmcSectionDesc: 'كشركة رائدة في إدارة الوجهات في المغرب، نقدم خبرة محلية لا تضاهى لفعاليات الشركات.',
+    dmcExpertise1: 'DMC معتمد مع 15 عامًا من خبرة MICE في المغرب',
+    dmcExpertise2: 'شبكة شركاء متميزة في جميع أنحاء المملكة', 
+    dmcExpertise3: 'إدارة وجهة شاملة: لوجستيات، أماكن، أنشطة',
+    dmcExpertise4: 'فريق MICE مخصص يتحدث الفرنسية والإنجليزية والإسبانية والعربية',
+    dmcExpertise5: 'دعم 24/7 أثناء فعالياتك في المغرب',
+    dmcExpertise6: 'أسعار متفاوض عليها مباشرة مع شركاء DMC',
     getProposal: 'عرض مجاني خلال 24 ساعة',
     whatsappContact: 'واتساب',
     
