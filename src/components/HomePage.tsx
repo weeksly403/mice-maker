@@ -14,6 +14,8 @@ import { CaseStudyDialog } from './CaseStudyDialog';
 import { ScheduleCallDialog } from './ScheduleCallDialog';
 import { openWhatsApp } from '@/utils/whatsapp';
 import { EnhancedStructuredData } from '@/components/SEO/EnhancedStructuredData';
+import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
+import { FAQSchema } from '@/components/SEO/FAQSchema';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -286,11 +288,33 @@ export const HomePage: React.FC = () => {
     }
   ];
 
+  // Enhanced FAQ data for structured data
+  const homeFAQs = [
+    {
+      question: language === 'fr' ? 'Qu\'est-ce qu\'un DMC au Maroc ?' : language === 'es' ? '¿Qué es un DMC en Marruecos?' : language === 'ar' ? 'ما هي شركة إدارة الوجهة في المغرب؟' : 'What is a DMC in Morocco?',
+      answer: language === 'fr' ? 'Un DMC (Destination Management Company) au Maroc est votre partenaire local expert pour organiser tous vos événements d\'entreprise. EventMorocco DMC gère l\'intégralité de vos MICE : conférences, incentives, team building, séminaires avec une expertise locale de 15 ans.' : language === 'es' ? 'Un DMC (Destination Management Company) en Marruecos es su socio local experto para organizar todos sus eventos corporativos. EventMorocco DMC gestiona la totalidad de sus MICE: conferencias, incentivos, team building, seminarios con experiencia local de 15 años.' : language === 'ar' ? 'شركة إدارة الوجهة (DMC) في المغرب هي شريكك المحلي الخبير لتنظيم جميع فعاليات شركتك. EventMorocco DMC تدير كامل أنشطة MICE: مؤتمرات، حوافز، بناء الفريق، ندوات مع خبرة محلية 15 سنة.' : 'A DMC (Destination Management Company) in Morocco is your expert local partner for organizing all your corporate events. EventMorocco DMC manages your complete MICE: conferences, incentives, team building, seminars with 15 years of local expertise.'
+    },
+    {
+      question: language === 'fr' ? 'Pourquoi choisir le Maroc pour vos incentives ?' : language === 'es' ? '¿Por qué elegir Marruecos para sus incentivos?' : language === 'ar' ? 'لماذا اختيار المغرب لحوافزك؟' : 'Why choose Morocco for your incentives?',
+      answer: language === 'fr' ? 'Le Maroc offre un cadre unique pour vos voyages incentive : proximité Europe (3h de vol), climat exceptionnel, diversité des expériences (désert, montagnes, océan), hôtels de luxe, coût attractif. EventMorocco DMC organise des incentives mémorables de Marrakech au Sahara.' : language === 'es' ? 'Marruecos ofrece un marco único para sus viajes de incentivo: proximidad a Europa (3h de vuelo), clima excepcional, diversidad de experiencias (desierto, montañas, océano), hoteles de lujo, costo atractivo. EventMorocco DMC organiza incentivos memorables de Marrakech al Sahara.' : language === 'ar' ? 'المغرب يقدم إطاراً فريداً لرحلات الحوافز: قرب من أوروبا (3 ساعات طيران)، مناخ استثنائي، تنوع التجارب (صحراء، جبال، محيط)، فنادق فاخرة، تكلفة جذابة. EventMorocco DMC تنظم حوافز لا تُنسى من مراكش إلى الصحراء.' : 'Morocco offers a unique setting for your incentive trips: proximity to Europe (3h flight), exceptional climate, diversity of experiences (desert, mountains, ocean), luxury hotels, attractive cost. EventMorocco DMC organizes memorable incentives from Marrakech to Sahara.'
+    },
+    {
+      question: language === 'fr' ? 'Quelles sont les meilleures villes pour les conférences au Maroc ?' : language === 'es' ? '¿Cuáles son las mejores ciudades para conferencias en Marruecos?' : language === 'ar' ? 'ما هي أفضل المدن للمؤتمرات في المغرب؟' : 'What are the best cities for conferences in Morocco?',
+      answer: language === 'fr' ? 'Les meilleures villes pour vos conférences au Maroc : Marrakech (50+ venues, 2000 capacité), Casablanca (centre économique, infrastructures modernes), Agadir (cadre balnéaire, climat parfait), Fès (authenticité culturelle). EventMorocco DMC vous conseille selon vos besoins spécifiques.' : language === 'es' ? 'Las mejores ciudades para sus conferencias en Marruecos: Marrakech (50+ venues, capacidad 2000), Casablanca (centro económico, infraestructuras modernas), Agadir (entorno costero, clima perfecto), Fez (autenticidad cultural). EventMorocco DMC le asesora según sus necesidades específicas.' : language === 'ar' ? 'أفضل المدن لمؤتمراتك في المغرب: مراكش (50+ مكان، سعة 2000)، الدار البيضاء (مركز اقتصادي، بنية تحتية حديثة)، أكادير (بيئة ساحلية، مناخ مثالي)، فاس (أصالة ثقافية). EventMorocco DMC تنصحك حسب احتياجاتك المحددة.' : 'Best cities for your conferences in Morocco: Marrakech (50+ venues, 2000 capacity), Casablanca (economic center, modern infrastructure), Agadir (coastal setting, perfect climate), Fez (cultural authenticity). EventMorocco DMC advises you according to your specific needs.'
+    }
+  ];
+
   return (
     <PageTransition className="min-h-screen bg-background">
+      {/* Optimized SEO */}
+      <OptimizedSEO pageType="home" />
+      
       {/* Enhanced SEO Structured Data */}
       <EnhancedStructuredData type="organization" data={{}} />
       <EnhancedStructuredData type="localbusiness" data={{}} />
+      
+      {/* FAQ Schema for SEO */}
+      <FAQSchema faqs={homeFAQs} />
       {/* Hero Section */}
       <section 
         ref={heroRef}
@@ -465,7 +489,7 @@ export const HomePage: React.FC = () => {
             >
               <img 
                 src="/lovable-uploads/9972a502-cb1d-485b-bd47-ed78652f5705.png" 
-                alt="Elegant corporate event setup in Morocco with Event Morocco branding"
+                alt="DMC Maroc EventMorocco - Expert organisation événements entreprise, conférences MICE et incentives au Maroc"
                 className="w-full h-auto rounded-lg shadow-elegant hover-scale transition-corporate"
               />
             </AnimatedCard>
@@ -537,7 +561,7 @@ export const HomePage: React.FC = () => {
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={destination.image} 
-                    alt={destination.name}
+                    alt={language === 'fr' ? `${destination.name} - Destination MICE Maroc pour événements entreprise, conférences et incentives` : language === 'es' ? `${destination.name} - Destino MICE Marruecos para eventos corporativos, conferencias e incentivos` : language === 'ar' ? `${destination.name} - وجهة MICE المغرب لفعاليات الشركات والمؤتمرات والحوافز` : `${destination.name} - MICE Destination Morocco for corporate events, conferences and incentives`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-corporate"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -666,7 +690,7 @@ export const HomePage: React.FC = () => {
             <div className="relative">
               <img 
                 src={roiBenefitsImage} 
-                alt="ROI Benefits Infographic"
+                alt={language === 'fr' ? 'Infographie ROI événements entreprise Maroc - Bénéfices mesurés des services MICE DMC EventMorocco' : language === 'es' ? 'Infografía ROI eventos corporativos Marruecos - Beneficios medidos servicios MICE DMC EventMorocco' : language === 'ar' ? 'إنفوجرافيك عائد الاستثمار للفعاليات الشركاتية المغرب - الفوائد المقاسة لخدمات MICE DMC EventMorocco' : 'ROI Benefits Infographic - Measured benefits of EventMorocco DMC MICE services in Morocco'}
                 className="w-full h-auto rounded-lg shadow-elegant"
               />
             </div>
@@ -726,7 +750,7 @@ export const HomePage: React.FC = () => {
             <div className="relative">
               <img 
                 src={corporateTestimonialsImage} 
-                alt="Corporate testimonials"
+                alt={language === 'fr' ? 'Témoignages clients DMC Maroc EventMorocco - Entreprises satisfaites événements MICE au Maroc' : language === 'es' ? 'Testimonios clientes DMC Marruecos EventMorocco - Empresas satisfechas eventos MICE en Marruecos' : language === 'ar' ? 'شهادات عملاء DMC المغرب EventMorocco - شركات راضية عن فعاليات MICE في المغرب' : 'EventMorocco DMC Morocco client testimonials - Satisfied companies MICE events Morocco'}
                 className="w-full h-auto rounded-lg shadow-elegant"
               />
             </div>
@@ -886,7 +910,7 @@ export const HomePage: React.FC = () => {
         <div className="absolute inset-0">
           <img 
             src={moroccoBusinessFusionImage} 
-            alt="Morocco business fusion"
+            alt={language === 'fr' ? 'Fusion business Maroc - Rencontres d\'affaires et networking événements entreprise au Maroc' : language === 'es' ? 'Fusión business Marruecos - Encuentros de negocios y networking eventos corporativos en Marruecos' : language === 'ar' ? 'اندماج الأعمال المغرب - لقاءات الأعمال والتواصل فعاليات الشركات في المغرب' : 'Morocco business fusion - Business meetings and networking corporate events in Morocco'}
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/60"></div>

@@ -7,6 +7,7 @@ import { MessageCircle, Phone, Mail } from 'lucide-react';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
+import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { openWhatsApp } from '@/utils/whatsapp';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 
@@ -80,16 +81,7 @@ const FAQ: React.FC = () => {
 
   return (
     <>
-      <SEOEnhancer
-        title={t('faqMetaTitle')}
-        description={t('faqMetaDescription')}
-        keywords="FAQ Morocco DMC, corporate events Morocco questions, MICE services FAQ, event planning Morocco answers, conference venues FAQ, DMC Morocco help"
-        type="website"
-        structuredDataType="faq"
-        structuredData={{
-          faqs: allFAQs
-        }}
-      />
+      <OptimizedSEO pageType="faq" />
       
       <FAQSchema 
         faqs={allFAQs}

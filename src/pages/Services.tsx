@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { useLanguage } from '@/components/LanguageProvider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -168,11 +169,7 @@ const Services: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{language === 'fr' ? 'Services MICE Maroc - Conférences, Incentives, Team Building | Experts Événements' : language === 'es' ? 'Servicios MICE Marruecos - Conferencias, Incentivos, Team Building | Expertos Eventos' : language === 'ar' ? 'خدمات السياحة التجارية المغرب - مؤتمرات، حوافز، بناء الفريق | خبراء الفعاليات' : 'MICE Services Morocco - Conferences, Incentives, Team Building | Event Experts'}</title>
-        <meta name="description" content={language === 'fr' ? 'Services MICE complets au Maroc: conférences, séminaires, incentives, team building et galas. Organisation événements d\'entreprise avec 15 ans d\'expertise locale. Devis gratuit 24h.' : language === 'es' ? 'Servicios MICE completos en Marruecos: conferencias, seminarios, incentivos, team building y galas. Organización eventos corporativos con 15 años de experiencia local. Presupuesto gratis 24h.' : language === 'ar' ? 'خدمات السياحة التجارية الشاملة في المغرب: مؤتمرات، ندوات، حوافز، بناء الفريق وحفلات. تنظيم الفعاليات الشركاتية مع 15 سنة من الخبرة المحلية. عرض سعر مجاني 24 ساعة.' : 'Complete MICE services in Morocco: conferences, seminars, incentives, team building and galas. Corporate event organization with 15 years of local expertise. Free quote 24h.'} />
-        <meta name="keywords" content={language === 'fr' ? 'services MICE Maroc, conférence Marrakech, incentive Maroc, team building Agadir, séminaire entreprise Casablanca, organisation événement Maroc, gala dîner Fès' : language === 'es' ? 'servicios MICE Marruecos, conferencia Marrakech, incentivo Marruecos, team building Agadir, seminario empresa Casablanca, organización evento Marruecos, cena gala Fez' : language === 'ar' ? 'خدمات السياحة التجارية المغرب، مؤتمر مراكش، حافز المغرب، بناء الفريق أكادير، ندوة شركة الدار البيضاء، تنظيم فعالية المغرب' : 'MICE services Morocco, conference Marrakech, incentive Morocco, team building Agadir, corporate seminar Casablanca, event organization Morocco, gala dinner Fez'} />
-      </Helmet>
+      <OptimizedSEO pageType="services" />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

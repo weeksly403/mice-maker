@@ -21,10 +21,14 @@ export const translations = {
     faq: 'Questions fréquentes',
     contact: 'Contact',
     
-    // Hero Section  
-    heroTitle: 'DMC Maroc - Événements d\'Entreprise & Services MICE',
-    heroSubtitle: 'Votre Destination Management Company au Maroc • MICE • Incentives • Conférences',
-    heroDescription: 'EventMorocco, votre DMC expert pour l\'organisation d\'événements d\'entreprise au Maroc. MICE, incentives, conférences et team building dans tout le royaume. De Marrakech aux déserts du Sahara.',
+    // Hero Section - SEO Optimized
+    heroTitle: 'DMC Maroc • MICE • Incentives • Conférences • Team Building',
+    heroSubtitle: 'Destination Management Company Morocco - Expert MICE Services',
+    heroDescription: 'EventMorocco DMC : Leader des événements d\'entreprise au Maroc. Services MICE complets : conférences Marrakech, incentives Sahara, team building Agadir, séminaires Casablanca. Devis gratuit 24h.',
+    
+    // SEO Meta Titles (≤60 chars) 
+    homePageTitle: 'DMC Maroc | MICE Services | Incentives Conférences Maroc',
+    homePageDescription: 'DMC Maroc expert : MICE, conférences, incentives, team building. Événements d\'entreprise Marrakech, Casablanca, Agadir. Devis gratuit 24h.',
     
     // New DMC Section
     dmcSectionTitle: 'Pourquoi Choisir EventMorocco comme votre DMC au Maroc ?',
@@ -80,8 +84,8 @@ export const translations = {
     destinationsPageDesc: "Les plus belles destinations pour vos événements d'entreprise au Maroc",
     servicesPageTitle: 'Services MICE Professionnels',
     servicesPageDesc: "Solutions sur mesure pour vos événements d'entreprise au Maroc",
-    faqMetaTitle: 'Questions Fréquentes - DMC Événements Maroc',
-    faqMetaDesc: 'Obtenez des réponses aux questions courantes sur l\'organisation d\'événements d\'entreprise au Maroc avec notre équipe DMC experte.',
+    faqMetaTitle: 'FAQ DMC Maroc | Questions MICE Événements Entreprise',
+    faqMetaDesc: 'FAQ DMC Maroc : réponses sur organisation MICE, conférences Marrakech, incentives, team building. Expert événements entreprise Maroc.',
     
     // Destination-specific translations - Marrakech
     marrakechPageTitle: 'DMC Marrakech - Événements d\'Entreprise & Services MICE | Expert DMC Maroc',
