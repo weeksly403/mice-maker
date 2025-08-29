@@ -5,6 +5,7 @@ import { useActiveRoute } from '@/hooks/useActiveRoute';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
 import { languages, languageNames, getLocalizedPath } from '@/lib/i18n';
+import { QuoteDialog } from './QuoteDialog';
 
 export const Header: React.FC = () => {
   const { language, t } = useLanguage();
@@ -97,9 +98,11 @@ export const Header: React.FC = () => {
               )}
             </div>
 
-            <Button variant="cta" size="sm" className="hover-lift hover-glow">
-              {t('getProposal')}
-            </Button>
+            <QuoteDialog>
+              <Button variant="cta" size="sm" className="hover-lift hover-glow">
+                {t('getProposal')}
+              </Button>
+            </QuoteDialog>
           </div>
 
           {/* Mobile Menu Button */}
@@ -152,9 +155,11 @@ export const Header: React.FC = () => {
                 ))}
                </div>
                
-               <Button variant="cta" className="w-full hover-lift hover-glow">
-                 {t('getProposal')}
-               </Button>
+                <QuoteDialog>
+                  <Button variant="cta" className="w-full hover-lift hover-glow">
+                    {t('getProposal')}
+                  </Button>
+                </QuoteDialog>
             </div>
           </div>
         )}
