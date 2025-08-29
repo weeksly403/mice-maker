@@ -4,6 +4,7 @@ import { ArrowLeft, MapPin, Users, Clock, Camera, Moon, Building2, Compass, Crow
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
+import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import saharaRetreatImage from '@/assets/blog-sahara-retreat.jpg';
 
 const SaharaRetreats: React.FC = () => {
@@ -11,14 +12,12 @@ const SaharaRetreats: React.FC = () => {
 
   return (
     <>
-      {/* SEO Meta Tags */}
-      <title>Sahara Desert Corporate Retreats Morocco | Executive Desert Team Building 2025</title>
-      <meta name="description" content="Luxury Sahara desert corporate retreats Morocco. Exclusive executive team building, leadership development, and strategic planning in Morocco's premium desert camps." />
-      <meta name="keywords" content="Sahara desert corporate retreats, Morocco desert team building, executive retreats Sahara, luxury desert camps Morocco, corporate leadership Sahara" />
-      <meta property="og:title" content="Ultimate Sahara Desert Corporate Retreats Morocco" />
-      <meta property="og:description" content="Transform your leadership team with exclusive Sahara desert corporate retreats. Luxury camps, executive coaching, and unforgettable team experiences." />
-      <meta property="og:image" content={saharaRetreatImage} />
-      <meta property="og:type" content="article" />
+      <OptimizedSEO 
+        pageType="blog"
+        customTitle="Sahara Corporate Retreats | Desert Team Building DMC Morocco"
+        customDescription="Luxury Sahara corporate retreats & desert team building. Executive leadership programs in Morocco's premium desert camps by expert DMC."
+        customKeywords="Sahara corporate retreats, desert team building Morocco, DMC Morocco, executive retreats Sahara, luxury desert camps, Morocco corporate retreat"
+      />
 
       <article className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
         <header className="relative h-[70vh] overflow-hidden">

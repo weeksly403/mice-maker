@@ -19,74 +19,108 @@ export const OptimizedSEO: React.FC<OptimizedSEOProps> = ({
   const { t, language } = useLanguage();
   const location = useLocation();
 
-  // SEO-optimized titles and descriptions based on keywords from Google Ads research
-  const seoContent = {
+  interface SEOContent {
+    title: string;
+    description: string;
+    keywords: string;
+  }
+
+  // SEO-optimized content based on focus keywords and character limits
+  const seoContent: Record<string, Record<string, SEOContent>> = {
     home: {
-      title: {
-        fr: 'DMC Maroc | MICE Services | Incentives Conférences Maroc',
-        en: 'Morocco DMC | MICE Services | Incentives Conferences Morocco',
-        es: 'DMC Marruecos | Servicios MICE | Incentivos Conferencias',
-        ar: 'شركة إدارة الوجهة المغرب | خدمات MICE | حوافز مؤتمرات'
+      en: {
+        title: 'Morocco DMC | Corporate Event Planning & MICE Services',
+        description: 'Leading Morocco DMC for corporate events, incentive travel, conferences & team building. Expert MICE services in Marrakech, Casablanca & Morocco.',
+        keywords: 'Morocco DMC, DMC Marrakech, incentive travel Morocco, team building Morocco, conference venues Morocco, corporate event Morocco, Morocco corporate retreat, MICE Morocco'
       },
-      description: {
-        fr: 'DMC Maroc expert : MICE, conférences, incentives, team building. Événements d\'entreprise Marrakech, Casablanca, Agadir. Devis gratuit 24h.',
-        en: 'Expert Morocco DMC: MICE, conferences, incentives, team building. Corporate events Marrakech, Casablanca, Agadir. Free quote 24h.',
-        es: 'DMC Marruecos experto: MICE, conferencias, incentivos, team building. Eventos corporativos Marrakech, Casablanca, Agadir. Presupuesto gratis 24h.',
-        ar: 'خبير شركة إدارة الوجهة المغرب: MICE، مؤتمرات، حوافز، بناء الفريق. فعاليات الشركات مراكش، الدار البيضاء، أكادير. عرض مجاني 24 ساعة.'
+      fr: {
+        title: 'DMC Maroc | Événements Corporatifs & Services MICE',
+        description: 'DMC leader au Maroc pour événements corporatifs, incentives, conférences & team building. Services MICE experts à Marrakech, Casablanca.',
+        keywords: 'DMC Maroc, DMC Marrakech, voyage incentive Maroc, team building Maroc, lieux conférence Maroc, événement corporatif Maroc, retraite corporative Maroc, MICE Maroc'
       },
-      keywords: {
-        fr: 'DMC Maroc, MICE Maroc, destination management company Maroc, conférence Marrakech, incentive Maroc, team building Maroc, événement entreprise Maroc, séminaire Casablanca, corporate retreat Maroc',
-        en: 'Morocco DMC, MICE Morocco, destination management company Morocco, conference venues Morocco, incentive travel Morocco, team building Morocco, corporate events Morocco, corporate retreats Morocco',
-        es: 'DMC Marruecos, MICE Marruecos, destination management company Marruecos, conferencia Marrakech, incentivo Marruecos, team building Marruecos, eventos corporativos Marruecos',
-        ar: 'شركة إدارة الوجهة المغرب، MICE المغرب، مؤتمر مراكش، حافز المغرب، بناء الفريق المغرب، فعاليات الشركات المغرب'
+      es: {
+        title: 'DMC Marruecos | Eventos Corporativos & Servicios MICE',
+        description: 'DMC líder en Marruecos para eventos corporativos, incentivos, conferencias y team building. Servicios MICE expertos en Marrakech.',
+        keywords: 'DMC Marruecos, DMC Marrakech, viaje incentivo Marruecos, team building Marruecos, lugares conferencia Marruecos, evento corporativo Marruecos, MICE Marruecos'
+      },
+      ar: {
+        title: 'DMC المغرب | الفعاليات الشركات وخدمات MICE',
+        description: 'DMC رائد في المغرب للفعاليات الشركات والحوافز والمؤتمرات وبناء الفرق. خدمات MICE متخصصة في مراكش والدار البيضاء.',
+        keywords: 'DMC المغرب، DMC مراكش، السفر التحفيزي المغرب، بناء الفرق المغرب، أماكن المؤتمرات المغرب، الفعاليات الشركات المغرب، MICE المغرب'
       }
     },
     services: {
-      title: {
-        fr: 'Services MICE Maroc | Conférences Incentives Team Building',
-        en: 'MICE Services Morocco | Conferences Incentives Team Building',
-        es: 'Servicios MICE Marruecos | Conferencias Incentivos Team Building',
-        ar: 'خدمات MICE المغرب | مؤتمرات حوافز بناء الفريق'
+      en: {
+        title: 'DMC Morocco Services | MICE & Corporate Event Planning',
+        description: 'Expert DMC Morocco services: corporate events, incentive travel, conferences & team building. Professional MICE solutions in Marrakech & Morocco.',
+        keywords: 'DMC Morocco, MICE Morocco, conference venues Morocco, incentive travel Morocco, team building Morocco, corporate event Morocco, DMC Marrakech services'
       },
-      description: {
-        fr: 'Services MICE complets Maroc: conférences, séminaires, incentives, team building, galas. Organisation événements entreprise avec expertise locale 15 ans.',
-        en: 'Complete MICE services Morocco: conferences, seminars, incentives, team building, galas. Corporate event organization with 15 years local expertise.',
-        es: 'Servicios MICE completos Marruecos: conferencias, seminarios, incentivos, team building, galas. Organización eventos corporativos con 15 años experiencia.',
-        ar: 'خدمات MICE شاملة المغرب: مؤتمرات، ندوات، حوافز، بناء الفريق، حفلات. تنظيم فعاليات الشركات مع خبرة محلية 15 سنة.'
+      fr: {
+        title: 'Services DMC Maroc | MICE & Événements Corporatifs',
+        description: 'Services DMC Maroc experts : événements corporatifs, voyages incentive, conférences & team building. Solutions MICE professionnelles.',
+        keywords: 'services DMC Maroc, MICE Maroc, lieux conférence Maroc, voyage incentive Maroc, team building Maroc, événement corporatif Maroc'
       },
-      keywords: {
-        fr: 'services MICE Maroc, conférence Marrakech, incentive Maroc, team building Agadir, séminaire entreprise Casablanca, organisation événement Maroc',
-        en: 'MICE services Morocco, conference Marrakech, incentive Morocco, team building Agadir, corporate seminar Casablanca, event organization Morocco',
-        es: 'servicios MICE Marruecos, conferencia Marrakech, incentivo Marruecos, team building Agadir, seminario empresa Casablanca',
-        ar: 'خدمات MICE المغرب، مؤتمر مراكش، حافز المغرب، بناء الفريق أكادير، ندوة شركة الدار البيضاء'
+      es: {
+        title: 'Servicios DMC Marruecos | MICE & Eventos Corporativos',
+        description: 'Servicios DMC Marruecos expertos: eventos corporativos, viajes incentivo, conferencias y team building. Soluciones MICE profesionales.',
+        keywords: 'servicios DMC Marruecos, MICE Marruecos, lugares conferencia Marruecos, viaje incentivo Marruecos, team building Marruecos'
+      },
+      ar: {
+        title: 'خدمات DMC المغرب | MICE والفعاليات الشركات',
+        description: 'خدمات DMC المغرب متخصصة: فعاليات شركات، سفر حوافز، مؤتمرات وبناء فرق. حلول MICE احترافية في مراكش والمغرب.',
+        keywords: 'خدمات DMC المغرب، MICE المغرب، أماكن المؤتمرات المغرب، سفر الحوافز المغرب، بناء الفرق المغرب'
+      }
+    },
+    blog: {
+      en: {
+        title: 'Morocco MICE Blog | DMC Insights & Corporate Event Tips',
+        description: 'Expert insights on Morocco MICE, corporate events, incentive travel & team building from leading DMC. Latest trends and tips.',
+        keywords: 'Morocco MICE blog, DMC Morocco insights, corporate events Morocco, incentive travel tips, team building Morocco, conference planning'
+      },
+      fr: {
+        title: 'Blog MICE Maroc | Conseils DMC & Événements Corporatifs',
+        description: 'Conseils experts sur MICE Maroc, événements corporatifs, voyages incentive & team building par DMC leader. Tendances et astuces.',
+        keywords: 'blog MICE Maroc, conseils DMC Maroc, événements corporatifs Maroc, conseils voyage incentive, team building Maroc'
+      },
+      es: {
+        title: 'Blog MICE Marruecos | Consejos DMC & Eventos Corporativos',
+        description: 'Consejos expertos sobre MICE Marruecos, eventos corporativos, viajes incentivo y team building por DMC líder. Tendencias y tips.',
+        keywords: 'blog MICE Marruecos, consejos DMC Marruecos, eventos corporativos Marruecos, consejos viaje incentivo, team building'
+      },
+      ar: {
+        title: 'مدونة MICE المغرب | نصائح DMC والفعاليات الشركات',
+        description: 'نصائح خبراء حول MICE المغرب والفعاليات الشركات وسفر الحوافز وبناء الفرق من DMC رائد. اتجاهات ونصائح حديثة.',
+        keywords: 'مدونة MICE المغرب، نصائح DMC المغرب، فعاليات شركات المغرب، نصائح سفر الحوافز، بناء الفرق'
       }
     },
     faq: {
-      title: {
-        fr: 'FAQ DMC Maroc | Questions MICE Événements Entreprise',
-        en: 'FAQ Morocco DMC | MICE Corporate Events Questions Answers', 
-        es: 'FAQ DMC Marruecos | Preguntas MICE Eventos Corporativos',
-        ar: 'الأسئلة الشائعة شركة إدارة الوجهة المغرب | MICE فعاليات الشركات'
+      en: {
+        title: 'Morocco DMC FAQ | MICE & Corporate Events Questions',
+        description: 'Answers to common questions about Morocco DMC, MICE services, corporate events, incentive travel & team building. Expert guidance.',
+        keywords: 'Morocco DMC FAQ, MICE questions Morocco, corporate events help, DMC services info, incentive travel questions, conference planning'
       },
-      description: {
-        fr: 'FAQ DMC Maroc : réponses sur organisation MICE, conférences Marrakech, incentives, team building. Expert événements entreprise Maroc.',
-        en: 'Morocco DMC FAQ: answers on MICE organization, Marrakech conferences, incentives, team building. Corporate events expert Morocco.',
-        es: 'FAQ DMC Marruecos: respuestas sobre organización MICE, conferencias Marrakech, incentivos, team building. Experto eventos corporativos.',
-        ar: 'الأسئلة الشائعة شركة إدارة الوجهة المغرب: إجابات على تنظيم MICE، مؤتمرات مراكش، حوافز، بناء الفريق.'
+      fr: {
+        title: 'FAQ DMC Maroc | Questions MICE & Événements Corporatifs',
+        description: 'Réponses aux questions fréquentes sur DMC Maroc, services MICE, événements corporatifs, voyages incentive & team building.',
+        keywords: 'FAQ DMC Maroc, questions MICE Maroc, aide événements corporatifs, infos services DMC, questions voyage incentive'
       },
-      keywords: {
-        fr: 'FAQ DMC Maroc, questions MICE Maroc, aide organisation événement, DMC Marrakech questions, planification événement Maroc',
-        en: 'FAQ Morocco DMC, MICE Morocco questions, event organization help, DMC Marrakech questions, event planning Morocco',
-        es: 'FAQ DMC Marruecos, preguntas MICE Marruecos, ayuda organización evento, DMC Marrakech preguntas',
-        ar: 'الأسئلة الشائعة شركة إدارة الوجهة المغرب، أسئلة MICE المغرب، مساعدة تنظيم الفعاليات'
+      es: {
+        title: 'FAQ DMC Marruecos | Preguntas MICE & Eventos Corporativos',
+        description: 'Respuestas a preguntas frecuentes sobre DMC Marruecos, servicios MICE, eventos corporativos, viajes incentivo y team building.',
+        keywords: 'FAQ DMC Marruecos, preguntas MICE Marruecos, ayuda eventos corporativos, info servicios DMC, preguntas viaje incentivo'
+      },
+      ar: {
+        title: 'الأسئلة الشائعة DMC المغرب | أسئلة MICE والفعاليات',
+        description: 'إجابات على الأسئلة الشائعة حول DMC المغرب وخدمات MICE والفعاليات الشركات وسفر الحوافز وبناء الفرق.',
+        keywords: 'أسئلة شائعة DMC المغرب، أسئلة MICE المغرب، مساعدة فعاليات شركات، معلومات خدمات DMC'
       }
     }
   };
 
-  const currentContent = seoContent[pageType] || seoContent.home;
-  const finalTitle = customTitle || currentContent.title[language];
-  const finalDescription = customDescription || currentContent.description[language];
-  const finalKeywords = customKeywords || currentContent.keywords[language];
+  const currentContent = seoContent[pageType]?.[language] || seoContent.home[language];
+  const finalTitle = customTitle || currentContent.title;
+  const finalDescription = customDescription || currentContent.description;
+  const finalKeywords = customKeywords || currentContent.keywords;
 
   return (
     <SEOEnhancer

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
+import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -32,14 +33,12 @@ const MarrakechIncentive: React.FC = () => {
 
   return (
     <>
-      {/* SEO Meta Tags */}
-      <title>Marrakech Incentive Travel Programs | Luxury Corporate Rewards Morocco 2025</title>
-      <meta name="description" content="Premium Marrakech incentive travel programs that drive performance and reward excellence. Luxury venues, authentic experiences, and professional MICE services in Morocco's imperial city." />
-      <meta name="keywords" content="Marrakech incentive travel, luxury corporate rewards Morocco, incentive programs Marrakech, corporate incentive travel, Morocco MICE incentives, executive rewards Marrakech" />
-      <meta property="og:title" content="Ultimate Marrakech Incentive Travel Programs for Corporate Excellence" />
-      <meta property="og:description" content="Transform your corporate rewards with luxury Marrakech incentive travel. Authentic experiences, premium venues, and measurable ROI for top-performing teams." />
-      <meta property="og:image" content={incentiveImage} />
-      <meta property="og:type" content="article" />
+      <OptimizedSEO 
+        pageType="blog"
+        customTitle="Marrakech Incentive Travel | Corporate Rewards DMC Morocco"
+        customDescription="Expert Marrakech incentive travel programs. Luxury corporate rewards, team building & MICE services by Morocco's leading DMC."
+        customKeywords="Marrakech incentive travel, DMC Marrakech, incentive travel Morocco, corporate rewards Morocco, luxury incentive programs, MICE Morocco"
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

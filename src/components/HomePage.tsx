@@ -8,7 +8,7 @@ import { AnimatedSection } from '@/components/AnimatedSection';
 import { PageTransition } from '@/components/PageTransition';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useStaggerAnimation } from '@/hooks/useStaggerAnimation';
-import { CheckCircle, Clock, Users, Star, MapPin, MessageCircle, Trophy, Briefcase, Presentation, Utensils, Plane, Building, Palette, TrendingUp, DollarSign, Timer, Target, Quote, Eye, BookOpen, HelpCircle, Phone, Mail } from 'lucide-react';
+import { CheckCircle, Clock, Users, Star, MapPin, MessageCircle, Trophy, Briefcase, Presentation, Utensils, Plane, Building, Palette, TrendingUp, DollarSign, Timer, Target, Quote, Eye, BookOpen, HelpCircle, Phone, Mail, Calendar, Award } from 'lucide-react';
 import { QuoteDialog } from './QuoteDialog';
 import { CaseStudyDialog } from './CaseStudyDialog';
 import { ScheduleCallDialog } from './ScheduleCallDialog';
@@ -390,6 +390,122 @@ export const HomePage: React.FC = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us as Morocco DMC Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-6">
+              {language === 'fr' ? 'Pourquoi Choisir Notre DMC Maroc' : 
+               language === 'es' ? '¿Por Qué Elegir Nuestro DMC Marruecos?' : 
+               language === 'ar' ? 'لماذا تختار شركة DMC المغرب لدينا' :
+               'Why Choose Our Morocco DMC'}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              {language === 'fr' ? 'En tant que DMC leader au Maroc, nous transformons vos événements corporatifs en expériences extraordinaires grâce à notre expertise locale inégalée et nos services MICE de classe mondiale.' :
+               language === 'es' ? 'Como DMC líder en Marruecos, transformamos sus eventos corporativos en experiencias extraordinarias gracias a nuestra experiencia local incomparable y servicios MICE de clase mundial.' :
+               language === 'ar' ? 'كشركة DMC رائدة في المغرب، نحول فعالياتكم الشركات إلى تجارب استثنائية بفضل خبرتنا المحلية الفريدة وخدمات MICE عالمية المستوى.' :
+               'As Morocco\'s leading DMC, we transform your corporate events into extraordinary experiences through unmatched local expertise and world-class MICE services.'}
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-12 mb-16">
+            <Card className="shadow-elegant hover:shadow-glow transition-smooth border-0 bg-gradient-to-br from-background to-muted/30">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Award className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-semibold text-foreground mb-4">
+                  {language === 'fr' ? '15+ Années d\'Excellence DMC' :
+                   language === 'es' ? '15+ Años de Excelencia DMC' :
+                   language === 'ar' ? '15+ سنة من التميز DMC' :
+                   '15+ Years DMC Excellence'}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Expertise approfondie du marché marocain des événements corporatifs avec un historique prouvé de plus de 2000 événements MICE réussis pour les entreprises Fortune 500 et les agences internationales.' :
+                   language === 'es' ? 'Experiencia profunda del mercado marroquí de eventos corporativos con un historial probado de más de 2000 eventos MICE exitosos para empresas Fortune 500 y agencias internacionales.' :
+                   language === 'ar' ? 'خبرة عميقة في السوق المغربي للفعاليات الشركات مع سجل مثبت لأكثر من 2000 حدث MICE ناجح لشركات فورتشن 500 والوكالات الدولية.' :
+                   'Deep expertise in Morocco\'s corporate events market with proven track record of 2000+ successful MICE events for Fortune 500 companies and international agencies.'}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elegant hover:shadow-glow transition-smooth border-0 bg-gradient-to-br from-background to-muted/30">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MapPin className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-semibold text-foreground mb-4">
+                  {language === 'fr' ? 'Réseau National Premium' :
+                   language === 'es' ? 'Red Nacional Premium' :
+                   language === 'ar' ? 'شبكة وطنية مميزة' :
+                   'National Premium Network'}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Accès exclusif à plus de 200 lieux de conférence premium au Maroc, des palais impériaux de Marrakech aux centres de congrès modernes de Casablanca, garantissant des options parfaites pour chaque événement corporatif.' :
+                   language === 'es' ? 'Acceso exclusivo a más de 200 lugares de conferencia premium en Marruecos, desde palacios imperiales de Marrakech hasta centros de convenciones modernos de Casablanca, garantizando opciones perfectas para cada evento corporativo.' :
+                   language === 'ar' ? 'وصول حصري لأكثر من 200 مكان مؤتمرات مميز في المغرب، من القصور الإمبراطورية في مراكش إلى مراكز المؤتمرات الحديثة في الدار البيضاء.' :
+                   'Exclusive access to 200+ premium conference venues across Morocco, from Marrakech\'s imperial palaces to Casablanca\'s modern convention centers, ensuring perfect options for every corporate event.'}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elegant hover:shadow-glow transition-smooth border-0 bg-gradient-to-br from-background to-muted/30">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Users className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-semibold text-foreground mb-4">
+                  {language === 'fr' ? 'Équipe Multilingue Expert' :
+                   language === 'es' ? 'Equipo Multilingüe Experto' :
+                   language === 'ar' ? 'فريق متعدد اللغات خبير' :
+                   'Expert Multilingual Team'}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Équipe dédiée de 50+ spécialistes MICE certifiés parlant plus de 8 langues, offrant un support 24/7 et une expertise culturelle approfondie pour des événements d\'incentive et team building transformateurs.' :
+                   language === 'es' ? 'Equipo dedicado de 50+ especialistas MICE certificados que hablan más de 8 idiomas, ofreciendo soporte 24/7 y experiencia cultural profunda para eventos de incentivo y team building transformadores.' :
+                   language === 'ar' ? 'فريق مخصص من 50+ متخصص MICE معتمد يتحدث أكثر من 8 لغات، مع دعم 24/7 وخبرة ثقافية عميقة للحوافز وبناء الفرق التحويلية.' :
+                   'Dedicated team of 50+ certified MICE specialists speaking 8+ languages, providing 24/7 support and deep cultural expertise for transformational incentive and team building events.'}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-12 text-center">
+            <h3 className="text-3xl font-bold text-foreground mb-6">
+              {language === 'fr' ? 'Votre Partenaire DMC de Confiance au Maroc' :
+               language === 'es' ? 'Su Socio DMC de Confianza en Marruecos' :
+               language === 'ar' ? 'شريك DMC الموثوق في المغرب' :
+               'Your Trusted DMC Partner in Morocco'}
+            </h3>
+            <p className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
+              {language === 'fr' ? 'De la planification stratégique à l\'exécution parfaite, notre DMC Maroc livre des résultats exceptionnels qui dépassent les attentes. Chaque événement corporatif devient une expérience transformatrice qui inspire, motive et génère un ROI mesurable pour votre organisation.' :
+               language === 'es' ? 'Desde la planificación estratégica hasta la ejecución perfecta, nuestro DMC Marruecos entrega resultados excepcionales que superan las expectativas. Cada evento corporativo se convierte en una experiencia transformadora que inspira, motiva y genera ROI medible para su organización.' :
+               language === 'ar' ? 'من التخطيط الاستراتيجي إلى التنفيذ المثالي، يقدم DMC المغرب لدينا نتائج استثنائية تفوق التوقعات. كل حدث شركات يصبح تجربة تحويلية تلهم وتحفز.' :
+               'From strategic planning to flawless execution, our Morocco DMC delivers exceptional results that exceed expectations. Every corporate event becomes a transformative experience that inspires, motivates, and generates measurable ROI for your organization.'}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <QuoteDialog>
+                <Button variant="cta" size="lg" className="text-lg px-10 py-4">
+                  {language === 'fr' ? 'Demandez Votre Proposition DMC' :
+                   language === 'es' ? 'Solicite Su Propuesta DMC' :
+                   language === 'ar' ? 'اطلب اقتراحك DMC' :
+                   'Request Your DMC Proposal'}
+                </Button>
+              </QuoteDialog>
+              <ScheduleCallDialog>
+                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+                  <Phone className="w-5 h-5 mr-2" />
+                  {language === 'fr' ? 'Consultation DMC Expert' :
+                   language === 'es' ? 'Consulta DMC Experta' :
+                   language === 'ar' ? 'استشارة DMC خبيرة' :
+                   'Expert DMC Consultation'}
+                </Button>
+              </ScheduleCallDialog>
+            </div>
           </div>
         </div>
       </section>
