@@ -9,7 +9,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
-import { Search, Plus, Edit, Trash2, Users, CheckCircle, XCircle, Loader2 } from 'lucide-react';
+import { Search, Plus, Edit, Trash2, Users, CheckCircle, XCircle, Loader2, Key } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { toast } from '@/hooks/use-toast';
@@ -32,6 +32,7 @@ interface PartnerFormData {
   phone: string;
   authorized_by_ministry: boolean;
   notes: string;
+  password?: string;
 }
 
 const Partners = () => {
@@ -49,10 +50,14 @@ const Partners = () => {
     email: '',
     phone: '',
     authorized_by_ministry: false,
-    notes: ''
+    notes: '',
+    password: ''
   });
   const [isSaving, setIsSaving] = useState(false);
   const [deletingPartnerId, setDeletingPartnerId] = useState<string | null>(null);
+  const [isCreateLoginDialogOpen, setIsCreateLoginDialogOpen] = useState(false);
+  const [selectedPartnerForLogin, setSelectedPartnerForLogin] = useState<Partner | null>(null);
+  const [isCreatingLogin, setIsCreatingLogin] = useState(false);
 
   useEffect(() => {
     loadPartners();
@@ -114,7 +119,8 @@ const Partners = () => {
       email: '',
       phone: '',
       authorized_by_ministry: false,
-      notes: ''
+      notes: '',
+      password: ''
     });
   };
 
@@ -164,7 +170,7 @@ const Partners = () => {
         toast({ title: "Success", description: "Partner updated successfully" });
       } else {
         // Create new partner
-        const { error } = await supabase
+        const { data, error } = await supabase
           .from('partners')
           .insert({
             name: formData.name,
@@ -172,10 +178,15 @@ const Partners = () => {
             phone: formData.phone || null,
             authorized_by_ministry: formData.authorized_by_ministry,
             notes: formData.notes || null
-          });
+          })
+          .select();
 
         if (error) throw error;
         toast({ title: "Success", description: "Partner created successfully" });
+        
+        // Auto-assign all unassigned leads and calls to the new partner if it's the first one
+        await handleAssignLeadsToPartner(data[0].id);
+        await handleAssignCallsToPartner(data[0].id);
       }
 
       loadPartners();
@@ -252,6 +263,105 @@ const Partners = () => {
         description: "Failed to assign leads to partner.",
         variant: "destructive",
       });
+    }
+  };
+
+  const handleAssignCallsToPartner = async (partnerId: string) => {
+    try {
+      const { error } = await supabase
+        .from('calls')
+        .update({ partner_id: partnerId })
+        .is('partner_id', null);
+
+      if (error) throw error;
+    } catch (error: any) {
+      console.error('Error assigning calls:', error);
+    }
+  };
+
+  const handleCreateLogin = (partner: Partner) => {
+    setSelectedPartnerForLogin(partner);
+    setFormData({
+      name: partner.name,
+      email: partner.email,
+      phone: partner.phone || '',
+      authorized_by_ministry: partner.authorized_by_ministry,
+      notes: partner.notes || '',
+      password: ''
+    });
+    setIsCreateLoginDialogOpen(true);
+  };
+
+  const handleSaveLogin = async () => {
+    if (!formData.password || formData.password.length < 6) {
+      toast({
+        title: "Validation Error",
+        description: "Password must be at least 6 characters long.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!selectedPartnerForLogin) return;
+
+    setIsCreatingLogin(true);
+    try {
+      // Create user account
+      const { data: authData, error: authError } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/crm/dashboard`,
+          data: {
+            full_name: formData.name,
+            role: 'Partner'
+          }
+        }
+      });
+
+      if (authError) throw authError;
+
+      if (authData.user) {
+        // Update partner with user_id
+        const { error: updateError } = await supabase
+          .from('partners')
+          .update({ user_id: authData.user.id })
+          .eq('id', selectedPartnerForLogin.id);
+
+        if (updateError) throw updateError;
+
+        // Create/update profile with partner_id
+        const { error: profileError } = await supabase
+          .from('profiles')
+          .upsert({
+            user_id: authData.user.id,
+            full_name: formData.name,
+            email: formData.email,
+            role: 'Partner',
+            partner_id: selectedPartnerForLogin.id
+          });
+
+        if (profileError) throw profileError;
+
+        toast({
+          title: "Login Created",
+          description: `Login credentials created for ${formData.name}. They can now access their assigned leads and calls.`,
+        });
+
+        loadPartners();
+        setIsCreateLoginDialogOpen(false);
+        setSelectedPartnerForLogin(null);
+        resetForm();
+      }
+    } catch (error: any) {
+      console.error('Error creating login:', error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to create login credentials.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsCreatingLogin(false);
     }
   };
 
@@ -358,9 +468,20 @@ const Partners = () => {
                           variant="ghost" 
                           size="sm" 
                           onClick={() => handleAssignLeadsToPartner(partner.id)}
+                          title="Assign leads"
                         >
                           <Users className="h-4 w-4" />
                         </Button>
+                        {!partner.user_id && (
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            onClick={() => handleCreateLogin(partner)}
+                            title="Create login credentials"
+                          >
+                            <Key className="h-4 w-4" />
+                          </Button>
+                        )}
                         <AlertDialog>
                           <AlertDialogTrigger asChild>
                             <Button variant="ghost" size="sm" className="text-destructive hover:text-destructive">
@@ -490,6 +611,65 @@ const Partners = () => {
             <Button onClick={handleSavePartner} disabled={isSaving}>
               {isSaving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               {selectedPartner ? 'Update' : 'Create'} Partner
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Create Login Dialog */}
+      <Dialog open={isCreateLoginDialogOpen} onOpenChange={(open) => {
+        if (!open) {
+          setIsCreateLoginDialogOpen(false);
+          setSelectedPartnerForLogin(null);
+          resetForm();
+        }
+      }}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle>Create Login Credentials</DialogTitle>
+            <DialogDescription>
+              Create login credentials for {selectedPartnerForLogin?.name} to access their assigned leads and calls.
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="login-email">Email</Label>
+              <Input
+                id="login-email"
+                type="email"
+                value={formData.email}
+                disabled
+                className="bg-muted"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="login-password">Password *</Label>
+              <Input
+                id="login-password"
+                type="password"
+                value={formData.password}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                placeholder="Enter password (min 6 characters)"
+              />
+            </div>
+          </div>
+
+          <DialogFooter>
+            <Button 
+              variant="outline" 
+              onClick={() => {
+                setIsCreateLoginDialogOpen(false);
+                setSelectedPartnerForLogin(null);
+                resetForm();
+              }}
+            >
+              Cancel
+            </Button>
+            <Button onClick={handleSaveLogin} disabled={isCreatingLogin}>
+              {isCreatingLogin && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              Create Login
             </Button>
           </DialogFooter>
         </DialogContent>
