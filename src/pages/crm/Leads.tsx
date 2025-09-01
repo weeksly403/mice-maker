@@ -21,14 +21,26 @@ interface Lead {
   phone?: string;
   status: string;
   created_at: string;
+  updated_at: string;
   total_offer_budget?: number;
+  budget_per_person?: number;
   commission_percent?: number;
   commission_value?: number;
+  expected_payment_date?: string;
   event_types: string[];
+  preferred_cities: string[];
   group_size?: string;
+  dates_text?: string;
+  language?: string;
+  source?: string;
+  is_flexible?: boolean;
+  consent_given?: boolean;
+  consent_source?: string;
   follow_up_remark?: string;
   partner_agency?: string;
+  partner_id?: string;
   currency?: string;
+  attachments?: string[];
 }
 
 const Leads = () => {
@@ -231,9 +243,12 @@ const Leads = () => {
                   <TableHead>Contact</TableHead>
                   <TableHead>Status</TableHead>
                   <TableHead>Event Type</TableHead>
+                  <TableHead>Preferred Cities</TableHead>
                   <TableHead>Group Size</TableHead>
-                  <TableHead>Budget</TableHead>
-                  <TableHead>Commission</TableHead>
+                  <TableHead>Budget/Person</TableHead>
+                  <TableHead>Total Budget</TableHead>
+                  <TableHead>Payment Due</TableHead>
+                  <TableHead>Language</TableHead>
                   <TableHead>Created</TableHead>
                   <TableHead>Actions</TableHead>
                 </TableRow>
@@ -247,6 +262,7 @@ const Leads = () => {
                       <div>
                         <p className="font-medium">{lead.contact_name}</p>
                         <p className="text-xs text-muted-foreground">{lead.email}</p>
+                        {lead.phone && <p className="text-xs text-muted-foreground">{lead.phone}</p>}
                       </div>
                     </TableCell>
                     <TableCell>
@@ -266,12 +282,32 @@ const Leads = () => {
                         )}
                       </div>
                     </TableCell>
+                    <TableCell>
+                      <div className="flex flex-wrap gap-1">
+                        {lead.preferred_cities?.slice(0, 2).map((city, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs">
+                            {city}
+                          </Badge>
+                        ))}
+                        {lead.preferred_cities?.length > 2 && (
+                          <Badge variant="outline" className="text-xs">
+                            +{lead.preferred_cities.length - 2}
+                          </Badge>
+                        )}
+                      </div>
+                    </TableCell>
                     <TableCell>{lead.group_size || 'N/A'}</TableCell>
                     <TableCell>
-                      {lead.total_offer_budget ? `€${parseFloat(lead.total_offer_budget.toString()).toFixed(2)}` : 'N/A'}
+                      {lead.budget_per_person ? `${lead.currency || 'EUR'} ${parseFloat(lead.budget_per_person.toString()).toFixed(0)}` : 'N/A'}
                     </TableCell>
                     <TableCell>
-                      {lead.commission_value ? `€${parseFloat(lead.commission_value.toString()).toFixed(2)}` : 'N/A'}
+                      {lead.total_offer_budget ? `${lead.currency || 'EUR'} ${parseFloat(lead.total_offer_budget.toString()).toFixed(2)}` : 'N/A'}
+                    </TableCell>
+                    <TableCell>
+                      {lead.expected_payment_date ? new Date(lead.expected_payment_date).toLocaleDateString() : 'N/A'}
+                    </TableCell>
+                    <TableCell>
+                      <Badge variant="secondary" className="text-xs">{lead.language || 'N/A'}</Badge>
                     </TableCell>
                     <TableCell>{new Date(lead.created_at).toLocaleDateString()}</TableCell>
                     <TableCell>
@@ -315,7 +351,7 @@ const Leads = () => {
                 ))}
                 {filteredLeads.length === 0 && (
                   <TableRow>
-                    <TableCell colSpan={10} className="text-center py-8 text-muted-foreground">
+                    <TableCell colSpan={13} className="text-center py-8 text-muted-foreground">
                       No leads found matching your criteria
                     </TableCell>
                   </TableRow>

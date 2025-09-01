@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { Loader2, X } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
@@ -19,14 +20,26 @@ interface Lead {
   phone?: string;
   status: string;
   total_offer_budget?: number;
+  budget_per_person?: number;
   commission_percent?: number;
   commission_value?: number;
+  expected_payment_date?: string;
   event_types: string[];
+  preferred_cities: string[];
   group_size?: string;
+  dates_text?: string;
+  language?: string;
+  source?: string;
+  is_flexible?: boolean;
+  consent_given?: boolean;
+  consent_source?: string;
   follow_up_remark?: string;
   partner_agency?: string;
+  partner_id?: string;
   currency?: string;
+  attachments?: string[];
   created_at: string;
+  updated_at: string;
 }
 
 interface LeadEditDialogProps {
@@ -60,8 +73,14 @@ const LeadEditDialog = ({ lead, isOpen, onClose, onSave }: LeadEditDialogProps) 
           phone: formData.phone,
           status: formData.status as any,
           total_offer_budget: formData.total_offer_budget,
+          budget_per_person: formData.budget_per_person,
           commission_percent: formData.commission_percent,
+          expected_payment_date: formData.expected_payment_date,
           group_size: formData.group_size as any,
+          dates_text: formData.dates_text,
+          language: formData.language as any,
+          source: formData.source as any,
+          is_flexible: formData.is_flexible,
           follow_up_remark: formData.follow_up_remark,
           partner_agency: formData.partner_agency,
           currency: formData.currency as any
@@ -92,6 +111,8 @@ const LeadEditDialog = ({ lead, isOpen, onClose, onSave }: LeadEditDialogProps) 
   const statusOptions = ['New', 'Qualified', 'Quoted', 'Negotiation', 'Won', 'Lost', 'OnHold'];
   const currencyOptions = ['MAD', 'EUR', 'USD'];
   const groupSizeOptions = ['<30', '30-80', '80-150', '150-300', '300+'];
+  const languageOptions = ['FR', 'EN', 'ES', 'AR'];
+  const sourceOptions = ['Manual', 'Website', 'Email', 'Phone', 'Referral'];
 
   if (!lead) return null;
 
@@ -222,10 +243,81 @@ const LeadEditDialog = ({ lead, isOpen, onClose, onSave }: LeadEditDialogProps) 
             </div>
           </div>
 
+          {/* Event Information */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-primary">Event Information</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="dates_text">Event Dates</Label>
+                <Input
+                  id="dates_text"
+                  value={formData.dates_text || ''}
+                  onChange={(e) => setFormData({ ...formData, dates_text: e.target.value })}
+                  placeholder="e.g., March 15-17, 2024"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="language">Language</Label>
+                <Select 
+                  value={formData.language || ''} 
+                  onValueChange={(value) => setFormData({ ...formData, language: value })}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select language" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {languageOptions.map((lang) => (
+                      <SelectItem key={lang} value={lang}>{lang}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="source">Lead Source</Label>
+                <Select 
+                  value={formData.source || ''} 
+                  onValueChange={(value) => setFormData({ ...formData, source: value })}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select source" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {sourceOptions.map((source) => (
+                      <SelectItem key={source} value={source}>{source}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2 flex items-center space-x-2 pt-8">
+                <Switch
+                  id="is_flexible"
+                  checked={formData.is_flexible || false}
+                  onCheckedChange={(checked) => setFormData({ ...formData, is_flexible: checked })}
+                />
+                <Label htmlFor="is_flexible">Flexible Dates</Label>
+              </div>
+            </div>
+          </div>
+
           {/* Financial Information */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-primary">Financial Information</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-3 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="budget_per_person">Budget Per Person ({formData.currency || 'EUR'})</Label>
+                <Input
+                  id="budget_per_person"
+                  type="number"
+                  step="1"
+                  value={formData.budget_per_person || ''}
+                  onChange={(e) => setFormData({ 
+                    ...formData, 
+                    budget_per_person: e.target.value ? parseFloat(e.target.value) : undefined 
+                  })}
+                />
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="total_offer_budget">Total Budget ({formData.currency || 'EUR'})</Label>
                 <Input
@@ -253,6 +345,15 @@ const LeadEditDialog = ({ lead, isOpen, onClose, onSave }: LeadEditDialogProps) 
                 />
               </div>
             </div>
+            <div className="space-y-2">
+              <Label htmlFor="expected_payment_date">Expected Payment Date</Label>
+              <Input
+                id="expected_payment_date"
+                type="date"
+                value={formData.expected_payment_date || ''}
+                onChange={(e) => setFormData({ ...formData, expected_payment_date: e.target.value })}
+              />
+            </div>
             {formData.commission_value && (
               <div className="p-3 bg-muted rounded-lg">
                 <p className="text-sm text-muted-foreground">
@@ -262,15 +363,29 @@ const LeadEditDialog = ({ lead, isOpen, onClose, onSave }: LeadEditDialogProps) 
             )}
           </div>
 
-          {/* Event Types */}
+          {/* Event Types & Cities */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-primary">Event Types</h3>
-            <div className="flex flex-wrap gap-2">
-              {formData.event_types?.map((type, idx) => (
-                <Badge key={idx} variant="secondary">
-                  {type}
-                </Badge>
-              ))}
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-primary">Event Types</h3>
+                <div className="flex flex-wrap gap-2">
+                  {formData.event_types?.map((type, idx) => (
+                    <Badge key={idx} variant="secondary">
+                      {type}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-primary">Preferred Cities</h3>
+                <div className="flex flex-wrap gap-2">
+                  {formData.preferred_cities?.map((city, idx) => (
+                    <Badge key={idx} variant="outline">
+                      {city}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 

@@ -41,6 +41,7 @@ import CRMLayout from "./components/crm/CRMLayout";
 import Dashboard from "./pages/crm/Dashboard";
 import Leads from "./pages/crm/Leads";
 import Calls from "./pages/crm/Calls";
+import Partners from "./pages/crm/Partners";
 
 const queryClient = new QueryClient();
 
@@ -119,6 +120,7 @@ const App = () => (
                     <Route path="dashboard" element={<Dashboard />} />
                     <Route path="leads" element={<Leads />} />
                     <Route path="calls" element={<Calls />} />
+                    <Route path="partners" element={<Partners />} />
                   </Route>
                   
                   {/* French Routes - SEO Optimized */}
