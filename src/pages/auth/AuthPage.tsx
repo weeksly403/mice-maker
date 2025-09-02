@@ -116,25 +116,6 @@ const AuthPage = () => {
               </TabsTrigger>
             </TabsList>
 
-            <div className="mt-4 text-center">
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                onClick={() => {
-                  setEmail('admin@eventmorocco.com');
-                  setPassword('EventMorocco2024!');
-                  setFullName('Event Morocco Admin');
-                  setRole('Admin');
-                }}
-                className="text-xs"
-              >
-                Use Admin Credentials
-              </Button>
-              <p className="text-xs text-muted-foreground mt-2">
-                First time? Sign up with admin credentials, then sign in.
-              </p>
-            </div>
 
             {error && (
               <Alert variant="destructive" className="mt-4">
