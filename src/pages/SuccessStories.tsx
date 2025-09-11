@@ -8,11 +8,11 @@ import { Badge } from '@/components/ui/badge';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { Award, Users, MapPin, Calendar, TrendingUp, Target, CheckCircle, Star, Building, Globe, Heart, Lightbulb } from 'lucide-react';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
-import marrakechImage from '@/assets/marrakech-conference.jpg';
-import desertImage from '@/assets/desert-team-building.jpg';
-import agadirImage from '@/assets/agadir-beach-teambuilding.jpg';
-import corporateImage from '@/assets/corporate-testimonials.jpg';
-import culturalImage from '@/assets/agadir-cultural-experience.jpg';
+import successMarrakechImage from '@/assets/success-marrakech.jpg';
+import successSaharaImage from '@/assets/success-sahara-retreat.jpg';
+import successAgadirTeamImage from '@/assets/success-agadir-team.jpg';
+import successCasablancaImage from '@/assets/success-casablanca-conference.jpg';
+import successFesImage from '@/assets/success-fes-cultural.jpg';
 import dinnerImage from '@/assets/agadir-corporate-dinner.jpg';
 
 const SuccessStories: React.FC = () => {
@@ -29,7 +29,7 @@ const SuccessStories: React.FC = () => {
       duration: '4 days',
       budget: '€480,000',
       year: '2024',
-      image: marrakechImage,
+      image: successMarrakechImage,
       challenge: language === 'fr' ? 'Organiser la convention annuelle de Total Energies pour 350 dirigeants internationaux avec des objectifs ambitieux de networking et présentation des résultats financiers.' : language === 'es' ? 'Organizar la convención anual de Total Energies para 350 ejecutivos internacionales con objetivos ambiciosos de networking y presentación de resultados financieros.' : language === 'ar' ? 'تنظيم المؤتمر السنوي لتوتال إنرجيز لـ 350 مدير دولي مع أهداف طموحة للتواصل وعرض النتائج المالية.' : 'Organize Total Energies annual convention for 350 international executives with ambitious networking and financial results presentation objectives.',
       solution: language === 'fr' ? 'Événement de 4 jours au Palais des Congrès de Marrakech avec sessions plénières, ateliers sectoriels, gala de gala dans un palais privé et activités team building dans l\'Atlas.' : language === 'es' ? 'Evento de 4 días en el Palacio de Congresos de Marrakech con sesiones plenarias, talleres sectoriales, cena de gala en palacio privado y actividades de team building en el Atlas.' : language === 'ar' ? 'فعالية لمدة 4 أيام في قصر المؤتمرات في مراكش مع جلسات عامة وورش قطاعية وعشاء احتفالي في قصر خاص وأنشطة بناء الفريق في الأطلس.' : '4-day event at Marrakech Congress Palace with plenary sessions, sectoral workshops, gala dinner in private palace and Atlas team building activities.',
       results: [
@@ -61,7 +61,7 @@ const SuccessStories: React.FC = () => {
       duration: '3 days',
       budget: '€85,000',
       year: '2024',
-      image: desertImage,
+      image: successSaharaImage,
       challenge: language === 'fr' ? 'Créer une expérience transformatrice pour le comité de direction KPMG Afrique du Nord afin de redéfinir la stratégie 2025-2030 dans un cadre inspirant.' : language === 'es' ? 'Crear una experiencia transformadora para el comité directivo KPMG Norte de África para redefinir la estrategia 2025-2030 en un marco inspirador.' : language === 'ar' ? 'إنشاء تجربة تحويلية للجنة الإدارية في كي بي إم جي شمال أفريقيا لإعادة تعريف استراتيجية 2025-2030 في إطار ملهم.' : 'Create a transformative experience for KPMG North Africa executive committee to redefine 2025-2030 strategy in an inspiring setting.',
       solution: language === 'fr' ? 'Retraite exclusive dans camp de luxe du Sahara avec ateliers stratégiques, coaching individuel, expériences culturelles berbers et sessions de réflexion sous les étoiles.' : language === 'es' ? 'Retiro exclusivo en campamento de lujo del Sahara con talleres estratégicos, coaching individual, experiencias culturales bereber y sesiones de reflexión bajo las estrellas.' : language === 'ar' ? 'خلوة حصرية في مخيم فاخر في الصحراء مع ورش استراتيجية وتدريب فردي وتجارب ثقافية بربرية وجلسات تأمل تحت النجوم.' : 'Exclusive retreat in luxury Sahara camp with strategic workshops, individual coaching, Berber cultural experiences and starlight reflection sessions.',
       results: [
@@ -93,7 +93,7 @@ const SuccessStories: React.FC = () => {
       duration: '5 days',
       budget: '€220,000',
       year: '2024',
-      image: agadirImage,
+      image: successAgadirTeamImage,
       challenge: language === 'fr' ? 'Intégrer 180 collaborateurs de 12 filiales européennes avec des activités de team building innovantes et formation commerciale intensive pour lancement nouveaux produits.' : language === 'es' ? 'Integrar 180 colaboradores de 12 filiales europeas con actividades de team building innovadoras y formación comercial intensiva para lanzamiento de nuevos productos.' : language === 'ar' ? 'دمج 180 موظف من 12 فرع أوروبي مع أنشطة بناء الفريق المبتكرة والتدريب التجاري المكثف لإطلاق منتجات جديدة.' : 'Integrate 180 employees from 12 European branches with innovative team building activities and intensive commercial training for new product launch.',
       solution: language === 'fr' ? 'Programme intensif de 5 jours combinant formations en salle, challenges sportifs sur plage, compétitions golf, ateliers culinaires marocains et soirée gala en bord de mer.' : language === 'es' ? 'Programa intensivo de 5 días combinando formaciones en aula, desafíos deportivos en playa, competencias de golf, talleres culinarios marroquíes y cena de gala junto al mar.' : language === 'ar' ? 'برنامج مكثف لمدة 5 أيام يجمع بين التدريب في القاعة والتحديات الرياضية على الشاطئ ومسابقات الجولف وورش الطبخ المغربي وعشاء احتفالي على شاطئ البحر.' : 'Intensive 5-day program combining classroom training, beach sports challenges, golf competitions, Moroccan culinary workshops and seaside gala dinner.',
       results: [
@@ -125,7 +125,7 @@ const SuccessStories: React.FC = () => {
       duration: '3 days',
       budget: '€320,000',
       year: '2024',
-      image: corporateImage,
+      image: successCasablancaImage,
       challenge: language === 'fr' ? 'Organiser la première conférence Google Cloud MENA avec 500 participants, démonstrations techniques en direct et networking de haut niveau pour décideurs IT régionaux.' : language === 'es' ? 'Organizar la primera conferencia Google Cloud MENA con 500 participantes, demostraciones técnicas en vivo y networking de alto nivel para tomadores de decisiones IT regionales.' : language === 'ar' ? 'تنظيم أول مؤتمر جوجل كلاود في منطقة الشرق الأوسط وشمال أفريقيا مع 500 مشارك وعروض تقنية مباشرة وتواصل عالي المستوى لصناع القرار في تقنية المعلومات الإقليميين.' : 'Organize the first Google Cloud MENA conference with 500 participants, live technical demonstrations and high-level networking for regional IT decision makers.',
       solution: language === 'fr' ? 'Événement de 3 jours au Centre International des Congrès avec keynotes internationaux, zones démo interactives, ateliers techniques hands-on et networking premium dans rooftop panoramique.' : language === 'es' ? 'Evento de 3 días en el Centro Internacional de Congresos con keynotes internacionales, zonas demo interactivas, talleres técnicos hands-on y networking premium en azotea panorámica.' : language === 'ar' ? 'فعالية لمدة 3 أيام في المركز الدولي للمؤتمرات مع كلمات رئيسية دولية ومناطق عرض تفاعلية وورش تقنية عملية وتواصل مميز في السطح البانورامي.' : '3-day event at International Congress Center with international keynotes, interactive demo zones, hands-on technical workshops and premium rooftop networking.',
       results: [
@@ -157,7 +157,7 @@ const SuccessStories: React.FC = () => {
       duration: '4 days',
       budget: '€295,000',
       year: '2024',
-      image: culturalImage,
+      image: successFesImage,
       challenge: language === 'fr' ? 'Créer un incentive premium pour les 120 meilleurs concessionnaires BMW Europe avec immersion culturelle authentique et expériences exclusives dignes de la marque.' : language === 'es' ? 'Crear un incentivo premium para los 120 mejores concesionarios BMW Europa con inmersión cultural auténtica y experiencias exclusivas dignas de la marca.' : language === 'ar' ? 'إنشاء حافز متميز لأفضل 120 وكيل بي إم دبليو في أوروبا مع انغماس ثقافي أصيل وتجارب حصرية تليق بالعلامة التجارية.' : 'Create a premium incentive for the top 120 BMW Europe dealers with authentic cultural immersion and exclusive experiences worthy of the brand.',
       solution: language === 'fr' ? 'Programme exclusif de 4 jours dans riads de luxe avec visites privées médina UNESCO, ateliers artisant marocain, dégustations gastronomiques et soirée spectaculaire dans palais royal.' : language === 'es' ? 'Programa exclusivo de 4 días en riads de lujo con visitas privadas medina UNESCO, talleres artesanos marroquíes, degustaciones gastronómicas y velada espectacular en palacio real.' : language === 'ar' ? 'برنامج حصري لمدة 4 أيام في رياضات فاخرة مع زيارات خاصة للمدينة التراثية وورش الحرفيين المغاربة وتذوق فنون الطبخ وأمسية مذهلة في القصر الملكي.' : 'Exclusive 4-day program in luxury riads with private UNESCO medina visits, Moroccan artisan workshops, gastronomic tastings and spectacular evening in royal palace.',
       results: [
