@@ -26,6 +26,7 @@ import roiBenefitsImage from '@/assets/roi-benefits-infographic.jpg';
 import blogMarrakechImage from '@/assets/blog-marrakech-incentive.jpg';
 import blogVenuesImage from '@/assets/blog-morocco-venues.jpg';
 import blogSaharaImage from '@/assets/blog-sahara-retreat.jpg';
+import agadirBeachImage from '@/assets/agadir-beach-teambuilding.jpg';
 
 export const HomePage: React.FC = () => {
   const { t, language } = useLanguage();
@@ -133,7 +134,7 @@ export const HomePage: React.FC = () => {
     },
     { 
       name: t('agadir'), 
-      image: desertImage,
+      image: agadirBeachImage,
       description: t('destinationAgadirDesc'),
       venues: '25+',
       capacity: '1500'
@@ -247,7 +248,7 @@ export const HomePage: React.FC = () => {
       title: t('caseStudy3Title'),
       description: t('caseStudy3Desc'),
       metrics: t('caseStudy3Metrics'),
-      image: desertImage
+      image: agadirBeachImage
     }
   ];
 

@@ -8,7 +8,10 @@ import { getLocalizedPath } from '@/lib/i18n';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
-import conferenceImage from '@/assets/marrakech-conference.jpg';
+import marrakechDestImage from '@/assets/dest-marrakech.jpg';
+import casablancaDestImage from '@/assets/dest-casablanca.jpg';
+import agadirDestImage from '@/assets/dest-agadir.jpg';
+import fesDestImage from '@/assets/dest-fes.jpg';
 
 const Destinations: React.FC = () => {
   const { t } = useLanguage();
@@ -17,7 +20,7 @@ const Destinations: React.FC = () => {
     {
       name: t('marrakech'),
       slug: 'marrakech',
-      image: conferenceImage,
+      image: marrakechDestImage,
       description: t('marrakechDesc'),
       highlights: [t('marrakechHighlight1'), t('marrakechHighlight2'), t('marrakechHighlight3')],
       venues: '50+',
@@ -26,7 +29,7 @@ const Destinations: React.FC = () => {
     {
       name: t('casablanca'),
       slug: 'casablanca',
-      image: heroImage,
+      image: casablancaDestImage,
       description: t('casablancaDesc'),
       highlights: [t('casablancaHighlight1'), t('casablancaHighlight2'), t('casablancaHighlight3')],
       venues: '30+',
@@ -35,7 +38,7 @@ const Destinations: React.FC = () => {
     {
       name: t('agadir'),
       slug: 'agadir',
-      image: desertImage,
+      image: agadirDestImage,
       description: t('agadirDesc'),
       highlights: [t('agadirHighlight1'), t('agadirHighlight2'), t('agadirHighlight3')],
       venues: '25+',
@@ -44,7 +47,7 @@ const Destinations: React.FC = () => {
     {
       name: t('fes'),
       slug: 'fes',
-      image: heroImage,
+      image: fesDestImage,
       description: t('fesDesc'),
       highlights: [t('fesHighlight1'), t('fesHighlight2'), t('fesHighlight3')],
       venues: '20+',

@@ -15,6 +15,9 @@ import teamBuildingImage from '@/assets/agadir-beach-teambuilding.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import dinnerImage from '@/assets/agadir-corporate-dinner.jpg';
 import culturalImage from '@/assets/agadir-cultural-experience.jpg';
+import servicesIncentive from '@/assets/services-incentive.jpg';
+import servicesTeam from '@/assets/services-team.jpg';
+import servicesRetreat from '@/assets/services-retreat.jpg';
 
 const Services: React.FC = () => {
   const { t, language } = useLanguage();
@@ -31,7 +34,7 @@ const Services: React.FC = () => {
         language === 'fr' ? 'ROI sur performance 250%' : language === 'es' ? 'ROI en rendimiento 250%' : language === 'ar' ? 'عائد الاستثمار على الأداء 250%' : 'Performance ROI 250%',
         language === 'fr' ? 'Fidélisation employés +65%' : language === 'es' ? 'Fidelización empleados +65%' : language === 'ar' ? 'ولاء الموظفين +65%' : 'Employee retention +65%'
       ],
-      image: desertImage,
+      image: servicesIncentive,
       priceRange: '€800-1500',
       duration: '3-7 days'
     },
@@ -46,7 +49,7 @@ const Services: React.FC = () => {
         language === 'fr' ? 'Productivité équipe +35%' : language === 'es' ? 'Productividad equipo +35%' : language === 'ar' ? 'إنتاجية الفريق +35%' : 'Team productivity +35%',
         language === 'fr' ? 'Communication interne +60%' : language === 'es' ? 'Comunicación interna +60%' : language === 'ar' ? 'التواصل الداخلي +60%' : 'Internal communication +60%'
       ],
-      image: teamBuildingImage,
+      image: servicesTeam,
       priceRange: '€350-800',
       duration: '1-3 days'
     },
@@ -61,7 +64,7 @@ const Services: React.FC = () => {
         language === 'fr' ? 'Prise décision +30%' : language === 'es' ? 'Toma decisiones +30%' : language === 'ar' ? 'اتخاذ القرار +30%' : 'Decision making +30%',
         language === 'fr' ? 'Innovation projets +55%' : language === 'es' ? 'Innovación proyectos +55%' : language === 'ar' ? 'ابتكار المشاريع +55%' : 'Project innovation +55%'
       ],
-      image: culturalImage,
+      image: servicesRetreat,
       priceRange: '€450-900',
       duration: '2-5 days'
     },
