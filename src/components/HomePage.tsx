@@ -248,7 +248,7 @@ export const HomePage: React.FC = () => {
       title: t('caseStudy3Title'),
       description: t('caseStudy3Desc'),
       metrics: t('caseStudy3Metrics'),
-      image: desertImage
+      image: agadirBeachImage
     }
   ];
 
