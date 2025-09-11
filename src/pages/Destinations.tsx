@@ -9,6 +9,7 @@ import { QuoteDialog } from '@/components/QuoteDialog';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
+import agadirImage from '@/assets/agadir-destination.jpg';
 
 const Destinations: React.FC = () => {
   const { t } = useLanguage();
@@ -35,7 +36,7 @@ const Destinations: React.FC = () => {
     {
       name: t('agadir'),
       slug: 'agadir',
-      image: desertImage,
+      image: agadirImage,
       description: t('agadirDesc'),
       highlights: [t('agadirHighlight1'), t('agadirHighlight2'), t('agadirHighlight3')],
       venues: '25+',
