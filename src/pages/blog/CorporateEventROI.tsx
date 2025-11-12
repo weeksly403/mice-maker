@@ -692,10 +692,10 @@ Incluya todos los costos:
   return (
     <>
       <OptimizedSEO
-        title={text.title}
-        description={text.metaDesc}
-        keywords="corporate event ROI Morocco, MICE ROI measurement, event ROI calculator, incentive travel ROI, conference ROI, Morocco event costs, event success metrics"
-        type="article"
+        pageType="blog"
+        customTitle={text.title}
+        customDescription={text.metaDesc}
+        customKeywords="corporate event ROI Morocco, MICE ROI measurement, event ROI calculator, incentive travel ROI, conference ROI, Morocco event costs, event success metrics"
       />
       <FAQSchema faqs={faqs} />
 
@@ -892,8 +892,12 @@ Incluya todos los costos:
         </div>
       </article>
 
-      <QuoteDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
-      <ScheduleCallDialog open={callOpen} onOpenChange={setCallOpen} />
+      <QuoteDialog>
+        <Button className="hidden">Get Quote</Button>
+      </QuoteDialog>
+      <ScheduleCallDialog>
+        <Button className="hidden">Schedule Call</Button>
+      </ScheduleCallDialog>
     </>
   );
 };

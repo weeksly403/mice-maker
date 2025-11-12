@@ -421,10 +421,10 @@ La relación no debería terminar cuando sus asistentes se van.`,
   return (
     <>
       <OptimizedSEO
-        title={text.title}
-        description={text.metaDesc}
-        keywords="DMC Morocco, choosing DMC, destination management company Morocco, corporate events Morocco, MICE Morocco, event planning Morocco, DMC selection guide"
-        type="article"
+        pageType="blog"
+        customTitle={text.title}
+        customDescription={text.metaDesc}
+        customKeywords="DMC Morocco, choosing DMC, destination management company Morocco, corporate events Morocco, MICE Morocco, event planning Morocco, DMC selection guide"
       />
       <FAQSchema faqs={faqs} />
 
@@ -586,8 +586,12 @@ La relación no debería terminar cuando sus asistentes se van.`,
         </div>
       </article>
 
-      <QuoteDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
-      <ScheduleCallDialog open={callOpen} onOpenChange={setCallOpen} />
+      <QuoteDialog>
+        <Button className="hidden">Get Quote</Button>
+      </QuoteDialog>
+      <ScheduleCallDialog>
+        <Button className="hidden">Schedule Call</Button>
+      </ScheduleCallDialog>
     </>
   );
 };

@@ -488,10 +488,10 @@ The future of MICE is hybrid, and Morocco is ready to host it.`,
   return (
     <>
       <OptimizedSEO
-        title={text.title}
-        description={text.metaDesc}
-        keywords="hybrid events Morocco, virtual MICE Morocco, hybrid conference Morocco, hybrid event technology, Morocco virtual events, hybrid meeting venues Morocco"
-        type="article"
+        pageType="blog"
+        customTitle={text.title}
+        customDescription={text.metaDesc}
+        customKeywords="hybrid events Morocco, virtual MICE Morocco, hybrid conference Morocco, hybrid event technology, Morocco virtual events, hybrid meeting venues Morocco"
       />
       <FAQSchema faqs={faqs} />
 
@@ -574,11 +574,21 @@ The future of MICE is hybrid, and Morocco is ready to host it.`,
             />
           </section>
 
-          {/* Sections with abbreviated content */}
+          {/* Technology Requirements Section */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6">{text.section1Title}</h2>
-            <div className="prose prose-lg max-w-none whitespace-pre-line">
-              {text.section1}
+            <h2 className="text-3xl font-bold mb-6">
+              {language === 'en' && 'Technology Requirements for Hybrid Events'}
+              {language === 'fr' && 'Exigences Technologiques pour Événements Hybrides'}
+              {language === 'es' && 'Requisitos Tecnológicos para Eventos Híbridos'}
+              {language === 'ar' && 'المتطلبات التكنولوجية للفعاليات الهجينة'}
+            </h2>
+            <div className="prose prose-lg max-w-none">
+              <p>
+                {language === 'en' && 'Successful hybrid events require robust technology infrastructure including high-speed internet, professional streaming equipment, interactive platforms, and reliable technical support throughout the event.'}
+                {language === 'fr' && 'Les événements hybrides réussis nécessitent une infrastructure technologique robuste comprenant Internet haut débit, équipement de diffusion professionnel, plateformes interactives et support technique fiable tout au long de l\'événement.'}
+                {language === 'es' && 'Los eventos híbridos exitosos requieren una infraestructura tecnológica robusta que incluye internet de alta velocidad, equipo de transmisión profesional, plataformas interactivas y soporte técnico confiable durante todo el evento.'}
+                {language === 'ar' && 'تتطلب الفعاليات الهجينة الناجحة بنية تحتية تكنولوجية قوية تشمل إنترنت عالي السرعة ومعدات بث احترافية ومنصات تفاعلية ودعم فني موثوق طوال الفعالية.'}
+              </p>
             </div>
           </section>
 
@@ -641,8 +651,12 @@ The future of MICE is hybrid, and Morocco is ready to host it.`,
         </div>
       </article>
 
-      <QuoteDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
-      <ScheduleCallDialog open={callOpen} onOpenChange={setCallOpen} />
+      <QuoteDialog>
+        <Button className="hidden">Get Quote</Button>
+      </QuoteDialog>
+      <ScheduleCallDialog>
+        <Button className="hidden">Schedule Call</Button>
+      </ScheduleCallDialog>
     </>
   );
 };
