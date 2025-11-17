@@ -32,6 +32,11 @@ import AgadirTeamBuilding from "./pages/blog/AgadirTeamBuilding";
 import GulfTeamBuilding from "./pages/blog/GulfTeamBuilding";
 import SpanishCorporate from "./pages/blog/SpanishCorporate";
 import SaharaRetreats from "./pages/blog/SaharaRetreats";
+import ChoosingDMCMorocco from "./pages/blog/ChoosingDMCMorocco";
+import CorporateEventROI from "./pages/blog/CorporateEventROI";
+import HybridEventsMorocco from "./pages/blog/HybridEventsMorocco";
+import AfconCorporateHospitality from "./pages/blog/AfconCorporateHospitality";
+import AfconLanding from "./pages/AfconLanding";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -63,6 +68,7 @@ const App = () => (
                 <Routes>
                   {/* English Routes (default) - SEO Optimized */}
                   <Route path="/" element={<Index />} />
+                  <Route path="/afcon-2025-morocco" element={<AfconLanding />} />
                   
                   {/* Services - Keyword-rich URLs */}
                   <Route path="/services" element={<Services />} />
