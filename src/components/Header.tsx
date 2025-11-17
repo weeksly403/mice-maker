@@ -83,12 +83,12 @@ export const Header: React.FC = () => {
               </Button>
               
               {isLangMenuOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-popover/98 backdrop-blur-md rounded-md shadow-elegant border border-border z-50 animate-slide-down">
+                <div className="absolute right-0 mt-2 w-40 bg-background backdrop-blur-md rounded-md shadow-lg border-2 border-border z-50 animate-slide-down">
                   {languages.map((lang, index) => (
                     <a
                       key={lang}
                       href={`/${lang === 'en' ? '' : lang}`}
-                      className={`block px-4 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-corporate hover-lift stagger-${index + 1}`}
+                      className={`block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-corporate hover-lift stagger-${index + 1}`}
                       onClick={() => setIsLangMenuOpen(false)}
                     >
                       {languageNames[lang]}
