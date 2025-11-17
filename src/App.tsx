@@ -70,6 +70,15 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="/afcon-2025-morocco" element={<AfconLanding />} />
                   
+                  {/* French Routes */}
+                  <Route path="/fr/afcon-2025-maroc" element={<AfconLanding />} />
+                  
+                  {/* Spanish Routes */}
+                  <Route path="/es/afcon-2025-marruecos" element={<AfconLanding />} />
+                  
+                  {/* Arabic Routes */}
+                  <Route path="/ar/afcon-2025-morocco" element={<AfconLanding />} />
+                  
                   {/* Services - Keyword-rich URLs */}
                   <Route path="/services" element={<Services />} />
                   <Route path="/corporate-event-planning" element={<Services />} />
