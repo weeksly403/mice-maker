@@ -90,6 +90,18 @@
       <priority>0.7</priority>
    </url>
    
+   <!-- AFCON 2025 Landing Pages -->
+   <url>
+      <loc>https://eventmorocco.com/afcon-2025-morocco</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://eventmorocco.com/afcon-2025-morocco" />
+      <xhtml:link rel="alternate" hreflang="fr" href="https://eventmorocco.com/fr/afcon-2025-maroc" />
+      <xhtml:link rel="alternate" hreflang="es" href="https://eventmorocco.com/es/afcon-2025-marruecos" />
+      <xhtml:link rel="alternate" hreflang="ar" href="https://eventmorocco.com/ar/afcon-2025-morocco" />
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+      <lastmod>2025-11-17</lastmod>
+   </url>
+   
    <!-- SEO-Optimized Blog Articles -->
    <url>
       <loc>https://eventmorocco.com/blog/seminars-marrakech</loc>

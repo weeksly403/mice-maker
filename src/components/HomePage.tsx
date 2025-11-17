@@ -16,6 +16,8 @@ import { openWhatsApp } from '@/utils/whatsapp';
 import { EnhancedStructuredData } from '@/components/SEO/EnhancedStructuredData';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
+import { TravelAgencySchema } from '@/components/SEO/TravelAgencySchema';
+import { MultipleServicesSchema } from '@/components/SEO/ServiceSchema';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -313,6 +315,35 @@ export const HomePage: React.FC = () => {
       {/* Enhanced SEO Structured Data */}
       <EnhancedStructuredData type="organization" data={{}} />
       <EnhancedStructuredData type="localbusiness" data={{}} />
+      <TravelAgencySchema />
+      <MultipleServicesSchema 
+        services={[
+          {
+            serviceName: language === 'fr' ? 'Événements Corporatifs Maroc' : language === 'es' ? 'Eventos Corporativos Marruecos' : language === 'ar' ? 'فعاليات الشركات المغرب' : 'Corporate Events Morocco',
+            description: language === 'fr' ? 'Organisation complète d\'événements corporatifs au Maroc incluant conférences, séminaires, lancements de produits et réunions d\'entreprise' : language === 'es' ? 'Organización completa de eventos corporativos en Marruecos incluyendo conferencias, seminarios, lanzamientos de productos y reuniones empresariales' : language === 'ar' ? 'تنظيم كامل لفعاليات الشركات في المغرب بما في ذلك المؤتمرات والندوات وإطلاق المنتجات واجتماعات الأعمال' : 'Complete corporate event organization in Morocco including conferences, seminars, product launches and business meetings',
+            serviceType: 'Event Planning',
+            category: 'Corporate Events & MICE'
+          },
+          {
+            serviceName: language === 'fr' ? 'Programmes Incentive Maroc' : language === 'es' ? 'Programas de Incentivos Marruecos' : language === 'ar' ? 'برامج الحوافز المغرب' : 'Incentive Programs Morocco',
+            description: language === 'fr' ? 'Programmes de voyage incentive personnalisés pour motiver et récompenser vos équipes à travers les destinations uniques du Maroc' : language === 'es' ? 'Programas de viaje de incentivo personalizados para motivar y recompensar a sus equipos a través de destinos únicos en Marruecos' : language === 'ar' ? 'برامج سفر الحوافز المخصصة لتحفيز ومكافأة فرقك عبر وجهات المغرب الفريدة' : 'Customized incentive travel programs to motivate and reward your teams across Morocco\'s unique destinations',
+            serviceType: 'Incentive Travel',
+            category: 'Corporate Events & MICE'
+          },
+          {
+            serviceName: language === 'fr' ? 'Organisation de Conférences' : language === 'es' ? 'Organización de Conferencias' : language === 'ar' ? 'تنظيم المؤتمرات' : 'Conference Organization',
+            description: language === 'fr' ? 'Services professionnels d\'organisation de conférences avec sélection de lieux, technologie AV et gestion logistique complète au Maroc' : language === 'es' ? 'Servicios profesionales de organización de conferencias con selección de lugares, tecnología audiovisual y gestión logística completa en Marruecos' : language === 'ar' ? 'خدمات تنظيم المؤتمرات المهنية مع اختيار الأماكن والتكنولوجيا السمعية البصرية والإدارة اللوجستية الكاملة في المغرب' : 'Professional conference organization services with venue selection, AV technology and complete logistics management in Morocco',
+            serviceType: 'Conference Management',
+            category: 'Corporate Events & MICE'
+          },
+          {
+            serviceName: language === 'fr' ? 'Team Building Maroc' : language === 'es' ? 'Team Building Marruecos' : language === 'ar' ? 'بناء الفريق المغرب' : 'Team Building Morocco',
+            description: language === 'fr' ? 'Activités innovantes de team building et retraites d\'entreprise dans des environnements uniques du désert aux montagnes' : language === 'es' ? 'Actividades innovadoras de team building y retiros corporativos en entornos únicos del desierto a las montañas' : language === 'ar' ? 'أنشطة بناء الفريق المبتكرة والخلوات الشركات في بيئات فريدة من الصحراء إلى الجبال' : 'Innovative team building activities and corporate retreats in unique settings from desert to mountains',
+            serviceType: 'Team Building',
+            category: 'Corporate Events & MICE'
+          }
+        ]}
+      />
       
       {/* FAQ Schema for SEO */}
       <FAQSchema faqs={homeFAQs} />

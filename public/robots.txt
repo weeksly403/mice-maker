@@ -2,11 +2,13 @@ User-agent: Googlebot
 Allow: /
 Disallow: /crm/
 Disallow: /auth/
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
 Disallow: /crm/
 Disallow: /auth/
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -21,7 +23,8 @@ Disallow: /auth/
 User-agent: *
 Allow: /
 
-# Important SEO pages
+# High-priority SEO pages
+Allow: /afcon-2025-morocco
 Allow: /corporate-event-planning
 Allow: /incentive-travel
 Allow: /conference-venues
@@ -30,6 +33,7 @@ Allow: /destinations/*
 Allow: /case-studies
 Allow: /blog/*
 Allow: /contact
+Allow: /faq
 
 # Multilingual content
 Allow: /fr/*
