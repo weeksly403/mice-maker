@@ -14,6 +14,136 @@ export type Database = {
   }
   public: {
     Tables: {
+      afcon_lead_activities: {
+        Row: {
+          activity_data: Json | null
+          activity_type: string
+          created_at: string | null
+          id: string
+          lead_id: string | null
+        }
+        Insert: {
+          activity_data?: Json | null
+          activity_type: string
+          created_at?: string | null
+          id?: string
+          lead_id?: string | null
+        }
+        Update: {
+          activity_data?: Json | null
+          activity_type?: string
+          created_at?: string | null
+          id?: string
+          lead_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "afcon_lead_activities_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "afcon_leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      afcon_leads: {
+        Row: {
+          budget_range: string | null
+          company: string
+          consent_given: boolean | null
+          consent_source: string | null
+          contact_name: string
+          country: string | null
+          created_at: string | null
+          email: string
+          event_type: string | null
+          group_size: string | null
+          id: string
+          lead_magnet_downloaded: string | null
+          lead_score: number | null
+          notes: string | null
+          package_interest: string | null
+          partner_id: string | null
+          phone: string | null
+          preferred_cities: string[] | null
+          preferred_dates: string | null
+          ref_code: string | null
+          source: string
+          special_requirements: string | null
+          status: string | null
+          updated_at: string | null
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+        }
+        Insert: {
+          budget_range?: string | null
+          company: string
+          consent_given?: boolean | null
+          consent_source?: string | null
+          contact_name: string
+          country?: string | null
+          created_at?: string | null
+          email: string
+          event_type?: string | null
+          group_size?: string | null
+          id?: string
+          lead_magnet_downloaded?: string | null
+          lead_score?: number | null
+          notes?: string | null
+          package_interest?: string | null
+          partner_id?: string | null
+          phone?: string | null
+          preferred_cities?: string[] | null
+          preferred_dates?: string | null
+          ref_code?: string | null
+          source?: string
+          special_requirements?: string | null
+          status?: string | null
+          updated_at?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Update: {
+          budget_range?: string | null
+          company?: string
+          consent_given?: boolean | null
+          consent_source?: string | null
+          contact_name?: string
+          country?: string | null
+          created_at?: string | null
+          email?: string
+          event_type?: string | null
+          group_size?: string | null
+          id?: string
+          lead_magnet_downloaded?: string | null
+          lead_score?: number | null
+          notes?: string | null
+          package_interest?: string | null
+          partner_id?: string | null
+          phone?: string | null
+          preferred_cities?: string[] | null
+          preferred_dates?: string | null
+          ref_code?: string | null
+          source?: string
+          special_requirements?: string | null
+          status?: string | null
+          updated_at?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "afcon_leads_partner_id_fkey"
+            columns: ["partner_id"]
+            isOneToOne: false
+            referencedRelation: "partners"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       calls: {
         Row: {
           call_notes: string | null
@@ -327,6 +457,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      generate_afcon_lead_ref_code: { Args: never; Returns: string }
       generate_call_ref_code: { Args: never; Returns: string }
       generate_ref_code: { Args: never; Returns: string }
       get_current_user_role: {
