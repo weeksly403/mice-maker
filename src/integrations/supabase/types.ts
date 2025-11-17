@@ -327,26 +327,14 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      generate_call_ref_code: {
-        Args: Record<PropertyKey, never>
-        Returns: string
-      }
-      generate_ref_code: {
-        Args: Record<PropertyKey, never>
-        Returns: string
-      }
+      generate_call_ref_code: { Args: never; Returns: string }
+      generate_ref_code: { Args: never; Returns: string }
       get_current_user_role: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: Database["public"]["Enums"]["user_role"]
       }
-      get_user_partner_id: {
-        Args: Record<PropertyKey, never>
-        Returns: string
-      }
-      is_admin: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
+      get_user_partner_id: { Args: never; Returns: string }
+      is_admin: { Args: never; Returns: boolean }
     }
     Enums: {
       currency_type: "MAD" | "EUR" | "USD"
