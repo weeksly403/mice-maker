@@ -22,9 +22,9 @@ export const translations = {
     contact: 'Contact',
     
     // Hero Section - SEO Optimized
-    heroTitle: 'DMC Maroc • MICE • Incentives • Conférences • Team Building',
-    heroSubtitle: 'Destination Management Company Morocco - Expert MICE Services',
-    heroDescription: 'EventMorocco DMC : Leader des événements d\'entreprise au Maroc. Services MICE complets : conférences Marrakech, incentives Sahara, team building Agadir, séminaires Casablanca. Devis gratuit 24h.',
+    heroTitle: 'DMC Maroc | Services MICE Expert & Événements Corporatifs',
+    heroSubtitle: 'Destination Management Company Leader au Maroc pour Incentives, Conférences, Team Building & Séminaires',
+    heroDescription: 'EventMorocco DMC : 15+ ans d\'expertise MICE au Maroc. Organisation complète d\'événements corporatifs à Marrakech, Casablanca, Agadir et Sahara. Services DMC professionnels pour conférences, voyages incentive, team building et séminaires d\'entreprise. 500+ événements livrés • 98% satisfaction.',
     
     // SEO Meta Titles (≤60 chars) 
     homePageTitle: 'DMC Maroc | MICE Services | Incentives Conférences Maroc',
@@ -572,9 +572,9 @@ export const translations = {
     contact: 'Contact',
     
     // Hero Section
-    heroTitle: 'Morocco DMC - Corporate Events & MICE Services',
-    heroSubtitle: 'Your Destination Management Company in Morocco • MICE • Incentives • Conferences',
-    heroDescription: 'EventMorocco, your expert DMC for organizing corporate events in Morocco. MICE, incentives, conferences and team building throughout the kingdom. From Marrakech to the Sahara deserts.',
+    heroTitle: 'Morocco DMC | Expert MICE Services & Corporate Event Planning',
+    heroSubtitle: 'Leading Destination Management Company Specializing in Incentive Travel, Conferences, Team Building & Corporate Events Across Morocco',
+    heroDescription: 'EventMorocco DMC: 15+ years MICE expertise in Morocco. Complete corporate event management in Marrakech, Casablanca, Agadir & Sahara. Professional DMC services for conferences, incentive programs, team building and business retreats. 500+ events delivered • 98% satisfaction rate.',
     
     // New DMC Section
     dmcSectionTitle: 'Why Choose EventMorocco as Your Morocco DMC?',
@@ -1265,9 +1265,9 @@ export const translations = {
     contact: 'Contacto',
     
     // Hero Section
-    heroTitle: 'DMC Marruecos - Eventos Corporativos y Servicios MICE',
-    heroSubtitle: 'Su Empresa de Gestión de Destinos en Marruecos • MICE • Incentivos • Conferencias',
-    heroDescription: 'EventMorocco, su DMC experto para organizar eventos corporativos en Marruecos. MICE, incentivos, conferencias y team building en todo el reino. De Marrakech a los desiertos del Sahara.',
+    heroTitle: 'DMC Marruecos | Servicios MICE Expertos & Planificación de Eventos Corporativos',
+    heroSubtitle: 'Destination Management Company Líder Especializada en Viajes de Incentivo, Conferencias, Team Building y Eventos Corporativos en Marruecos',
+    heroDescription: 'EventMorocco DMC: 15+ años experiencia MICE en Marruecos. Gestión completa de eventos corporativos en Marrakech, Casablanca, Agadir y Sahara. Servicios DMC profesionales para conferencias, programas incentivo, team building y retiros empresariales. 500+ eventos entregados • 98% satisfacción.',
     
     // New DMC Section
     dmcSectionTitle: '¿Por Qué Elegir EventMorocco como su DMC en Marruecos?',
@@ -1913,9 +1913,9 @@ export const translations = {
     blog: 'المدونة',
     
     // Hero Section
-    heroTitle: 'DMC المغرب - فعاليات الشركات وخدمات MICE',
-    heroSubtitle: 'شركة إدارة الوجهات في المغرب • MICE • رحلات تحفيزية • مؤتمرات',
-    heroDescription: 'EventMorocco، شركة DMC الخبيرة في تنظيم فعاليات الشركات في المغرب. MICE، رحلات تحفيزية، مؤتمرات وبناء الفرق في جميع أنحاء المملكة. من مراكش إلى صحاري الصحراء.',
+    heroTitle: 'DMC المغرب | خدمات MICE الخبيرة وتخطيط فعاليات الشركات',
+    heroSubtitle: 'شركة إدارة الوجهات الرائدة المتخصصة في برامج الحوافز والمؤتمرات وبناء الفريق والفعاليات الشركات في المغرب',
+    heroDescription: 'EventMorocco DMC: 15+ سنة خبرة MICE في المغرب. إدارة كاملة لفعاليات الشركات في مراكش والدار البيضاء وأكادير والصحراء. خدمات DMC احترافية للمؤتمرات وبرامج الحوافز وبناء الفريق والخلوات التجارية. 500+ فعالية منفذة • رضا 98%.',
     
     // New DMC Section
     dmcSectionTitle: 'لماذا تختار EventMorocco كشركة DMC في المغرب؟',
