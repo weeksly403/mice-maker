@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { useLanguage } from '@/components/LanguageProvider';
 import { Card, CardContent } from '@/components/ui/card';
@@ -21,6 +22,7 @@ import servicesRetreat from '@/assets/services-retreat.jpg';
 
 const Services: React.FC = () => {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
 
   const services = [
     {
@@ -284,6 +286,102 @@ const Services: React.FC = () => {
                       {service.detailedDesc}
                     </p>
                     
+                    {/* SEO-rich expanded content with internal links */}
+                    {index === 0 && (
+                      <div className="space-y-4 mt-4">
+                        <p className="text-base text-muted-foreground leading-relaxed">
+                          {language === 'fr' 
+                            ? 'Notre DMC Maroc conçoit des programmes incentive qui transforment la motivation en résultats. Que vous organisiez votre incentive à Marrakech dans les riads de luxe, à Casablanca pour un programme business chic, ou dans le Sahara pour une aventure inoubliable, nous créons des expériences qui marquent les esprits.' 
+                            : language === 'es'
+                            ? 'Nuestro DMC Marruecos diseña programas de incentivos que transforman la motivación en resultados. Ya sea que organice su incentivo en Marrakech en riads de lujo, en Casablanca para un programa empresarial elegante, o en el Sahara para una aventura inolvidable, creamos experiencias memorables.'
+                            : language === 'ar'
+                            ? 'تصمم شركة DMC المغرب برامج الحوافز التي تحول الدافع إلى نتائج. سواء كنت تنظم حافزك في مراكش في الرياضات الفاخرة، أو في الدار البيضاء لبرنامج أعمال أنيق، أو في الصحراء لمغامرة لا تُنسى، نخلق تجارب لا تُنسى.'
+                            : 'Our Morocco DMC designs incentive programs that transform motivation into results. Whether organizing your incentive in Marrakech at luxury riads, in Casablanca for an elegant business program, or in the Sahara for an unforgettable adventure, we create memorable experiences.'}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <Button 
+                            variant="link" 
+                            size="sm"
+                            onClick={() => navigate(language === 'fr' ? '/fr/destinations/marrakech' : language === 'es' ? '/es/destinations/marrakech' : language === 'ar' ? '/ar/destinations/marrakech' : '/destinations/marrakech')}
+                            className="text-primary hover:text-primary/80"
+                          >
+                            {language === 'fr' ? '→ Incentives à Marrakech' : language === 'es' ? '→ Incentivos en Marrakech' : language === 'ar' ? '→ حوافز في مراكش' : '→ Marrakech Incentives'}
+                          </Button>
+                          <Button 
+                            variant="link" 
+                            size="sm"
+                            onClick={() => navigate(language === 'fr' ? '/fr/destinations/sahara' : language === 'es' ? '/es/destinations/sahara' : language === 'ar' ? '/ar/destinations/sahara' : '/destinations/sahara')}
+                            className="text-primary hover:text-primary/80"
+                          >
+                            {language === 'fr' ? '→ Retraites au Sahara' : language === 'es' ? '→ Retiros en Sahara' : language === 'ar' ? '→ خلوات في الصحراء' : '→ Sahara Retreats'}
+                          </Button>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {index === 1 && (
+                      <div className="space-y-4 mt-4">
+                        <p className="text-base text-muted-foreground leading-relaxed">
+                          {language === 'fr'
+                            ? 'Des activités team building innovantes qui renforcent la cohésion d\'équipe dans les cadres exceptionnels du Maroc. Du surf et quad à Agadir, aux challenges dans l\'Atlas, en passant par les ateliers culturels à Fès, chaque programme est conçu pour créer des liens durables et améliorer la performance collective.'
+                            : language === 'es'
+                            ? 'Actividades innovadoras de team building que refuerzan la cohesión del equipo en los marcos excepcionales de Marruecos. Desde surf y quad en Agadir, hasta desafíos en el Atlas, pasando por talleres culturales en Fez, cada programa está diseñado para crear vínculos duraderos y mejorar el rendimiento colectivo.'
+                            : language === 'ar'
+                            ? 'أنشطة بناء الفريق المبتكرة التي تعزز تماسك الفريق في أطر المغرب الاستثنائية. من ركوب الأمواج والدراجات الرباعية في أكادير، إلى التحديات في الأطلس، مرورًا بالورش الثقافية في فاس، كل برنامج مصمم لخلق روابط دائمة وتحسين الأداء الجماعي.'
+                            : 'Innovative team building activities that strengthen team cohesion in Morocco\'s exceptional settings. From surfing and quad biking in Agadir to Atlas Mountain challenges and cultural workshops in Fez, each program is designed to create lasting bonds and improve collective performance.'}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <Button 
+                            variant="link" 
+                            size="sm"
+                            onClick={() => navigate(language === 'fr' ? '/fr/destinations/agadir' : language === 'es' ? '/es/destinations/agadir' : language === 'ar' ? '/ar/destinations/agadir' : '/destinations/agadir')}
+                            className="text-primary hover:text-primary/80"
+                          >
+                            {language === 'fr' ? '→ Team Building Agadir' : language === 'es' ? '→ Team Building Agadir' : language === 'ar' ? '→ بناء الفريق أكادير' : '→ Agadir Team Building'}
+                          </Button>
+                          <Button 
+                            variant="link" 
+                            size="sm"
+                            onClick={() => navigate(language === 'fr' ? '/fr/destinations/fes' : language === 'es' ? '/es/destinations/fes' : language === 'ar' ? '/ar/destinations/fes' : '/destinations/fes')}
+                            className="text-primary hover:text-primary/80"
+                          >
+                            {language === 'fr' ? '→ Activités Culturelles Fès' : language === 'es' ? '→ Actividades Culturales Fez' : language === 'ar' ? '→ أنشطة ثقافية فاس' : '→ Fez Cultural Activities'}
+                          </Button>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {index === 2 && (
+                      <div className="space-y-4 mt-4">
+                        <p className="text-base text-muted-foreground leading-relaxed">
+                          {language === 'fr'
+                            ? 'Organisation professionnelle de conférences et congrès au Maroc avec les meilleures infrastructures MICE. De Casablanca, hub business moderne, aux palais de congrès de Marrakech, nous gérons l\'intégralité de votre événement : sélection de lieux, technologie AV de pointe, logistique complète et services sur mesure pour des conférences réussies.'
+                            : language === 'es'
+                            ? 'Organización profesional de conferencias y congresos en Marruecos con las mejores infraestructuras MICE. Desde Casablanca, hub empresarial moderno, hasta los palacios de congresos de Marrakech, gestionamos la totalidad de su evento: selección de lugares, tecnología audiovisual de vanguardia, logística completa y servicios personalizados para conferencias exitosas.'
+                            : language === 'ar'
+                            ? 'تنظيم احترافي للمؤتمرات والمؤتمرات في المغرب مع أفضل البنى التحتية لـ MICE. من الدار البيضاء، مركز الأعمال الحديث، إلى قصور المؤتمرات في مراكش، ندير كامل حدثك: اختيار الأماكن، تقنية سمعية بصرية متقدمة، لوجستيات كاملة وخدمات مخصصة لمؤتمرات ناجحة.'
+                            : 'Professional conference and congress organization in Morocco with the best MICE infrastructure. From Casablanca, the modern business hub, to Marrakech\'s convention palaces, we manage your entire event: venue selection, cutting-edge AV technology, complete logistics and customized services for successful conferences.'}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <Button 
+                            variant="link" 
+                            size="sm"
+                            onClick={() => navigate(language === 'fr' ? '/fr/destinations/casablanca' : language === 'es' ? '/es/destinations/casablanca' : language === 'ar' ? '/ar/destinations/casablanca' : '/destinations/casablanca')}
+                            className="text-primary hover:text-primary/80"
+                          >
+                            {language === 'fr' ? '→ Conférences Casablanca' : language === 'es' ? '→ Conferencias Casablanca' : language === 'ar' ? '→ مؤتمرات الدار البيضاء' : '→ Casablanca Conferences'}
+                          </Button>
+                          <Button 
+                            variant="link" 
+                            size="sm"
+                            onClick={() => navigate(language === 'fr' ? '/fr/destinations/marrakech' : language === 'es' ? '/es/destinations/marrakech' : language === 'ar' ? '/ar/destinations/marrakech' : '/destinations/marrakech')}
+                            className="text-primary hover:text-primary/80"
+                          >
+                            {language === 'fr' ? '→ Palais Congrès Marrakech' : language === 'es' ? '→ Palacio Congresos Marrakech' : language === 'ar' ? '→ قصر المؤتمرات مراكش' : '→ Marrakech Congress Palace'}
+                          </Button>
+                        </div>
+                      </div>
+                    )}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="font-semibold text-foreground mb-3">

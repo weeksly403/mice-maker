@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from './LanguageProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { AnimatedCard } from '@/components/AnimatedCard';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { PageTransition } from '@/components/PageTransition';
@@ -422,6 +423,71 @@ export const HomePage: React.FC = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Bar with Stats & Certifications */}
+      <section className="py-12 bg-muted/30 border-y border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-3">
+                <Award className="w-8 h-8 text-primary" />
+              </div>
+              <div className="text-3xl font-bold text-primary mb-1">15+</div>
+              <div className="text-sm text-muted-foreground">
+                {language === 'fr' ? 'Années d\'Expérience' : language === 'es' ? 'Años de Experiencia' : language === 'ar' ? 'سنوات خبرة' : 'Years Experience'}
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-3">
+                <Star className="w-8 h-8 text-gold" />
+              </div>
+              <div className="text-3xl font-bold text-primary mb-1">4.9/5</div>
+              <div className="text-sm text-muted-foreground">
+                {language === 'fr' ? 'Satisfaction Client' : language === 'es' ? 'Satisfacción Cliente' : language === 'ar' ? 'رضا العملاء' : 'Client Rating'}
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-3">
+                <CheckCircle className="w-8 h-8 text-accent" />
+              </div>
+              <div className="text-3xl font-bold text-primary mb-1">500+</div>
+              <div className="text-sm text-muted-foreground">
+                {language === 'fr' ? 'Événements Livrés' : language === 'es' ? 'Eventos Entregados' : language === 'ar' ? 'فعاليات منفذة' : 'Events Delivered'}
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-3">
+                <Users className="w-8 h-8 text-secondary" />
+              </div>
+              <div className="text-3xl font-bold text-primary mb-1">98%</div>
+              <div className="text-sm text-muted-foreground">
+                {language === 'fr' ? 'Taux de Satisfaction' : language === 'es' ? 'Tasa de Satisfacción' : language === 'ar' ? 'معدل الرضا' : 'Satisfaction Rate'}
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex flex-wrap items-center justify-center gap-6 pt-6 border-t border-border">
+            <p className="text-sm text-muted-foreground font-medium">
+              {language === 'fr' ? 'Certifié & Reconnu:' : language === 'es' ? 'Certificado y Reconocido:' : language === 'ar' ? 'معتمد ومعترف به:' : 'Certified & Trusted:'}
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <Badge variant="outline" className="text-xs">
+                {language === 'fr' ? 'Spécialiste MICE Certifié' : language === 'es' ? 'Especialista MICE Certificado' : language === 'ar' ? 'متخصص MICE معتمد' : 'MICE Specialist Certified'}
+              </Badge>
+              <Badge variant="outline" className="text-xs">ISO 9001</Badge>
+              <Badge variant="outline" className="text-xs">
+                {language === 'fr' ? 'Ministère du Tourisme Maroc' : language === 'es' ? 'Ministerio de Turismo Marruecos' : language === 'ar' ? 'وزارة السياحة المغرب' : 'Morocco Tourism Ministry'}
+              </Badge>
+              <Badge variant="outline" className="text-xs">
+                {language === 'fr' ? 'Membre SITE Global' : language === 'es' ? 'Miembro SITE Global' : language === 'ar' ? 'عضو SITE العالمي' : 'SITE Global Member'}
+              </Badge>
+            </div>
           </div>
         </div>
       </section>
