@@ -6,6 +6,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { getLocalizedPath } from '@/lib/i18n';
+import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
+import { OptimizedImage } from '@/components/OptimizedImage';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -151,10 +153,12 @@ const Blog: React.FC = () => {
                 {featuredPosts.map((post, index) => (
                   <Card key={post.slug} className="group overflow-hidden shadow-card hover:shadow-elegant transition-smooth border-0">
                     <div className="relative h-64 overflow-hidden">
-                      <img 
+                      <OptimizedImage 
                         src={post.image} 
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
+                        width={800}
+                        height={512}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                       <div className="absolute top-4 left-4">
@@ -212,10 +216,12 @@ const Blog: React.FC = () => {
               {regularPosts.map((post) => (
                 <Card key={post.slug} className="group overflow-hidden shadow-card hover:shadow-elegant transition-smooth border-0">
                   <div className="relative h-48 overflow-hidden">
-                    <img 
+                    <OptimizedImage 
                       src={post.image} 
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
+                      width={600}
+                      height={384}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute top-4 right-4">
