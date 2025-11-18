@@ -35,7 +35,23 @@ import agadirBeachImage from '@/assets/agadir-beach-teambuilding.jpg';
 export const HomePage: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
-  const heroRef = useScrollReveal({ 
+  
+  const homepageFAQs = [
+    {
+      question: t('faq.whatIsDMC'),
+      answer: t('faq.whatIsDMCAnswer'),
+    },
+    {
+      question: t('faq.whyMorocco'),
+      answer: t('faq.whyMoroccoAnswer'),
+    },
+    {
+      question: t('faq.howFarAdvance'),
+      answer: t('faq.howFarAdvanceAnswer'),
+    },
+  ];
+
+  const heroRef = useScrollReveal({
     threshold: 0.1, 
     animationType: 'fade-up', 
     duration: 0.8 
@@ -347,8 +363,8 @@ export const HomePage: React.FC = () => {
         ]}
       />
       
-      {/* FAQ Schema for SEO */}
-      <FAQSchema faqs={homeFAQs} />
+      <FAQSchema faqs={homepageFAQs} />
+      
       {/* Hero Section */}
       <section 
         ref={heroRef}

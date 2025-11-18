@@ -37,6 +37,9 @@ import CorporateEventROI from "./pages/blog/CorporateEventROI";
 import HybridEventsMorocco from "./pages/blog/HybridEventsMorocco";
 import AfconCorporateHospitality from "./pages/blog/AfconCorporateHospitality";
 import AfconLanding from "./pages/AfconLanding";
+import CorporateEventsGuide from "./pages/CorporateEventsGuide";
+import { ExitIntentPopup } from "./components/conversion/ExitIntentPopup";
+import { EnhancedLocalBusinessSchema } from "./components/SEO/EnhancedLocalBusinessSchema";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -60,6 +63,8 @@ const App = () => (
             <TooltipProvider>
               <ErrorBoundary>
                 <SEOEnhancer />
+                <EnhancedLocalBusinessSchema />
+                <ExitIntentPopup />
                 <Toaster />
                 <Sonner />
                 <div className="min-h-screen flex flex-col">
@@ -107,6 +112,15 @@ const App = () => (
                   
                   {/* Blog - SEO Optimized URLs */}
                   <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/choosing-dmc-morocco" element={<ChoosingDMCMorocco />} />
+                  <Route path="/blog/corporate-event-roi" element={<CorporateEventROI />} />
+                  <Route path="/blog/hybrid-events-morocco" element={<HybridEventsMorocco />} />
+                  <Route path="/blog/afcon-corporate-hospitality" element={<AfconCorporateHospitality />} />
+                  
+                  {/* Pillar Pages */}
+                  <Route path="/guide/corporate-events-morocco" element={<CorporateEventsGuide />} />
+                  
+                  {/* Legacy blog SEO-optimized URLs */}
                   <Route path="/blog/seminars-marrakech" element={<BlogArticleMarrakech />} />
                   <Route path="/blog/conference-venues-morocco" element={<TopVenuesMorocco />} />
                   <Route path="/blog/incentive-travel-marrakech" element={<MarrakechIncentive />} />
