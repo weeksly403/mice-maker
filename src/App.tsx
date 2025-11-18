@@ -39,6 +39,7 @@ import AfconCorporateHospitality from "./pages/blog/AfconCorporateHospitality";
 import AfconLanding from "./pages/AfconLanding";
 import CorporateEventsGuide from "./pages/CorporateEventsGuide";
 import { ExitIntentPopup } from "./components/conversion/ExitIntentPopup";
+import { LiveChat } from "./components/conversion/LiveChat";
 import { EnhancedLocalBusinessSchema } from "./components/SEO/EnhancedLocalBusinessSchema";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
@@ -288,6 +289,7 @@ const App = () => (
                 <ChatBotButton />
                 <StickyCTA />
                 <WhatsAppBusinessButton />
+                <LiveChat />
               </div>
             </ErrorBoundary>
           </TooltipProvider>
