@@ -4,6 +4,7 @@ import { ArrowLeft, MapPin, Users, Clock, Camera, Waves, Building2, Trophy, Hear
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
+import { OptimizedImage } from '@/components/OptimizedImage';
 import agadirHeroImage from '@/assets/agadir-hero-corporate.jpg';
 import agadirConferenceRoom from '@/assets/agadir-conference-room.jpg';
 import agadirBeachTeambuilding from '@/assets/agadir-beach-teambuilding.jpg';
@@ -126,11 +127,12 @@ const AgadirTeamBuilding: React.FC = () => {
               </p>
 
               <div className="my-8 flex justify-center">
-                <img 
+                <OptimizedImage 
                   src={agadirConferenceRoom}
                   alt="Luxury beachfront conference room in Agadir with floor-to-ceiling windows overlooking the Atlantic Ocean, modern business meeting setup with Moroccan architectural elements"
                   className="rounded-lg shadow-lg max-w-full h-auto"
-                  loading="lazy"
+                  width={1200}
+                  height={800}
                 />
               </div>
 
@@ -170,11 +172,12 @@ const AgadirTeamBuilding: React.FC = () => {
               </p>
 
               <div className="my-8 flex justify-center">
-                <img 
+                <OptimizedImage 
                   src={agadirBeachTeambuilding}
                   alt="Corporate team building activity on Agadir beach with professional business people in casual attire doing beach volleyball and team exercises, Atlantic Ocean and modern cityscape background"
                   className="rounded-lg shadow-lg max-w-full h-auto"
-                  loading="lazy"
+                  width={1200}
+                  height={800}
                 />
               </div>
 
@@ -266,11 +269,12 @@ const AgadirTeamBuilding: React.FC = () => {
               </p>
 
               <div className="my-8 flex justify-center">
-                <img 
+                <OptimizedImage 
                   src={agadirCulturalExperience}
                   alt="Traditional Moroccan souk market in Agadir with corporate team doing cultural treasure hunt activity, colorful spices and traditional crafts, authentic local experience for business groups"
                   className="rounded-lg shadow-lg max-w-full h-auto"
-                  loading="lazy"
+                  width={1200}
+                  height={800}
                 />
               </div>
 

@@ -19,6 +19,7 @@ import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { TravelAgencySchema } from '@/components/SEO/TravelAgencySchema';
 import { MultipleServicesSchema } from '@/components/SEO/ServiceSchema';
+import { OptimizedImage } from '@/components/OptimizedImage';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -773,10 +774,12 @@ export const HomePage: React.FC = () => {
                 onClick={() => navigate(`/destinations/${destination.name.toLowerCase()}`)}
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <OptimizedImage 
                     src={destination.image} 
                     alt={language === 'fr' ? `${destination.name} - Destination MICE Maroc pour événements entreprise, conférences et incentives` : language === 'es' ? `${destination.name} - Destino MICE Marruecos para eventos corporativos, conferencias e incentivos` : language === 'ar' ? `${destination.name} - وجهة MICE المغرب لفعاليات الشركات والمؤتمرات والحوافز` : `${destination.name} - MICE Destination Morocco for corporate events, conferences and incentives`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-corporate"
+                    width={600}
+                    height={384}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
