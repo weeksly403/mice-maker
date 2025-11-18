@@ -20,6 +20,11 @@ import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { TravelAgencySchema } from '@/components/SEO/TravelAgencySchema';
 import { MultipleServicesSchema } from '@/components/SEO/ServiceSchema';
 import { OptimizedImage } from '@/components/OptimizedImage';
+import { PressSection } from '@/components/conversion/PressSection';
+import { ClientLogos } from '@/components/conversion/ClientLogos';
+import { VideoTestimonials } from '@/components/conversion/VideoTestimonials';
+import { LeadMagnetDownload } from '@/components/conversion/LeadMagnetDownload';
+import { useEnhancedAnalytics } from '@/hooks/useEnhancedAnalytics';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -76,6 +81,9 @@ export const HomePage: React.FC = () => {
     staggerDelay: 0.2, 
     animationType: 'slide-up' 
   });
+
+  // Initialize enhanced analytics tracking
+  useEnhancedAnalytics();
 
   // Initialize scroll reveal animations on mount - keeping for compatibility
   useEffect(() => {
@@ -1095,6 +1103,18 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Client Logos Section */}
+      <ClientLogos />
+
+      {/* Video Testimonials Section */}
+      <VideoTestimonials />
+
+      {/* Press Section */}
+      <PressSection />
+
+      {/* Lead Magnet Section */}
+      <LeadMagnetDownload />
 
       {/* FAQ Preview */}
       <section className="py-20 bg-muted/30">
