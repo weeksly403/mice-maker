@@ -26,7 +26,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
   // For Vite-imported assets (absolute URLs), use them directly without optimization
   // They're already processed by Vite's build pipeline
-  const isViteAsset = src.startsWith('/assets/') || src.startsWith('http');
+  const isViteAsset = src.startsWith('/') || src.startsWith('http');
   
   if (isViteAsset) {
     return (
