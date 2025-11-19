@@ -24,6 +24,27 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   onError,
   onClick
 }) => {
+  // For Vite-imported assets (absolute URLs), use them directly without optimization
+  // They're already processed by Vite's build pipeline
+  const isViteAsset = src.startsWith('/assets/') || src.startsWith('http');
+  
+  if (isViteAsset) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+        width={width}
+        height={height}
+        className={className}
+        onError={onError}
+        onClick={onClick}
+      />
+    );
+  }
+
+  // For other images, use the optimization utility
   const optimized = getOptimizedImageUrl(src, { width, height, quality, loading });
 
   return (
