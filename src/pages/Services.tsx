@@ -10,6 +10,8 @@ import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
 import { Trophy, Users, Briefcase, Presentation, Utensils, CheckCircle, Star, MapPin, Calendar, Phone, Clock, Euro, Award, Target, TrendingUp, Shield, Headphones, Globe, Heart, Camera, Music, Palette } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
+import { FAQSchema } from '@/components/SEO/FAQSchema';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
 import teamBuildingImage from '@/assets/agadir-beach-teambuilding.jpg';
@@ -527,6 +529,193 @@ const Services: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4">
+                {language === 'fr' ? 'Questions Fréquentes sur nos Services' :
+                 language === 'es' ? 'Preguntas Frecuentes sobre Nuestros Servicios' :
+                 language === 'ar' ? 'الأسئلة الشائعة حول خدماتنا' :
+                 'Frequently Asked Questions'}
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                {language === 'fr' ? 'Tout ce que vous devez savoir sur nos services MICE au Maroc' :
+                 language === 'es' ? 'Todo lo que necesita saber sobre nuestros servicios MICE en Marruecos' :
+                 language === 'ar' ? 'كل ما تحتاج معرفته عن خدمات MICE لدينا في المغرب' :
+                 'Everything you need to know about our MICE services'}
+              </p>
+            </div>
+            
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Quels types d\'événements organisez-vous au Maroc?' :
+                   language === 'es' ? '¿Qué tipos de eventos organizan en Marruecos?' :
+                   language === 'ar' ? 'ما أنواع الفعاليات التي تنظمونها في المغرب؟' :
+                   'What types of events do you organize in Morocco?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Nous organisons tous types d\'événements d\'entreprise: conférences internationales, séminaires, voyages incentive, team building, retraites d\'entreprise, lancements de produits, galas de soirée et conventions. Notre expertise couvre tous les aspects de l\'organisation MICE au Maroc.' :
+                   language === 'es' ? 'Organizamos todo tipo de eventos corporativos: conferencias internacionales, seminarios, viajes de incentivo, team building, retiros corporativos, lanzamientos de productos, galas y convenciones. Nuestra experiencia cubre todos los aspectos de la organización MICE en Marruecos.' :
+                   language === 'ar' ? 'ننظم جميع أنواع الفعاليات الشركات: المؤتمرات الدولية والندوات ورحلات الحوافز وبناء الفريق والخلوات الشركاتية وإطلاق المنتجات والحفلات والمؤتمرات. خبرتنا تغطي جميع جوانب تنظيم MICE في المغرب.' :
+                   'We organize all types of corporate events: international conferences, seminars, incentive trips, team building, corporate retreats, product launches, gala dinners, and conventions. Our expertise covers all aspects of MICE organization in Morocco.'}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Combien de temps à l\'avance dois-je réserver?' :
+                   language === 'es' ? '¿Con cuánta antelación debo reservar?' :
+                   language === 'ar' ? 'كم من الوقت مسبقاً يجب أن أحجز؟' :
+                   'How far in advance should I book?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Pour les événements de grande envergure (200+ participants), nous recommandons 6-12 mois d\'avance. Pour les groupes moyens (50-200), 3-6 mois sont idéaux. Les petits groupes peuvent être organisés avec 4-8 semaines de préavis. Cependant, nous pouvons gérer des demandes urgentes avec un minimum de 2 semaines.' :
+                   language === 'es' ? 'Para eventos de gran escala (200+ participantes), recomendamos 6-12 meses de antelación. Para grupos medianos (50-200), 3-6 meses son ideales. Los grupos pequeños pueden organizarse con 4-8 semanas de aviso. Sin embargo, podemos manejar solicitudes urgentes con un mínimo de 2 semanas.' :
+                   language === 'ar' ? 'للفعاليات واسعة النطاق (أكثر من 200 مشارك)، نوصي بـ 6-12 شهراً مسبقاً. للمجموعات المتوسطة (50-200)، 3-6 أشهر مثالية. المجموعات الصغيرة يمكن تنظيمها مع 4-8 أسابيع. ومع ذلك، يمكننا التعامل مع الطلبات العاجلة بحد أدنى أسبوعين.' :
+                   'For large-scale events (200+ participants), we recommend 6-12 months in advance. For medium groups (50-200), 3-6 months is ideal. Small groups can be organized with 4-8 weeks notice. However, we can handle urgent requests with a minimum of 2 weeks.'}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Quels sont vos tarifs pour les services MICE?' :
+                   language === 'es' ? '¿Cuáles son sus tarifas para los servicios MICE?' :
+                   language === 'ar' ? 'ما هي أسعاركم لخدمات MICE؟' :
+                   'What are your pricing for MICE services?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Nos tarifs varient selon le type d\'événement, la taille du groupe et les services requis. Voyages incentive: €800-1500/personne. Team building: €150-400/personne. Conférences: €200-600/personne/jour. Tous les devis sont personnalisés et incluent transport, hébergement, activités, restauration et support sur place.' :
+                   language === 'es' ? 'Nuestras tarifas varían según el tipo de evento, tamaño del grupo y servicios requeridos. Viajes de incentivo: €800-1500/persona. Team building: €150-400/persona. Conferencias: €200-600/persona/día. Todas las cotizaciones son personalizadas e incluyen transporte, alojamiento, actividades, restauración y soporte en sitio.' :
+                   language === 'ar' ? 'أسعارنا تختلف حسب نوع الفعالية وحجم المجموعة والخدمات المطلوبة. رحلات الحوافز: €800-1500/للشخص. بناء الفريق: €150-400/للشخص. المؤتمرات: €200-600/للشخص/اليوم. جميع العروض مخصصة وتشمل النقل والإقامة والأنشطة والمطاعم والدعم في الموقع.' :
+                   'Our pricing varies by event type, group size, and services required. Incentive travel: €800-1500/person. Team building: €150-400/person. Conferences: €200-600/person/day. All quotes are customized and include transport, accommodation, activities, catering, and on-site support.'}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Offrez-vous un support 24/7 pendant l\'événement?' :
+                   language === 'es' ? '¿Ofrecen soporte 24/7 durante el evento?' :
+                   language === 'ar' ? 'هل تقدمون دعماً على مدار الساعة طوال أيام الأسبوع أثناء الفعالية؟' :
+                   'Do you provide 24/7 support during events?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Oui, absolument. Chaque événement est accompagné d\'une équipe dédiée sur place avec support 24/7. Vous aurez un coordinateur principal, des assistants logistiques, et une ligne d\'urgence active 24h/24. Nous gérons tous les imprévus en temps réel pour garantir le succès de votre événement.' :
+                   language === 'es' ? 'Sí, absolutamente. Cada evento cuenta con un equipo dedicado en sitio con soporte 24/7. Tendrá un coordinador principal, asistentes logísticos y una línea de emergencia activa 24 horas. Gestionamos todos los imprevistos en tiempo real para garantizar el éxito de su evento.' :
+                   language === 'ar' ? 'نعم، بالتأكيد. كل فعالية مصحوبة بفريق مخصص في الموقع مع دعم على مدار الساعة طوال أيام الأسبوع. ستحصل على منسق رئيسي ومساعدين لوجستيين وخط طوارئ نشط على مدار 24 ساعة. نتعامل مع جميع الطوارئ في الوقت الفعلي لضمان نجاح فعاليتك.' :
+                   'Yes, absolutely. Every event is accompanied by a dedicated on-site team with 24/7 support. You\'ll have a main coordinator, logistics assistants, and a 24-hour emergency hotline. We handle all contingencies in real-time to ensure your event\'s success.'}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Pouvez-vous gérer des événements multilingues?' :
+                   language === 'es' ? '¿Pueden gestionar eventos multilingües?' :
+                   language === 'ar' ? 'هل يمكنكم إدارة الفعاليات متعددة اللغات؟' :
+                   'Can you handle multilingual events?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Oui, notre équipe parle couramment français, anglais, espagnol et arabe. Nous fournissons également des services de traduction simultanée, d\'interprétation, de documentation multilingue et de signalétique dans toutes les langues requises pour votre événement international.' :
+                   language === 'es' ? 'Sí, nuestro equipo habla con fluidez francés, inglés, español y árabe. También proporcionamos servicios de traducción simultánea, interpretación, documentación multilingüe y señalización en todos los idiomas requeridos para su evento internacional.' :
+                   language === 'ar' ? 'نعم، فريقنا يتحدث بطلاقة الفرنسية والإنجليزية والإسبانية والعربية. كما نوفر خدمات الترجمة الفورية والتفسير والوثائق متعددة اللغات واللافتات بجميع اللغات المطلوبة لفعاليتك الدولية.' :
+                   'Yes, our team is fluent in French, English, Spanish, and Arabic. We also provide simultaneous translation services, interpretation, multilingual documentation, and signage in all languages required for your international event.'}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Quelles garanties offrez-vous?' :
+                   language === 'es' ? '¿Qué garantías ofrecen?' :
+                   language === 'ar' ? 'ما الضمانات التي تقدمونها؟' :
+                   'What guarantees do you offer?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Nous garantissons la conformité totale au budget convenu, le respect strict des délais, la qualité des prestations selon les standards internationaux, et une assurance tous risques pour votre événement. En cas d\'insatisfaction, nous nous engageons à trouver une solution immédiate ou un remboursement partiel.' :
+                   language === 'es' ? 'Garantizamos el cumplimiento total del presupuesto acordado, el respeto estricto de los plazos, la calidad de las prestaciones según estándares internacionales, y un seguro a todo riesgo para su evento. En caso de insatisfacción, nos comprometemos a encontrar una solución inmediata o un reembolso parcial.' :
+                   language === 'ar' ? 'نضمن الامتثال الكامل للميزانية المتفق عليها، الاحترام الصارم للمواعيد، جودة الخدمات وفقاً للمعايير الدولية، والتأمين الشامل لفعاليتك. في حالة عدم الرضا، نلتزم بإيجاد حل فوري أو استرداد جزئي.' :
+                   'We guarantee full compliance with the agreed budget, strict adherence to deadlines, service quality according to international standards, and comprehensive insurance for your event. In case of dissatisfaction, we commit to finding an immediate solution or partial refund.'}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Proposez-vous des options d\'événements hybrides?' :
+                   language === 'es' ? '¿Ofrecen opciones de eventos híbridos?' :
+                   language === 'ar' ? 'هل تقدمون خيارات للفعاليات الهجينة؟' :
+                   'Do you offer hybrid event options?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Oui, nous organisons des événements hybrides avec diffusion en direct professionnelle, plateformes d\'engagement interactif, networking virtuel, et studios de broadcast sur place. Nous intégrons parfaitement les participants en personne et à distance pour une expérience unifiée.' :
+                   language === 'es' ? 'Sí, organizamos eventos híbridos con transmisión en vivo profesional, plataformas de participación interactiva, networking virtual y estudios de broadcast en sitio. Integramos perfectamente a los participantes presenciales y remotos para una experiencia unificada.' :
+                   language === 'ar' ? 'نعم، ننظم الفعاليات الهجينة مع البث المباشر الاحترافي ومنصات المشاركة التفاعلية والتواصل الافتراضي واستوديوهات البث في الموقع. ندمج بشكل مثالي المشاركين الحضوريين والبعيدين لتجربة موحدة.' :
+                   'Yes, we organize hybrid events with professional live streaming, interactive engagement platforms, virtual networking, and on-site broadcast studios. We seamlessly integrate in-person and remote participants for a unified experience.'}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-8">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Comment mesurez-vous le ROI de nos événements?' :
+                   language === 'es' ? '¿Cómo miden el ROI de nuestros eventos?' :
+                   language === 'ar' ? 'كيف تقيسون عائد الاستثمار لفعالياتنا؟' :
+                   'How do you measure ROI for our events?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Nous fournissons un reporting détaillé incluant: taux de satisfaction participants (enquêtes post-événement), engagement et interactions mesurés, objectifs commerciaux atteints, analyse coût-bénéfice, et recommandations d\'amélioration. Nos clients constatent en moyenne un ROI de 250-400% sur leurs investissements MICE.' :
+                   language === 'es' ? 'Proporcionamos informes detallados que incluyen: tasa de satisfacción de participantes (encuestas post-evento), compromiso e interacciones medidas, objetivos comerciales alcanzados, análisis costo-beneficio y recomendaciones de mejora. Nuestros clientes constatan en promedio un ROI de 250-400% en sus inversiones MICE.' :
+                   language === 'ar' ? 'نقدم تقارير مفصلة تتضمن: معدل رضا المشاركين (استبيانات ما بعد الفعالية)، قياس المشاركة والتفاعلات، تحقيق الأهداف التجارية، تحليل التكلفة والفائدة، وتوصيات التحسين. عملاؤنا يحققون في المتوسط عائد استثمار بنسبة 250-400% على استثماراتهم في MICE.' :
+                   'We provide detailed reporting including: participant satisfaction rates (post-event surveys), measured engagement and interactions, business objectives achieved, cost-benefit analysis, and improvement recommendations. Our clients average a 250-400% ROI on their MICE investments.'}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-9">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Quels sont les meilleures périodes pour organiser un événement au Maroc?' :
+                   language === 'es' ? '¿Cuáles son los mejores períodos para organizar un evento en Marruecos?' :
+                   language === 'ar' ? 'ما أفضل الفترات لتنظيم فعالية في المغرب؟' :
+                   'What are the best periods to organize an event in Morocco?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Les périodes optimales sont mars-mai (printemps) et septembre-novembre (automne) avec des températures agréables de 20-28°C. L\'hiver (décembre-février) est parfait pour les régions côtières et le désert. L\'été convient aux événements en montagne ou dans le nord. Nous vous conseillons selon votre destination et type d\'événement.' :
+                   language === 'es' ? 'Los períodos óptimos son marzo-mayo (primavera) y septiembre-noviembre (otoño) con temperaturas agradables de 20-28°C. El invierno (diciembre-febrero) es perfecto para las regiones costeras y el desierto. El verano es adecuado para eventos en montaña o en el norte. Le asesoramos según su destino y tipo de evento.' :
+                   language === 'ar' ? 'الفترات المثلى هي مارس-مايو (الربيع) وسبتمبر-نوفمبر (الخريف) مع درجات حرارة مريحة 20-28 درجة مئوية. الشتاء (ديسمبر-فبراير) مثالي للمناطق الساحلية والصحراء. الصيف مناسب للفعاليات في الجبال أو الشمال. ننصحك حسب وجهتك ونوع فعاليتك.' :
+                   'The optimal periods are March-May (spring) and September-November (fall) with pleasant temperatures of 20-28°C. Winter (December-February) is perfect for coastal regions and the desert. Summer suits mountain or northern events. We advise based on your destination and event type.'}
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-10">
+                <AccordionTrigger className="text-left">
+                  {language === 'fr' ? 'Êtes-vous autorisé par le Ministère du Tourisme marocain?' :
+                   language === 'es' ? '¿Están autorizados por el Ministerio de Turismo marroquí?' :
+                   language === 'ar' ? 'هل أنتم مرخصون من وزارة السياحة المغربية؟' :
+                   'Are you authorized by the Moroccan Ministry of Tourism?'}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {language === 'fr' ? 'Oui, EventMorocco est pleinement licencié et autorisé par le Ministère du Tourisme marocain. Nous sommes également membres de la Fédération Nationale du Tourisme et possédons toutes les certifications requises pour opérer en tant que DMC professionnel au Maroc, garantissant légalité et conformité totales.' :
+                   language === 'es' ? 'Sí, EventMorocco está completamente licenciado y autorizado por el Ministerio de Turismo marroquí. También somos miembros de la Federación Nacional de Turismo y poseemos todas las certificaciones requeridas para operar como DMC profesional en Marruecos, garantizando legalidad y cumplimiento totales.' :
+                   language === 'ar' ? 'نعم، EventMorocco مرخص بالكامل ومصرح به من وزارة السياحة المغربية. نحن أيضاً أعضاء في الاتحاد الوطني للسياحة ونمتلك جميع الشهادات المطلوبة للعمل كشركة DMC محترفة في المغرب، مما يضمن الشرعية والامتثال الكاملين.' :
+                   'Yes, EventMorocco is fully licensed and authorized by the Moroccan Ministry of Tourism. We are also members of the National Tourism Federation and hold all required certifications to operate as a professional DMC in Morocco, guaranteeing complete legality and compliance.'}
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </section>
+
+        <FAQSchema faqs={[
+          {
+            question: language === 'fr' ? 'Quels types d\'événements organisez-vous au Maroc?' : 'What types of events do you organize in Morocco?',
+            answer: language === 'fr' ? 'Nous organisons tous types d\'événements d\'entreprise: conférences internationales, séminaires, voyages incentive, team building, retraites d\'entreprise, lancements de produits, galas de soirée et conventions.' : 'We organize all types of corporate events: international conferences, seminars, incentive trips, team building, corporate retreats, product launches, gala dinners, and conventions.'
+          },
+          {
+            question: language === 'fr' ? 'Combien de temps à l\'avance dois-je réserver?' : 'How far in advance should I book?',
+            answer: language === 'fr' ? 'Pour les événements de grande envergure (200+ participants), nous recommandons 6-12 mois d\'avance. Pour les groupes moyens (50-200), 3-6 mois sont idéaux.' : 'For large-scale events (200+ participants), we recommend 6-12 months in advance. For medium groups (50-200), 3-6 months is ideal.'
+          },
+          {
+            question: language === 'fr' ? 'Quels sont vos tarifs pour les services MICE?' : 'What are your pricing for MICE services?',
+            answer: language === 'fr' ? 'Voyages incentive: €800-1500/personne. Team building: €150-400/personne. Conférences: €200-600/personne/jour. Tous les devis sont personnalisés.' : 'Incentive travel: €800-1500/person. Team building: €150-400/person. Conferences: €200-600/person/day. All quotes are customized.'
+          }
+        ]} />
 
         {/* CTA Section */}
         <section className="py-20 gradient-secondary">
