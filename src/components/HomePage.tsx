@@ -19,6 +19,7 @@ import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { TravelAgencySchema } from '@/components/SEO/TravelAgencySchema';
 import { MultipleServicesSchema } from '@/components/SEO/ServiceSchema';
+import { VideoObjectSchema } from '@/components/SEO/VideoObjectSchema';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { PressSection } from '@/components/conversion/PressSection';
 import { ClientLogos } from '@/components/conversion/ClientLogos';
@@ -373,6 +374,21 @@ export const HomePage: React.FC = () => {
       
       <FAQSchema faqs={homepageFAQs} />
       
+      <VideoObjectSchema
+        name={language === 'fr' ? 'Destination MICE Maroc - EventMorocco' :
+              language === 'es' ? 'Destino MICE Marruecos - EventMorocco' :
+              language === 'ar' ? 'وجهة MICE المغرب - EventMorocco' :
+              'Morocco MICE Destination - EventMorocco'}
+        description={language === 'fr' ? 'Découvrez le Maroc comme destination MICE premium avec EventMorocco, votre partenaire DMC expert pour événements d\'entreprise, conférences, et voyages incentive.' :
+                    language === 'es' ? 'Descubra Marruecos como destino MICE premium con EventMorocco, su socio DMC experto en eventos corporativos, conferencias y viajes de incentivo.' :
+                    language === 'ar' ? 'اكتشف المغرب كوجهة MICE متميزة مع EventMorocco، شريك DMC الخبير في الفعاليات الشركات والمؤتمرات ورحلات الحوافز.' :
+                    'Discover Morocco as a premium MICE destination with EventMorocco, your expert DMC partner for corporate events, conferences, and incentive travel.'}
+        thumbnailUrl="https://eventmorocco.com/hero-morocco-mice.jpg"
+        uploadDate="2024-01-15"
+        duration="PT3M15S"
+        embedUrl="https://www.youtube.com/embed/p6dAOmN0zdg"
+      />
+      
       {/* Hero Section */}
       <section 
         ref={heroRef}
@@ -413,12 +429,18 @@ export const HomePage: React.FC = () => {
         </div>
         
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold text-primary-foreground mb-6 leading-tight animate-on-load">
-            {t('heroTitle')}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground mb-6 leading-tight animate-on-load">
+            {language === 'fr' ? 'Expert DMC Maroc pour Événements d\'Entreprise' : 
+             language === 'es' ? 'Experto DMC Marruecos para Eventos Corporativos' :
+             language === 'ar' ? 'خبير DMC المغرب للفعاليات الشركات' :
+             'Expert Morocco DMC for Corporate Events'}
           </h1>
           
           <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-4 font-medium animate-on-load-delay-1">
-            {t('heroSubtitle')}
+            {language === 'fr' ? 'Services MICE & Gestion de Destination Premium' :
+             language === 'es' ? 'Servicios MICE & Gestión de Destino Premium' :
+             language === 'ar' ? 'خدمات MICE وإدارة الوجهات المتميزة' :
+             'Premium MICE Services & Destination Management'}
           </p>
           
           <p className="text-lg text-primary-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed animate-on-load-delay-2">

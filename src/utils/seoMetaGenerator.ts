@@ -27,22 +27,22 @@ export const generateSEOMeta = (content: PageContent): SEOMetadata => {
 
   const defaultDescriptions = {
     blog: {
-      en: 'Expert insights on corporate events, MICE services, and destination management in Morocco. Professional event planning tips and industry best practices.',
-      fr: 'Conseils d\'experts sur les événements d\'entreprise, les services MICE et la gestion de destination au Maroc.',
-      es: 'Consejos expertos sobre eventos corporativos, servicios MICE y gestión de destinos en Marruecos.',
-      ar: 'رؤى الخبراء حول الفعاليات الشركات وخدمات MICE وإدارة الوجهات في المغرب.',
+      en: 'Expert insights on corporate events, MICE, and DMC services in Morocco. Practical strategies, ROI analysis, and industry best practices for event planners.',
+      fr: 'Conseils d\'experts sur événements d\'entreprise, MICE et services DMC au Maroc. Stratégies pratiques, analyse ROI et meilleures pratiques.',
+      es: 'Perspectivas expertas sobre eventos corporativos, MICE y servicios DMC en Marruecos. Estrategias prácticas, análisis ROI y mejores prácticas.',
+      ar: 'رؤى خبراء حول الفعاليات الشركات وخدمات MICE و DMC في المغرب. استراتيجيات عملية وتحليل العائد وأفضل الممارسات.',
     },
     destination: {
-      en: 'Discover premier MICE venues, team building activities, and corporate event facilities in {destination}. Expert DMC services and event planning.',
-      fr: 'Découvrez les meilleurs lieux MICE, activités de team building et installations d\'événements d\'entreprise à {destination}.',
-      es: 'Descubra los mejores lugares MICE, actividades de team building e instalaciones para eventos corporativos en {destination}.',
-      ar: 'اكتشف أفضل أماكن MICE وأنشطة بناء الفريق ومرافق الفعاليات الشركات في {destination}.',
+      en: 'Top MICE venues, corporate event spaces & team building activities in {destination}. 50+ verified locations, capacity details & expert DMC support.',
+      fr: 'Meilleurs lieux MICE, espaces événementiels et activités team building à {destination}. 50+ sites vérifiés, capacités détaillées, support DMC expert.',
+      es: 'Mejores lugares MICE, espacios para eventos corporativos y actividades de team building en {destination}. 50+ ubicaciones verificadas, detalles de capacidad.',
+      ar: 'أفضل أماكن MICE ومساحات الفعاليات الشركات وأنشطة بناء الفريق في {destination}. أكثر من 50 موقع موثق وتفاصيل السعة.',
     },
     service: {
-      en: 'Professional {service} services in Morocco. Expert planning, execution, and management for unforgettable corporate events.',
-      fr: 'Services professionnels de {service} au Maroc. Planification, exécution et gestion expertes.',
-      es: 'Servicios profesionales de {service} en Marruecos. Planificación, ejecución y gestión expertas.',
-      ar: 'خدمات {service} احترافية في المغرب. تخطيط وتنفيذ وإدارة متخصصة.',
+      en: 'Professional {service} in Morocco with proven ROI. Expert planning, seamless execution & 24/7 support. 500+ successful events delivered.',
+      fr: 'Services {service} professionnels au Maroc avec ROI prouvé. Planification experte, exécution fluide, support 24/7. 500+ événements réussis.',
+      es: 'Servicios profesionales de {service} en Marruecos con ROI comprobado. Planificación experta, ejecución perfecta, soporte 24/7. 500+ eventos exitosos.',
+      ar: 'خدمات {service} احترافية في المغرب مع عائد استثمار مثبت. تخطيط متخصص وتنفيذ سلس ودعم على مدار الساعة. أكثر من 500 حدث ناجح.',
     },
   };
 
@@ -81,8 +81,8 @@ export const generateSEOMeta = (content: PageContent): SEOMetadata => {
 
     case 'home':
       return {
-        title: 'Morocco DMC | Expert MICE Services & Corporate Event Planning | EventMorocco',
-        description: 'Premier destination management company specializing in MICE, corporate events, incentive travel, and team building across Morocco. 15+ years experience, 500+ events delivered.',
+        title: 'Morocco DMC | Expert MICE & Corporate Event Planning | EventMorocco',
+        description: 'Leading Morocco DMC with 15+ years expertise in MICE, incentive travel & corporate events. 500+ events, 98% satisfaction, 24/7 support. Get free quote today.',
         keywords: 'Morocco DMC, MICE Morocco, corporate events Morocco, incentive travel Morocco, team building Morocco, conference venues Morocco, Marrakech DMC, Casablanca events',
         ogImage: '/hero-morocco-mice.jpg',
       };
@@ -90,16 +90,16 @@ export const generateSEOMeta = (content: PageContent): SEOMetadata => {
     case 'about':
       return {
         title: `About Us | ${brandSuffix[language]}`,
-        description: '15+ years of excellence in destination management and MICE services. 500+ successful events, 98% client satisfaction, award-winning team.',
-        keywords: 'Morocco DMC, about EventMorocco, MICE Morocco company, corporate event planners Morocco',
+        description: 'Morocco\'s leading DMC since 2000. 500+ events delivered, 98% client satisfaction, ministry-authorized. Expert team, 24/7 support, proven track record.',
+        keywords: 'Morocco DMC, about EventMorocco, MICE Morocco company, corporate event planners Morocco, authorized DMC Morocco',
         ogImage: '/morocco-business-fusion.jpg',
       };
 
     case 'contact':
       return {
         title: `Contact Us | ${brandSuffix[language]}`,
-        description: 'Get in touch with Morocco\'s leading DMC for your next corporate event, conference, or incentive program. Free consultation and custom quotes.',
-        keywords: 'contact Morocco DMC, MICE Morocco contact, event planning Morocco contact',
+        description: 'Contact Morocco\'s premier DMC for corporate events & MICE services. Free consultation, 24-hour response, custom proposals. Call, email or WhatsApp today.',
+        keywords: 'contact Morocco DMC, MICE Morocco contact, event planning Morocco contact, DMC quote Morocco',
         ogImage: '/hero-morocco-mice.jpg',
       };
 
