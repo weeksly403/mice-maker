@@ -1,0 +1,109 @@
+# HTTP/2 Server Push Headers and Caching Policies for EventMorocco.com
+# Optimized for Netlify/Vercel deployment
+
+# Global headers for all pages
+/*
+  # Security Headers
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  
+  # Cache Control for HTML (revalidate frequently)
+  Cache-Control: public, max-age=0, must-revalidate
+
+# JavaScript bundles - Long-term caching with content hash
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  
+# CSS files - Long-term caching with content hash
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - Long-term caching
+/assets/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.gif
+  Cache-Control: public, max-age=31536000, immutable
+
+# Uploaded images - Medium-term caching (7 days)
+/lovable-uploads/*
+  Cache-Control: public, max-age=604800, immutable
+
+# Fonts - Long-term caching
+/assets/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+/assets/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+/assets/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# Favicon - Medium-term caching (30 days)
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+
+# Sitemap - Short-term caching (1 day)
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+/sitemap-images.xml
+  Cache-Control: public, max-age=86400
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+# Service Worker (if applicable) - No cache
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# API routes (if using redirects to Supabase) - No cache
+/api/*
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+
+# Critical resource hints for homepage
+/
+  Link: </assets/hero-morocco-mice.jpg>; rel=preload; as=image; fetchpriority=high
+  Link: <https://fonts.googleapis.com>; rel=preconnect; crossorigin
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+
+# Blog pages - Medium-term caching (1 hour)
+/blog/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Destination pages - Medium-term caching (1 hour)
+/destinations/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Services pages - Medium-term caching (1 hour)
+/services
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Static pages - Medium-term caching (1 hour)
+/about
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+/contact
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+/faq
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# AFCON landing page - Short-term caching (10 minutes) for lead gen
+/afcon-2025-morocco
+  Cache-Control: public, max-age=600, stale-while-revalidate=3600
+
+# CRM routes - No cache (requires authentication)
+/crm/*
+  Cache-Control: private, no-cache, no-store, must-revalidate
+  
+# Auth routes - No cache
+/auth
+  Cache-Control: private, no-cache, no-store, must-revalidate
