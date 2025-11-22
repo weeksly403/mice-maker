@@ -69,26 +69,30 @@ export const Footer: React.FC = () => {
             </nav>
           </div>
 
-          {/* Contact Info */}
-          <div>
+          {/* Contact Info with Schema Microdata */}
+          <div itemScope itemType="https://schema.org/LocalBusiness">
             <h3 className="font-semibold text-lg mb-6">{t('contact')}</h3>
+            <meta itemProp="name" content="Event Morocco" />
+            <meta itemProp="url" content="https://eventmorocco.com" />
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 mt-1 text-secondary" />
-                <div>
+                <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                   <p className="text-primary-foreground/80">
-                    Marrakech, Morocco<br />
-                    Quartier Hivernage
+                    <span itemProp="addressLocality">Marrakech</span>, <span itemProp="addressCountry">Morocco</span><br />
+                    <span itemProp="streetAddress">Quartier Hivernage</span>
                   </p>
+                  <meta itemProp="postalCode" content="40000" />
+                  <meta itemProp="addressRegion" content="Marrakech-Safi" />
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-secondary" />
-                <p className="text-primary-foreground/80">+212 684 84 84 87</p>
+                <p className="text-primary-foreground/80" itemProp="telephone">+212 684 84 84 87</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-secondary" />
-                <p className="text-primary-foreground/80">contact@eventsmorocco.com</p>
+                <p className="text-primary-foreground/80" itemProp="email">contact@eventsmorocco.com</p>
               </div>
             </div>
           </div>

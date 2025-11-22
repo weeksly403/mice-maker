@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Clock, Users, Calendar, Euro, Target, TrendingUp } from 'lucide-react';
+import { Clock, Users, Calendar, Euro, Target, TrendingUp, Building } from 'lucide-react';
 
 interface QuickFact {
   icon: React.ComponentType<{ className?: string }>;
@@ -100,5 +100,11 @@ export const createROIFact = (value: string): QuickFact => ({
 export const createLeadTimeFact = (value: string): QuickFact => ({
   icon: Target,
   label: "Lead Time",
+  value
+});
+
+export const createVenuesFact = (value: string): QuickFact => ({
+  icon: Building,
+  label: "Available Venues",
   value
 });

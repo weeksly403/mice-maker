@@ -1,6 +1,7 @@
 import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
@@ -451,6 +452,65 @@ La relación no debería terminar cuando sus asistentes se van.`,
 
         {/* Article Content */}
         <div className="container mx-auto px-4 py-12 max-w-4xl">
+          {/* TL;DR Summary - AI Optimized */}
+          <TLDRSummary
+            mainInsight={
+              language === 'fr' ? 
+              "Choisir le bon DMC au Maroc nécessite d'évaluer 10 critères essentiels : expertise locale, antécédents prouvés, stabilité financière, technologie, gestion de crise, personnel multilingue, pratiques durables, transparence des prix, références clients et support post-événement. Ces facteurs déterminent si votre événement corporatif sera extraordinaire ou désastreux." :
+              language === 'es' ?
+              "Elegir el DMC adecuado en Marruecos requiere evaluar 10 criterios esenciales: experiencia local, historial comprobado, estabilidad financiera, tecnología, gestión de crisis, personal multilingüe, prácticas sostenibles, transparencia de precios, referencias de clientes y soporte post-evento. Estos factores determinan si su evento corporativo será extraordinario o desastroso." :
+              language === 'ar' ?
+              "اختيار DMC المناسب في المغرب يتطلب تقييم 10 معايير أساسية: الخبرة المحلية، السجل المثبت، الاستقرار المالي، التكنولوجيا، إدارة الأزمات، الموظفون متعددو اللغات، الممارسات المستدامة، شفافية التسعير، مراجع العملاء والدعم بعد الحدث." :
+              "Choosing the right DMC in Morocco requires evaluating 10 essential criteria: local expertise, proven track record, financial stability, technology, crisis management, multilingual staff, sustainable practices, pricing transparency, client references, and post-event support. These factors determine whether your corporate event will be extraordinary or disastrous."
+            }
+            keyTakeaways={
+              language === 'fr' ? [
+                "Les DMC avec 15+ ans d'expérience et un réseau de 200+ lieux offrent des avantages significatifs",
+                "Les signaux d'alarme incluent : prix irréalistes, mauvaise communication, absence de références vérifiables",
+                "Posez 20 questions essentielles couvrant les capacités commerciales, financières, d'exécution et de résultats",
+                "Utilisez un cadre de comparaison ROI pondéré : Coûts 30%, Expertise 25%, Services 20%, Technologie 15%, Risques 10%",
+                "Les DMC de qualité offrent un support post-événement complet incluant rapports détaillés et analyse de feedback"
+              ] : language === 'es' ? [
+                "Los DMC con 15+ años de experiencia y una red de 200+ lugares ofrecen ventajas significativas",
+                "Las señales de alerta incluyen: precios irreales, mala comunicación, falta de referencias verificables",
+                "Haga 20 preguntas esenciales que cubran capacidades comerciales, financieras, de ejecución y resultados",
+                "Use un marco de comparación ROI ponderado: Costos 30%, Experiencia 25%, Servicios 20%, Tecnología 15%, Riesgos 10%",
+                "Los DMC de calidad ofrecen soporte post-evento completo incluyendo informes detallados y análisis de feedback"
+              ] : language === 'ar' ? [
+                "شركات DMC مع خبرة 15+ سنة وشبكة 200+ مكان توفر مزايا كبيرة",
+                "إشارات التحذير تشمل: أسعار غير واقعية، تواصل سيئ، عدم وجود مراجع يمكن التحقق منها",
+                "اطرح 20 سؤالاً أساسيًا تغطي القدرات التجارية والمالية والتنفيذية والنتائج",
+                "استخدم إطار مقارنة ROI مرجح: التكاليف 30٪، الخبرة 25٪، الخدمات 20٪، التكنولوجيا 15٪، المخاطر 10٪",
+                "شركات DMC الجيدة تقدم دعم ما بعد الحدث الشامل بما في ذلك تقارير مفصلة وتحليل التعليقات"
+              ] : [
+                "DMCs with 15+ years experience and 200+ venue networks offer significant advantages",
+                "Red flags include: unrealistic pricing, poor communication, lack of verifiable references",
+                "Ask 20 essential questions covering business, financial, execution, and results capabilities",
+                "Use weighted ROI comparison framework: Costs 30%, Expertise 25%, Services 20%, Tech 15%, Risk 10%",
+                "Quality DMCs provide comprehensive post-event support including detailed reports and feedback analysis"
+              ]
+            }
+            bestFor={
+              language === 'fr' ?
+              "Planificateurs d'événements corporatifs, gestionnaires MICE, directeurs HR cherchant à organiser des conférences, incentives, team building ou retraites au Maroc pour 50-2000 participants avec des budgets de €100K-€5M." :
+              language === 'es' ?
+              "Planificadores de eventos corporativos, gerentes MICE, directores de RRHH que buscan organizar conferencias, incentivos, team building o retiros en Marruecos para 50-2000 participantes con presupuestos de €100K-€5M." :
+              language === 'ar' ?
+              "مخططو الفعاليات الشركات، مديرو MICE، مديرو الموارد البشرية الذين يسعون لتنظيم مؤتمرات، حوافز، بناء فريق أو خلوات في المغرب لـ 50-2000 مشارك بميزانيات €100K-€5M." :
+              "Corporate event planners, MICE managers, HR directors seeking to organize conferences, incentives, team building, or retreats in Morocco for 50-2000 attendees with €100K-€5M budgets."
+            }
+            actionRequired={
+              language === 'fr' ?
+              "Téléchargez notre DMC Selection Scorecard gratuite et demandez des propositions de 3-5 DMC marocains en utilisant les 20 questions de ce guide. Comparez en utilisant le cadre ROI et prenez une décision éclairée en 2-3 semaines." :
+              language === 'es' ?
+              "Descargue nuestra Scorecard de Selección DMC gratuita y solicite propuestas de 3-5 DMC marroquíes usando las 20 preguntas de esta guía. Compare usando el marco ROI y tome una decisión informada en 2-3 semanas." :
+              language === 'ar' ?
+              "قم بتنزيل بطاقة تسجيل اختيار DMC المجانية واطلب مقترحات من 3-5 شركات DMC مغربية باستخدام الأسئلة العشرين من هذا الدليل. قارن باستخدام إطار ROI واتخذ قرارًا مستنيرًا في 2-3 أسابيع." :
+              "Download our free DMC Selection Scorecard and request proposals from 3-5 Moroccan DMCs using the 20 questions from this guide. Compare using the ROI framework and make an informed decision within 2-3 weeks."
+            }
+            readTime={text.readTime}
+          />
+
           {/* Introduction */}
           <div className="prose prose-lg max-w-none mb-12">
             <p className="text-xl text-muted-foreground leading-relaxed">

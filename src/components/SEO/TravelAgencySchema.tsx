@@ -25,7 +25,7 @@ export const TravelAgencySchema: React.FC = () => {
       "width": "1200",
       "height": "630"
     },
-    "telephone": "+212-XXX-XXXX",
+    "telephone": "+212-684-848-487",
     "email": "contact@eventmorocco.com",
     "address": {
       "@type": "PostalAddress",

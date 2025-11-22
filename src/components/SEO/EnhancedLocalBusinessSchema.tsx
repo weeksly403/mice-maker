@@ -10,7 +10,7 @@ export const EnhancedLocalBusinessSchema = () => {
     alternateName: 'EventMorocco DMC',
     description: 'Premier destination management company specializing in MICE, corporate events, incentive travel, and team building across Morocco. 15+ years experience.',
     url: 'https://eventmorocco.com',
-    telephone: '+212-XXX-XXXXXX',
+    telephone: '+212-684-848-487',
     email: 'contact@eventmorocco.com',
     address: {
       '@type': 'PostalAddress',
