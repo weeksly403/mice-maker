@@ -9,6 +9,8 @@ import { QuoteDialog } from '@/components/QuoteDialog';
 import { ComparisonTable } from '@/components/SEO/ComparisonTable';
 import { DecisionFramework } from '@/components/SEO/DecisionFramework';
 import { BestForBlock } from '@/components/SEO/BestForBlock';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
+import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import marrakechDestImage from '@/assets/dest-marrakech.jpg';
@@ -68,7 +70,11 @@ const Destinations: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <OptimizedSEO pageType="destinations" />
+      <VisualBreadcrumbs />
+      
+      <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div 
@@ -309,11 +315,12 @@ const Destinations: React.FC = () => {
           <QuoteDialog>
             <Button variant="cta" size="lg" className="text-lg px-12 py-6">
               {t('getProposal')}
-            </Button>
-          </QuoteDialog>
+          </Button>
+        </QuoteDialog>
         </div>
       </section>
     </div>
+    </>
   );
 };
 

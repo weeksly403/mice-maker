@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { ComparisonTable } from '@/components/SEO/ComparisonTable';
 import { DecisionFramework } from '@/components/SEO/DecisionFramework';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { useLanguage } from '@/components/LanguageProvider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -179,6 +180,7 @@ const Services: React.FC = () => {
   return (
     <>
       <OptimizedSEO pageType="services" />
+      <VisualBreadcrumbs />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
