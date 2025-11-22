@@ -4,6 +4,7 @@ import { ArrowLeft, MapPin, Users, Clock, Camera, Plane, Building2, TrendingUp, 
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import spanishCorporateImage from '@/assets/blog-spanish-corporate.jpg';
 
 const SpanishCorporate: React.FC = () => {
@@ -71,6 +72,21 @@ const SpanishCorporate: React.FC = () => {
 
         <main className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
+            {/* TL;DR Summary */}
+            <TLDRSummary
+              mainInsight="Morocco offers Spanish companies unbeatable proximity (1-2 hours flight), 30-40% cost savings, and growing business opportunities for corporate events leveraging shared Mediterranean culture and strengthening economic ties."
+              keyTakeaways={[
+                "Strategic proximity: Just 1-2 hours from Barcelona, Madrid, Valencia with excellent connectivity",
+                "Popular events: Executive retreats, incentive programs, product launches, board meetings",
+                "Cultural advantages: Similar emphasis on personal relationships, meal-based business, hospitality values",
+                "150+ Spanish companies served with 95% satisfaction and 40% average cost savings",
+                "Key considerations: Islamic cultural awareness, different time approaches, language preferences (Arabic/French/English)"
+              ]}
+              bestFor="Spanish companies expanding Morocco business relationships, rewarding Iberian teams, hosting cross-cultural client events, or seeking exotic yet accessible corporate travel destinations."
+              actionRequired="Connect with bilingual (Spanish-Arabic) DMC specialist. Plan 4-6 months ahead for optimal pricing. Request customized proposal considering Spanish business culture preferences."
+              readTime="12 min read"
+            />
+
             {/* Article Content */}
             <div className="prose prose-lg max-w-none mb-12">
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">

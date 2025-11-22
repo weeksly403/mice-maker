@@ -6,11 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
-import { Building, MapPin, Users, Calendar, Star, Plane, Car, Phone, Mail, Clock, Wifi, Coffee, Car as ParkingIcon, Utensils, Shield } from 'lucide-react';
+import { Building, MapPin, Users, Calendar, Star, Plane, Car, Phone, Mail, Clock, Wifi, Coffee, Utensils, Shield } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
 import { EnhancedStructuredData } from '@/components/SEO/EnhancedStructuredData';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
+import { QuickFacts } from '@/components/SEO/QuickFacts';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
 
@@ -152,48 +153,14 @@ const CasablancaDestination: React.FC = () => {
         </section>
 
         {/* Quick Facts */}
-        <section className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">30+</div>
-                <div className="text-sm text-muted-foreground">
-                  {language === 'fr' ? 'Lieux de Conférence' : 
-                   language === 'es' ? 'Lugares de Conferencia' : 
-                   language === 'ar' ? 'أماكن المؤتمرات' : 
-                   'Conference Venues'}
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">3000</div>
-                <div className="text-sm text-muted-foreground">
-                  {language === 'fr' ? 'Capacité Max' : 
-                   language === 'es' ? 'Capacidad Máx' : 
-                   language === 'ar' ? 'السعة القصوى' : 
-                   'Max Capacity'}
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">1h</div>
-                <div className="text-sm text-muted-foreground">
-                  {language === 'fr' ? 'Aéroport Mohammed V' : 
-                   language === 'es' ? 'Aeropuerto Mohammed V' : 
-                   language === 'ar' ? 'مطار محمد الخامس' : 
-                   'Mohammed V Airport'}
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">5★</div>
-                <div className="text-sm text-muted-foreground">
-                  {language === 'fr' ? 'Hôtels de Luxe' : 
-                   language === 'es' ? 'Hoteles de Lujo' : 
-                   language === 'ar' ? 'فنادق فاخرة' : 
-                   'Luxury Hotels'}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <QuickFacts
+          facts={[
+            { icon: Building, label: 'Conference Venues', value: '30+ Venues' },
+            { icon: Users, label: 'Max Capacity', value: 'Up to 3,000 guests' },
+            { icon: Plane, label: 'Airport Access', value: '30 min from Mohammed V' },
+            { icon: Star, label: 'Luxury Hotels', value: '5-Star Properties' }
+          ]}
+        />
 
         {/* Why Choose Casablanca */}
         <section className="py-20">

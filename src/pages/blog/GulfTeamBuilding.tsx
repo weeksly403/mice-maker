@@ -4,6 +4,7 @@ import { ArrowLeft, MapPin, Users, Clock, Camera, Plane, Building2, TrendingUp, 
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import gulfTeamImage from '@/assets/blog-gulf-team.jpg';
 
 const GulfTeamBuilding: React.FC = () => {
@@ -71,6 +72,21 @@ const GulfTeamBuilding: React.FC = () => {
 
         <main className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
+            {/* TL;DR Summary */}
+            <TLDRSummary
+              mainInsight="Morocco offers Gulf companies perfect blend of Islamic values, luxury standards matching GCC expectations, and exotic appeal - ideal for corporate team building with shared cultural context and 30-40% cost savings."
+              keyTakeaways={[
+                "Shared Islamic principles: Halal cuisine, prayer facilities, cultural harmony",
+                "Luxury standards: 5-star palaces, premium desert camps, world-class service",
+                "3 signature programs: Royal Desert Leadership, Imperial Cities Challenge, Atlas Executive Retreat",
+                "98% satisfaction rate with 85% repeat business from Gulf companies",
+                "Just 4-6 hours flight from GCC capitals with excellent connectivity"
+              ]}
+              bestFor="GCC corporations (UAE, Saudi, Kuwait, Qatar, Bahrain, Oman) seeking luxury team building, leadership retreats, or cultural intelligence programs with Islamic comfort and authentic Moroccan experiences."
+              actionRequired="Schedule consultation with bilingual (Arabic-English) MICE specialist. Book 4-6 months ahead for customized Gulf corporate programs. Request halal-certified venue options."
+              readTime="10 min read"
+            />
+
             {/* Article Content */}
             <div className="prose prose-lg max-w-none mb-12">
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">

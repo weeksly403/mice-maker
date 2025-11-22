@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedImage } from '@/components/OptimizedImage';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import agadirHeroImage from '@/assets/agadir-hero-corporate.jpg';
 import agadirConferenceRoom from '@/assets/agadir-conference-room.jpg';
 import agadirBeachTeambuilding from '@/assets/agadir-beach-teambuilding.jpg';
@@ -107,6 +108,21 @@ const AgadirTeamBuilding: React.FC = () => {
 
         <main className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
+            {/* TL;DR Summary */}
+            <TLDRSummary
+              mainInsight="Agadir offers unique blend of beach-based team building, mountain adventures, and cultural experiences with 300+ sunny days, perfect climate, and modern MICE infrastructure just 2-3 hours from Europe."
+              keyTakeaways={[
+                "Beach Olympics, surfing challenges, and coastal team building with professional equipment",
+                "Cultural activities: cooking classes, argan oil cooperatives, traditional craft workshops",
+                "Atlas Mountains adventures and desert excursions for diverse experiences",
+                "World-class 5-star resorts with all-inclusive packages and conference facilities",
+                "30-40% cost savings vs European destinations with year-round perfect weather"
+              ]}
+              bestFor="European companies seeking beach-based team building, golf tournaments, wellness retreats, or combining business meetings with Atlantic Coast relaxation and adventure."
+              actionRequired="Request customized Agadir team building proposal. Book 3-6 months ahead for peak season (May-October) to secure best beachfront venues."
+              readTime="15 min read"
+            />
+
             {/* Article Content */}
             <div className="prose prose-lg max-w-none mb-12">
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">

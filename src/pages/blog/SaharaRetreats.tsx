@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import saharaRetreatImage from '@/assets/blog-sahara-retreat.jpg';
 
 const SaharaRetreats: React.FC = () => {
@@ -70,6 +71,21 @@ const SaharaRetreats: React.FC = () => {
 
         <main className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
+            {/* TL;DR Summary */}
+            <TLDRSummary
+              mainInsight="Sahara executive retreats strip away distractions to unlock breakthrough strategic thinking - delivering 87% improved clarity, 92% leadership confidence boost, and 68% faster decision-making in unique luxury desert camps."
+              keyTakeaways={[
+                "Luxury camps with 5-star amenities: climate control, en-suite bathrooms, executive facilities",
+                "Transformational programs: dawn strategy sessions, Berber leadership wisdom, starlight reflection",
+                "Desert psychology: vast silence creates 300% improvement in strategic vision and big-picture thinking",
+                "Business impact: 87% strategic clarity, 73% team collaboration, 92% leadership confidence",
+                "Elite setting for C-suite retreats, board meetings, and deep strategic planning sessions"
+              ]}
+              bestFor="C-suite executives, senior leadership teams, and board members seeking transformational strategic planning, authentic leadership development, or breakthrough decision-making away from urban distractions."
+              actionRequired="Schedule desert leadership consultation. Book 4-6 months ahead for optimal weather (October-April). Request Royal Sahara Executive Camp availability for premium experiences."
+              readTime="15 min read"
+            />
+
             {/* Article Content */}
             <div className="prose prose-lg max-w-none mb-12">
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">

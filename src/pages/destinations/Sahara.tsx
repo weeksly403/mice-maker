@@ -8,6 +8,7 @@ import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
 import { Mountain, MapPin, Users, Calendar, Star, Plane, Sunset, Phone, Mail, Clock, Wifi, Coffee, Utensils, Shield, Tent } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
+import { QuickFacts } from '@/components/SEO/QuickFacts';
 import heroImage from '@/assets/desert-team-building.jpg';
 import saharaImage from '@/assets/blog-sahara-retreat.jpg';
 
@@ -160,28 +161,14 @@ const SaharaDestination: React.FC = () => {
         </section>
 
         {/* Quick Facts */}
-        <section className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">9M</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'km² Superficie' : language === 'es' ? 'km² Superficie' : language === 'ar' ? 'كم² مساحة' : 'km² Area'}</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">150m</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Hauteur Dunes' : language === 'es' ? 'Altura Dunas' : language === 'ar' ? 'ارتفاع الكثبان' : 'Dunes Height'}</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">365</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Jours d\'Aventure' : language === 'es' ? 'Días de Aventura' : language === 'ar' ? 'أيام المغامرة' : 'Adventure Days'}</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">∞</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Étoiles Visibles' : language === 'es' ? 'Estrellas Visibles' : language === 'ar' ? 'نجوم مرئية' : 'Visible Stars'}</div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <QuickFacts
+          facts={[
+            { icon: Mountain, label: 'Desert Area', value: '9M km²' },
+            { icon: Mountain, label: 'Dunes Height', value: 'Up to 150m' },
+            { icon: Sunset, label: 'Year-Round', value: '365 Days Adventure' },
+            { icon: Star, label: 'Stargazing', value: 'Infinite Stars' }
+          ]}
+        />
 
         {/* Why Choose Sahara */}
         <section className="py-20">

@@ -6,8 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
-import { Crown, MapPin, Users, Calendar, Star, Plane, Palette, Phone, Mail, Clock, Wifi, Coffee, Utensils, Shield, Book } from 'lucide-react';
+import { Crown, MapPin, Users, Calendar, Star, Plane, Palette, Phone, Mail, Clock, Wifi, Coffee, Utensils, Shield, Book, Building } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
+import { QuickFacts } from '@/components/SEO/QuickFacts';
 import heroImage from '@/assets/agadir-cultural-experience.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
 
@@ -160,28 +161,14 @@ const FesDestination: React.FC = () => {
         </section>
 
         {/* Quick Facts */}
-        <section className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">1200+</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Ans d\'Histoire' : language === 'es' ? 'Años de Historia' : language === 'ar' ? 'سنة من التاريخ' : 'Years of History'}</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">UNESCO</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Patrimoine Mondial' : language === 'es' ? 'Patrimonio Mundial' : language === 'ar' ? 'تراث عالمي' : 'World Heritage'}</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">9000+</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Artisans Active' : language === 'es' ? 'Artesanos Activos' : language === 'ar' ? 'حرفي نشط' : 'Active Artisans'}</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">20+</div>
-                <div className="text-sm text-muted-foreground">{language === 'fr' ? 'Lieux Événements' : language === 'es' ? 'Lugares Eventos' : language === 'ar' ? 'أماكن الفعاليات' : 'Event Venues'}</div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <QuickFacts
+          facts={[
+            { icon: Clock, label: 'History', value: '1200+ Years Old' },
+            { icon: Crown, label: 'Status', value: 'UNESCO World Heritage' },
+            { icon: Palette, label: 'Artisans', value: '9000+ Active Craftsmen' },
+            { icon: Building, label: 'Event Venues', value: '20+ Cultural Venues' }
+          ]}
+        />
 
         {/* Why Choose Fez */}
         <section className="py-20">
