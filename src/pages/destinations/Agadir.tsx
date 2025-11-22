@@ -10,6 +10,7 @@ import { Waves, MapPin, Users, Calendar, Star, Plane, Palmtree, Phone, Mail, Clo
 import { openWhatsApp } from '@/utils/whatsapp';
 import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
 import { QuickFacts } from '@/components/SEO/QuickFacts';
+import { BestForBlock } from '@/components/SEO/BestForBlock';
 import heroImage from '@/assets/agadir-beach-teambuilding.jpg';
 import conferenceImage from '@/assets/agadir-conference-room.jpg';
 import dinnerImage from '@/assets/agadir-corporate-dinner.jpg';
@@ -172,6 +173,21 @@ const AgadirDestination: React.FC = () => {
             { icon: Palmtree, label: 'Activities', value: '5 Golf Courses' }
           ]}
         />
+        
+        {/* Best For Block */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <BestForBlock
+            title={language === 'fr' ? 'Agadir est Parfait Pour' : language === 'es' ? 'Agadir es Perfecto Para' : language === 'ar' ? 'أكادير مثالية لـ' : 'Agadir is Perfect For'}
+            variant="compact"
+            items={[
+              language === 'fr' ? 'Team building plage et sports nautiques' : language === 'es' ? 'Team building de playa y deportes acuáticos' : language === 'ar' ? 'بناء الفريق على الشاطئ والرياضات المائية' : 'Beach team building and water sports',
+              language === 'fr' ? 'Incentive détente et bien-être (spa, golf)' : language === 'es' ? 'Incentivo relax y bienestar (spa, golf)' : language === 'ar' ? 'الحوافز الاسترخاء والعافية (سبا، جولف)' : 'Relaxation and wellness incentives (spa, golf)',
+              language === 'fr' ? 'Séminaires outdoor avec climat idéal' : language === 'es' ? 'Seminarios outdoor con clima ideal' : language === 'ar' ? 'ندوات خارجية مع مناخ مثالي' : 'Outdoor seminars with ideal climate',
+              language === 'fr' ? 'Événements d\'équipe 50-200 personnes' : language === 'es' ? 'Eventos de equipo 50-200 personas' : language === 'ar' ? 'فعاليات فريق 50-200 شخص' : 'Team events for 50-200 people',
+              language === 'fr' ? 'Retraites d\'entreprise avec activités nature' : language === 'es' ? 'Retiros corporativos con actividades en la naturaleza' : language === 'ar' ? 'خلوات شركاتية مع أنشطة طبيعية' : 'Corporate retreats with nature activities'
+            ]}
+          />
+        </div>
 
         {/* Why Choose Agadir */}
         <section className="py-20">

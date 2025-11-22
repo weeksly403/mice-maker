@@ -7,6 +7,8 @@ import { MapPin, Star, Users, Calendar } from 'lucide-react';
 import { getLocalizedPath } from '@/lib/i18n';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { ComparisonTable } from '@/components/SEO/ComparisonTable';
+import { DecisionFramework } from '@/components/SEO/DecisionFramework';
+import { BestForBlock } from '@/components/SEO/BestForBlock';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import marrakechDestImage from '@/assets/dest-marrakech.jpg';
@@ -83,6 +85,43 @@ const Destinations: React.FC = () => {
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
             {t('destinationsPageDesc')}
           </p>
+        </div>
+      </section>
+
+      {/* Destination Selection Decision Framework */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <DecisionFramework
+            title={t('whichDestinationToChoose')}
+            description={t('destinationDecisionDesc')}
+            steps={[
+              {
+                condition: t('largeConference300Plus'),
+                recommendation: t('casablanca'),
+                reason: t('casablancaBusinessHub')
+              },
+              {
+                condition: t('luxuryIncentive20to80'),
+                recommendation: t('marrakech'),
+                reason: t('marrakechLuxuryExperience')
+              },
+              {
+                condition: t('beachTeamBuilding'),
+                recommendation: t('agadir'),
+                reason: t('agadirBeachActivities')
+              },
+              {
+                condition: t('culturalImmersion'),
+                recommendation: t('fes'),
+                reason: t('fesCulturalAuthentic')
+              },
+              {
+                condition: t('uniqueDesertExperience'),
+                recommendation: t('sahara'),
+                reason: t('saharaUnforgettable')
+              }
+            ]}
+          />
         </div>
       </section>
 
