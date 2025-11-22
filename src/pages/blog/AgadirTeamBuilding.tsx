@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
+import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { getRelatedArticles } from '@/utils/relatedArticles';
 import agadirHeroImage from '@/assets/agadir-hero-corporate.jpg';
 import agadirConferenceRoom from '@/assets/agadir-conference-room.jpg';
 import agadirBeachTeambuilding from '@/assets/agadir-beach-teambuilding.jpg';
@@ -14,7 +16,8 @@ import agadirCulturalExperience from '@/assets/agadir-cultural-experience.jpg';
 import agadirCorporateDinner from '@/assets/agadir-corporate-dinner.jpg';
 
 const AgadirTeamBuilding: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const relatedArticles = getRelatedArticles('agadir-team-building', 3);
 
   return (
     <>
@@ -580,6 +583,17 @@ const AgadirTeamBuilding: React.FC = () => {
           </div>
         </main>
       </article>
+      
+      {/* Related Articles */}
+      <RelatedArticlesSection 
+        currentSlug="agadir-team-building" 
+        articles={relatedArticles.map(article => ({
+          ...article,
+          title: language === 'fr' ? article.titleFr : language === 'es' ? article.titleEs : language === 'ar' ? article.titleAr : article.title,
+          excerpt: language === 'fr' ? article.excerptFr : language === 'es' ? article.excerptEs : language === 'ar' ? article.excerptAr : article.excerpt,
+          category: language === 'fr' ? article.categoryFr : language === 'es' ? article.categoryEs : language === 'ar' ? article.categoryAr : article.category
+        }))}
+      />
     </>
   );
 };

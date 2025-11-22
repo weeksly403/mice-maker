@@ -6,10 +6,13 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
+import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { getRelatedArticles } from '@/utils/relatedArticles';
 import saharaRetreatImage from '@/assets/blog-sahara-retreat.jpg';
 
 const SaharaRetreats: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const relatedArticles = getRelatedArticles('sahara-retreats', 3);
 
   return (
     <>
@@ -327,6 +330,17 @@ const SaharaRetreats: React.FC = () => {
           </div>
         </main>
       </article>
+      
+      {/* Related Articles */}
+      <RelatedArticlesSection 
+        currentSlug="sahara-retreats" 
+        articles={relatedArticles.map(article => ({
+          ...article,
+          title: language === 'fr' ? article.titleFr : language === 'es' ? article.titleEs : language === 'ar' ? article.titleAr : article.title,
+          excerpt: language === 'fr' ? article.excerptFr : language === 'es' ? article.excerptEs : language === 'ar' ? article.excerptAr : article.excerpt,
+          category: language === 'fr' ? article.categoryFr : language === 'es' ? article.categoryEs : language === 'ar' ? article.categoryAr : article.category
+        }))}
+      />
     </>
   );
 };

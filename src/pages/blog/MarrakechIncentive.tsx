@@ -2,17 +2,20 @@ import React from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
+import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, Clock, ArrowLeft, Trophy, Users, MapPin, Star, Target, Zap, Crown, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
+import { getRelatedArticles } from '@/utils/relatedArticles';
 import incentiveImage from '@/assets/blog-marrakech-incentive.jpg';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 
 const MarrakechIncentive: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const relatedArticles = getRelatedArticles('marrakech-incentive', 3);
 
   const incentivePrograms = [
     {
@@ -462,6 +465,17 @@ const MarrakechIncentive: React.FC = () => {
         </div>
       </section>
       </div>
+      
+      {/* Related Articles */}
+      <RelatedArticlesSection 
+        currentSlug="marrakech-incentive" 
+        articles={relatedArticles.map(article => ({
+          ...article,
+          title: language === 'fr' ? article.titleFr : language === 'es' ? article.titleEs : language === 'ar' ? article.titleAr : article.title,
+          excerpt: language === 'fr' ? article.excerptFr : language === 'es' ? article.excerptEs : language === 'ar' ? article.excerptAr : article.excerpt,
+          category: language === 'fr' ? article.categoryFr : language === 'es' ? article.categoryEs : language === 'ar' ? article.categoryAr : article.category
+        }))}
+      />
     </>
   );
 };

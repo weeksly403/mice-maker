@@ -4,14 +4,17 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
+import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
 import { Calendar, Clock, ArrowLeft, MapPin, Star, Building2, Wifi, Users, Shield, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
+import { getRelatedArticles } from '@/utils/relatedArticles';
 import venuesImage from '@/assets/blog-morocco-venues.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
 
 const TopVenuesMorocco: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const relatedArticles = getRelatedArticles('top-venues-morocco', 3);
 
   const venues = [
     {
@@ -440,6 +443,17 @@ const TopVenuesMorocco: React.FC = () => {
         </div>
       </section>
       </div>
+      
+      {/* Related Articles */}
+      <RelatedArticlesSection 
+        currentSlug="top-venues-morocco" 
+        articles={relatedArticles.map(article => ({
+          ...article,
+          title: language === 'fr' ? article.titleFr : language === 'es' ? article.titleEs : language === 'ar' ? article.titleAr : article.title,
+          excerpt: language === 'fr' ? article.excerptFr : language === 'es' ? article.excerptEs : language === 'ar' ? article.excerptAr : article.excerpt,
+          category: language === 'fr' ? article.categoryFr : language === 'es' ? article.categoryEs : language === 'ar' ? article.categoryAr : article.category
+        }))}
+      />
     </>
   );
 };
