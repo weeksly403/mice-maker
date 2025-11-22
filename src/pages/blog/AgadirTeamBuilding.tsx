@@ -7,6 +7,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { getRelatedArticles } from '@/utils/relatedArticles';
 import agadirHeroImage from '@/assets/agadir-hero-corporate.jpg';
 import agadirConferenceRoom from '@/assets/agadir-conference-room.jpg';
@@ -34,6 +35,7 @@ const AgadirTeamBuilding: React.FC = () => {
       <meta property="article:section" content="Team Building" />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href="https://eventsmorocco.com/blog/team-building-agadir-activities" />
+      <VisualBreadcrumbs />
       
       {/* Structured Data */}
       <script type="application/ld+json">

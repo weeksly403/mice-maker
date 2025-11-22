@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { Calendar, Clock, ArrowLeft, MapPin, Star, Building2, Wifi, Users, Shield, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
@@ -47,6 +48,7 @@ const TopVenuesMorocco: React.FC = () => {
       <meta property="og:description" content="Comprehensive guide to Morocco's best conference venues and MICE facilities. Modern amenities, authentic settings, and professional service for successful business events." />
       <meta property="og:image" content={venuesImage} />
       <meta property="og:type" content="article" />
+      <VisualBreadcrumbs />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

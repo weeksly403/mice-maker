@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+   
+   <!-- Homepage Images -->
+   <url>
+      <loc>https://eventmorocco.com/</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/hero-morocco-mice.jpg</image:loc>
+         <image:title>Morocco MICE Hero</image:title>
+         <image:caption>Premium MICE and DMC services in Morocco</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/morocco-business-fusion.jpg</image:loc>
+         <image:title>Morocco Business Fusion</image:title>
+         <image:caption>Business events combining tradition and modernity in Morocco</image:caption>
+      </image:image>
+   </url>
+   
+   <!-- Destinations Images -->
+   <url>
+      <loc>https://eventmorocco.com/destinations/marrakech-events</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/dest-marrakech.jpg</image:loc>
+         <image:title>Marrakech Events Destination</image:title>
+         <image:caption>Corporate events and MICE services in Marrakech</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/marrakech-conference.jpg</image:loc>
+         <image:title>Marrakech Conference Venue</image:title>
+         <image:caption>Premium conference venues in Marrakech</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/destinations/casablanca-conferences</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/dest-casablanca.jpg</image:loc>
+         <image:title>Casablanca Business Hub</image:title>
+         <image:caption>Conference and business events in Casablanca</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/destinations/agadir-incentives</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/dest-agadir.jpg</image:loc>
+         <image:title>Agadir Beach Destination</image:title>
+         <image:caption>Incentive travel and team building in Agadir</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/agadir-hero-corporate.jpg</image:loc>
+         <image:title>Agadir Corporate Events</image:title>
+         <image:caption>Beach-based corporate events in Agadir</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/destinations/fes-seminars</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/dest-fes.jpg</image:loc>
+         <image:title>Fes Cultural Destination</image:title>
+         <image:caption>Seminars and cultural events in Fes</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/destinations/sahara-retreats</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/desert-team-building.jpg</image:loc>
+         <image:title>Sahara Desert Team Building</image:title>
+         <image:caption>Executive retreats and team building in Sahara Desert</image:caption>
+      </image:image>
+   </url>
+   
+   <!-- Services Images -->
+   <url>
+      <loc>https://eventmorocco.com/services</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/services-incentive.jpg</image:loc>
+         <image:title>Incentive Travel Services</image:title>
+         <image:caption>Premium incentive travel programs in Morocco</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/services-team.jpg</image:loc>
+         <image:title>Team Building Activities</image:title>
+         <image:caption>Professional team building services in Morocco</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/services-retreat.jpg</image:loc>
+         <image:title>Corporate Retreats</image:title>
+         <image:caption>Executive corporate retreat planning</image:caption>
+      </image:image>
+   </url>
+   
+   <!-- Blog Images -->
+   <url>
+      <loc>https://eventmorocco.com/blog/choosing-dmc-morocco</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-dmc-selection-checklist.jpg</image:loc>
+         <image:title>DMC Selection Checklist</image:title>
+         <image:caption>How to choose the right DMC in Morocco</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-dmc-meeting.jpg</image:loc>
+         <image:title>DMC Meeting</image:title>
+         <image:caption>Professional DMC consultation in Morocco</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/blog/corporate-event-roi</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-roi-infographic.jpg</image:loc>
+         <image:title>ROI Infographic</image:title>
+         <image:caption>Measuring corporate event ROI in Morocco</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-roi-analysis.jpg</image:loc>
+         <image:title>ROI Analysis</image:title>
+         <image:caption>Event ROI analysis and metrics</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/blog/hybrid-events-morocco</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-hybrid-events-tech.jpg</image:loc>
+         <image:title>Hybrid Events Technology</image:title>
+         <image:caption>Advanced technology for hybrid events in Morocco</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-hybrid-event-setup.jpg</image:loc>
+         <image:title>Hybrid Event Setup</image:title>
+         <image:caption>Professional hybrid event setup and staging</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/blog/afcon-2025-corporate-hospitality</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-afcon-corporate-hospitality.jpg</image:loc>
+         <image:title>AFCON Corporate Hospitality</image:title>
+         <image:caption>Premium corporate hospitality for AFCON 2025</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-afcon-vip-box.jpg</image:loc>
+         <image:title>AFCON VIP Box</image:title>
+         <image:caption>VIP box experiences at AFCON 2025 venues</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-afcon-venues-map.jpg</image:loc>
+         <image:title>AFCON Venues Map</image:title>
+         <image:caption>Map of AFCON 2025 stadium venues across Morocco</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/blog/agadir-team-building</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/agadir-beach-teambuilding.jpg</image:loc>
+         <image:title>Agadir Beach Team Building</image:title>
+         <image:caption>Beach-based team building activities in Agadir</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/agadir-atlas-adventure.jpg</image:loc>
+         <image:title>Agadir Atlas Adventure</image:title>
+         <image:caption>Atlas Mountains adventure activities near Agadir</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/blog/incentive-travel-marrakech</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-marrakech-incentive.jpg</image:loc>
+         <image:title>Marrakech Incentive Travel</image:title>
+         <image:caption>Premium incentive travel programs in Marrakech</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/blog/sahara-retreats</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-sahara-retreat.jpg</image:loc>
+         <image:title>Sahara Corporate Retreat</image:title>
+         <image:caption>Luxury corporate retreat in Sahara Desert</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/blog/team-building-gulf-corporates</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-gulf-team.jpg</image:loc>
+         <image:title>Gulf Companies Team Building</image:title>
+         <image:caption>Team building programs for Gulf companies in Morocco</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/blog/spain-corporate-events-morocco</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-spanish-corporate.jpg</image:loc>
+         <image:title>Spanish Corporate Events</image:title>
+         <image:caption>Corporate events for Spanish companies in Morocco</image:caption>
+      </image:image>
+   </url>
+   
+   <url>
+      <loc>https://eventmorocco.com/blog/conference-venues-morocco</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/blog-morocco-venues.jpg</image:loc>
+         <image:title>Morocco Conference Venues</image:title>
+         <image:caption>Top conference and event venues across Morocco</image:caption>
+      </image:image>
+   </url>
+   
+   <!-- AFCON Landing Page -->
+   <url>
+      <loc>https://eventmorocco.com/afcon-2025-morocco</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/afcon-landing-hero.jpg</image:loc>
+         <image:title>AFCON 2025 Morocco</image:title>
+         <image:caption>Africa Cup of Nations 2025 corporate hospitality packages</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/afcon-venue-map.jpg</image:loc>
+         <image:title>AFCON Venue Map</image:title>
+         <image:caption>AFCON 2025 stadium locations across Morocco</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/afcon-package-vip.png</image:loc>
+         <image:title>AFCON VIP Package</image:title>
+         <image:caption>VIP hospitality package for AFCON 2025</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/afcon-package-premium.png</image:loc>
+         <image:title>AFCON Premium Package</image:title>
+         <image:caption>Premium hospitality package for AFCON 2025</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/afcon-package-essential.png</image:loc>
+         <image:title>AFCON Essential Package</image:title>
+         <image:caption>Essential hospitality package for AFCON 2025</image:caption>
+      </image:image>
+   </url>
+   
+   <!-- Success Stories -->
+   <url>
+      <loc>https://eventmorocco.com/case-studies</loc>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/success-marrakech.jpg</image:loc>
+         <image:title>Marrakech Success Story</image:title>
+         <image:caption>Successful corporate event in Marrakech</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/success-casablanca-conference.jpg</image:loc>
+         <image:title>Casablanca Conference Success</image:title>
+         <image:caption>Major conference success in Casablanca</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/success-sahara-retreat.jpg</image:loc>
+         <image:title>Sahara Retreat Success</image:title>
+         <image:caption>Executive retreat success in Sahara Desert</image:caption>
+      </image:image>
+      <image:image>
+         <image:loc>https://eventmorocco.com/assets/success-agadir-team.jpg</image:loc>
+         <image:title>Agadir Team Building Success</image:title>
+         <image:caption>Team building event success in Agadir</image:caption>
+      </image:image>
+   </url>
+   
+</urlset>

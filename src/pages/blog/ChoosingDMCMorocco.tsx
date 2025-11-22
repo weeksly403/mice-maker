@@ -3,6 +3,7 @@ import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
@@ -430,6 +431,7 @@ La relación no debería terminar cuando sus asistentes se van.`,
         customDescription={text.metaDesc}
         customKeywords="DMC Morocco, choosing DMC, destination management company Morocco, corporate events Morocco, MICE Morocco, event planning Morocco, DMC selection guide"
       />
+      <VisualBreadcrumbs />
       <FAQSchema faqs={faqs} />
 
       <article className="min-h-screen bg-background">

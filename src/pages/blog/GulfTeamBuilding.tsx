@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { getRelatedArticles } from '@/utils/relatedArticles';
 import gulfTeamImage from '@/assets/blog-gulf-team.jpg';
 
@@ -23,6 +24,7 @@ const GulfTeamBuilding: React.FC = () => {
       <meta property="og:description" content="Premium corporate team building experiences in Morocco tailored for Gulf companies. Professional MICE services with cultural authenticity." />
       <meta property="og:image" content={gulfTeamImage} />
       <meta property="og:type" content="article" />
+      <VisualBreadcrumbs />
 
       <article className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
         <header className="relative h-[70vh] overflow-hidden">

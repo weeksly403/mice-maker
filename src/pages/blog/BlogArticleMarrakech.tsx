@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, Clock, ArrowLeft, MapPin, Users, Star, CheckCircle } from 'lucide-react';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -91,6 +92,7 @@ const BlogArticleMarrakech: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <VisualBreadcrumbs />
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div 

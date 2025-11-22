@@ -7,6 +7,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { getRelatedArticles } from '@/utils/relatedArticles';
 import saharaRetreatImage from '@/assets/blog-sahara-retreat.jpg';
 
@@ -22,6 +23,7 @@ const SaharaRetreats: React.FC = () => {
         customDescription="Luxury Sahara corporate retreats & desert team building. Executive leadership programs in Morocco's premium desert camps by expert DMC."
         customKeywords="Sahara corporate retreats, desert team building Morocco, DMC Morocco, executive retreats Sahara, luxury desert camps, Morocco corporate retreat"
       />
+      <VisualBreadcrumbs />
 
       <article className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
         <header className="relative h-[70vh] overflow-hidden">
