@@ -3,6 +3,7 @@ import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
@@ -497,6 +498,7 @@ The future of MICE is hybrid, and Morocco is ready to host it.`,
         customDescription={text.metaDesc}
         customKeywords="hybrid events Morocco, virtual MICE Morocco, hybrid conference Morocco, hybrid event technology, Morocco virtual events, hybrid meeting venues Morocco"
       />
+      <VisualBreadcrumbs />
       <FAQSchema faqs={faqs} />
 
       <article className="min-h-screen bg-background">

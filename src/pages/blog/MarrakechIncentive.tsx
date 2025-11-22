@@ -3,6 +3,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -43,6 +44,7 @@ const MarrakechIncentive: React.FC = () => {
         customDescription="Expert Marrakech incentive travel programs. Luxury corporate rewards, team building & MICE services by Morocco's leading DMC."
         customKeywords="Marrakech incentive travel, DMC Marrakech, incentive travel Morocco, corporate rewards Morocco, luxury incentive programs, MICE Morocco"
       />
+      <VisualBreadcrumbs />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

@@ -3,6 +3,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -88,7 +89,7 @@ export const AfconCorporateHospitality: React.FC = () => {
         customDescription={text.metaDesc}
         customKeywords="AFCON 2025 corporate hospitality Morocco, Africa Cup Nations VIP packages Morocco, AFCON business events Morocco, AFCON 2025 DMC services, corporate packages AFCON Morocco, VIP hospitality Africa Cup Nations"
       />
-
+      <VisualBreadcrumbs />
       <FAQSchema faqs={faqs} />
 
       <article className="min-h-screen bg-background">

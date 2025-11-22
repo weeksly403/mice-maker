@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { getRelatedArticles } from '@/utils/relatedArticles';
 import spanishCorporateImage from '@/assets/blog-spanish-corporate.jpg';
 
@@ -23,6 +24,7 @@ const SpanishCorporate: React.FC = () => {
       <meta property="og:description" content="Expert MICE services for Spanish companies expanding business relationships in Morocco. Professional event management solutions." />
       <meta property="og:image" content={spanishCorporateImage} />
       <meta property="og:type" content="article" />
+      <VisualBreadcrumbs />
 
       <article className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
         <header className="relative h-[70vh] overflow-hidden">

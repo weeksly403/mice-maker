@@ -3,6 +3,7 @@ import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { VisualBreadcrumbs } from '@/components/SEO/VisualBreadcrumbs';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
@@ -701,6 +702,7 @@ Incluya todos los costos:
         customDescription={text.metaDesc}
         customKeywords="corporate event ROI Morocco, MICE ROI measurement, event ROI calculator, incentive travel ROI, conference ROI, Morocco event costs, event success metrics"
       />
+      <VisualBreadcrumbs />
       <FAQSchema faqs={faqs} />
 
       <article className="min-h-screen bg-background">
