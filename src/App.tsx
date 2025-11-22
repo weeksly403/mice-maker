@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
+import { useEffect } from 'react';
 import { LanguageProvider } from "./components/LanguageProvider";
 import { AuthProvider } from "./components/auth/AuthProvider";
 import { Header } from "./components/Header";
@@ -14,6 +15,7 @@ import { ChatBotButton } from "./components/chatbot/ChatBotButton";
 import { SEOEnhancer } from "./components/SEO/SEOEnhancer";
 import { StickyCTA } from "./components/conversion/StickyCTA";
 import { WhatsAppBusinessButton } from "./components/conversion/WhatsAppBusinessButton";
+import { initializeSEOAnalytics } from "./utils/seoAnalytics";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Destinations from "./pages/Destinations";
@@ -54,21 +56,28 @@ import Partners from "./pages/crm/Partners";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <HelmetProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <LanguageProvider>
-          <AuthProvider>
-            <TooltipProvider>
-              <ErrorBoundary>
-                <SEOEnhancer />
-                <EnhancedLocalBusinessSchema />
-                <ExitIntentPopup />
-                <Toaster />
-                <Sonner />
-                <div className="min-h-screen flex flex-col">
+const App = () => {
+  // Initialize SEO analytics tracking (scroll depth, time on page, etc.)
+  useEffect(() => {
+    const cleanup = initializeSEOAnalytics();
+    return cleanup;
+  }, []);
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <LanguageProvider>
+            <AuthProvider>
+              <TooltipProvider>
+                <ErrorBoundary>
+                  <SEOEnhancer />
+                  <EnhancedLocalBusinessSchema />
+                  <ExitIntentPopup />
+                  <Toaster />
+                  <Sonner />
+                  <div className="min-h-screen flex flex-col">
                 <Header />
                 <main className="flex-1">
                 <Routes>
@@ -298,6 +307,7 @@ const App = () => (
       </BrowserRouter>
     </HelmetProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;

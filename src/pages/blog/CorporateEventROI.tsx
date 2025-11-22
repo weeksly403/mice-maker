@@ -2,6 +2,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
+import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
@@ -13,11 +14,13 @@ import roiAnalysisImage from '@/assets/blog-roi-analysis.jpg';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
 import { useState } from 'react';
+import { allArticles, getRelatedArticles } from '@/utils/relatedArticles';
 
 const CorporateEventROI = () => {
   const { language, t } = useLanguage();
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [callOpen, setCallOpen] = useState(false);
+  const relatedArticles = getRelatedArticles('corporate-event-roi', 3);
 
   const content = {
     en: {
@@ -899,6 +902,17 @@ Incluya todos los costos:
       <ScheduleCallDialog>
         <Button className="hidden">Schedule Call</Button>
       </ScheduleCallDialog>
+      
+      {/* Related Articles */}
+      <RelatedArticlesSection 
+        currentSlug="corporate-event-roi" 
+        articles={relatedArticles.map(article => ({
+          ...article,
+          title: language === 'fr' ? article.titleFr : language === 'es' ? article.titleEs : language === 'ar' ? article.titleAr : article.title,
+          excerpt: language === 'fr' ? article.excerptFr : language === 'es' ? article.excerptEs : language === 'ar' ? article.excerptAr : article.excerpt,
+          category: language === 'fr' ? article.categoryFr : language === 'es' ? article.categoryEs : language === 'ar' ? article.categoryAr : article.category
+        }))}
+      />
     </>
   );
 };
