@@ -1,6 +1,7 @@
 import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';

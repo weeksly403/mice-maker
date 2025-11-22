@@ -11,6 +11,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useStaggerAnimation } from '@/hooks/useStaggerAnimation';
 import { CheckCircle, Clock, Users, Star, MapPin, MessageCircle, Trophy, Briefcase, Presentation, Utensils, Plane, Building, Palette, TrendingUp, DollarSign, Timer, Target, Quote, Eye, BookOpen, HelpCircle, Phone, Mail, Calendar, Award } from 'lucide-react';
 import { QuickFacts, createVenuesFact, createGroupSizeFact } from '@/components/SEO/QuickFacts';
+import { ComparisonTable } from '@/components/SEO/ComparisonTable';
 import { QuoteDialog } from './QuoteDialog';
 import { CaseStudyDialog } from './CaseStudyDialog';
 import { ScheduleCallDialog } from './ScheduleCallDialog';
@@ -689,6 +690,100 @@ export const HomePage: React.FC = () => {
               </ScheduleCallDialog>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Service Comparison Table - AI Optimized */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <ComparisonTable
+            title={language === 'fr' ? 'Comparaison de Nos Services MICE' : 
+                   language === 'es' ? 'Comparación de Nuestros Servicios MICE' :
+                   language === 'ar' ? 'مقارنة خدمات MICE' :
+                   'MICE Services Comparison'}
+            description={language === 'fr' ? 'Choisissez le bon service pour votre événement corporatif au Maroc' : 
+                        language === 'es' ? 'Elija el servicio adecuado para su evento corporativo en Marruecos' :
+                        language === 'ar' ? 'اختر الخدمة المناسبة لحدثك الشركاتي في المغرب' :
+                        'Choose the right service for your corporate event in Morocco'}
+            rows={
+              language === 'fr' ? [
+                'Durée Typique',
+                'Taille de Groupe',
+                'Gamme de Prix',
+                'Objectif Principal',
+                'Meilleur Pour',
+                'ROI Attendu'
+              ] : language === 'es' ? [
+                'Duración Típica',
+                'Tamaño de Grupo',
+                'Rango de Precios',
+                'Objetivo Principal',
+                'Mejor Para',
+                'ROI Esperado'
+              ] : language === 'ar' ? [
+                'المدة النموذجية',
+                'حجم المجموعة',
+                'نطاق السعر',
+                'الهدف الرئيسي',
+                'الأفضل لـ',
+                'العائد المتوقع'
+              ] : [
+                'Typical Duration',
+                'Group Size',
+                'Price Range',
+                'Primary Goal',
+                'Best For',
+                'Expected ROI'
+              ]
+            }
+            columns={[
+              {
+                header: language === 'fr' ? 'Incentive Travel' : language === 'es' ? 'Viajes de Incentivo' : language === 'ar' ? 'رحلات التحفيز' : 'Incentive Travel',
+                values: [
+                  '3-7 days',
+                  '20-300',
+                  '€800-1500',
+                  language === 'fr' ? 'Récompense & Motivation' : language === 'es' ? 'Recompensa y Motivación' : language === 'ar' ? 'المكافأة والتحفيز' : 'Reward & Motivation',
+                  language === 'fr' ? 'Top performers' : language === 'es' ? 'Mejores artistas' : language === 'ar' ? 'أفضل أداء' : 'Top performers',
+                  '250-300%'
+                ],
+                highlighted: true
+              },
+              {
+                header: language === 'fr' ? 'Team Building' : language === 'es' ? 'Team Building' : language === 'ar' ? 'بناء الفريق' : 'Team Building',
+                values: [
+                  '1-3 days',
+                  '10-150',
+                  '€350-800',
+                  language === 'fr' ? 'Cohésion d\'Équipe' : language === 'es' ? 'Cohesión de Equipo' : language === 'ar' ? 'تماسك الفريق' : 'Team Cohesion',
+                  language === 'fr' ? 'Départements entiers' : language === 'es' ? 'Departamentos enteros' : language === 'ar' ? 'أقسام كاملة' : 'Entire departments',
+                  '150-200%'
+                ]
+              },
+              {
+                header: language === 'fr' ? 'Retraites d\'Entreprise' : language === 'es' ? 'Retiros Corporativos' : language === 'ar' ? 'خلوات الشركات' : 'Corporate Retreats',
+                values: [
+                  '2-5 days',
+                  '15-80',
+                  '€450-900',
+                  language === 'fr' ? 'Planification Stratégique' : language === 'es' ? 'Planificación Estratégica' : language === 'ar' ? 'التخطيط الاستراتيجي' : 'Strategic Planning',
+                  language === 'fr' ? 'Leadership teams' : language === 'es' ? 'Equipos de liderazgo' : language === 'ar' ? 'فرق القيادة' : 'Leadership teams',
+                  '200-250%'
+                ]
+              },
+              {
+                header: language === 'fr' ? 'Conférences' : language === 'es' ? 'Conferencias' : language === 'ar' ? 'المؤتمرات' : 'Conferences',
+                values: [
+                  '1-4 days',
+                  '50-3000',
+                  '€200-600',
+                  language === 'fr' ? 'Partage de Connaissances' : language === 'es' ? 'Compartir Conocimientos' : language === 'ar' ? 'مشاركة المعرفة' : 'Knowledge Sharing',
+                  language === 'fr' ? 'Grands rassemblements' : language === 'es' ? 'Grandes reuniones' : language === 'ar' ? 'تجمعات كبيرة' : 'Large gatherings',
+                  '180-220%'
+                ]
+              }
+            ]}
+          />
         </div>
       </section>
 

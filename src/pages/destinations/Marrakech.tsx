@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { MapPin, Users, Star, Calendar, Camera, Utensils, Briefcase, Car } from 'lucide-react';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
+import { QuickFacts, createPricingFact, createDurationFact, createGroupSizeFact, createBestMonthsFact, createVenuesFact, createROIFact } from '@/components/SEO/QuickFacts';
 import marrakechConference from '@/assets/marrakech-conference.jpg';
 import heroMoroccoMice from '@/assets/hero-morocco-mice.jpg';
 
