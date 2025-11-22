@@ -6,8 +6,10 @@ import { AnimatedCard } from '@/components/AnimatedCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Users, Award, Shield, MapPin, Clock, Target, Globe, MessageSquare, Users2, FileText, Settings, PartyPopper } from 'lucide-react';
+import { CheckCircle, Users, Award, Shield, MapPin, Clock, Target, Globe, MessageSquare, Users2, FileText, Settings, PartyPopper, Building2, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { QuickFacts } from '@/components/SEO/QuickFacts';
+import { ComparisonTable } from '@/components/SEO/ComparisonTable';
 
 const About: React.FC = () => {
   const { t, language } = useLanguage();
@@ -162,6 +164,46 @@ const About: React.FC = () => {
                 </p>
               </div>
             </div>
+            
+            {/* Company Quick Facts */}
+            <div className="mt-12">
+              <QuickFacts
+                title={t('companyOverview')}
+                variant="default"
+                facts={[
+                  {
+                    icon: Calendar,
+                    label: t('established'),
+                    value: '2000'
+                  },
+                  {
+                    icon: Users,
+                    label: t('eventsDelivered'),
+                    value: '500+'
+                  },
+                  {
+                    icon: Building2,
+                    label: t('partnerVenues'),
+                    value: '150+'
+                  },
+                  {
+                    icon: Globe,
+                    label: t('countriesServed'),
+                    value: '40+'
+                  },
+                  {
+                    icon: Shield,
+                    label: t('certification'),
+                    value: t('ministryAuthorized')
+                  },
+                  {
+                    icon: Award,
+                    label: t('satisfaction'),
+                    value: '98%'
+                  }
+                ]}
+              />
+            </div>
           </div>
         </AnimatedSection>
 
@@ -219,6 +261,76 @@ const About: React.FC = () => {
                 </Link>
               </Button>
             </div>
+          </div>
+        </AnimatedSection>
+
+        {/* DMC Selection Criteria */}
+        <AnimatedSection className="py-16 lg:py-24 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                {t('whyChooseEventMorocco')}
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                {t('dmcComparisonDesc')}
+              </p>
+            </div>
+            
+            <ComparisonTable
+              title={t('dmcSelectionCriteria')}
+              rows={[
+                t('ministryAuthorization'),
+                t('yearsOfExperience'),
+                t('inHouseTeam'),
+                t('multilingualSupport'),
+                t('emergencySupport'),
+                t('transparentPricing'),
+                t('clientReferences'),
+                t('venueNetwork')
+              ]}
+              columns={[
+                {
+                  header: t('eventMorocco'),
+                  values: [
+                    true,
+                    '20+ ' + t('years'),
+                    true,
+                    t('fourLanguages'),
+                    '24/7',
+                    true,
+                    '500+',
+                    '150+'
+                  ],
+                  highlighted: true
+                },
+                {
+                  header: t('typicalDMC'),
+                  values: [
+                    t('sometimes'),
+                    '5-10 ' + t('years'),
+                    t('mixed'),
+                    t('twoThreeLanguages'),
+                    t('businessHours'),
+                    t('varies'),
+                    '50-100',
+                    '30-50'
+                  ]
+                },
+                {
+                  header: t('freelanceOrganizer'),
+                  values: [
+                    false,
+                    t('varies'),
+                    false,
+                    t('limited'),
+                    t('limited'),
+                    t('negotiable'),
+                    t('limited'),
+                    t('limited')
+                  ]
+                }
+              ]}
+            />
           </div>
         </AnimatedSection>
 
