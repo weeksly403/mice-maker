@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { MapPin, Star, Users, Calendar } from 'lucide-react';
 import { getLocalizedPath } from '@/lib/i18n';
 import { QuoteDialog } from '@/components/QuoteDialog';
+import { ComparisonTable } from '@/components/SEO/ComparisonTable';
 import heroImage from '@/assets/hero-morocco-mice.jpg';
 import desertImage from '@/assets/desert-team-building.jpg';
 import marrakechDestImage from '@/assets/dest-marrakech.jpg';
@@ -82,6 +83,103 @@ const Destinations: React.FC = () => {
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
             {t('destinationsPageDesc')}
           </p>
+        </div>
+      </section>
+
+      {/* Destinations Comparison */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
+              {t('compareDestinations')}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {t('compareDestinationsDesc')}
+            </p>
+          </div>
+          
+          <ComparisonTable
+            title={t('destinationComparisonTitle')}
+            description={t('destinationComparisonDesc')}
+            rows={[
+              t('businessInfrastructure'),
+              t('internationalAirport'),
+              t('5starHotels'),
+              t('conferenceFacilities'),
+              t('teamBuildingOptions'),
+              t('culturalExperiences'),
+              t('averageBudget'),
+              t('bestSeason')
+            ]}
+            columns={[
+              {
+                header: t('marrakech'),
+                values: [
+                  t('excellent'),
+                  true,
+                  '40+',
+                  t('excellent'),
+                  t('excellent'),
+                  t('excellent'),
+                  '€120-180',
+                  t('yearRound')
+                ]
+              },
+              {
+                header: t('casablanca'),
+                values: [
+                  t('excellent'),
+                  true,
+                  '30+',
+                  t('excellent'),
+                  t('good'),
+                  t('good'),
+                  '€130-200',
+                  t('yearRound')
+                ],
+                highlighted: true
+              },
+              {
+                header: t('agadir'),
+                values: [
+                  t('good'),
+                  true,
+                  '20+',
+                  t('good'),
+                  t('excellent'),
+                  t('moderate'),
+                  '€100-150',
+                  t('marchNovember')
+                ]
+              },
+              {
+                header: t('fes'),
+                values: [
+                  t('moderate'),
+                  false,
+                  '10+',
+                  t('moderate'),
+                  t('good'),
+                  t('excellent'),
+                  '€90-130',
+                  t('springFall')
+                ]
+              },
+              {
+                header: t('sahara'),
+                values: [
+                  t('limited'),
+                  false,
+                  '5+',
+                  t('unique'),
+                  t('excellent'),
+                  t('exceptional'),
+                  '€150-250',
+                  t('octoberApril')
+                ]
+              }
+            ]}
+          />
         </div>
       </section>
 
