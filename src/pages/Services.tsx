@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
+import { ComparisonTable } from '@/components/SEO/ComparisonTable';
 import { useLanguage } from '@/components/LanguageProvider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -433,6 +434,111 @@ const Services: React.FC = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Service Comparison Table - AI Optimized */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <ComparisonTable
+              title={language === 'fr' ? 'Comparaison Détaillée de Nos Services' : 
+                     language === 'es' ? 'Comparación Detallada de Nuestros Servicios' :
+                     language === 'ar' ? 'مقارنة تفصيلية لخدماتنا' :
+                     'Detailed Service Comparison'}
+              description={language === 'fr' ? 'Trouvez le service parfait pour votre événement corporatif' : 
+                          language === 'es' ? 'Encuentre el servicio perfecto para su evento corporativo' :
+                          language === 'ar' ? 'ابحث عن الخدمة المثالية لحدثك الشركاتي' :
+                          'Find the perfect service for your corporate event'}
+              rows={
+                language === 'fr' ? [
+                  'Durée Typique',
+                  'Taille de Groupe',
+                  'Prix par Personne',
+                  'Objectif Principal',
+                  'Idéal Pour',
+                  'ROI Moyen'
+                ] : language === 'es' ? [
+                  'Duración Típica',
+                  'Tamaño de Grupo',
+                  'Precio por Persona',
+                  'Objetivo Principal',
+                  'Ideal Para',
+                  'ROI Promedio'
+                ] : language === 'ar' ? [
+                  'المدة النموذجية',
+                  'حجم المجموعة',
+                  'السعر للفرد',
+                  'الهدف الرئيسي',
+                  'مثالي لـ',
+                  'متوسط العائد'
+                ] : [
+                  'Typical Duration',
+                  'Group Size',
+                  'Price per Person',
+                  'Primary Goal',
+                  'Ideal For',
+                  'Average ROI'
+                ]
+              }
+              columns={[
+                {
+                  header: t('incentiveTravel'),
+                  values: [
+                    '3-7 days',
+                    '20-300',
+                    '€800-1500',
+                    language === 'fr' ? 'Récompense' : language === 'es' ? 'Recompensa' : language === 'ar' ? 'مكافأة' : 'Reward',
+                    language === 'fr' ? 'Top performers' : language === 'es' ? 'Mejores empleados' : language === 'ar' ? 'أفضل الموظفين' : 'Top performers',
+                    '250-300%'
+                  ],
+                  highlighted: true
+                },
+                {
+                  header: t('teamBuilding'),
+                  values: [
+                    '1-3 days',
+                    '10-150',
+                    '€350-800',
+                    language === 'fr' ? 'Cohésion' : language === 'es' ? 'Cohesión' : language === 'ar' ? 'تماسك' : 'Cohesion',
+                    language === 'fr' ? 'Équipes entières' : language === 'es' ? 'Equipos completos' : language === 'ar' ? 'فرق كاملة' : 'Whole teams',
+                    '150-200%'
+                  ]
+                },
+                {
+                  header: t('corporateRetreats'),
+                  values: [
+                    '2-5 days',
+                    '15-80',
+                    '€450-900',
+                    language === 'fr' ? 'Stratégie' : language === 'es' ? 'Estrategia' : language === 'ar' ? 'استراتيجية' : 'Strategy',
+                    language === 'fr' ? 'Dirigeants' : language === 'es' ? 'Líderes' : language === 'ar' ? 'القادة' : 'Leaders',
+                    '200-250%'
+                  ]
+                },
+                {
+                  header: t('conferences'),
+                  values: [
+                    '1-4 days',
+                    '50-3000',
+                    '€200-600',
+                    language === 'fr' ? 'Formation' : language === 'es' ? 'Formación' : language === 'ar' ? 'تدريب' : 'Training',
+                    language === 'fr' ? 'Grands groupes' : language === 'es' ? 'Grandes grupos' : language === 'ar' ? 'مجموعات كبيرة' : 'Large groups',
+                    '180-220%'
+                  ]
+                },
+                {
+                  header: t('galaDinners'),
+                  values: [
+                    '1 evening',
+                    '30-500',
+                    '€150-400',
+                    language === 'fr' ? 'Célébration' : language === 'es' ? 'Celebración' : language === 'ar' ? 'احتفال' : 'Celebration',
+                    language === 'fr' ? 'Événements spéciaux' : language === 'es' ? 'Eventos especiales' : language === 'ar' ? 'مناسبات خاصة' : 'Special occasions',
+                    '150-180%'
+                  ]
+                }
+              ]}
+            />
           </div>
         </section>
 
