@@ -5,10 +5,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
+import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { getRelatedArticles } from '@/utils/relatedArticles';
 import gulfTeamImage from '@/assets/blog-gulf-team.jpg';
 
 const GulfTeamBuilding: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const relatedArticles = getRelatedArticles('gulf-team-building', 3);
 
   return (
     <>
@@ -278,6 +281,17 @@ const GulfTeamBuilding: React.FC = () => {
           </div>
         </main>
       </article>
+      
+      {/* Related Articles */}
+      <RelatedArticlesSection 
+        currentSlug="gulf-team-building" 
+        articles={relatedArticles.map(article => ({
+          ...article,
+          title: language === 'fr' ? article.titleFr : language === 'es' ? article.titleEs : language === 'ar' ? article.titleAr : article.title,
+          excerpt: language === 'fr' ? article.excerptFr : language === 'es' ? article.excerptEs : language === 'ar' ? article.excerptAr : article.excerpt,
+          category: language === 'fr' ? article.categoryFr : language === 'es' ? article.categoryEs : language === 'ar' ? article.categoryAr : article.category
+        }))}
+      />
     </>
   );
 };

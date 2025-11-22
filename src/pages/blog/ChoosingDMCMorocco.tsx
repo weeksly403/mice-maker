@@ -2,6 +2,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
+import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
@@ -13,11 +14,13 @@ import dmcMeetingImage from '@/assets/blog-dmc-meeting.jpg';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
 import { useState } from 'react';
+import { getRelatedArticles } from '@/utils/relatedArticles';
 
 const ChoosingDMCMorocco = () => {
   const { language, t } = useLanguage();
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [callOpen, setCallOpen] = useState(false);
+  const relatedArticles = getRelatedArticles('choosing-dmc-morocco', 3);
 
   const content = {
     en: {
@@ -652,6 +655,17 @@ La relación no debería terminar cuando sus asistentes se van.`,
       <ScheduleCallDialog>
         <Button className="hidden">Schedule Call</Button>
       </ScheduleCallDialog>
+      
+      {/* Related Articles */}
+      <RelatedArticlesSection 
+        currentSlug="choosing-dmc-morocco" 
+        articles={relatedArticles.map(article => ({
+          ...article,
+          title: language === 'fr' ? article.titleFr : language === 'es' ? article.titleEs : language === 'ar' ? article.titleAr : article.title,
+          excerpt: language === 'fr' ? article.excerptFr : language === 'es' ? article.excerptEs : language === 'ar' ? article.excerptAr : article.excerpt,
+          category: language === 'fr' ? article.categoryFr : language === 'es' ? article.categoryEs : language === 'ar' ? article.categoryAr : article.category
+        }))}
+      />
     </>
   );
 };

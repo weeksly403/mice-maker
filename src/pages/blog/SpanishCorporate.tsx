@@ -5,10 +5,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/LanguageProvider';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
+import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
+import { getRelatedArticles } from '@/utils/relatedArticles';
 import spanishCorporateImage from '@/assets/blog-spanish-corporate.jpg';
 
 const SpanishCorporate: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const relatedArticles = getRelatedArticles('spanish-corporate', 3);
 
   return (
     <>
@@ -263,6 +266,17 @@ const SpanishCorporate: React.FC = () => {
           </div>
         </main>
       </article>
+      
+      {/* Related Articles */}
+      <RelatedArticlesSection 
+        currentSlug="spanish-corporate" 
+        articles={relatedArticles.map(article => ({
+          ...article,
+          title: language === 'fr' ? article.titleFr : language === 'es' ? article.titleEs : language === 'ar' ? article.titleAr : article.title,
+          excerpt: language === 'fr' ? article.excerptFr : language === 'es' ? article.excerptEs : language === 'ar' ? article.excerptAr : article.excerpt,
+          category: language === 'fr' ? article.categoryFr : language === 'es' ? article.categoryEs : language === 'ar' ? article.categoryAr : article.category
+        }))}
+      />
     </>
   );
 };

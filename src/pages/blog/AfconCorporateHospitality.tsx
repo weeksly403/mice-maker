@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { FAQSchema } from '@/components/SEO/FAQSchema';
+import { RelatedArticlesSection } from '@/components/blog/RelatedArticlesSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -11,6 +12,7 @@ import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
 import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
+import { getRelatedArticles } from '@/utils/relatedArticles';
 
 import heroImage from '@/assets/blog-afcon-corporate-hospitality.jpg';
 import venuesMapImage from '@/assets/blog-afcon-venues-map.jpg';
@@ -21,6 +23,7 @@ export const AfconCorporateHospitality: React.FC = () => {
   const { t, language } = useLanguage();
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [callOpen, setCallOpen] = useState(false);
+  const relatedArticles = getRelatedArticles('afcon-corporate-hospitality', 3);
 
   const getTranslation = (key: string) => {
     const val = t(key);
@@ -400,6 +403,17 @@ export const AfconCorporateHospitality: React.FC = () => {
       <ScheduleCallDialog>
         <Button className="hidden">Schedule Call</Button>
       </ScheduleCallDialog>
+      
+      {/* Related Articles */}
+      <RelatedArticlesSection 
+        currentSlug="afcon-corporate-hospitality" 
+        articles={relatedArticles.map(article => ({
+          ...article,
+          title: language === 'fr' ? article.titleFr : language === 'es' ? article.titleEs : language === 'ar' ? article.titleAr : article.title,
+          excerpt: language === 'fr' ? article.excerptFr : language === 'es' ? article.excerptEs : language === 'ar' ? article.excerptAr : article.excerpt,
+          category: language === 'fr' ? article.categoryFr : language === 'es' ? article.categoryEs : language === 'ar' ? article.categoryAr : article.category
+        }))}
+      />
     </>
   );
 };
