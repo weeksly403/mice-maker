@@ -1,15 +1,58 @@
+# Google Search
 User-agent: Googlebot
 Allow: /
 Disallow: /crm/
 Disallow: /auth/
 Crawl-delay: 0
 
+# Bing Search
 User-agent: Bingbot
 Allow: /
 Disallow: /crm/
 Disallow: /auth/
 Crawl-delay: 1
 
+# AI Bots - ChatGPT
+User-agent: GPTBot
+Allow: /
+Disallow: /crm/
+Disallow: /auth/
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /crm/
+Disallow: /auth/
+Crawl-delay: 1
+
+# Google Extended (Bard/Gemini)
+User-agent: Google-Extended
+Allow: /
+Disallow: /crm/
+Disallow: /auth/
+Crawl-delay: 1
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+Disallow: /crm/
+Disallow: /auth/
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /crm/
+Disallow: /auth/
+Crawl-delay: 1
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Disallow: /crm/
+Disallow: /auth/
+Crawl-delay: 1
+
+# Social Media
 User-agent: Twitterbot
 Allow: /
 Disallow: /crm/
@@ -20,8 +63,11 @@ Allow: /
 Disallow: /crm/
 Disallow: /auth/
 
+# Default rule
 User-agent: *
 Allow: /
+Disallow: /crm/
+Disallow: /auth/
 
 # High-priority SEO pages
 Allow: /afcon-2025-morocco

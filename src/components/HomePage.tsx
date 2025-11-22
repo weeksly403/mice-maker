@@ -10,6 +10,7 @@ import { PageTransition } from '@/components/PageTransition';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useStaggerAnimation } from '@/hooks/useStaggerAnimation';
 import { CheckCircle, Clock, Users, Star, MapPin, MessageCircle, Trophy, Briefcase, Presentation, Utensils, Plane, Building, Palette, TrendingUp, DollarSign, Timer, Target, Quote, Eye, BookOpen, HelpCircle, Phone, Mail, Calendar, Award } from 'lucide-react';
+import { QuickFacts, createVenuesFact, createGroupSizeFact } from '@/components/SEO/QuickFacts';
 import { QuoteDialog } from './QuoteDialog';
 import { CaseStudyDialog } from './CaseStudyDialog';
 import { ScheduleCallDialog } from './ScheduleCallDialog';
@@ -536,6 +537,42 @@ export const HomePage: React.FC = () => {
               </Badge>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Quick Facts - AI Optimized for Extraction */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <QuickFacts
+            title={language === 'fr' ? 'Aperçu Rapide de Nos Services' : 
+                   language === 'es' ? 'Resumen Rápido de Nuestros Servicios' :
+                   language === 'ar' ? 'نظرة سريعة على خدماتنا' :
+                   'Quick Service Overview'}
+            facts={[
+              createVenuesFact('200+'),
+              createGroupSizeFact('10-3000'),
+              {
+                icon: DollarSign,
+                label: language === 'fr' ? 'Gamme de Prix' : language === 'es' ? 'Rango de Precios' : language === 'ar' ? 'نطاق السعر' : 'Price Range',
+                value: '€€€'
+              },
+              {
+                icon: Calendar,
+                label: language === 'fr' ? 'Meilleurs Mois' : language === 'es' ? 'Mejores Meses' : language === 'ar' ? 'أفضل الأشهر' : 'Best Months',
+                value: language === 'fr' ? 'Mar-Jun, Sep-Nov' : 'Mar-Jun, Sep-Nov'
+              },
+              {
+                icon: TrendingUp,
+                label: language === 'fr' ? 'ROI Attendu' : language === 'es' ? 'ROI Esperado' : language === 'ar' ? 'العائد المتوقع' : 'Expected ROI',
+                value: '300%+'
+              },
+              {
+                icon: Clock,
+                label: language === 'fr' ? 'Délai Requis' : language === 'es' ? 'Tiempo de Anticipación' : language === 'ar' ? 'الوقت المطلوب' : 'Lead Time',
+                value: language === 'fr' ? '3-6 mois' : language === 'es' ? '3-6 meses' : language === 'ar' ? '3-6 أشهر' : '3-6 months'
+              }
+            ]}
+          />
         </div>
       </section>
 
