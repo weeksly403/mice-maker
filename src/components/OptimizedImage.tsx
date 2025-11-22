@@ -7,6 +7,7 @@ interface OptimizedImageProps extends OptimizedImageOptions {
   className?: string;
   onError?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
   onClick?: () => void;
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
 /**
@@ -22,7 +23,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   quality,
   loading = 'lazy',
   onError,
-  onClick
+  onClick,
+  fetchpriority = 'auto'
 }) => {
   // For Vite-imported assets (absolute URLs), use them directly without optimization
   // They're already processed by Vite's build pipeline
@@ -40,6 +42,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         className={className}
         onError={onError}
         onClick={onClick}
+        fetchPriority={fetchpriority}
       />
     );
   }
@@ -69,6 +72,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         className={className}
         onError={onError}
         onClick={onClick}
+        fetchPriority={fetchpriority}
       />
     </picture>
   );
