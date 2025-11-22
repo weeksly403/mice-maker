@@ -3,6 +3,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { Calendar, Clock, ArrowLeft, MapPin, Star, Building2, Wifi, Users, Shield, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
@@ -88,6 +89,21 @@ const TopVenuesMorocco: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="prose prose-lg max-w-none">
             
+            {/* TL;DR Summary */}
+            <TLDRSummary
+              mainInsight="Morocco offers world-class MICE venues combining modern infrastructure (fiber internet, AV tech, simultaneous translation) with 40% cost savings vs Europe across 4 major cities with 3-hour flight proximity."
+              keyTakeaways={[
+                "Marrakech: La Mamounia (2,000 pax), historic palaces, luxury hotels with cultural charm",
+                "Casablanca: CICR (5,000 pax), modern convention centers, business capital infrastructure",
+                "Agadir: Beachfront resorts perfect for incentives, wellness, golf tournaments",
+                "Rabat: Diplomatic venues, government protocol facilities for high-level meetings",
+                "Technology: Fiber-optic 1GB/s, advanced AV, 8-language translation, hybrid event capabilities"
+              ]}
+              bestFor="International conferences (100-5,000 pax), executive board meetings, product launches, incentive travel, and corporate events seeking cultural differentiation with modern business amenities."
+              actionRequired="Start venue selection 9-12 months ahead for large conferences, 6 months for smaller events. Request site inspection visits. Peak seasons: March-May, September-November."
+              readTime="8 min read"
+            />
+
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               <strong>Conference venues Morocco</strong> represent the perfect fusion of cutting-edge business facilities and authentic 
               cultural experiences. From ultramodern convention centers to historic palaces transformed into luxury event spaces, 

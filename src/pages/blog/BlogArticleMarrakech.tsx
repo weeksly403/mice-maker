@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, Clock, ArrowLeft, MapPin, Users, Star, CheckCircle } from 'lucide-react';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
@@ -150,6 +151,21 @@ const BlogArticleMarrakech: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="prose prose-lg max-w-none">
             
+            {/* TL;DR Summary */}
+            <TLDRSummary
+              mainInsight="Marrakech seamlessly blends ancient imperial charm with modern conference infrastructure, offering luxury venues from historic palaces to 5-star hotels at 40% lower cost than European destinations."
+              keyTakeaways={[
+                "Strategic location: 3 hours from Europe with international connectivity",
+                "Diverse venues: La Mamounia (2,000 pax), Four Seasons (800 pax), traditional riads",
+                "Year-round favorable climate with 300+ sunny days annually",
+                "Rich cultural experiences: Atlas Mountains, desert camps, cooking classes, artisan workshops",
+                "Competitive pricing with world-class hospitality and services"
+              ]}
+              bestFor="International corporate seminars, executive meetings, incentive travel, and conferences seeking unique cultural backdrop combined with modern MICE facilities."
+              actionRequired="Start venue research 6-9 months ahead. Book 4-6 months in advance for peak season (March-May, September-November). Request detailed planning guide and venue proposals."
+              readTime="12 min read"
+            />
+
             {/* Introduction */}
             <div className="text-xl text-muted-foreground mb-12 leading-relaxed bg-primary/5 p-6 rounded-lg">
               <p className="mb-4">

@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Users, Trophy, Star, CheckCircle } from 'lucide-react';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { Link } from 'react-router-dom';
 import { getLocalizedPath } from '@/lib/i18n';
 
@@ -128,6 +129,21 @@ export const AfconCorporateHospitality: React.FC = () => {
         {/* Main Content */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="max-w-4xl mx-auto">
+            {/* TL;DR Summary */}
+            <TLDRSummary
+              mainInsight="AFCON 2025 in Morocco (Dec 21 - Jan 18) is a major business opportunity for corporate hospitality, offering VIP packages across 6 cities with 9 world-class stadiums."
+              keyTakeaways={[
+                "Peak booking window: August-October 2025, 6 months before event",
+                "6 host cities (Rabat, Casablanca, Marrakech, Agadir, Fes, Tangier) with diverse venue options",
+                "VIP packages range from premium seating to exclusive luxury boxes with catering",
+                "Combine football with cultural experiences, team building, and networking events",
+                "Morocco proving capabilities as host for FIFA World Cup 2030"
+              ]}
+              bestFor="Corporations seeking high-value client entertainment, employee rewards, or business networking opportunities during Africa's premier sporting event."
+              actionRequired="Contact EventMorocco DMC before June 2025 to secure premium packages and availability. Early booking essential for best venues and pricing."
+              readTime={text.readTime}
+            />
+
             {/* Introduction */}
             <div className="prose prose-lg max-w-none mb-16">
               <p className="lead text-xl text-muted-foreground mb-8">

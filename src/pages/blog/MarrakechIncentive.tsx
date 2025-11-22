@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
+import { TLDRSummary } from '@/components/SEO/TLDRSummary';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -84,6 +85,21 @@ const MarrakechIncentive: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="prose prose-lg max-w-none">
             
+            {/* TL;DR Summary */}
+            <TLDRSummary
+              mainInsight="Marrakech incentive programs deliver 47% sales performance increase and 73% higher retention by combining luxury accommodations (palaces, riads) with authentic cultural experiences and measurable business ROI."
+              keyTakeaways={[
+                "3 signature programs: Imperial Palace Executive (4 days), Desert & Atlas Adventure (4 days), Cultural Immersion (3 days)",
+                "Proven outcomes: 47% sales boost, 89% team collaboration improvement, 95% satisfaction",
+                "Luxury venues: La Mamounia, Royal Mansour, Four Seasons with exclusive access",
+                "Unique experiences: Atlas Mountains, Sahara desert camps, artisan workshops, helicopter tours",
+                "40% cost savings vs European destinations with world-class service standards"
+              ]}
+              bestFor="Companies rewarding top performers, strengthening client relationships, or motivating sales teams with transformational experiences that combine business objectives with cultural enrichment."
+              actionRequired="Start planning 6-9 months ahead for optimal venue availability. Request customized incentive proposal with ROI analysis. Best seasons: March-May, September-November."
+              readTime="6 min read"
+            />
+
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Marrakech has established itself as the undisputed capital of incentive travel in North Africa. This imperial city offers a perfect blend of luxury, adventure, and cultural immersion that creates unforgettable experiences for high-performing teams and valued clients.
             </p>

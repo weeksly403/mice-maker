@@ -6,9 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
-import { Waves, MapPin, Users, Calendar, Star, Plane, Palmtree, Phone, Mail, Clock, Wifi, Coffee, Utensils, Shield, Sun } from 'lucide-react';
+import { Waves, MapPin, Users, Calendar, Star, Plane, Palmtree, Phone, Mail, Clock, Wifi, Coffee, Utensils, Shield, Sun, Building } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
 import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
+import { QuickFacts } from '@/components/SEO/QuickFacts';
 import heroImage from '@/assets/agadir-beach-teambuilding.jpg';
 import conferenceImage from '@/assets/agadir-conference-room.jpg';
 import dinnerImage from '@/assets/agadir-corporate-dinner.jpg';
@@ -163,48 +164,14 @@ const AgadirDestination: React.FC = () => {
         </section>
 
         {/* Quick Facts */}
-        <section className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">25+</div>
-                <div className="text-sm text-muted-foreground">
-                  {language === 'fr' ? 'Resorts & Hôtels' : 
-                   language === 'es' ? 'Resorts y Hoteles' : 
-                   language === 'ar' ? 'منتجعات وفنادق' : 
-                   'Resorts & Hotels'}
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">300+</div>
-                <div className="text-sm text-muted-foreground">
-                  {language === 'fr' ? 'Jours de Soleil/An' : 
-                   language === 'es' ? 'Días de Sol/Año' : 
-                   language === 'ar' ? 'يوم مشمس/سنة' : 
-                   'Sunny Days/Year'}
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">10km</div>
-                <div className="text-sm text-muted-foreground">
-                  {language === 'fr' ? 'Plages de Sable' : 
-                   language === 'es' ? 'Playas de Arena' : 
-                   language === 'ar' ? 'شواطئ رملية' : 
-                   'Sandy Beaches'}
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">5</div>
-                <div className="text-sm text-muted-foreground">
-                  {language === 'fr' ? 'Parcours de Golf' : 
-                   language === 'es' ? 'Campos de Golf' : 
-                   language === 'ar' ? 'ملاعب جولف' : 
-                   'Golf Courses'}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <QuickFacts
+          facts={[
+            { icon: Building, label: 'Beach Resorts', value: '25+ Resorts' },
+            { icon: Sun, label: 'Climate', value: '300+ Sunny Days/Year' },
+            { icon: Waves, label: 'Beaches', value: '10km Sandy Coast' },
+            { icon: Palmtree, label: 'Activities', value: '5 Golf Courses' }
+          ]}
+        />
 
         {/* Why Choose Agadir */}
         <section className="py-20">
