@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { LanguageProvider } from "./components/LanguageProvider";
 import { AuthProvider } from "./components/auth/AuthProvider";
 import { Header } from "./components/Header";
@@ -16,43 +16,46 @@ import { SEOEnhancer } from "./components/SEO/SEOEnhancer";
 import { StickyCTA } from "./components/conversion/StickyCTA";
 import { WhatsAppBusinessButton } from "./components/conversion/WhatsAppBusinessButton";
 import { initializeSEOAnalytics } from "./utils/seoAnalytics";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import Destinations from "./pages/Destinations";
-import MarrakechDestination from "./pages/destinations/Marrakech";
-import CasablancaDestination from "./pages/destinations/Casablanca";
-import AgadirDestination from "./pages/destinations/Agadir";
-import FesDestination from "./pages/destinations/Fes";
-import SaharaDestination from "./pages/destinations/Sahara";
-import Services from "./pages/Services";
-import SuccessStories from "./pages/SuccessStories";
-import Blog from "./pages/Blog";
-import BlogArticleMarrakech from "./pages/blog/BlogArticleMarrakech";
-import TopVenuesMorocco from "./pages/blog/TopVenuesMorocco";
-import MarrakechIncentive from "./pages/blog/MarrakechIncentive";
-import AgadirTeamBuilding from "./pages/blog/AgadirTeamBuilding";
-import GulfTeamBuilding from "./pages/blog/GulfTeamBuilding";
-import SpanishCorporate from "./pages/blog/SpanishCorporate";
-import SaharaRetreats from "./pages/blog/SaharaRetreats";
-import ChoosingDMCMorocco from "./pages/blog/ChoosingDMCMorocco";
-import CorporateEventROI from "./pages/blog/CorporateEventROI";
-import HybridEventsMorocco from "./pages/blog/HybridEventsMorocco";
-import AfconCorporateHospitality from "./pages/blog/AfconCorporateHospitality";
-import AfconLanding from "./pages/AfconLanding";
-import CorporateEventsGuide from "./pages/CorporateEventsGuide";
 import { ExitIntentPopup } from "./components/conversion/ExitIntentPopup";
 import { LiveChat } from "./components/conversion/LiveChat";
 import { EnhancedLocalBusinessSchema } from "./components/SEO/EnhancedLocalBusinessSchema";
-import FAQ from "./pages/FAQ";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
-import AuthPage from "./pages/auth/AuthPage";
-import CRMLayout from "./components/crm/CRMLayout";
-// Force reimport of components to clear any cache issues
-import Dashboard from "./pages/crm/Dashboard";
-import Leads from "./pages/crm/Leads";
-import Calls from "./pages/crm/Calls";
-import Partners from "./pages/crm/Partners";
+
+// Critical pages - loaded immediately
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+
+// All other pages - lazy loaded for performance
+const Destinations = lazy(() => import("./pages/Destinations"));
+const MarrakechDestination = lazy(() => import("./pages/destinations/Marrakech"));
+const CasablancaDestination = lazy(() => import("./pages/destinations/Casablanca"));
+const AgadirDestination = lazy(() => import("./pages/destinations/Agadir"));
+const FesDestination = lazy(() => import("./pages/destinations/Fes"));
+const SaharaDestination = lazy(() => import("./pages/destinations/Sahara"));
+const Services = lazy(() => import("./pages/Services"));
+const SuccessStories = lazy(() => import("./pages/SuccessStories"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogArticleMarrakech = lazy(() => import("./pages/blog/BlogArticleMarrakech"));
+const TopVenuesMorocco = lazy(() => import("./pages/blog/TopVenuesMorocco"));
+const MarrakechIncentive = lazy(() => import("./pages/blog/MarrakechIncentive"));
+const AgadirTeamBuilding = lazy(() => import("./pages/blog/AgadirTeamBuilding"));
+const GulfTeamBuilding = lazy(() => import("./pages/blog/GulfTeamBuilding"));
+const SpanishCorporate = lazy(() => import("./pages/blog/SpanishCorporate"));
+const SaharaRetreats = lazy(() => import("./pages/blog/SaharaRetreats"));
+const ChoosingDMCMorocco = lazy(() => import("./pages/blog/ChoosingDMCMorocco"));
+const CorporateEventROI = lazy(() => import("./pages/blog/CorporateEventROI"));
+const HybridEventsMorocco = lazy(() => import("./pages/blog/HybridEventsMorocco"));
+const AfconCorporateHospitality = lazy(() => import("./pages/blog/AfconCorporateHospitality"));
+const AfconLanding = lazy(() => import("./pages/AfconLanding"));
+const CorporateEventsGuide = lazy(() => import("./pages/CorporateEventsGuide"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Contact = lazy(() => import("./pages/Contact"));
+const About = lazy(() => import("./pages/About"));
+const AuthPage = lazy(() => import("./pages/auth/AuthPage"));
+const CRMLayout = lazy(() => import("./components/crm/CRMLayout"));
+const Dashboard = lazy(() => import("./pages/crm/Dashboard"));
+const Leads = lazy(() => import("./pages/crm/Leads"));
+const Calls = lazy(() => import("./pages/crm/Calls"));
+const Partners = lazy(() => import("./pages/crm/Partners"));
 
 const queryClient = new QueryClient();
 
@@ -80,7 +83,15 @@ const App = () => {
                   <div className="min-h-screen flex flex-col">
                 <Header />
                 <main className="flex-1">
-                <Routes>
+                  <Suspense fallback={
+                    <div className="min-h-screen flex items-center justify-center">
+                      <div className="text-center space-y-4">
+                        <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
+                        <p className="text-muted-foreground">Loading...</p>
+                      </div>
+                    </div>
+                  }>
+                    <Routes>
                   {/* English Routes (default) - SEO Optimized */}
                   <Route path="/" element={<Index />} />
                   <Route path="/afcon-2025-morocco" element={<AfconLanding />} />
@@ -291,9 +302,10 @@ const App = () => {
                   <Route path="/ar/اتصل-بنا" element={<Contact />} />
                   
                   {/* Catch-all route */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-               </main>
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </Suspense>
+                </main>
                 <Footer />
                 <ChatBotButton />
                 <StickyCTA />
