@@ -12,7 +12,8 @@ import { EnhancedStructuredData } from '@/components/SEO/EnhancedStructuredData'
 import { FAQSchema } from '@/components/SEO/FAQSchema';
 import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
 import { QuickFacts } from '@/components/SEO/QuickFacts';
-import heroImage from '@/assets/hero-morocco-mice.jpg';
+import { BestForBlock } from '@/components/SEO/BestForBlock';
+import heroImage from '@/assets/dest-casablanca.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
 
 const CasablancaDestination: React.FC = () => {
@@ -161,6 +162,21 @@ const CasablancaDestination: React.FC = () => {
             { icon: Star, label: 'Luxury Hotels', value: '5-Star Properties' }
           ]}
         />
+        
+        {/* Best For Block */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <BestForBlock
+            title={language === 'fr' ? 'Casablanca est Parfait Pour' : language === 'es' ? 'Casablanca es Perfecto Para' : language === 'ar' ? 'الدار البيضاء مثالية لـ' : 'Casablanca is Perfect For'}
+            variant="compact"
+            items={[
+              language === 'fr' ? 'Grandes conférences (300-3000 participants)' : language === 'es' ? 'Grandes conferencias (300-3000 participantes)' : language === 'ar' ? 'المؤتمرات الكبيرة (300-3000 مشارك)' : 'Large conferences (300-3,000 participants)',
+              language === 'fr' ? 'Événements B2B et networking professionnel' : language === 'es' ? 'Eventos B2B y networking profesional' : language === 'ar' ? 'فعاليات B2B والتواصل المهني' : 'B2B events and professional networking',
+              language === 'fr' ? 'Lancements de produits internationaux' : language === 'es' ? 'Lanzamientos de productos internacionales' : language === 'ar' ? 'إطلاق المنتجات الدولية' : 'International product launches',
+              language === 'fr' ? 'Congrès médicaux et scientifiques' : language === 'es' ? 'Congresos médicos y científicos' : language === 'ar' ? 'المؤتمرات الطبية والعلمية' : 'Medical and scientific congresses',
+              language === 'fr' ? 'Séminaires d\'entreprise avec accès international' : language === 'es' ? 'Seminarios corporativos con acceso internacional' : language === 'ar' ? 'ندوات الشركات مع وصول دولي' : 'Corporate seminars with international access'
+            ]}
+          />
+        </div>
 
         {/* Why Choose Casablanca */}
         <section className="py-20">

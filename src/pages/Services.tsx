@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { OptimizedSEO } from '@/components/SEO/OptimizedSEO';
 import { ComparisonTable } from '@/components/SEO/ComparisonTable';
+import { DecisionFramework } from '@/components/SEO/DecisionFramework';
 import { useLanguage } from '@/components/LanguageProvider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -536,6 +537,43 @@ const Services: React.FC = () => {
                     language === 'fr' ? 'Événements spéciaux' : language === 'es' ? 'Eventos especiales' : language === 'ar' ? 'مناسبات خاصة' : 'Special occasions',
                     '150-180%'
                   ]
+                }
+              ]}
+            />
+          </div>
+        </section>
+
+        {/* Service Selection Decision Framework */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+            <DecisionFramework
+              title={language === 'fr' ? 'Quel Service Choisir ?' : language === 'es' ? '¿Qué Servicio Elegir?' : language === 'ar' ? 'أي خدمة تختار؟' : 'Which Service to Choose?'}
+              description={language === 'fr' ? 'Suivez ce guide de décision pour identifier le service MICE parfait pour vos objectifs.' : language === 'es' ? 'Siga esta guía de decisión para identificar el servicio MICE perfecto para sus objetivos.' : language === 'ar' ? 'اتبع دليل القرار هذا لتحديد خدمة MICE المثالية لأهدافك.' : 'Follow this decision guide to identify the perfect MICE service for your goals.'}
+              steps={[
+                {
+                  condition: language === 'fr' ? 'Groupe 5-25 personnes + Objectif: Récompenser top performers' : language === 'es' ? 'Grupo 5-25 personas + Objetivo: Recompensar top performers' : language === 'ar' ? 'مجموعة 5-25 شخصًا + الهدف: مكافأة الأفضل أداءً' : 'Group 5-25 people + Goal: Reward top performers',
+                  recommendation: language === 'fr' ? 'Voyage Incentive' : language === 'es' ? 'Viaje Incentivo' : language === 'ar' ? 'رحلة تحفيزية' : 'Incentive Travel',
+                  reason: language === 'fr' ? 'Expérience luxueuse exclusive idéale pour récompenser et motiver vos meilleurs talents avec programmes personnalisés et activités VIP.' : language === 'es' ? 'Experiencia lujosa exclusiva ideal para recompensar y motivar a sus mejores talentos con programas personalizados y actividades VIP.' : language === 'ar' ? 'تجربة فاخرة حصرية مثالية لمكافأة وتحفيز أفضل مواهبك مع برامج مخصصة وأنشطة VIP.' : 'Exclusive luxury experience ideal for rewarding and motivating your best talents with personalized programs and VIP activities.'
+                },
+                {
+                  condition: language === 'fr' ? 'Groupe 10-150 personnes + Objectif: Renforcer cohésion équipe' : language === 'es' ? 'Grupo 10-150 personas + Objetivo: Reforzar cohesión equipo' : language === 'ar' ? 'مجموعة 10-150 شخصًا + الهدف: تعزيز تماسك الفريق' : 'Group 10-150 people + Goal: Strengthen team cohesion',
+                  recommendation: language === 'fr' ? 'Team Building' : language === 'es' ? 'Team Building' : language === 'ar' ? 'بناء الفريق' : 'Team Building',
+                  reason: language === 'fr' ? 'Activités collaboratives et défis d\'équipe dans cadres exceptionnels pour améliorer communication, confiance et productivité (+50%).' : language === 'es' ? 'Actividades colaborativas y desafíos de equipo en marcos excepcionales para mejorar comunicación, confianza y productividad (+50%).' : language === 'ar' ? 'أنشطة تعاونية وتحديات فريق في أطر استثنائية لتحسين التواصل والثقة والإنتاجية (+50%).' : 'Collaborative activities and team challenges in exceptional settings to improve communication, trust and productivity (+50%).'
+                },
+                {
+                  condition: language === 'fr' ? 'Groupe 15-80 personnes + Objectif: Planification stratégique/Innovation' : language === 'es' ? 'Grupo 15-80 personas + Objetivo: Planificación estratégica/Innovación' : language === 'ar' ? 'مجموعة 15-80 شخصًا + الهدف: التخطيط الاستراتيجي/الابتكار' : 'Group 15-80 people + Goal: Strategic planning/Innovation',
+                  recommendation: language === 'fr' ? 'Séminaire d\'Entreprise' : language === 'es' ? 'Seminario Corporativo' : language === 'ar' ? 'ندوة الشركات' : 'Corporate Retreat',
+                  reason: language === 'fr' ? 'Environnements inspirants éloignés du quotidien favorisant créativité (+45%), brainstorming stratégique et prise de décision avec focus total.' : language === 'es' ? 'Entornos inspiradores alejados de lo cotidiano que fomentan creatividad (+45%), brainstorming estratégico y toma de decisiones con enfoque total.' : language === 'ar' ? 'بيئات ملهمة بعيدة عن الروتين تعزز الإبداع (+45%) والعصف الذهني الاستراتيجي واتخاذ القرار مع تركيز تام.' : 'Inspiring environments away from daily routine fostering creativity (+45%), strategic brainstorming and decision-making with total focus.'
+                },
+                {
+                  condition: language === 'fr' ? 'Groupe 50-3000 personnes + Objectif: Formation/Congrès/Lancement produit' : language === 'es' ? 'Grupo 50-3000 personas + Objetivo: Formación/Congreso/Lanzamiento producto' : language === 'ar' ? 'مجموعة 50-3000 شخصًا + الهدف: التدريب/المؤتمر/إطلاق المنتج' : 'Group 50-3000 people + Goal: Training/Congress/Product launch',
+                  recommendation: language === 'fr' ? 'Conférence & Congrès' : language === 'es' ? 'Conferencia & Congreso' : language === 'ar' ? 'مؤتمر وندوة' : 'Conference & Congress',
+                  reason: language === 'fr' ? 'Infrastructure moderne avec technologie de pointe, logistique professionnelle et capacités grande échelle pour événements MICE majeurs avec satisfaction 95%.' : language === 'es' ? 'Infraestructura moderna con tecnología de vanguardia, logística profesional y capacidades a gran escala para eventos MICE importantes con satisfacción 95%.' : language === 'ar' ? 'بنية تحتية حديثة مع تكنولوجيا متطورة ولوجستيات محترفة وقدرات واسعة النطاق لفعاليات MICE الكبرى برضا 95%.' : 'Modern infrastructure with cutting-edge technology, professional logistics and large-scale capabilities for major MICE events with 95% satisfaction.'
+                },
+                {
+                  condition: language === 'fr' ? 'Objectif: Célébrer succès/Anniversaire/Reconnaissance partenaires' : language === 'es' ? 'Objetivo: Celebrar éxito/Aniversario/Reconocimiento socios' : language === 'ar' ? 'الهدف: الاحتفال بالنجاح/الذكرى السنوية/تقدير الشركاء' : 'Goal: Celebrate success/Anniversary/Partner recognition',
+                  recommendation: language === 'fr' ? 'Dîner de Gala' : language === 'es' ? 'Cena de Gala' : language === 'ar' ? 'عشاء احتفالي' : 'Gala Dinner',
+                  reason: language === 'fr' ? 'Soirée prestigieuse dans palais marocains avec gastronomie raffinée et spectacles authentiques créant image entreprise premium et mémorabilité 100%.' : language === 'es' ? 'Velada prestigiosa en palacios marroquíes con gastronomía refinada y espectáculos auténticos creando imagen empresa premium y memorabilidad 100%.' : language === 'ar' ? 'أمسية مرموقة في القصور المغربية مع فن الطهي الراقي والعروض الأصيلة التي تخلق صورة شركة متميزة وذكرى 100%.' : 'Prestigious evening in Moroccan palaces with refined gastronomy and authentic shows creating premium company image and 100% memorability.'
                 }
               ]}
             />

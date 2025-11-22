@@ -8,7 +8,9 @@ import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
 import { Crown, MapPin, Users, Calendar, Star, Plane, Palette, Phone, Mail, Clock, Wifi, Coffee, Utensils, Shield, Book, Building } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
+import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
 import { QuickFacts } from '@/components/SEO/QuickFacts';
+import { BestForBlock } from '@/components/SEO/BestForBlock';
 import heroImage from '@/assets/agadir-cultural-experience.jpg';
 import conferenceImage from '@/assets/marrakech-conference.jpg';
 
@@ -169,6 +171,21 @@ const FesDestination: React.FC = () => {
             { icon: Building, label: 'Event Venues', value: '20+ Cultural Venues' }
           ]}
         />
+        
+        {/* Best For Block */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <BestForBlock
+            title={language === 'fr' ? 'Fès est Parfait Pour' : language === 'es' ? 'Fez es Perfecto Para' : language === 'ar' ? 'فاس مثالية لـ' : 'Fez is Perfect For'}
+            variant="compact"
+            items={[
+              language === 'fr' ? 'Immersion culturelle et expériences authentiques' : language === 'es' ? 'Inmersión cultural y experiencias auténticas' : language === 'ar' ? 'الغمر الثقافي والتجارب الأصيلة' : 'Cultural immersion and authentic experiences',
+              language === 'fr' ? 'Séminaires créatifs dans lieux historiques' : language === 'es' ? 'Seminarios creativos en lugares históricos' : language === 'ar' ? 'ندوات إبداعية في أماكن تاريخية' : 'Creative seminars in historical venues',
+              language === 'fr' ? 'Team building artisanat et traditions' : language === 'es' ? 'Team building artesanía y tradiciones' : language === 'ar' ? 'بناء الفريق الحرف والتقاليد' : 'Handicraft and tradition team building',
+              language === 'fr' ? 'Événements 30-150 personnes avec focus culturel' : language === 'es' ? 'Eventos 30-150 personas con enfoque cultural' : language === 'ar' ? 'فعاليات 30-150 شخصًا مع تركيز ثقافي' : 'Events for 30-150 people with cultural focus',
+              language === 'fr' ? 'Incentive UNESCO et patrimoine mondial' : language === 'es' ? 'Incentivo UNESCO y patrimonio mundial' : language === 'ar' ? 'الحوافز اليونسكو والتراث العالمي' : 'UNESCO and world heritage incentives'
+            ]}
+          />
+        </div>
 
         {/* Why Choose Fez */}
         <section className="py-20">

@@ -8,7 +8,9 @@ import { QuoteDialog } from '@/components/QuoteDialog';
 import { ScheduleCallDialog } from '@/components/ScheduleCallDialog';
 import { Mountain, MapPin, Users, Calendar, Star, Plane, Sunset, Phone, Mail, Clock, Wifi, Coffee, Utensils, Shield, Tent } from 'lucide-react';
 import { openWhatsApp } from '@/utils/whatsapp';
+import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
 import { QuickFacts } from '@/components/SEO/QuickFacts';
+import { BestForBlock } from '@/components/SEO/BestForBlock';
 import heroImage from '@/assets/desert-team-building.jpg';
 import saharaImage from '@/assets/blog-sahara-retreat.jpg';
 
@@ -169,6 +171,21 @@ const SaharaDestination: React.FC = () => {
             { icon: Star, label: 'Stargazing', value: 'Infinite Stars' }
           ]}
         />
+        
+        {/* Best For Block */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <BestForBlock
+            title={language === 'fr' ? 'Sahara est Parfait Pour' : language === 'es' ? 'Sahara es Perfecto Para' : language === 'ar' ? 'الصحراء مثالية لـ' : 'Sahara is Perfect For'}
+            variant="compact"
+            items={[
+              language === 'fr' ? 'Incentive aventure exceptionnel (10-50 personnes)' : language === 'es' ? 'Incentivo aventura excepcional (10-50 personas)' : language === 'ar' ? 'حافز مغامرة استثنائي (10-50 شخصًا)' : 'Exceptional adventure incentive (10-50 people)',
+              language === 'fr' ? 'Team building extrême et défis désert' : language === 'es' ? 'Team building extremo y desafíos en el desierto' : language === 'ar' ? 'بناء الفريق المتطرف وتحديات الصحراء' : 'Extreme team building and desert challenges',
+              language === 'fr' ? 'Retraites leadership dans environnement unique' : language === 'es' ? 'Retiros de liderazgo en entorno único' : language === 'ar' ? 'خلوات القيادة في بيئة فريدة' : 'Leadership retreats in unique environment',
+              language === 'fr' ? 'Expériences VIP avec camps de luxe' : language === 'es' ? 'Experiencias VIP con campamentos de lujo' : language === 'ar' ? 'تجارب VIP مع مخيمات فاخرة' : 'VIP experiences with luxury camps',
+              language === 'fr' ? 'Événements exclusifs sous les étoiles' : language === 'es' ? 'Eventos exclusivos bajo las estrellas' : language === 'ar' ? 'فعاليات حصرية تحت النجوم' : 'Exclusive events under the stars'
+            ]}
+          />
+        </div>
 
         {/* Why Choose Sahara */}
         <section className="py-20">

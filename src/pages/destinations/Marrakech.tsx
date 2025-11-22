@@ -11,6 +11,7 @@ import { MapPin, Users, Star, Calendar, Camera, Utensils, Briefcase, Car } from 
 import { QuoteDialog } from '@/components/QuoteDialog';
 import { SEOEnhancer } from '@/components/SEO/SEOEnhancer';
 import { QuickFacts, createPricingFact, createDurationFact, createGroupSizeFact, createBestMonthsFact, createVenuesFact, createROIFact } from '@/components/SEO/QuickFacts';
+import { BestForBlock } from '@/components/SEO/BestForBlock';
 import marrakechConference from '@/assets/marrakech-conference.jpg';
 import heroMoroccoMice from '@/assets/hero-morocco-mice.jpg';
 
@@ -182,6 +183,19 @@ const MarrakechDestination: React.FC = () => {
                 />
               </div>
             </div>
+            
+            {/* Best For Block */}
+            <BestForBlock
+              title={language === 'fr' ? 'Marrakech est Parfait Pour' : language === 'es' ? 'Marrakech es Perfecto Para' : language === 'ar' ? 'مراكش مثالية لـ' : 'Marrakech is Perfect For'}
+              variant="compact"
+              items={[
+                language === 'fr' ? 'Voyages incentive luxe (20-80 personnes)' : language === 'es' ? 'Viajes incentivo de lujo (20-80 personas)' : language === 'ar' ? 'رحلات تحفيزية فاخرة (20-80 شخصًا)' : 'Luxury incentive trips (20-80 people)',
+                language === 'fr' ? 'Retraites d\'entreprise dans les riads' : language === 'es' ? 'Retiros corporativos en riads' : language === 'ar' ? 'خلوات شركاتية في الرياضات' : 'Corporate retreats in riads',
+                language === 'fr' ? 'Dîners de gala dans les palais' : language === 'es' ? 'Cenas de gala en palacios' : language === 'ar' ? 'عشاء احتفالي في القصور' : 'Gala dinners in palaces',
+                language === 'fr' ? 'Team building Atlas Mountains' : language === 'es' ? 'Team building Montañas Atlas' : language === 'ar' ? 'بناء الفريق في جبال الأطلس' : 'Team building in Atlas Mountains',
+                language === 'fr' ? 'Expériences culturelles immersives' : language === 'es' ? 'Experiencias culturales inmersivas' : language === 'ar' ? 'تجارب ثقافية غامرة' : 'Immersive cultural experiences'
+              ]}
+            />
           </div>
         </section>
 
