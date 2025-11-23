@@ -105,37 +105,3 @@ export const createSafeScript = (script: string): TrustedScript | string => {
     throw error;
   }
 };
-
-// Type definitions for Trusted Types (for TypeScript)
-declare global {
-  interface Window {
-    trustedTypes?: {
-      createPolicy: (
-        name: string,
-        policy: {
-          createHTML?: (input: string) => string;
-          createScript?: (input: string) => string;
-          createScriptURL?: (input: string) => string;
-        }
-      ) => TrustedTypePolicy;
-    };
-  }
-
-  interface TrustedTypePolicy {
-    createHTML: (input: string) => TrustedHTML;
-    createScript: (input: string) => TrustedScript;
-    createScriptURL: (input: string) => TrustedScriptURL;
-  }
-
-  interface TrustedHTML {
-    toString(): string;
-  }
-
-  interface TrustedScript {
-    toString(): string;
-  }
-
-  interface TrustedScriptURL {
-    toString(): string;
-  }
-}
