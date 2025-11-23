@@ -1,14 +1,35 @@
-# HTTP/2 Server Push Headers and Caching Policies for EventMorocco.com
-# Optimized for Netlify/Vercel deployment
+# HTTP/2 Server Push Headers, Security Headers, and Caching Policies for EventMorocco.com
+# Optimized for Netlify/Vercel deployment with enhanced security
 
 # Global headers for all pages
 /*
-  # Security Headers
+  # Security Headers - CRITICAL
+  
+  # Strict Transport Security (HSTS) - Force HTTPS for 2 years
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  
+  # Content Security Policy (CSP) - Comprehensive protection against XSS
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.ahrefs.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://analytics.ahrefs.com https://*.supabase.co wss://*.supabase.co https://ai.gateway.lovable.dev; frame-src 'self' https://www.youtube.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+  
+  # Prevent clickjacking attacks
   X-Frame-Options: DENY
+  
+  # Prevent MIME type sniffing
   X-Content-Type-Options: nosniff
+  
+  # XSS Protection (legacy but still useful for older browsers)
   X-XSS-Protection: 1; mode=block
+  
+  # Referrer Policy - Strict for privacy
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  
+  # Permissions Policy - Disable unnecessary features
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()
+  
+  # Cross-Origin Policies
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
   
   # Cache Control for HTML (revalidate frequently)
   Cache-Control: public, max-age=0, must-revalidate
@@ -39,16 +60,19 @@
 /lovable-uploads/*
   Cache-Control: public, max-age=604800, immutable
 
-# Fonts - Long-term caching
+# Fonts - Long-term caching with CORS headers
 /assets/*.woff2
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
 /assets/*.woff
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
 /assets/*.ttf
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
 
 # Favicon - Medium-term caching (30 days)
 /favicon.ico
@@ -66,9 +90,10 @@
 /sw.js
   Cache-Control: public, max-age=0, must-revalidate
 
-# API routes (if using redirects to Supabase) - No cache
+# API routes (if using redirects to Supabase) - No cache, enhanced security
 /api/*
   Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+  Content-Security-Policy: default-src 'none'
 
 # Critical resource hints for homepage
 /
@@ -100,10 +125,12 @@
 /afcon-2025-morocco
   Cache-Control: public, max-age=600, stale-while-revalidate=3600
 
-# CRM routes - No cache (requires authentication)
+# CRM routes - No cache (requires authentication) + restrictive CSP
 /crm/*
   Cache-Control: private, no-cache, no-store, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co wss://*.supabase.co
   
-# Auth routes - No cache
+# Auth routes - No cache + restrictive CSP
 /auth
   Cache-Control: private, no-cache, no-store, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co wss://*.supabase.co

@@ -1,0 +1,19 @@
+# Security Policy for EventMorocco.com
+# Contact information for security researchers
+
+Contact: mailto:security@eventsmorocco.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en, fr, es, ar
+Canonical: https://eventmorocco.com/.well-known/security.txt
+
+# Scope
+Policy: https://eventmorocco.com/security-policy
+
+# Acknowledgments
+Acknowledgments: https://eventmorocco.com/security-acknowledgments
+
+# Encryption
+Encryption: https://eventmorocco.com/pgp-key.txt
+
+# Please report security vulnerabilities responsibly
+# We appreciate your efforts to improve our security
