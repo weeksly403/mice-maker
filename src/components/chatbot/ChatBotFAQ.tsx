@@ -295,8 +295,9 @@ export const ChatBotFAQ: React.FC<ChatBotFAQProps> = ({
           size="sm"
           onClick={onBackToChat}
           className="flex items-center gap-2"
+          aria-label="Go back to chat"
         >
-          <ArrowLeft className="h-4 w-4" />
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           {language === 'fr' ? 'Retour' : 
            language === 'es' ? 'Volver' :
            language === 'ar' ? 'العودة' : 'Back'}
@@ -344,9 +345,10 @@ export const ChatBotFAQ: React.FC<ChatBotFAQProps> = ({
                         size="sm"
                         className="h-auto p-1 text-xs flex items-center gap-1"
                         onClick={() => window.open(link.url, '_blank')}
+                        aria-label={`Open ${link.text} in new tab`}
                       >
                         {link.text}
-                        <ExternalLink className="h-3 w-3" />
+                        <ExternalLink className="h-3 w-3" aria-hidden="true" />
                       </Button>
                     ))}
                   </div>

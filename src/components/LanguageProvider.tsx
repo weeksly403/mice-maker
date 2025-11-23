@@ -24,6 +24,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return () => window.removeEventListener('popstate', handleLanguageChange);
   }, [language]);
 
+  // Update HTML lang attribute dynamically for accessibility
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   const t = (key: string): string => {
     return getTranslation(language, key);
   };

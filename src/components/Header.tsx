@@ -77,8 +77,11 @@ export const Header: React.FC = () => {
                 size="sm"
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                 className="flex items-center space-x-1 hover-lift"
+                aria-label={`Change language - Current: ${languageNames[language]}`}
+                aria-expanded={isLangMenuOpen}
+                aria-haspopup="true"
               >
-                <Globe className="w-4 h-4" />
+                <Globe className="w-4 h-4" aria-hidden="true" />
                 <span>{languageNames[language]}</span>
               </Button>
               
@@ -111,17 +114,25 @@ export const Header: React.FC = () => {
             size="sm"
             className="md:hidden transition-corporate"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             <div className="relative w-5 h-5">
-              <Menu className={`w-5 h-5 absolute transition-all duration-300 ${isMenuOpen ? 'opacity-0 rotate-45' : 'opacity-100 rotate-0'}`} />
-              <X className={`w-5 h-5 absolute transition-all duration-300 ${isMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-45'}`} />
+              <Menu className={`w-5 h-5 absolute transition-all duration-300 ${isMenuOpen ? 'opacity-0 rotate-45' : 'opacity-100 rotate-0'}`} aria-hidden="true" />
+              <X className={`w-5 h-5 absolute transition-all duration-300 ${isMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-45'}`} aria-hidden="true" />
             </div>
           </Button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-border mt-2 pt-4 pb-4 animate-slide-down">
+          <div 
+            id="mobile-navigation" 
+            className="md:hidden border-t border-border mt-2 pt-4 pb-4 animate-slide-down"
+            role="navigation"
+            aria-label="Mobile navigation"
+          >
             <nav className="flex flex-col space-y-4">
               {navigationItems.map((item, index) => (
                 <Link

@@ -38,8 +38,9 @@ export const WhatsAppBusinessButton = () => {
             size="icon" 
             onClick={() => setShowTooltip(false)}
             className="absolute -top-1 -right-1 h-4 w-4 text-white hover:bg-green-600"
+            aria-label="Close WhatsApp tooltip"
           >
-            <X className="h-3 w-3" />
+            <X className="h-3 w-3" aria-hidden="true" />
           </Button>
           <p className="pr-4">
             {t('Need help with your corporate event? Chat with our MICE specialists now!')}
@@ -53,8 +54,9 @@ export const WhatsAppBusinessButton = () => {
           onMouseEnter={() => setShowTooltip(true)}
           className="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
           size="icon"
+          aria-label="Chat with us on WhatsApp Business"
         >
-          <MessageCircle className="h-6 w-6" />
+          <MessageCircle className="h-6 w-6" aria-hidden="true" />
         </Button>
         
         {/* WhatsApp Business badge */}

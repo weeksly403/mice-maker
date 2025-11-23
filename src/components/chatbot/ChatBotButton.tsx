@@ -42,16 +42,20 @@ export const ChatBotButton: React.FC = () => {
             showAttentionAnimation ? 'animate-bounce' : ''
           }`}
           size="lg"
+          aria-label="Open AI chatbot assistant"
         >
-          <MessageCircle className="h-5 w-5 mr-2" />
+          <MessageCircle className="h-5 w-5 mr-2" aria-hidden="true" />
           <span className="hidden sm:inline font-medium">{t.buttonLabel}</span>
           <span className="sm:hidden font-medium">{t.buttonLabelShort}</span>
         </Button>
         
         {/* Notification badge for new users */}
-        <div className={`absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full ${
-          showAttentionAnimation ? 'animate-pulse scale-110' : 'animate-pulse'
-        } transition-transform duration-300`} />
+        <div 
+          className={`absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full ${
+            showAttentionAnimation ? 'animate-pulse scale-110' : 'animate-pulse'
+          } transition-transform duration-300`}
+          aria-hidden="true"
+        />
       </div>
 
       <ChatBot isOpen={isOpen} onClose={() => setIsOpen(false)} />

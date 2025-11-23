@@ -33,8 +33,9 @@ export const StickyCTA = () => {
           onClick={() => setIsMinimized(false)}
           className="bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300"
           size="icon"
+          aria-label="Expand quote request form"
         >
-          <FileText className="h-5 w-5" />
+          <FileText className="h-5 w-5" aria-hidden="true" />
         </Button>
       </div>
     );
@@ -53,8 +54,9 @@ export const StickyCTA = () => {
               size="icon"
               onClick={() => setIsMinimized(true)}
               className="h-6 w-6"
+              aria-label="Minimize quote request form"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" aria-hidden="true" />
             </Button>
           </div>
           
@@ -67,8 +69,9 @@ export const StickyCTA = () => {
               <Button 
                 className="flex-1 bg-primary hover:bg-primary/90 text-white text-xs h-8"
                 onClick={() => analytics.trackCTA('quote_button', 'sticky_cta')}
+                aria-label="Request a quote"
               >
-                <FileText className="h-3 w-3 mr-1" />
+                <FileText className="h-3 w-3 mr-1" aria-hidden="true" />
                 {t('Get Quote')}
               </Button>
             </QuoteDialog>
@@ -78,8 +81,9 @@ export const StickyCTA = () => {
                 variant="outline"
                 className="flex-1 text-xs h-8"
                 onClick={() => analytics.trackCTA('call_button', 'sticky_cta')}
+                aria-label="Schedule a call"
               >
-                <Phone className="h-3 w-3 mr-1" />
+                <Phone className="h-3 w-3 mr-1" aria-hidden="true" />
                 {t('Book Call')}
               </Button>
             </ScheduleCallDialog>
