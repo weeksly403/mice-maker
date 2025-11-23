@@ -507,16 +507,20 @@ export const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
               size="sm"
               onClick={() => setShowLanguageSelector(!showLanguageSelector)}
               className="text-white hover:bg-white/20"
+              aria-label={`Change chatbot language - Current: ${chatLanguage.toUpperCase()}`}
+              aria-expanded={showLanguageSelector}
+              aria-haspopup="true"
             >
-              <Globe className="h-4 w-4" />
+              <Globe className="h-4 w-4" aria-hidden="true" />
             </Button>
             <Button
               variant="ghost"
               size="sm"
               onClick={onClose}
               className="text-white hover:bg-white/20"
+              aria-label="Close chatbot"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" aria-hidden="true" />
             </Button>
           </div>
         </div>

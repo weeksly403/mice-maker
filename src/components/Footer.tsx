@@ -45,9 +45,11 @@ export const Footer: React.FC = () => {
                   key={index}
                   href={social.href}
                   className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-smooth"
-                  aria-label={social.label}
+                  aria-label={`Visit our ${social.label} page`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-5 h-5" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -108,8 +110,12 @@ export const Footer: React.FC = () => {
                 type="email"
                 placeholder="Votre email"
                 className="flex-1 px-4 py-2 rounded-l-md bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-secondary"
+                aria-label="Email address for newsletter"
               />
-              <button className="px-4 py-2 bg-secondary text-secondary-foreground rounded-r-md hover:bg-secondary-hover transition-smooth">
+              <button 
+                className="px-4 py-2 bg-secondary text-secondary-foreground rounded-r-md hover:bg-secondary-hover transition-smooth"
+                aria-label="Subscribe to newsletter"
+              >
                 OK
               </button>
             </div>

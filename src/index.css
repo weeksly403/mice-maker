@@ -36,9 +36,9 @@
     --gold: 45 95% 50%;
     --gold-foreground: 215 25% 15%;
 
-    /* Muted Colors */
-    --muted: 215 15% 96%;
-    --muted-foreground: 215 15% 45%;
+    /* Muted Colors - Improved contrast for WCAG AA compliance */
+    --muted: 215 15% 94%;
+    --muted-foreground: 215 20% 35%; /* Darker for better contrast (was 45%) */
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
