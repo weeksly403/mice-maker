@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+    <!-- Security Meta Tags (fallback if headers not applied) -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Content Security Policy (Meta tag fallback) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.ahrefs.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://analytics.ahrefs.com https://*.supabase.co wss://*.supabase.co; frame-src 'self' https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me;">
+    
     <!-- Google Fonts with display=swap for optimal performance -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap">
@@ -237,15 +246,21 @@
 
   <body>
     <!-- Google Analytics - Deferred to bottom for performance -->
+    <!-- Privacy-enhanced configuration with IP anonymization -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17503206777"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-17503206777');
+      gtag('config', 'AW-17503206777', {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false,
+        'cookie_flags': 'SameSite=Lax;Secure'
+      });
     </script>
     
-    <!-- Ahrefs Analytics - Deferred to bottom for performance -->
+    <!-- Ahrefs Analytics - Deferred for performance -->
     <script>
       var ahrefs_analytics_script = document.createElement('script');
       ahrefs_analytics_script.async = true;
