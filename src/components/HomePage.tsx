@@ -23,6 +23,7 @@ import { TravelAgencySchema } from '@/components/SEO/TravelAgencySchema';
 import { MultipleServicesSchema } from '@/components/SEO/ServiceSchema';
 import { VideoObjectSchema } from '@/components/SEO/VideoObjectSchema';
 import { OptimizedImage } from '@/components/OptimizedImage';
+import { ResponsiveImage } from '@/components/ResponsiveImage';
 import { PressSection } from '@/components/conversion/PressSection';
 import { ClientLogos } from '@/components/conversion/ClientLogos';
 import { VideoTestimonials } from '@/components/conversion/VideoTestimonials';
@@ -953,12 +954,13 @@ export const HomePage: React.FC = () => {
                 onClick={() => navigate(`/destinations/${destination.name.toLowerCase()}`)}
               >
                 <div className="relative h-48 overflow-hidden">
-                  <OptimizedImage 
+                  <ResponsiveImage 
                     src={destination.image} 
                     alt={language === 'fr' ? `${destination.name} - Destination MICE Maroc pour événements entreprise, conférences et incentives` : language === 'es' ? `${destination.name} - Destino MICE Marruecos para eventos corporativos, conferencias e incentivos` : language === 'ar' ? `${destination.name} - وجهة MICE المغرب لفعاليات الشركات والمؤتمرات والحوافز` : `${destination.name} - MICE Destination Morocco for corporate events, conferences and incentives`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-corporate"
-                    width={600}
-                    height={384}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
+                    loading="lazy"
+                    width={1600}
+                    height={764}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
@@ -1084,11 +1086,13 @@ export const HomePage: React.FC = () => {
             </div>
             
             <div className="relative">
-              <img 
+              <ResponsiveImage 
                 src={roiBenefitsImage} 
                 alt={language === 'fr' ? 'Infographie ROI événements entreprise Maroc - Bénéfices mesurés des services MICE DMC EventMorocco' : language === 'es' ? 'Infografía ROI eventos corporativos Marruecos - Beneficios medidos servicios MICE DMC EventMorocco' : language === 'ar' ? 'إنفوجرافيك عائد الاستثمار للفعاليات الشركاتية المغرب - الفوائد المقاسة لخدمات MICE DMC EventMorocco' : 'ROI Benefits Infographic - Measured benefits of EventMorocco DMC MICE services in Morocco'}
                 className="w-full h-auto rounded-lg shadow-elegant"
                 loading="lazy"
+                width={1600}
+                height={1067}
               />
             </div>
           </div>
@@ -1145,11 +1149,13 @@ export const HomePage: React.FC = () => {
             </div>
             
             <div className="relative">
-              <img 
+              <ResponsiveImage 
                 src={corporateTestimonialsImage} 
                 alt={language === 'fr' ? 'Témoignages clients DMC Maroc EventMorocco - Entreprises satisfaites événements MICE au Maroc' : language === 'es' ? 'Testimonios clientes DMC Marruecos EventMorocco - Empresas satisfechas eventos MICE en Marruecos' : language === 'ar' ? 'شهادات عملاء DMC المغرب EventMorocco - شركات راضية عن فعاليات MICE في المغرب' : 'EventMorocco DMC Morocco client testimonials - Satisfied companies MICE events Morocco'}
                 className="w-full h-auto rounded-lg shadow-elegant"
                 loading="lazy"
+                width={1600}
+                height={1065}
               />
             </div>
           </div>
@@ -1172,11 +1178,13 @@ export const HomePage: React.FC = () => {
             {caseStudies.map((caseStudy, index) => (
               <Card key={index} className="group cursor-pointer overflow-hidden shadow-card hover:shadow-elegant transition-smooth border-0">
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <ResponsiveImage 
                     src={caseStudy.image} 
                     alt={caseStudy.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
                     loading="lazy"
+                    width={1600}
+                    height={764}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                 </div>
@@ -1222,11 +1230,13 @@ export const HomePage: React.FC = () => {
             {insights.map((insight, index) => (
               <Card key={index} className="group cursor-pointer overflow-hidden shadow-card hover:shadow-elegant transition-smooth border-0">
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <ResponsiveImage 
                     src={insight.image} 
                     alt={insight.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
                     loading="lazy"
+                    width={1600}
+                    height={764}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
@@ -1320,11 +1330,13 @@ export const HomePage: React.FC = () => {
       {/* Strong Final CTA Section */}
       <section className="py-20 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <ResponsiveImage 
             src={moroccoBusinessFusionImage} 
             alt={language === 'fr' ? 'Fusion business Maroc - Rencontres d\'affaires et networking événements entreprise au Maroc' : language === 'es' ? 'Fusión business Marruecos - Encuentros de negocios y networking eventos corporativos en Marruecos' : language === 'ar' ? 'اندماج الأعمال المغرب - لقاءات الأعمال والتواصل فعاليات الشركات في المغرب' : 'Morocco business fusion - Business meetings and networking corporate events in Morocco'}
             className="w-full h-full object-cover opacity-20"
             loading="lazy"
+            width={1600}
+            height={764}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/60"></div>
         </div>

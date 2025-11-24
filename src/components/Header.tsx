@@ -49,6 +49,10 @@ export const Header: React.FC = () => {
                 src="/lovable-uploads/cfc08f51-9311-488b-aa3c-cd9ef1376332.png" 
                 alt="Event Morocco Logo" 
                 className="w-12 h-12 object-contain"
+                width="48"
+                height="48"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </Link>
