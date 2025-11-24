@@ -264,28 +264,40 @@
   </head>
 
   <body>
-    <!-- Google Analytics - Deferred to bottom for performance -->
+    <!-- Google Analytics - Delayed load to reduce Total Blocking Time -->
     <!-- Privacy-enhanced configuration with IP anonymization -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17503206777"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17503206777', {
-        'anonymize_ip': true,
-        'allow_google_signals': false,
-        'allow_ad_personalization_signals': false,
-        'cookie_flags': 'SameSite=Lax;Secure'
-      });
+      // Defer analytics loading to after page interactive to reduce TBT
+      setTimeout(function() {
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17503206777';
+        document.head.appendChild(gaScript);
+        
+        gaScript.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-17503206777', {
+            'anonymize_ip': true,
+            'allow_google_signals': false,
+            'allow_ad_personalization_signals': false,
+            'cookie_flags': 'SameSite=Lax;Secure'
+          });
+        };
+      }, 2000);
     </script>
     
-    <!-- Ahrefs Analytics - Deferred for performance -->
+    <!-- Ahrefs Analytics - Delayed for performance -->
     <script>
-      var ahrefs_analytics_script = document.createElement('script');
-      ahrefs_analytics_script.async = true;
-      ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
-      ahrefs_analytics_script.setAttribute('data-key', 'XvGy2Cp742YVpEdpr5FLxw');
-      document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
+      // Defer Ahrefs to after page interactive to reduce TBT
+      setTimeout(function() {
+        var ahrefs_analytics_script = document.createElement('script');
+        ahrefs_analytics_script.async = true;
+        ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
+        ahrefs_analytics_script.setAttribute('data-key', 'XvGy2Cp742YVpEdpr5FLxw');
+        document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
+      }, 2500);
     </script>
     
     <!-- Static Content for Search Engines & AI Bots (visible without JavaScript) -->
