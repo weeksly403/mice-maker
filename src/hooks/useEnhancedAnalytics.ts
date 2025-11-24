@@ -3,15 +3,31 @@ import { initScrollDepthTracking, initTimeOnPageTracking } from '@/utils/enhance
 
 export const useEnhancedAnalytics = () => {
   useEffect(() => {
-    // Initialize scroll depth tracking
-    const cleanupScroll = initScrollDepthTracking();
-
-    // Initialize time on page tracking
-    const cleanupTime = initTimeOnPageTracking();
-
-    return () => {
-      cleanupScroll();
-      cleanupTime();
+    // Defer analytics initialization to idle time to reduce FID
+    const scheduleInit = () => {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          const cleanupScroll = initScrollDepthTracking();
+          const cleanupTime = initTimeOnPageTracking();
+          
+          return () => {
+            cleanupScroll();
+            cleanupTime();
+          };
+        }, { timeout: 3000 });
+      } else {
+        setTimeout(() => {
+          const cleanupScroll = initScrollDepthTracking();
+          const cleanupTime = initTimeOnPageTracking();
+          
+          return () => {
+            cleanupScroll();
+            cleanupTime();
+          };
+        }, 1000);
+      }
     };
+
+    scheduleInit();
   }, []);
 };
