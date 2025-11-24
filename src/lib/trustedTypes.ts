@@ -12,7 +12,7 @@ export const isTrustedTypesSupported = (): boolean => {
 };
 
 // Create the default policy for the application
-let defaultPolicy: TrustedTypePolicy | null = null;
+let defaultPolicy: any = null;
 
 export const initTrustedTypesPolicy = (): void => {
   if (!isTrustedTypesSupported()) {
@@ -65,7 +65,7 @@ export const initTrustedTypesPolicy = (): void => {
 };
 
 // Safe HTML creation helper
-export const createSafeHTML = (html: string): TrustedHTML | string => {
+export const createSafeHTML = (html: string): any => {
   if (!isTrustedTypesSupported() || !defaultPolicy) {
     return html;
   }
@@ -79,7 +79,7 @@ export const createSafeHTML = (html: string): TrustedHTML | string => {
 };
 
 // Safe script URL creation helper
-export const createSafeScriptURL = (url: string): TrustedScriptURL | string => {
+export const createSafeScriptURL = (url: string): any => {
   if (!isTrustedTypesSupported() || !defaultPolicy) {
     return url;
   }
@@ -93,7 +93,7 @@ export const createSafeScriptURL = (url: string): TrustedScriptURL | string => {
 };
 
 // Safe script creation helper
-export const createSafeScript = (script: string): TrustedScript | string => {
+export const createSafeScript = (script: string): any => {
   if (!isTrustedTypesSupported() || !defaultPolicy) {
     return script;
   }
