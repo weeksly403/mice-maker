@@ -884,6 +884,7 @@ export const HomePage: React.FC = () => {
                 src="/lovable-uploads/9972a502-cb1d-485b-bd47-ed78652f5705.png" 
                 alt="DMC Maroc EventMorocco - Expert organisation événements entreprise, conférences MICE et incentives au Maroc"
                 className="w-full h-auto rounded-lg shadow-elegant hover-scale transition-corporate"
+                loading="lazy"
               />
             </AnimatedCard>
           </div>
@@ -1087,6 +1088,7 @@ export const HomePage: React.FC = () => {
                 src={roiBenefitsImage} 
                 alt={language === 'fr' ? 'Infographie ROI événements entreprise Maroc - Bénéfices mesurés des services MICE DMC EventMorocco' : language === 'es' ? 'Infografía ROI eventos corporativos Marruecos - Beneficios medidos servicios MICE DMC EventMorocco' : language === 'ar' ? 'إنفوجرافيك عائد الاستثمار للفعاليات الشركاتية المغرب - الفوائد المقاسة لخدمات MICE DMC EventMorocco' : 'ROI Benefits Infographic - Measured benefits of EventMorocco DMC MICE services in Morocco'}
                 className="w-full h-auto rounded-lg shadow-elegant"
+                loading="lazy"
               />
             </div>
           </div>
@@ -1147,6 +1149,7 @@ export const HomePage: React.FC = () => {
                 src={corporateTestimonialsImage} 
                 alt={language === 'fr' ? 'Témoignages clients DMC Maroc EventMorocco - Entreprises satisfaites événements MICE au Maroc' : language === 'es' ? 'Testimonios clientes DMC Marruecos EventMorocco - Empresas satisfechas eventos MICE en Marruecos' : language === 'ar' ? 'شهادات عملاء DMC المغرب EventMorocco - شركات راضية عن فعاليات MICE في المغرب' : 'EventMorocco DMC Morocco client testimonials - Satisfied companies MICE events Morocco'}
                 className="w-full h-auto rounded-lg shadow-elegant"
+                loading="lazy"
               />
             </div>
           </div>
@@ -1173,6 +1176,7 @@ export const HomePage: React.FC = () => {
                     src={caseStudy.image} 
                     alt={caseStudy.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                 </div>
@@ -1222,6 +1226,7 @@ export const HomePage: React.FC = () => {
                     src={insight.image} 
                     alt={insight.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
@@ -1319,6 +1324,7 @@ export const HomePage: React.FC = () => {
             src={moroccoBusinessFusionImage} 
             alt={language === 'fr' ? 'Fusion business Maroc - Rencontres d\'affaires et networking événements entreprise au Maroc' : language === 'es' ? 'Fusión business Marruecos - Encuentros de negocios y networking eventos corporativos en Marruecos' : language === 'ar' ? 'اندماج الأعمال المغرب - لقاءات الأعمال والتواصل فعاليات الشركات في المغرب' : 'Morocco business fusion - Business meetings and networking corporate events in Morocco'}
             className="w-full h-full object-cover opacity-20"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/60"></div>
         </div>
