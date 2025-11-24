@@ -11,14 +11,16 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ErrorBoundary } from "./components/ErrorBoundary";
-import { ChatBotButton } from "./components/chatbot/ChatBotButton";
 import { SEOEnhancer } from "./components/SEO/SEOEnhancer";
-import { StickyCTA } from "./components/conversion/StickyCTA";
-import { WhatsAppBusinessButton } from "./components/conversion/WhatsAppBusinessButton";
 import { initializeSEOAnalytics } from "./utils/seoAnalytics";
-import { ExitIntentPopup } from "./components/conversion/ExitIntentPopup";
-import { LiveChat } from "./components/conversion/LiveChat";
 import { EnhancedLocalBusinessSchema } from "./components/SEO/EnhancedLocalBusinessSchema";
+
+// Lazy load non-critical conversion widgets to reduce initial bundle
+const ChatBotButton = lazy(() => import("./components/chatbot/ChatBotButton").then(m => ({ default: m.ChatBotButton })));
+const StickyCTA = lazy(() => import("./components/conversion/StickyCTA").then(m => ({ default: m.StickyCTA })));
+const WhatsAppBusinessButton = lazy(() => import("./components/conversion/WhatsAppBusinessButton").then(m => ({ default: m.WhatsAppBusinessButton })));
+const ExitIntentPopup = lazy(() => import("./components/conversion/ExitIntentPopup").then(m => ({ default: m.ExitIntentPopup })));
+const LiveChat = lazy(() => import("./components/conversion/LiveChat").then(m => ({ default: m.LiveChat })));
 
 // Critical pages - loaded immediately
 import Index from "./pages/Index";
@@ -77,7 +79,10 @@ const App = () => {
                 <ErrorBoundary>
                   <SEOEnhancer />
                   <EnhancedLocalBusinessSchema />
-                  <ExitIntentPopup />
+                  {/* Lazy-load non-critical conversion widgets */}
+                  <Suspense fallback={null}>
+                    <ExitIntentPopup />
+                  </Suspense>
                   <Toaster />
                   <Sonner />
                   <div className="min-h-screen flex flex-col">
@@ -307,10 +312,13 @@ const App = () => {
                   </Suspense>
                 </main>
                 <Footer />
-                <ChatBotButton />
-                <StickyCTA />
-                <WhatsAppBusinessButton />
-                <LiveChat />
+                {/* Lazy-load non-critical conversion widgets */}
+                <Suspense fallback={null}>
+                  <ChatBotButton />
+                  <StickyCTA />
+                  <WhatsAppBusinessButton />
+                  <LiveChat />
+                </Suspense>
               </div>
             </ErrorBoundary>
           </TooltipProvider>
