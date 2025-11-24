@@ -1,28 +1,39 @@
 import { analytics } from './analytics';
 
-// Scroll depth tracking
+// Helper to use requestIdleCallback with fallback
+const scheduleIdleTask = (callback: () => void) => {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(callback, { timeout: 2000 });
+  } else {
+    setTimeout(callback, 1);
+  }
+};
+
+// Scroll depth tracking - deferred to idle time
 export const initScrollDepthTracking = () => {
   const thresholds = [25, 50, 75, 90, 100];
   const reached = new Set<number>();
 
   const checkScrollDepth = () => {
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const scrollTop = window.scrollY;
-    const scrollPercent = ((scrollTop + windowHeight) / documentHeight) * 100;
+    scheduleIdleTask(() => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const scrollPercent = ((scrollTop + windowHeight) / documentHeight) * 100;
 
-    thresholds.forEach(threshold => {
-      if (scrollPercent >= threshold && !reached.has(threshold)) {
-        reached.add(threshold);
-        analytics.trackButtonClick('scroll_depth', `${threshold}%`);
-      }
+      thresholds.forEach(threshold => {
+        if (scrollPercent >= threshold && !reached.has(threshold)) {
+          reached.add(threshold);
+          analytics.trackButtonClick('scroll_depth', `${threshold}%`);
+        }
+      });
     });
   };
 
   let timeoutId: NodeJS.Timeout;
   const debouncedCheck = () => {
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(checkScrollDepth, 100);
+    timeoutId = setTimeout(checkScrollDepth, 250);
   };
 
   window.addEventListener('scroll', debouncedCheck, { passive: true });
@@ -32,20 +43,22 @@ export const initScrollDepthTracking = () => {
   };
 };
 
-// Time on page tracking
+// Time on page tracking - deferred to idle time
 export const initTimeOnPageTracking = () => {
   const startTime = Date.now();
-  const intervals = [30, 60, 120, 300]; // 30s, 1min, 2min, 5min
+  const intervals = [30, 60, 120, 300];
   const tracked = new Set<number>();
 
   const checkInterval = setInterval(() => {
-    const timeOnPage = Math.floor((Date.now() - startTime) / 1000);
-    
-    intervals.forEach(interval => {
-      if (timeOnPage >= interval && !tracked.has(interval)) {
-        tracked.add(interval);
-        analytics.trackButtonClick('time_on_page', `${interval}s`);
-      }
+    scheduleIdleTask(() => {
+      const timeOnPage = Math.floor((Date.now() - startTime) / 1000);
+      
+      intervals.forEach(interval => {
+        if (timeOnPage >= interval && !tracked.has(interval)) {
+          tracked.add(interval);
+          analytics.trackButtonClick('time_on_page', `${interval}s`);
+        }
+      });
     });
   }, 5000);
 
