@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from './LanguageProvider';
 import { Button } from '@/components/ui/button';
@@ -44,6 +44,26 @@ import agadirBeachImage from '@/assets/agadir-beach-teambuilding.jpg';
 export const HomePage: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
+  
+  // Defer background video loading to reduce main thread blocking
+  const [loadBackgroundVideo, setLoadBackgroundVideo] = useState(false);
+  
+  useEffect(() => {
+    // Load background video after page is interactive
+    const deferVideoLoad = () => {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          setLoadBackgroundVideo(true);
+        }, { timeout: 2000 });
+      } else {
+        setTimeout(() => {
+          setLoadBackgroundVideo(true);
+        }, 1500);
+      }
+    };
+    
+    deferVideoLoad();
+  }, []);
   
   const homepageFAQs = [
     {
@@ -399,35 +419,39 @@ export const HomePage: React.FC = () => {
       >
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/p6dAOmN0zdg?autoplay=1&mute=1&loop=1&playlist=p6dAOmN0zdg&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&enablejsapi=0"
-            title="Morocco MICE Destination Video"
-            loading="lazy"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
-                       w-[300%] h-[300%] 
-                       sm:w-[250%] sm:h-[250%] 
-                       md:w-[180%] md:h-[180%] 
-                       lg:w-[130%] lg:h-[130%] 
-                       xl:w-[110%] xl:h-[110%]
-                       2xl:w-[105%] 2xl:h-[105%]
-                       min-w-full min-h-full"
-            allow="autoplay; encrypted-media"
-            allowFullScreen={false}
-            style={{
-              border: 'none',
-              outline: 'none',
-              background: 'transparent'
-            }}
-            onError={() => {
-              // Fallback to image if video fails to load
-              const iframe = event.target as HTMLIFrameElement;
-              const fallbackImg = document.createElement('img');
-              fallbackImg.src = heroImage;
-              fallbackImg.alt = 'Morocco MICE destination';
-              fallbackImg.className = 'w-full h-full object-cover';
-              iframe.parentNode?.replaceChild(fallbackImg, iframe);
-            }}
-          />
+          {loadBackgroundVideo ? (
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/p6dAOmN0zdg?autoplay=1&mute=1&loop=1&playlist=p6dAOmN0zdg&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&enablejsapi=0"
+              title="Morocco MICE Destination Video"
+              loading="lazy"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
+                         w-[300%] h-[300%] 
+                         sm:w-[250%] sm:h-[250%] 
+                         md:w-[180%] md:h-[180%] 
+                         lg:w-[130%] lg:h-[130%] 
+                         xl:w-[110%] xl:h-[110%]
+                         2xl:w-[105%] 2xl:h-[105%]
+                         min-w-full min-h-full"
+              allow="autoplay; encrypted-media"
+              allowFullScreen={false}
+              style={{
+                border: 'none',
+                outline: 'none',
+                background: 'transparent'
+              }}
+              onError={() => {
+                // Fallback to image if video fails to load
+                const iframe = event.target as HTMLIFrameElement;
+                const fallbackImg = document.createElement('img');
+                fallbackImg.src = heroImage;
+                fallbackImg.alt = 'Morocco MICE destination';
+                fallbackImg.className = 'w-full h-full object-cover';
+                iframe.parentNode?.replaceChild(fallbackImg, iframe);
+              }}
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20" />
+          )}
           <div className="absolute inset-0 bg-black/40 backdrop-blur-[0.5px]"></div>
         </div>
         

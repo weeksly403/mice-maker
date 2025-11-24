@@ -1,4 +1,4 @@
-// Google Analytics tracking utility
+// Google Analytics tracking utility - optimized for performance
 declare global {
   interface Window {
     gtag: (command: string, targetId: string, config?: any) => void;
@@ -6,33 +6,81 @@ declare global {
   }
 }
 
-export const trackEvent = (eventName: string, parameters?: any) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', eventName, {
-      event_category: 'user_engagement',
-      event_label: parameters?.label || '',
-      value: parameters?.value || 0,
-      ...parameters,
-    });
+// Queue for analytics events before gtag is loaded
+let analyticsQueue: Array<() => void> = [];
+let isGtagLoaded = false;
+
+// Initialize gtag in idle time to reduce main thread blocking
+const initGtag = () => {
+  if (isGtagLoaded) return;
+  
+  const scheduleInit = () => {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        isGtagLoaded = true;
+        // Process queued events
+        analyticsQueue.forEach(fn => fn());
+        analyticsQueue = [];
+      }, { timeout: 3000 });
+    } else {
+      setTimeout(() => {
+        isGtagLoaded = true;
+        analyticsQueue.forEach(fn => fn());
+        analyticsQueue = [];
+      }, 2000);
+    }
+  };
+  
+  scheduleInit();
+};
+
+// Auto-initialize on first import
+if (typeof window !== 'undefined') {
+  initGtag();
+}
+
+// Helper to queue or execute analytics calls
+const executeOrQueue = (fn: () => void) => {
+  if (isGtagLoaded && typeof window !== 'undefined' && window.gtag) {
+    fn();
+  } else {
+    analyticsQueue.push(fn);
   }
+};
+
+export const trackEvent = (eventName: string, parameters?: any) => {
+  executeOrQueue(() => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', eventName, {
+        event_category: 'user_engagement',
+        event_label: parameters?.label || '',
+        value: parameters?.value || 0,
+        ...parameters,
+      });
+    }
+  });
 };
 
 export const trackConversion = (conversionId: string, parameters?: any) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', {
-      send_to: conversionId,
-      ...parameters,
-    });
-  }
+  executeOrQueue(() => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: conversionId,
+        ...parameters,
+      });
+    }
+  });
 };
 
 export const trackPageView = (pagePath: string, pageTitle?: string) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('config', 'AW-17503206777', {
-      page_path: pagePath,
-      page_title: pageTitle,
-    });
-  }
+  executeOrQueue(() => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('config', 'AW-17503206777', {
+        page_path: pagePath,
+        page_title: pageTitle,
+      });
+    }
+  });
 };
 
 // Event tracking functions for common actions
