@@ -49,6 +49,13 @@ export const HomePage: React.FC = () => {
   const [loadBackgroundVideo, setLoadBackgroundVideo] = useState(false);
   
   useEffect(() => {
+    // Only load background video on desktop (md+) to reduce unused YouTube CSS on mobile
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+    
+    if (!isDesktop) {
+      return; // Skip video loading on mobile/tablet
+    }
+    
     // Load background video after page is interactive - aggressively deferred
     const deferVideoLoad = () => {
       if ('requestIdleCallback' in window) {
