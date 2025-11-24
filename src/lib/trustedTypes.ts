@@ -21,8 +21,15 @@ export const initTrustedTypesPolicy = (): void => {
   }
 
   try {
+    const trustedTypes = (window as any).trustedTypes;
+
+    if (!trustedTypes || typeof trustedTypes.createPolicy !== 'function') {
+      console.warn('Trusted Types API is not fully available');
+      return;
+    }
+
     // Create a default policy that sanitizes HTML
-    defaultPolicy = window.trustedTypes!.createPolicy('default', {
+    defaultPolicy = trustedTypes.createPolicy('default', {
       createHTML: (input: string) => {
         // Basic sanitization - remove script tags and event handlers
         const sanitized = input
