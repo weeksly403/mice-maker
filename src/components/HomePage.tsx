@@ -399,8 +399,9 @@ export const HomePage: React.FC = () => {
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <iframe
-            src="https://www.youtube.com/embed/p6dAOmN0zdg?autoplay=1&mute=1&loop=1&playlist=p6dAOmN0zdg&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&enablejsapi=0"
+            src="https://www.youtube-nocookie.com/embed/p6dAOmN0zdg?autoplay=1&mute=1&loop=1&playlist=p6dAOmN0zdg&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&enablejsapi=0"
             title="Morocco MICE Destination Video"
+            loading="lazy"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
                        w-[300%] h-[300%] 
                        sm:w-[250%] sm:h-[250%] 
@@ -411,7 +412,6 @@ export const HomePage: React.FC = () => {
                        min-w-full min-h-full"
             allow="autoplay; encrypted-media"
             allowFullScreen={false}
-            loading="lazy"
             style={{
               border: 'none',
               outline: 'none',
