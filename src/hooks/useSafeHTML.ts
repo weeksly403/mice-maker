@@ -11,7 +11,7 @@ import { createSafeHTML } from '@/lib/trustedTypes';
  * const safeHTML = useSafeHTML('<p>User content</p>');
  * return <div dangerouslySetInnerHTML={safeHTML} />;
  */
-export const useSafeHTML = (html: string): { __html: TrustedHTML | string } => {
+export const useSafeHTML = (html: string): { __html: any } => {
   const safeHTML = useMemo(() => {
     return createSafeHTML(html);
   }, [html]);
