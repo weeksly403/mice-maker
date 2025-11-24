@@ -52,6 +52,7 @@ export const Header: React.FC = () => {
                 width="48"
                 height="48"
                 loading="eager"
+                decoding="async"
                 fetchPriority="high"
               />
             </div>
