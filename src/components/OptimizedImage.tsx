@@ -8,6 +8,8 @@ interface OptimizedImageProps extends OptimizedImageOptions {
   onError?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
   onClick?: () => void;
   fetchpriority?: 'high' | 'low' | 'auto';
+  srcSet?: string;
+  sizes?: string;
 }
 
 /**
@@ -24,7 +26,9 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   loading = 'lazy',
   onError,
   onClick,
-  fetchpriority = 'auto'
+  fetchpriority = 'auto',
+  srcSet,
+  sizes
 }) => {
   // For Vite-imported assets (absolute URLs), use them directly without optimization
   // They're already processed by Vite's build pipeline
@@ -35,6 +39,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       <img
         src={src}
         alt={alt}
+        srcSet={srcSet}
+        sizes={sizes}
         loading={loading}
         decoding="async"
         width={width}
