@@ -49,16 +49,17 @@ export const HomePage: React.FC = () => {
   const [loadBackgroundVideo, setLoadBackgroundVideo] = useState(false);
   
   useEffect(() => {
-    // Load background video after page is interactive
+    // Load background video after page is interactive - aggressively deferred
     const deferVideoLoad = () => {
       if ('requestIdleCallback' in window) {
         requestIdleCallback(() => {
-          setLoadBackgroundVideo(true);
-        }, { timeout: 2000 });
+          // Additional delay to ensure critical resources load first
+          setTimeout(() => setLoadBackgroundVideo(true), 1000);
+        }, { timeout: 3000 });
       } else {
         setTimeout(() => {
           setLoadBackgroundVideo(true);
-        }, 1500);
+        }, 2500);
       }
     };
     
