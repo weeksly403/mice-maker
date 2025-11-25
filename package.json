@@ -91,7 +91,8 @@
     "inlineCss": true,
     "minifyHtml": {
       "collapseWhitespace": true,
-      "removeComments": true
+      "removeComments": true,
+      "source": "dist"
     },
     "include": [
       "/",
