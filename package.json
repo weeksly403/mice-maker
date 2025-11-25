@@ -88,11 +88,12 @@
     "vite": "^5.4.19"
   },
   "reactSnap": {
+    "source": "dist",
     "inlineCss": true,
     "minifyHtml": {
       "collapseWhitespace": true,
       "removeComments": true,
-      "source": "dist"
+      "removeAttributeQuotes": false
     },
     "include": [
       "/",
@@ -107,6 +108,7 @@
       "/about",
       "/contact",
       "/faq",
+      "/success-stories",
       "/afcon-2025-morocco"
     ],
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
