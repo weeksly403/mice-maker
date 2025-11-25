@@ -27,6 +27,7 @@ Add this configuration at the end of your `package.json`:
 
 ```json
 "reactSnap": {
+  "source": "dist",
   "inlineCss": true,
   "minifyHtml": {
     "collapseWhitespace": true,
@@ -65,6 +66,8 @@ Add this configuration at the end of your `package.json`:
   "concurrency": 4
 }
 ```
+
+**IMPORTANT**: The `"source": "dist"` line is critical because Vite outputs to the `dist/` folder, not `build/`.
 
 ### 3. Build and Test
 
