@@ -88,12 +88,11 @@
     "vite": "^5.4.19"
   },
   "reactSnap": {
-    "source": "dist", // <-- THIS is the critical fix
     "inlineCss": true,
     "minifyHtml": {
       "collapseWhitespace": true,
       "removeComments": true,
-      "removeAttributeQuotes": false
+      "source": "dist"
     },
     "include": [
       "/",
