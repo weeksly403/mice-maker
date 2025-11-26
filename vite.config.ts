@@ -106,9 +106,9 @@ export default defineConfig(({ mode }) => ({
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: mode === 'production',
+        drop_console: false, // Keep console during build for react-snap diagnostics
         drop_debugger: true,
-        pure_funcs: mode === 'production' ? ['console.log', 'console.info', 'console.debug'] : [],
+        pure_funcs: mode === 'production' ? ['console.debug'] : [],
       },
       format: {
         comments: false, // Remove comments in production
