@@ -64,6 +64,11 @@ const queryClient = new QueryClient();
 const App = () => {
   // Initialize SEO analytics tracking (scroll depth, time on page, etc.)
   useEffect(() => {
+    // Skip analytics during pre-rendering
+    if (navigator.userAgent.includes('HeadlessChrome')) {
+      return;
+    }
+    
     const cleanup = initializeSEOAnalytics();
     return cleanup;
   }, []);
