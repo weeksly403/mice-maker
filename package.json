@@ -95,9 +95,25 @@
       "removeComments": true,
       "removeAttributeQuotes": false
     },
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu", "--disable-dev-shm-usage"],
+    "include": [
+      "/",
+      "/services",
+      "/destinations",
+      "/destinations/marrakech",
+      "/destinations/casablanca",
+      "/destinations/agadir",
+      "/destinations/fes",
+      "/destinations/sahara",
+      "/blog",
+      "/about",
+      "/contact",
+      "/faq",
+      "/success-stories",
+      "/afcon-2025-morocco"
+    ],
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
     "skipThirdPartyRequests": true,
-    "concurrency": 2,
-    "timeout": 30000
+    "cacheAjaxRequests": false,
+    "concurrency": 4
   }
 }
