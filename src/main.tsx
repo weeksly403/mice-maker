@@ -2,14 +2,27 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import { initTrustedTypesPolicy } from './lib/trustedTypes'
 import App from './App.tsx'
 import './index.css'
+import { deployLog, deployErrorLog, isPrerenderingEnv } from './utils/deployLogging'
 
-// Skip Trusted Types during pre-rendering (react-snap uses HeadlessChrome)
-const isPrerendering = typeof navigator !== 'undefined' && 
-  navigator.userAgent.includes('HeadlessChrome');
+// Detect prerendering (react-snap / HeadlessChrome)
+const isPrerendering = isPrerenderingEnv();
 
-if (!isPrerendering) {
-  // Initialize Trusted Types policy for DOM XSS protection (Phase 5 Security Enhancement)
-  initTrustedTypesPolicy();
+deployLog('bootstrap_start', 'Application bootstrap starting', {
+  isPrerendering,
+});
+
+try {
+  if (!isPrerendering) {
+    // Initialize Trusted Types policy for DOM XSS protection (Phase 5 Security Enhancement)
+    deployLog('bootstrap_trusted_types_init', 'Initializing Trusted Types policy');
+    initTrustedTypesPolicy();
+  } else {
+    deployLog('bootstrap_trusted_types_skip', 'Skipping Trusted Types during prerender');
+  }
+} catch (error) {
+  deployErrorLog('bootstrap_trusted_types_error', 'Trusted Types initialization threw', {
+    error: error instanceof Error ? error.message : String(error),
+  });
 }
 
 const container = document.getElementById("root")!;
@@ -18,9 +31,14 @@ const container = document.getElementById("root")!;
 const hasPrerenderedContent = container.hasChildNodes();
 
 if (hasPrerenderedContent) {
-  // Hydrate the pre-rendered HTML (React 18)
+  deployLog('bootstrap_render_mode', 'Hydrating pre-rendered HTML with React 18', {
+    mode: 'hydrateRoot',
+  });
   hydrateRoot(container, <App />);
 } else {
-  // Fresh render (development or first visit before pre-rendering)
+  deployLog('bootstrap_render_mode', 'Performing fresh client render', {
+    mode: 'createRoot',
+  });
   createRoot(container).render(<App />);
 }
+

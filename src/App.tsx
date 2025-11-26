@@ -13,6 +13,7 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { SEOEnhancer } from "./components/SEO/SEOEnhancer";
 import { initializeSEOAnalytics } from "./utils/seoAnalytics";
+import { deployLog, deployErrorLog, isPrerenderingEnv } from "./utils/deployLogging";
 import { EnhancedLocalBusinessSchema } from "./components/SEO/EnhancedLocalBusinessSchema";
 
 // Lazy load non-critical conversion widgets to reduce initial bundle
@@ -64,13 +65,24 @@ const queryClient = new QueryClient();
 const App = () => {
   // Initialize SEO analytics tracking (scroll depth, time on page, etc.)
   useEffect(() => {
-    // Skip analytics during pre-rendering
-    if (navigator.userAgent.includes('HeadlessChrome')) {
-      return;
+    const isPrerendering = isPrerenderingEnv();
+
+    try {
+      if (isPrerendering) {
+        deployLog('seo_analytics_skip_prerender', 'Skipping SEO analytics during prerender');
+        return;
+      }
+
+      deployLog('seo_analytics_init', 'Initializing SEO analytics');
+      const cleanup = initializeSEOAnalytics();
+      return cleanup;
+    } catch (error) {
+      deployErrorLog('seo_analytics_error', 'SEO analytics initialization failed', {
+        error: error instanceof Error ? error.message : String(error),
+      });
+      // Also log to console for local debugging
+      console.error('SEO analytics initialization failed:', error);
     }
-    
-    const cleanup = initializeSEOAnalytics();
-    return cleanup;
   }, []);
   
   return (
