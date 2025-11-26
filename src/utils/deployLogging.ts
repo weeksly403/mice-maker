@@ -52,10 +52,9 @@ export const deployLog = (
 
   try {
     const payload = formatPayload(phase, message, data);
-    // Netlify + react-snap will surface console output in build logs
-    // Use a consistent, searchable prefix
+    // Use console.warn which is less likely to be stripped by minifiers
     // eslint-disable-next-line no-console
-    console.log('[DEPLOY][REACT_SNAP]', JSON.stringify(payload));
+    console.warn('[DEPLOY][REACT_SNAP]', JSON.stringify(payload));
   } catch {
     // Swallow any logging errors to avoid impacting build
   }
