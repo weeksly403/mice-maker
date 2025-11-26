@@ -15,6 +15,16 @@ export const isTrustedTypesSupported = (): boolean => {
 let defaultPolicy: any = null;
 
 export const initTrustedTypesPolicy = (): void => {
+  // Skip during SSR or pre-rendering
+  if (typeof window === 'undefined') {
+    return;
+  }
+  
+  // Skip during react-snap pre-rendering (HeadlessChrome)
+  if (navigator.userAgent.includes('HeadlessChrome')) {
+    return;
+  }
+
   if (!isTrustedTypesSupported()) {
     console.warn('Trusted Types not supported in this browser');
     return;
