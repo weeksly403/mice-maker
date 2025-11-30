@@ -8,8 +8,8 @@
   # Strict Transport Security (HSTS) - Force HTTPS for 2 years
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   
-  # Content Security Policy (CSP) - Comprehensive protection against XSS with Trusted Types (Phase 5)
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.ahrefs.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://analytics.ahrefs.com https://*.supabase.co wss://*.supabase.co https://ai.gateway.lovable.dev; frame-src 'self' https://www.youtube.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; require-trusted-types-for 'script'; trusted-types default dompurify
+  # Content Security Policy (CSP) - Comprehensive protection against XSS (relaxed for react-snap compatibility)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.ahrefs.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://analytics.ahrefs.com https://*.supabase.co wss://*.supabase.co https://ai.gateway.lovable.dev; frame-src 'self' https://www.youtube.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
   
   # Prevent clickjacking attacks
   X-Frame-Options: DENY
@@ -26,9 +26,8 @@
   # Permissions Policy - Disable unnecessary features
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()
   
-  # Cross-Origin Policies
+  # Cross-Origin Policies (relaxed for react-snap compatibility)
   Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Resource-Policy: same-origin
   
   # Cache Control for HTML (revalidate frequently)

@@ -114,6 +114,28 @@ export const OptimizedSEO: React.FC<OptimizedSEOProps> = ({
         description: 'إجابات على الأسئلة الشائعة حول DMC المغرب وخدمات MICE والفعاليات الشركات وسفر الحوافز وبناء الفرق.',
         keywords: 'أسئلة شائعة DMC المغرب، أسئلة MICE المغرب، مساعدة فعاليات شركات، معلومات خدمات DMC'
       }
+    },
+    destinations: {
+      en: {
+        title: 'MICE Destinations Morocco | Marrakech, Casablanca, Agadir, Fes',
+        description: 'Explore top corporate event destinations in Morocco: Marrakech, Casablanca, Agadir, Fes & Sahara. Expert DMC venue recommendations.',
+        keywords: 'Morocco destinations, MICE venues Morocco, Marrakech events, Casablanca conferences, Agadir team building, Fes corporate, Sahara retreats'
+      },
+      fr: {
+        title: 'Destinations MICE Maroc | Marrakech, Casablanca, Agadir, Fès',
+        description: 'Découvrez les meilleures destinations pour événements corporatifs au Maroc : Marrakech, Casablanca, Agadir, Fès et Sahara. Recommandations DMC.',
+        keywords: 'destinations Maroc, lieux MICE Maroc, événements Marrakech, conférences Casablanca, team building Agadir, corporatif Fès, retraites Sahara'
+      },
+      es: {
+        title: 'Destinos MICE Marruecos | Marrakech, Casablanca, Agadir, Fez',
+        description: 'Explora los mejores destinos para eventos corporativos en Marruecos: Marrakech, Casablanca, Agadir, Fez y Sahara. Recomendaciones DMC.',
+        keywords: 'destinos Marruecos, lugares MICE Marruecos, eventos Marrakech, conferencias Casablanca, team building Agadir, corporativo Fez, retiros Sahara'
+      },
+      ar: {
+        title: 'وجهات MICE المغرب | مراكش، الدار البيضاء، أكادير، فاس',
+        description: 'اكتشف أفضل وجهات الفعاليات الشركات في المغرب: مراكش، الدار البيضاء، أكادير، فاس والصحراء. توصيات DMC متخصصة.',
+        keywords: 'وجهات المغرب، أماكن MICE المغرب، فعاليات مراكش، مؤتمرات الدار البيضاء، بناء فرق أكادير، شركات فاس، خلوات الصحراء'
+      }
     }
   };
 
