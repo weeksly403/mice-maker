@@ -13,6 +13,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [language, setLanguage] = useState<Language>(() => getCurrentLanguage());
 
   useEffect(() => {
+    // SSR-safe: only add event listeners on client side
+    if (typeof window === 'undefined') return;
+    
     const handleLanguageChange = () => {
       const newLang = getCurrentLanguage();
       if (newLang !== language) {
@@ -26,7 +29,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // Update HTML lang attribute dynamically for accessibility
   useEffect(() => {
-    document.documentElement.lang = language;
+    // SSR-safe: only update document on client side
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language;
+    }
   }, [language]);
 
   const t = (key: string): string => {

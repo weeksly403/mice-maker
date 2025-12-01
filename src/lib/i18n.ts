@@ -2549,6 +2549,11 @@ export const getTranslation = (lang: Language, key: string): string => {
 };
 
 export const getCurrentLanguage = (): Language => {
+  // SSR-safe: return default language if window is not available
+  if (typeof window === 'undefined') {
+    return 'en';
+  }
+  
   const path = window.location.pathname;
   const segments = path.split('/').filter(Boolean);
   const firstSegment = segments[0];
