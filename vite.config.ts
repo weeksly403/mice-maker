@@ -125,4 +125,10 @@ export default defineConfig(({ mode }) => ({
       target: 'esnext', // Modern JavaScript for faster builds
     },
   },
+  ssr: {
+    // Force bundling of CommonJS modules that don't support ESM properly
+    noExternal: [
+      'react-helmet-async',
+    ],
+  },
 }));
