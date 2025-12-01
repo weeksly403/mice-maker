@@ -2548,13 +2548,9 @@ export const getTranslation = (lang: Language, key: string): string => {
   return value || key;
 };
 
-export const getCurrentLanguage = (): Language => {
-  // SSR-safe: return default language if window is not available
-  if (typeof window === 'undefined') {
-    return 'en';
-  }
-  
-  const path = window.location.pathname;
+export const getCurrentLanguage = (pathname?: string): Language => {
+  // Use provided pathname (from useLocation during SSR) or window.location
+  const path = pathname || (typeof window !== 'undefined' ? window.location.pathname : '/');
   const segments = path.split('/').filter(Boolean);
   const firstSegment = segments[0];
   

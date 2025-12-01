@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Language, getCurrentLanguage, getTranslation } from '@/lib/i18n';
 
 interface LanguageContextType {
@@ -10,22 +11,16 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>(() => getCurrentLanguage());
+  const location = useLocation();
+  const [language, setLanguage] = useState<Language>(() => getCurrentLanguage(location.pathname));
 
+  // Update language when route changes
   useEffect(() => {
-    // SSR-safe: only add event listeners on client side
-    if (typeof window === 'undefined') return;
-    
-    const handleLanguageChange = () => {
-      const newLang = getCurrentLanguage();
-      if (newLang !== language) {
-        setLanguage(newLang);
-      }
-    };
-
-    window.addEventListener('popstate', handleLanguageChange);
-    return () => window.removeEventListener('popstate', handleLanguageChange);
-  }, [language]);
+    const newLang = getCurrentLanguage(location.pathname);
+    if (newLang !== language) {
+      setLanguage(newLang);
+    }
+  }, [location.pathname, language]);
 
   // Update HTML lang attribute dynamically for accessibility
   useEffect(() => {
