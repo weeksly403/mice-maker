@@ -1,43 +1,40 @@
 import type { RouteObject } from 'react-router-dom';
-import { lazy } from 'react';
 import AppLayout from './AppLayout';
 
-// Critical pages - loaded immediately
+// All pages - directly imported for SSG compatibility
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-
-// All other pages - lazy loaded for performance
-const Destinations = lazy(() => import("./pages/Destinations"));
-const MarrakechDestination = lazy(() => import("./pages/destinations/Marrakech"));
-const CasablancaDestination = lazy(() => import("./pages/destinations/Casablanca"));
-const AgadirDestination = lazy(() => import("./pages/destinations/Agadir"));
-const FesDestination = lazy(() => import("./pages/destinations/Fes"));
-const SaharaDestination = lazy(() => import("./pages/destinations/Sahara"));
-const Services = lazy(() => import("./pages/Services"));
-const SuccessStories = lazy(() => import("./pages/SuccessStories"));
-const Blog = lazy(() => import("./pages/Blog"));
-const BlogArticleMarrakech = lazy(() => import("./pages/blog/BlogArticleMarrakech"));
-const TopVenuesMorocco = lazy(() => import("./pages/blog/TopVenuesMorocco"));
-const MarrakechIncentive = lazy(() => import("./pages/blog/MarrakechIncentive"));
-const AgadirTeamBuilding = lazy(() => import("./pages/blog/AgadirTeamBuilding"));
-const GulfTeamBuilding = lazy(() => import("./pages/blog/GulfTeamBuilding"));
-const SpanishCorporate = lazy(() => import("./pages/blog/SpanishCorporate"));
-const SaharaRetreats = lazy(() => import("./pages/blog/SaharaRetreats"));
-const ChoosingDMCMorocco = lazy(() => import("./pages/blog/ChoosingDMCMorocco"));
-const CorporateEventROI = lazy(() => import("./pages/blog/CorporateEventROI"));
-const HybridEventsMorocco = lazy(() => import("./pages/blog/HybridEventsMorocco"));
-const AfconCorporateHospitality = lazy(() => import("./pages/blog/AfconCorporateHospitality"));
-const AfconLanding = lazy(() => import("./pages/AfconLanding"));
-const CorporateEventsGuide = lazy(() => import("./pages/CorporateEventsGuide"));
-const FAQ = lazy(() => import("./pages/FAQ"));
-const Contact = lazy(() => import("./pages/Contact"));
-const About = lazy(() => import("./pages/About"));
-const AuthPage = lazy(() => import("./pages/auth/AuthPage"));
-const CRMLayout = lazy(() => import("./components/crm/CRMLayout"));
-const Dashboard = lazy(() => import("./pages/crm/Dashboard"));
-const Leads = lazy(() => import("./pages/crm/Leads"));
-const Calls = lazy(() => import("./pages/crm/Calls"));
-const Partners = lazy(() => import("./pages/crm/Partners"));
+import Destinations from "./pages/Destinations";
+import MarrakechDestination from "./pages/destinations/Marrakech";
+import CasablancaDestination from "./pages/destinations/Casablanca";
+import AgadirDestination from "./pages/destinations/Agadir";
+import FesDestination from "./pages/destinations/Fes";
+import SaharaDestination from "./pages/destinations/Sahara";
+import Services from "./pages/Services";
+import SuccessStories from "./pages/SuccessStories";
+import Blog from "./pages/Blog";
+import BlogArticleMarrakech from "./pages/blog/BlogArticleMarrakech";
+import TopVenuesMorocco from "./pages/blog/TopVenuesMorocco";
+import MarrakechIncentive from "./pages/blog/MarrakechIncentive";
+import AgadirTeamBuilding from "./pages/blog/AgadirTeamBuilding";
+import GulfTeamBuilding from "./pages/blog/GulfTeamBuilding";
+import SpanishCorporate from "./pages/blog/SpanishCorporate";
+import SaharaRetreats from "./pages/blog/SaharaRetreats";
+import ChoosingDMCMorocco from "./pages/blog/ChoosingDMCMorocco";
+import CorporateEventROI from "./pages/blog/CorporateEventROI";
+import HybridEventsMorocco from "./pages/blog/HybridEventsMorocco";
+import AfconCorporateHospitality from "./pages/blog/AfconCorporateHospitality";
+import AfconLanding from "./pages/AfconLanding";
+import CorporateEventsGuide from "./pages/CorporateEventsGuide";
+import FAQ from "./pages/FAQ";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import AuthPage from "./pages/auth/AuthPage";
+import CRMLayout from "./components/crm/CRMLayout";
+import Dashboard from "./pages/crm/Dashboard";
+import Leads from "./pages/crm/Leads";
+import Calls from "./pages/crm/Calls";
+import Partners from "./pages/crm/Partners";
 
 export const routes: RouteObject[] = [
   {
@@ -256,7 +253,7 @@ export const routes: RouteObject[] = [
       { path: "ar/من-نحن", Component: About },
       { path: "ar/الأسئلة-الشائعة", Component: FAQ },
       { path: "ar/اتصل-بنا", Component: Contact },
-  
+      
       // Catch-all route
       { path: "*", Component: NotFound },
     ],
