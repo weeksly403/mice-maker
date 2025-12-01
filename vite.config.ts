@@ -38,6 +38,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: 'esnext', // Modern JavaScript only (ES2020+)
+    minify: 'terser',
     rollupOptions: {
       output: {
         manualChunks: (id) => {
@@ -103,10 +104,9 @@ export default defineConfig(({ mode }) => ({
       },
     },
     chunkSizeWarningLimit: 1000,
-    minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: false, // Keep console during build for react-snap diagnostics
+        drop_console: mode === 'production', // Remove console in production, keep in dev
         drop_debugger: true,
         pure_funcs: mode === 'production' ? ['console.debug'] : [],
       },
@@ -115,6 +115,9 @@ export default defineConfig(({ mode }) => ({
       },
     },
     sourcemap: mode === 'development',
+    // SSG-specific settings
+    cssCodeSplit: true,
+    reportCompressedSize: false, // Faster builds
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
